@@ -1,0 +1,308 @@
+func! SetMolokaiTheme()
+	set background=dark
+	let g:molokai_original = 1
+	let g:rehash256 = 1
+    colo molokai 
+	set cursorline
+endfunc
+
+if (has("gui_running")) 
+    set guifont=Menlo\ Regular:h14 
+    colo default 
+else 
+	call SetMolokaiTheme()
+endif 
+"=====================autoCommand 
+"获取文件名的后缀，防止对vim.otl zsh.otl crontab.otl 之类的文件类型误判
+au BufReadPost * if expand("%:e")=='otl' |set filetype=otl |endif
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif  
+"align plugin is installed 
+augroup csvFile
+	au!
+	au FileType csv nnoremap <Leader><Leader>s <ESC>:%s/\ //g<CR> 
+	au FileType csv nnoremap <Leader><Leader>t :noh<CR> :%Align ,<CR> 
+augroup END
+au FileType yaml set tabstop=2 softtabstop=2 shiftwidth=2
+au FileType lua call SetLuaTagsFile()
+au FileType php call SetPhpTagsFile()
+au FileType otl set tags+=/data/dwork/learn/tags 
+"au FileType lua nested :TagbarOpen
+"autocmd! BufWritePost .vimrc source %
+
+func! SetLuaTagsFile()
+	let path=expand('%:p')
+	if matchstr(path,'gundam')!="" 
+		set tags+=~/.vim/gundam-luatags
+	endif
+	if matchstr(path,'sanguo2')!=""
+		set tags+=~/.vim/sanguo2-luatags
+	endif
+	return
+	if matchstr(path,'sanguo')!=""
+		set tags+=~/.vim/luatags
+	endif
+endfunc
+fun! SetPhpTagsFile()
+	let path=expand('%:p')
+	if matchstr(path,'gundam')!=""
+		set tags+=/data/work/gundam/apps/mingxin/tags
+		set tags-=/data/work/sanguo/apps/mingxin/tags
+	endif
+	if matchstr(path,'sanguo')!=""
+		set tags-=/data/work/gundam/apps/mingxin/tags
+		set tags+=/data/work/sanguo/apps/mingxin/tags
+	endif
+endfunc
+"=== browsing code setting, ex, cscope global .. 
+"set cscopetag
+"set cscopeprg=gtags-cscope
+"set cscopequickfix=c-,d-,e-,f-,g0,i-,s-,t-
+
+"================================================
+"==              thirdPardPlugin               ==
+"================================================
+"=====================csv
+let g:csv_nomap_cr = 1 "csv文件阻止回车折行
+"=====================Align
+let g:Align_xstrlen= 3  "align support multibyte
+"=====================a_vim
+"imap <Leader>is <ESC>:IHS<CR>:A<CR>
+"nmap <Leader>is :IHS<CR>:A<CR>
+"a.vim 和c.vim 同时安装的时候，打开c文件这两个映射会冲突，注掉a.vim中得即可
+"=====================gundo 
+let g:gundo_preview_bottom=1 
+let g:gundo_preview_height=40 
+let g:gundo_right=1 
+nnoremap <F5> :GundoToggle<CR> 
+"=====================neocomplete
+"let g:acp_enableAtStartup = 0
+"let g:neocomplete#enable_cursor_hold_i=1
+"let g:neocomplete#enable_at_startup = 1
+"let g:neocomplete#auto_completion_start_length=2
+"let g:neocomplete#manual_completion_start_length=0
+"let g:neocomplete#min_keyword_length=4
+"let g:neocomplete#enable_ignore_case=1
+""let g:neocomplete#enable_smart_case=1
+"let g:neocomplete#enable_auto_select=1
+"let g:neocomplete#enable_fuzzy_completion=1
+"=====================easymotion
+"let g:EasyMotion_leader_key = '<Leader><Leader>'
+"=====================airline 
+set laststatus=2 " Always show the statusline 
+if !exists('g:airline_symbols') 
+  let g:airline_symbols = {} 
+endif 
+
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tagbar#flags = 's'
+let g:airline#extensions#tabline#enabled = 1
+let s:airline_theme='dark'
+if g:colors_name=='molokai'
+	let s:airline_theme='molokai'
+endif
+let g:airline_theme=s:airline_theme
+let g:airline_detect_modified=0 
+let g:airline_detect_paste=0 
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_symbols.branch = '⭠'
+let g:airline_symbols.readonly = '⭤'
+let g:airline_symbols.linenr = '⭡'
+let g:airline_section_c = '%F'
+"let g:airline_section_c = '%F\ %{fugitive#statusline()}' 
+"let g:airline_section_c = '%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P'
+
+let g:airline#extensions#default#layout = ([ 
+	 \ [ 'a', 'b', 'c',], 
+	 \ [ 'x', 'y', 'z' ] 
+	 \ ]) 
+let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#excludes = []
+let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
+let g:airline#extensions#tabline#formatter = 'default'
+let g:airline#extensions#tabline#left_sep = '⮀'
+let g:airline#extensions#tabline#left_alt_sep = '⮁'
+let g:airline#extensions#tabline#right_sep = '⮂'
+let g:airline#extensions#tabline#right_alt_sep = '⮃'
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#syntastic#enabled = 0
+let g:airline#extensions#csv#enabled = 0
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#virtualenv#enabled = 0
+let g:airline#extensions#bufferline#enabled = 0
+"=====================ctrlP 
+let g:ctrlp_open_multiple_files = '2h' 
+let g:ctrlp_arg_map = 0 
+let g:ctrlp_max_height = 15 
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:15' 
+let g:ctrlp_use_caching = 1 
+let g:ctrlp_clear_cache_on_exit = 1 
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp' 
+let g:ctrlp_funky_sort_by_mru = 1
+let g:ctrlp_open_new_file = 't'
+let g:ctrlp_tabpage_position = 'ac'
+let g:ctrlp_show_hidden = 0 
+let g:ctrlp_map = '\p' 
+let g:ctrlp_cmd = 'CtrlP' 
+let g:ctrlp_custom_ignore = { 
+    \ 'dir': '\v[\/]\.(git|svn)$', 
+    \ 'file': '\v\.(log|jpg|png|jpeg)$', 
+    \} 
+let g:ctrlp_mruf_max = 1000 
+let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*\|/var/.*\|'
+            \'/private/.*\|\.git.*\|'
+            \'.*\.vim.*' 
+let g:ctrlp_mruf_relative = 0 
+let g:ctrlp_mruf_case_sensitive = 0 
+let g:ctrlp_extensions = ['tag', 'dir' , 'funky', 'buffertag' ] 
+let g:ctrlp_prompt_mappings = { 
+            \ 'PrtBS()': ['<bs>', '<c-]>'], 
+            \ 'PrtDelete()': ['<del>'], 
+            \ 'PrtDeleteWord()': ['<c-w>'], 
+            \ 'PrtClear()': ['<c-u>'], 
+            \ 'PrtSelectMove("j")': ['<c-j>', '<down>'], 
+            \ 'PrtSelectMove("k")': ['<c-k>', '<up>'], 
+            \ 'PrtSelectMove("t")': ['<Home>', '<kHome>'], 
+            \ 'PrtSelectMove("b")': ['<End>', '<kEnd>'], 
+            \ 'PrtSelectMove("u")': ['<PageUp>', '<kPageUp>'],  
+            \ 'PrtSelectMove("d")': ['<PageDown>', '<kPageDown>'], 
+            \ 'PrtHistory(-1)': ['<c-n>'], 
+            \ 'PrtHistory(1)': ['<c-p>'], 
+            \ 'AcceptSelection("e")': ['<c-e>', '<2-LeftMouse>'], 
+            \ 'AcceptSelection("h")': ['<c-x>'], 
+            \ 'AcceptSelection("t")': ['<c-t>', '<cr>'], 
+            \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'], 
+            \ 'ToggleFocus()': ['<s-tab>'], 
+            \ 'ToggleRegex()': ['<c-r>'], 
+            \ 'ToggleByFname()': ['<c-d>'], 
+            \ 'ToggleType(1)': ['<c-f>', '<c-up>'], 
+            \ 'ToggleType(-1)': ['<c-b>', '<c-down>'], 
+            \ 'PrtExpandDir()': ['<tab>'], 
+            \ 'PrtInsert("c")': ['<MiddleMouse>', '<insert>'], 
+            \ 'PrtInsert()': ['<c-\>'], 
+            \ 'PrtCurStart()': ['<c-a>'], 
+            \ 'PrtCurEnd()': ['<c-e>'],  
+            \ 'PrtCurLeft()': ['<left>', '<c-^>'], 
+            \ 'PrtCurRight()': ['<c-l>', '<right>'], 
+            \ 'PrtClearCache()': ['<F5>'], 
+            \ 'PrtDeleteEnt()': ['<F7>'], 
+            \ 'CreateNewFile()': ['<c-y>'], 
+            \ 'MarkToOpen()': ['<c-z>'], 
+            \ 'OpenMulti()': ['<c-o>'], 
+            \ 'PrtExit()': ['<esc>', '<c-c>', '<c-g>'], 
+            \ }
+nnoremap <Leader>f :CtrlPFunky<cr> 
+nnoremap <Leader>b :CtrlPBuffer<cr> 
+nnoremap <C-h> :CtrlPMRU<cr> 
+"=====================ctrlp_tjump 
+nnoremap <C-]> :CtrlPtjump<cr> 
+vnoremap <C-]> :CtrlPtjumpVisual<cr> 
+"=====================tagbar
+let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+let g:tagbar_left=0
+let g:tagbar_width = 45
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
+let g:tagbar_sort = 0
+let g:tagbar_compact = 1
+let g:tagbar_indent = 0
+let g:tagbar_show_visibility = 1
+let g:tagbar_show_linenumbers = 0
+let g:tagbar_expand = 1
+let g:tagbar_autoshowtag = 1
+"let g:tagbar_previewwin_pos = "topleft"
+"let g:tagbar_autopreview = 1
+nnoremap tb :TagbarToggle<CR>
+let g:tagbar_type_php = {
+	\ 'ctagstype' : 'php',
+	\ 'kinds'     : [
+		\ 'c:classes', 
+		\ 'i:interfaces', 
+		\ 'd:constant',
+		\ 'f:functions', 
+		\ 'j:jsfunctions'
+	\ ],
+\ }
+nnoremap tt <C-t> 
+nnoremap gt <C-]>
+nnoremap <leader>gt <C-w><C-]><C-w>T "在一个新tab中打开
+"=====================dragvisual
+"vmap  <expr>  <LEFT>   DVB_Drag('left')
+"vmap  <expr>  <RIGHT>  DVB_Drag('right')
+"vmap  <expr>  <DOWN>   DVB_Drag('down')
+"vmap  <expr>  <UP>     DVB_Drag('up')
+"vmap  <expr>  D        DVB_Duplicate()
+"=====================maps
+noremap <F10> :tabnext<CR>
+noremap <F9> :tabprev<CR>
+noremap tn :tabnew<CR>
+noremap td :tabclose<CR>
+nnoremap <F3> :r! date \+\%F\ \%T<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+nnoremap <leader><space> :noh<cr>
+nnoremap ; :
+vnoremap ; :
+nnoremap : ;
+vnoremap : ;
+nnoremap <F7> :tabmove -1<cr>
+vnoremap <F7> :tabmove -1<cr>
+nnoremap <F8> :tabmove +1<cr>
+vnoremap <F8> :tabmove +1<cr>
+nnoremap <UP> <Nop>
+nnoremap <DOWN> <Nop>
+nnoremap <LEFT> <Nop>
+nnoremap <RIGHT> <Nop>
+"==commind key shortcut,change vim behave like terminal
+cnoremap <C-a>  <Home>
+cnoremap <C-b>  <Left>
+cnoremap <C-f>  <Right>
+cnoremap <C-d>  <Delete>
+cnoremap <M-b>  <S-Left>
+cnoremap <M-f>  <S-Right>
+cnoremap <M-d>  <S-right><Delete>
+cnoremap <C-g>  <C-c>
+
+"=====================TagHighlight
+"if ! exists('g:TagHighlightSettings')
+	"let g:TagHighlightSettings = {}
+"endif
+"let g:TagHighlightSettings['TagFileName'] = 'tags'
+"let g:TagHighlightSettings['CtagsExecutable'] = '/usr/local/bin/ctags'
+"let g:TagHighlightSettings['ProjectConfigFileName']='thlconfig.txt'
+"let g:TagHighlightSettings['ProjectConfigDirModePriority']='Default'
+"let g:TagHighlightSettings['DefaultDirModePriority']=['Explicit']
+"let g:TagHighlightSettings['ProjectConfigDirModePriority'] = ''
+"nnoremap ;s :so ~/Desktop/test_vim_script/test.vim<cr>
+"=====================someTips
+"\v[\u4e00-\u9fbf] 搜索中文字符
+"=====================notice
+"sparkup 插件安装之后，写php会导致C-n提示不好使。
+"=====================special
+" insert 模式下输入下面的编码
+" 输入方式 Ctrl-V u2764
+"❤ u2764
+"=====================helps
+"insert ,插入
+"holy-grail ,ex_cmd_list
+"map-which-key
+"keycodes
+"
+"=====================special
+"vim-airline dark theme setting
+"let s:IA3 = [ '#4e4e4e' , '#303030' , 14 , 234 , '' ]
+"================================================================
+"=====[搜索按n N时闪烁光标]=============
+nnoremap <silent> n   n:call HLNext(0.1)<cr>
+nnoremap <silent> N   N:call HLNext(0.1)<cr>
+function! HLNext (blinktime)
+	set invcursorline
+	redraw
+	exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+	set invcursorline
+	redraw
+endfunction

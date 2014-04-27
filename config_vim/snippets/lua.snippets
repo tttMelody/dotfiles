@@ -1,0 +1,33 @@
+snippet fun
+	function ${1:classname}:${2:funcname}(${3})
+		${4}
+	end
+snippet if
+	if ${1} then
+		${2}
+	end
+snippet ife
+	if ${1} then
+		${3}
+	else ${2}
+		${4}
+	end
+snippet newc only class define
+	newClass('${1:subclass}',${2:baseclass})
+snippet newc class  width oninit 
+	newClass('${1:subclass}',${2:baseclass})
+	function ${3:$1}:onInit()
+		self:setLayout()
+	end
+snippet newc class  width setcontent 
+	newClass('${1:subclass}',${2:baseclass})
+	function ${3:$1}:onInit()
+		self:setLayout()
+		self:setContent()
+	end
+
+	function ${4:$1}:setContent()
+
+	end
+snippet dp
+	dump(${1:var},'==dmx==${2:tip}==dmx==')

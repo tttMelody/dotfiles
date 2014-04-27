@@ -1,0 +1,70 @@
+#!/bin/bash - 
+#===============================================================================
+#
+#          FILE: deployvim.sh
+# 
+#         USAGE: ./deployvim.sh 
+# 
+#   DESCRIPTION: 下载vundle 部署vim
+# 
+#       OPTIONS: ---
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: 丁明信
+#  ORGANIZATION: 
+#       CREATED: 03/28/2014 10:17
+#      REVISION:  ---
+#===============================================================================
+
+addvundle()
+{
+	#git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+}
+
+dp_vimrc()
+{
+	step=$1
+	if [[ $# -lt 0 ]]; then
+		return
+	fi
+	if [[ $step -eq 1 ]]; then
+		cd ~/vimfiles
+		cp vimrc_base ~/.vimrc
+	else
+		cat vimrc_extra >> ~/.vimrc
+	fi
+}
+
+dp_snippets()
+{
+	cp ./snippets/* ~/.vim/bundle/snipMate/snippets/
+}
+
+deploy_all()
+{
+	addvundle
+	dp_vimrc 1
+	vim +PluginInstall +qall
+	dp_snippets
+	dp_vimrc 2
+}
+
+deploy()
+{
+	if [[ $# -eq 0 ]]; then
+		deploy_all 
+		exit 0
+	fi
+	mod=$1
+	if [[ $mod = "snippets" ]]; then
+		dp_snippets
+	elif [[ $mod = "vimrc" ]]; then
+		dp_vimrc 1
+		dp_vimrc 2
+	fi
+}
+
+deploy $@
+
