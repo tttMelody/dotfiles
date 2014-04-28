@@ -1,0 +1,7 @@
+#common
+alias svnci='svnrmall; svnaddall; svn ci'
+alias hg='history | grep '
+alias ll="ls -lhG"
+alias ld='ll|grep "^d"'
+alias op='open'
+alias bs='source ~/.bash_profile'
