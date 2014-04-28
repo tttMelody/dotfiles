@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: deployvim.sh
+#          FILE: deploy.sh
 # 
-#         USAGE: ./deployvim.sh 
+#         USAGE: ./deploy.sh 
 # 
 #   DESCRIPTION: 下载vundle 部署vim
 # 
@@ -16,6 +16,9 @@
 #       CREATED: 03/28/2014 10:17
 #      REVISION:  ---
 #===============================================================================
+
+DOTFILES_ROOT=~/dotfiles
+VIMFILES_DIR=$DOTFILES_ROOT/config_vim
 
 addvundle()
 {
@@ -30,16 +33,15 @@ dp_vimrc()
 		return
 	fi
 	if [[ $step -eq 1 ]]; then
-		cd ~/vimfiles
-		cp vimrc_base ~/.vimrc
+		cp $VIMFILES_DIR/vimrc_base ~/.vimrc
 	else
-		cat vimrc_extra >> ~/.vimrc
+		cat $VIMFILES_DIR/vimrc_extra >> ~/.vimrc
 	fi
 }
 
 dp_snippets()
 {
-	cp ./snippets/* ~/.vim/bundle/snipMate/snippets/
+	cp $VIMFILES_DIR/snippets/* ~/.vim/bundle/snipMate/snippets/
 }
 
 deploy_all()
