@@ -1,0 +1,5 @@
+export ANDROID_SDK_ROOT="/data/work/sanguo/android-sdk-macosx" 
+export NDK_ROOT="/data/work/sanguo/android-ndk-r8e"
+export PATH=$ANDROID_SDK_ROOT/platforms/android-3/tools:$ANDROID_SDK_ROOT/platform-tools:$NDK_ROOT:$ANDROID_SDK_ROOT/tools:$PATH
+export PATH=/opt/local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/bin/dmxbin:$PATH
