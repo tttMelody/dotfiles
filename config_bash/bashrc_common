@@ -2,9 +2,10 @@
 # .bashrc
 #share command history with different bash ttys
 export HISTCONTROL=ignoredups
-export HISTIGNORE="[   ]*:&:bg:fg:exit"
+export HISTIGNORE="[   ]*:&:bg:fg:exit:pwd:ls:ll:history"
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000
+export HISTTIMEFORMAT='%F %T '
 shopt -s histappend
 export DISPLAY=:0
 export EDITOR=vim

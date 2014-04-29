@@ -68,5 +68,4 @@ deploy()
 	fi
 }
 
-deploy $@
-
+# deploy $@
