@@ -16,7 +16,7 @@ cc_off='\033[0m'       # Text Reset
 
 parse_git_branch() 
 {
-	echo -n $(__git_ps1 " (%s)")
+	echo -n $(__git_ps1 " (⭠ %s)")
 }
 
 jobscount() 
@@ -31,8 +31,13 @@ gen_segment()
 	local text_c=$2
 	local text_bg_c=$3
 	local follow_bg=$4
-	if [[ ! -n $text ]]; then
+	local text_null_return=$5
+
+	if [[ -n $text_null_return && ! -n $text ]]; then
 		exit 0
+	fi
+	if [[ ! -n $text ]]; then
+		text=" "
 	fi
 
 	local fg_pre="\033[38;5;"
@@ -53,7 +58,7 @@ gen_prompt()
 	local _job_status=$(jobscount)
 	local _git_status=$(parse_git_branch)
 	local _date_status=$(date "+%F %A %T")
-	local seg_job=$(gen_segment "${_job_status}" 124 249 236)
+	local seg_job=$(gen_segment "${_job_status}" 124 249 236 0)
 	local seg_user=$(gen_segment "\u@\h" 255 236 239)
 	local seg_path=$(gen_segment "\w" 51 239 111)
 	local seg_git=$(gen_segment "${_git_status}" 124 111 255)
@@ -61,9 +66,8 @@ gen_prompt()
 	local seg_secline=$(gen_segment "\# " 232 192)
 	case "$TERM" in
 		xterm-256color|screen-256color)
-			local _second_line="\#>"
 			#export PS1="\u@\h:\w\$\n\#>"
-			export PS1="${seg_job}${seg_user}${seg_path}${seg_git}${seg_date}$cc_off\$\n${seg_secline}"
+			export PS1="┌─${seg_job}${seg_user}${seg_path}${seg_git}${seg_date}$cc_off\$\n└─${seg_secline}"
 			;;
 		linux)
 			export PS1="\u@\h:\w\$\n\#>"
