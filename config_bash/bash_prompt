@@ -1,4 +1,34 @@
 ## PROMPT SETTING START
+<< desc
+\a : an ASCII bell character (07)
+\d : the date in "Weekday Month Date" format (e.g., "Tue May 26")
+\D{format} :	the format is passed to strftime(3) and the result is inserted into the prompt string; an empty format results in a locale-specific time representation. The braces are required
+\e : an ASCII escape character (033)
+\h : the hostname up to the first '.'
+\H : the hostname
+\j : the number of jobs currently managed by the shell
+\l : the basename of the shell’s terminal device name
+\n : newline
+\r : carriage return
+\s : the name of the shell, the basename of $0 (the portion following the final slash)
+\t : the current time in 24-hour HH:MM:SS format
+\T : the current time in 12-hour HH:MM:SS format
+\@ : the current time in 12-hour am/pm format
+\A : the current time in 24-hour HH:MM format
+\u : the username of the current user
+\v : the version of bash (e.g., 2.00)
+\V : the release of bash, version + patch level (e.g., 2.00.0)
+\w : the current working directory, with $HOME abbreviated with a tilde
+\W : the basename of the current working directory, with $HOME abbreviated with a tilde
+\! : the history number of this command
+\# : the command number of this command
+\$ : if the effective UID is 0, a #, otherwise a $
+\nnn : the character corresponding to the octal number nnn
+\\ : a backslash
+\[ : begin a sequence of non-printing characters, which could be used to embed a terminal control sequence into the prompt
+\] : end a sequence of non-printing characters
+
+desc
 # Reset
 Color_Off='\e[0m'       # Text Reset
 
@@ -83,15 +113,19 @@ jobscount()
 	local running=$(jobs -rp | wc -l | tr -d " ")
 	((running+stopped)) && echo -n "$Red[-${running}r/${stopped}s-]"
 }
+
 gen_prompt()
 {
+	history -a; history -c; history -r;
 	local _job_status=$(jobscount)
 	local _git_status=$(parse_git_branch)
+	local _date_status=$(date "+%F %A %T")
 	case "$TERM" in
 		xterm-256color|screen-256color)
 			SCREEEN_PS1="Window:$WINDOW"
-			local _second_line="\#>"
-			export PS1="$_job_status$Blue\u@\h:$Cyan\w$Color_Off$Red$_git_status$Color_Off\$\n$_second_line"
+			local _first_line="$_job_status$Blue\u@\h:$Cyan\w$Color_Off$Red$_git_status$Color_Off\$"
+			local _second_line="\n$Purple$_date_status$Color_Off$Green C:\#$Color_Off > "
+			export PS1="$_first_line$_second_line"
 			;;
 		linux)
 			#export PS1="\e[0;33m\u@\h:\w\$(parse_git_branch)\$\e[m\n\#>"
