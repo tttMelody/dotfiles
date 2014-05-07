@@ -40,8 +40,10 @@ prompt_segment()
 	[[ -n $1 ]] && local BG_C=$1 
 	[[ -n $2 ]] && local FG_C=$2 
 	[[ -n $3 ]] && local TEXT=$3 || local TEXT=""
-	BG=$(bg_color $BG_C)
-	FG=$(fg_color $FG_C)
+	if [[ ! $BG_C -eq 256 ]]; then
+		local BG=$(bg_color $BG_C)
+	fi
+	local FG=$(fg_color $FG_C)
 	if [[ $CURRENT_BG_C != 'NONE' ]]; then
 		local CURRENT_BG=$(fg_color $CURRENT_BG_C)
 		echo -n "${BG}${CURRENT_BG}${SEGMENG_SEPRATOR}${FG}"
@@ -99,8 +101,12 @@ gen_prompt()
 	#special code: ┌─└─
 # 	local _date_status=$(date "+%F %A %T")
 	case "$TERM" in
-		xterm-256color|screen-256color)
+		xterm-256color)
 # 			export PS1="\u@\h:\w\$\n\#>"
+			export PS1=$(build_prompt)
+			;;
+		screen-256color)
+             #export PS1="\u@\h:\w\$\n\#>"
 			export PS1=$(build_prompt)
 			;;
 		linux)
