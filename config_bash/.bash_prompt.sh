@@ -17,7 +17,10 @@ CURRENT_BG_C="NONE"
 CC_FG_PRE="\033[38;5;"
 CC_BG_PRE="\033[48;5;"
 SEGMENG_SEPRATOR="⮀"
-
+GIT_PS1_SHOWDIRTYSTATE="1"
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+# GIT_PS1_SHOWUPSTREAM="verbose"
 fg_color()
 {
 	color=$1
@@ -32,7 +35,7 @@ bg_color()
 
 parse_git_branch() 
 {
-	echo -n $(__git_ps1 " (%s)")
+	echo -n $(__git_ps1 "(%s)")
 }
 
 prompt_segment()
@@ -76,6 +79,10 @@ prompt_git()
 	prompt_segment  111 124 $(parse_git_branch)
 }
 
+prompt_date()
+{
+	prompt_segment 123 134 $(date +%T)
+}
 prompt_end()
 {
 	prompt_segment 256 $CURRENT_BG_C 
@@ -93,6 +100,7 @@ build_prompt()
 	prompt_user
 	prompt_path
 	prompt_git
+	prompt_date
 	prompt_end
 }
 
@@ -102,7 +110,7 @@ gen_prompt()
 # 	local _date_status=$(date "+%F %A %T")
 	case "$TERM" in
 		xterm-256color)
-# 			export PS1="\u@\h:\w\$\n\#>"
+# 			export PS1="\u@\h:\w-- $(parse_git_branch)\$\n\#>"
 			export PS1=$(build_prompt)
 			;;
 		screen-256color)

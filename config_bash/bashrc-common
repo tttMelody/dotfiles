@@ -16,13 +16,12 @@ export CLICOLOR="xterm-color"
 # export LSCOLORS=Ehfxcxdxbxegedabagacad
 export LSCOLORS=ExFxCxDxbxegedabagacad
 export GREP_OPTIONS="--color=auto"
-
 SOURCE_FILES=(
 	/opt/local/etc/bash_completion \
 	~/.git-completion.bash \
 	/etc/git-completion.bash \
 	~/.git-prompt.sh \
-	~/.bash_prompt \
+	~/.bash_prompt.sh \
 	~/.bash_aliases \
 	~/.bash_path)
 
