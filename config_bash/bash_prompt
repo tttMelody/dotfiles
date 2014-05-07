@@ -12,62 +12,96 @@ The \033 is the escape code. The [38; directs command to the foreground. If you 
 
 desc
 
-cc_off='\033[0m'       # Text Reset
+CC_OFF='\033[0m'       # Text Reset
+CURRENT_BG_C="NONE"
+CC_FG_PRE="\033[38;5;"
+CC_BG_PRE="\033[48;5;"
+SEGMENG_SEPRATOR="⮀"
+
+fg_color()
+{
+	color=$1
+	echo -n "${CC_FG_PRE}${color}m"
+}
+
+bg_color()
+{
+	color=$1
+	echo -n "${CC_BG_PRE}${color}m"
+}
 
 parse_git_branch() 
 {
-	echo -n $(__git_ps1 " (⭠ %s)")
+	echo -n $(__git_ps1 " (%s)")
 }
 
-jobscount() 
+prompt_segment()
 {
+	[[ -n $1 ]] && local BG_C=$1 
+	[[ -n $2 ]] && local FG_C=$2 
+	[[ -n $3 ]] && local TEXT=$3 || local TEXT=""
+	BG=$(bg_color $BG_C)
+	FG=$(fg_color $FG_C)
+	if [[ $CURRENT_BG_C != 'NONE' ]]; then
+		local CURRENT_BG=$(fg_color $CURRENT_BG_C)
+		echo -n "${BG}${CURRENT_BG}${SEGMENG_SEPRATOR}${FG}"
+	else
+		echo -n "${BG}${FG}"
+	fi
+	[[ -n $TEXT ]] && echo -n "${TEXT}"
+	echo -n $CC_OFF
+	CURRENT_BG_C=$BG_C
+}
+
+prompt_job()
+{
+	local job=" "
 	local stopped=$(jobs -sp | wc -l | tr -d " ")
 	local running=$(jobs -rp | wc -l | tr -d " ")
-	((running+stopped)) && echo -n "[${running}r/${stopped}s]"
+	((running+stopped)) &&  job="[${running}r/${stopped}s]" && prompt_segment 249 124 $job
 }
-gen_segment()
+
+prompt_user()
 {
-	local text=$1
-	local text_c=$2
-	local text_bg_c=$3
-	local follow_bg=$4
-	local text_null_return=$5
-
-	if [[ -n $text_null_return && ! -n $text ]]; then
-		exit 0
-	fi
-	if [[ ! -n $text ]]; then
-		text=" "
-	fi
-
-	local fg_pre="\033[38;5;"
-	local bg_pre="\033[48;5;"
-	local bg_c="${bg_pre}${text_bg_c}m"
-	local t_c="${fg_pre}${text_c}m"
-	local seg_c="${fg_pre}${text_bg_c}m"
-	if [[ -n $4 ]]; then
-		local bg_f="${cc_off}${bg_pre}${follow_bg}m"
-	else
-		local bg_f="${cc_off}"
-	fi
-	echo -n "${bg_c}${t_c}${text}${bg_f}${seg_c}⮀$cc_off"
+	prompt_segment 236 255 "\u@\h" 
 }
+prompt_path()
+{
+	prompt_segment 239 119 "\w" 
+}
+prompt_git()
+{
+	prompt_segment  111 124 $(parse_git_branch)
+}
+
+prompt_end()
+{
+	prompt_segment 256 $CURRENT_BG_C 
+	CURRENT_BG_C="NONE"
+	echo -n "\n"
+	prompt_segment 230 16 "\#"
+	prompt_segment 256 $CURRENT_BG_C 
+	echo -n $CC_OFF
+}
+
+
+build_prompt()
+{
+	prompt_job
+	prompt_user
+	prompt_path
+	prompt_git
+	prompt_end
+}
+
 gen_prompt()
 {
 	#special code: ┌─└─
-	local _job_status=$(jobscount)
-	local _git_status=$(parse_git_branch)
-	local _date_status=$(date "+%F %A %T")
-	local seg_job=$(gen_segment "${_job_status}" 124 249 236 0)
-	local seg_user=$(gen_segment "\u@\h" 255 236 239)
-	local seg_path=$(gen_segment "\w" 51 239 111)
-	local seg_git=$(gen_segment "${_git_status}" 124 111 255)
-	local seg_date=$(gen_segment " ${_date_status}" 16 255)
-	local seg_secline=$(gen_segment "\# " 232 192)
+# 	local _date_status=$(date "+%F %A %T")
 	case "$TERM" in
 		xterm-256color|screen-256color)
-			#export PS1="\u@\h:\w\$\n\#>"
-			export PS1="┌─${seg_job}${seg_user}${seg_path}${seg_git}${seg_date}$cc_off\$\n└─${seg_secline}"
+# 			export PS1="\u@\h:\w\$\n\#>"
+			export PS1=$(build_prompt)
 			;;
 		linux)
 			export PS1="\u@\h:\w\$\n\#>"
