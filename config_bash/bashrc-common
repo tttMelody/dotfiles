@@ -17,18 +17,16 @@ export CLICOLOR="xterm-color"
 export LSCOLORS=ExFxCxDxbxegedabagacad
 export GREP_OPTIONS="--color=auto"
 
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-	   . /opt/local/etc/profile.d/bash_completion.sh
-fi
+SOURCE_FILES=(
+	/opt/local/etc/bash_completion \
+	~/.git-completion.bash \
+	/etc/git-completion.bash \
+	~/.git-prompt.sh \
+	~/.bash_prompt \
+	~/.bash_aliases \
+	~/.bash_path)
 
-if [ -f ~/git-completion.bash ]; then
-  . ~/git-completion.bash
-fi
-
-if [ -f ~/.bash_prompt ]; then
-	. ~/.bash_prompt
-fi
-
-if [ -f ~/.bash_aliases ]; then
-	source ~/.bash_aliases
-fi
+for file in ${SOURCE_FILES[@]}
+do
+	[[ -f $file ]] && . $file
+done
