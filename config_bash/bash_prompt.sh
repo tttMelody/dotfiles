@@ -58,25 +58,55 @@ prompt_segment()
 	CURRENT_BG_C=$BG_C
 }
 
+prompt_simple()
+{
+	local text_c=$1
+	local text=$2
+	echo -n $(fg_color $text_c)${text}
+	echo -n $CC_OFF
+}
+
 prompt_job()
 {
 	local job=" "
 	local stopped=$(jobs -sp | wc -l | tr -d " ")
 	local running=$(jobs -rp | wc -l | tr -d " ")
-	((running+stopped)) &&  job="[${running}r/${stopped}s]" && prompt_segment 249 124 $job
+	local bg_c=249
+	local fg_c=124
+	local total=$((running+stopped))
+	if [[ $total -lt 0 || $total -eq 0 ]];then
+		return
+	fi
+	if [[ -n $1 ]]; then
+		prompt_simple $fg_c $job
+	else
+		job="[${running}r/${stopped}s]" && prompt_segment $bg_c $fg_c $job
+	fi
 }
 
 prompt_user()
 {
-	prompt_segment 236 255 "\u@\h" 
+	if [[ -n $1 ]]; then
+		prompt_simple 19 "\u@\h:"
+	else
+		prompt_segment 236 255 "\u@\h" 
+	fi
 }
 prompt_path()
 {
-	prompt_segment 239 119 "\w" 
+	if [[ -n $1 ]]; then
+		prompt_simple 39 "\w"
+	else
+		prompt_segment 239 119 "\w" 
+	fi
 }
 prompt_git()
 {
-	prompt_segment  111 124 $(parse_git_branch)
+	if [[ -n $1 ]]; then
+		prompt_simple 124 $(parse_git_branch)
+	else
+		prompt_segment  111 124 $(parse_git_branch)
+	fi
 }
 
 prompt_date()
@@ -85,23 +115,37 @@ prompt_date()
 }
 prompt_end()
 {
-	prompt_segment 256 $CURRENT_BG_C 
-	CURRENT_BG_C="NONE"
-	echo -n "\n"
-	prompt_segment 230 16 "\#"
-	prompt_segment 256 $CURRENT_BG_C 
-	echo -n $CC_OFF
+	if [[ -n $1 ]]; then
+		echo "\$\n└─\#>"
+	else
+		prompt_segment 256 $CURRENT_BG_C 
+		CURRENT_BG_C="NONE"
+		echo -n "\n"
+		prompt_segment 230 16 "\#"
+		prompt_segment 256 $CURRENT_BG_C 
+		echo -n $CC_OFF
+	fi
+}
+
+prompt_begin()
+{
+	if [[ -n $1 ]]; then
+		prompt_simple 16 "┌─"
+	else
+		:
+	fi
 }
 
 
 build_prompt()
 {
-	prompt_job
-	prompt_user
-	prompt_path
-	prompt_git
-	prompt_date
-	prompt_end
+	prompt_begin $@
+	prompt_job $@
+	prompt_user $@
+	prompt_path $@
+	prompt_git $@
+# 	prompt_date $@
+	prompt_end $@
 }
 
 gen_prompt()
@@ -110,8 +154,8 @@ gen_prompt()
 # 	local _date_status=$(date "+%F %A %T")
 	case "$TERM" in
 		xterm-256color)
-# 			export PS1="\u@\h:\w-- $(parse_git_branch)\$\n\#>"
-			export PS1=$(build_prompt)
+			export PS1=$(build_prompt 1)
+# 			export PS1=$(build_prompt)
 			;;
 		screen-256color)
              #export PS1="\u@\h:\w\$\n\#>"
