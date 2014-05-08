@@ -116,7 +116,8 @@ prompt_date()
 prompt_end()
 {
 	if [[ -n $1 ]]; then
-		echo "\$\n└─\#>"
+		echo -n "\$\n└─"
+		prompt_simple 138 "\#>"
 	else
 		prompt_segment 256 $CURRENT_BG_C 
 		CURRENT_BG_C="NONE"
