@@ -24,13 +24,13 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 fg_color()
 {
 	color=$1
-	echo -n "${CC_FG_PRE}${color}m"
+	echo -n -e "${CC_FG_PRE}${color}m"
 }
 
 bg_color()
 {
 	color=$1
-	echo -n "${CC_BG_PRE}${color}m"
+	echo -n -e "${CC_BG_PRE}${color}m"
 }
 
 parse_git_branch() 
@@ -49,12 +49,12 @@ prompt_segment()
 	local FG=$(fg_color $FG_C)
 	if [[ $CURRENT_BG_C != 'NONE' ]]; then
 		local CURRENT_BG=$(fg_color $CURRENT_BG_C)
-		echo -n "${BG}${CURRENT_BG}${SEGMENG_SEPRATOR}${FG}"
+		echo -n -e "${BG}${CURRENT_BG}${SEGMENG_SEPRATOR}${FG}"
 	else
-		echo -n "${BG}${FG}"
+		echo -n -e "${BG}${FG}"
 	fi
 	[[ -n $TEXT ]] && echo -n "${TEXT}"
-	echo -n $CC_OFF
+	echo -n -e $CC_OFF
 	CURRENT_BG_C=$BG_C
 }
 
@@ -62,8 +62,8 @@ prompt_simple()
 {
 	local text_c=$1
 	local text=$2
-	echo -n $(fg_color $text_c)${text}
-	echo -n $CC_OFF
+	echo -n -e $(fg_color $text_c)${text}
+	echo -n -e $CC_OFF
 }
 
 prompt_job()
@@ -77,10 +77,11 @@ prompt_job()
 	if [[ $total -lt 0 || $total -eq 0 ]];then
 		return
 	fi
+	local job="[${running}r/${stopped}s]"
 	if [[ -n $1 ]]; then
 		prompt_simple $fg_c $job
 	else
-		job="[${running}r/${stopped}s]" && prompt_segment $bg_c $fg_c $job
+		prompt_segment $bg_c $fg_c $job
 	fi
 }
 
@@ -116,8 +117,8 @@ prompt_date()
 prompt_end()
 {
 	if [[ -n $1 ]]; then
-		echo -n "\$\n└─"
-		prompt_simple 138 "\#>"
+		echo -n -e "\$\n\#>"
+# 		prompt_simple 138 "\#>"
 	else
 		prompt_segment 256 $CURRENT_BG_C 
 		CURRENT_BG_C="NONE"
@@ -131,7 +132,8 @@ prompt_end()
 prompt_begin()
 {
 	if [[ -n $1 ]]; then
-		prompt_simple 16 "┌─"
+		:
+# 		prompt_simple 16 "┌─"
 	else
 		:
 	fi
@@ -140,7 +142,7 @@ prompt_begin()
 
 build_prompt()
 {
-	prompt_begin $@
+# 	prompt_begin $@
 	prompt_job $@
 	prompt_user $@
 	prompt_path $@
