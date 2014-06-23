@@ -197,7 +197,7 @@ let g:ctrlp_prompt_mappings = {
             \ }
 nnoremap <Leader>f :CtrlPFunky<cr> 
 nnoremap <Leader>b :CtrlPBuffer<cr> 
-nnoremap <C-h> :CtrlPMRU<cr> 
+nnoremap <C-j> :CtrlPMRU<cr> 
 "=====================ctrlp_tjump 
 nnoremap <C-]> :CtrlPtjump<cr> 
 vnoremap <C-]> :CtrlPtjumpVisual<cr> 
