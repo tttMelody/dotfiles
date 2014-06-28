@@ -33,9 +33,9 @@ dp_vimrc()
 		return
 	fi
 	if [[ $step -eq 1 ]]; then
-		cp $VIMFILES_DIR/vimrc_base ~/.vimrc
+		sed -n "1,/dingmingxin-base/p" $VIMFILES_DIR/vimrc >> ~/.vimrc
 	else
-		cat $VIMFILES_DIR/vimrc_extra >> ~/.vimrc
+		sed -n "/dingmingxin-extra/,$ p" $VIMFILES_DIR/vimrc >> ~/.vimrc
 	fi
 }
 
@@ -57,7 +57,6 @@ deploy()
 {
 	if [[ $# -eq 0 ]]; then
 		deploy_all 
-		exit 0
 	fi
 	mod=$1
 	if [[ $mod = "snippets" ]]; then
@@ -68,4 +67,4 @@ deploy()
 	fi
 }
 
-# deploy $@
+deploy $@

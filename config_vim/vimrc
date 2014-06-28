@@ -1,3 +1,98 @@
+"=====================general
+set number 
+set wh=999 
+set ruler 
+set showcmd 
+set confirm 
+set novisualbell 
+set mouse=a
+set so=5 
+set listchars=tab:▸\ ,eol:¬  "关于特殊字符请搜索 Unicode character table
+set nolist 
+set linebreak 
+set wrap 
+"set showbreak=↘ "u21e2 u2198
+set enc=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,GB18030,big5,GBK,GB2312,chinese,latin1,default 
+"set fileencoding=utf-8 
+"set fileencodings=ucs-bom,GBK,utf-8,cp936,gb18030,big5,latin1 
+set formatoptions=tcrqn1
+set undolevels=1000
+set history=1000
+set cindent 
+set autoindent 
+set smartindent 
+set backspace=indent,eol,start 
+set tabstop=4 
+set softtabstop=4 
+set shiftwidth=4 
+set smarttab "insert tabs on the start of a line according to shiftwidth,not tabstop
+"set title "change the terminal title
+set noexpandtab 
+set nocompatible " Disable vi-compatibility 
+set mouse=a 
+set pastetoggle=<F2>
+set tags+=./tags
+"=====================textFormat
+set foldmethod=marker
+"set virtualedit=all 
+"=====================autoComplete
+"set dict+=/usr/share/dict/words 
+set completeopt=longest,menuone
+"=====================search
+set incsearch 
+set hlsearch 
+set ignorecase smartcase "infercase
+set completeopt=longest,menu 
+filetype off 
+"=====================statusline
+"=====================vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Align'
+"Plugin 'CSApprox'
+Plugin 'auto_mkdir'
+Plugin 'a.vim'
+Plugin 'dingmingxin/vim-ctrlp-tjump'
+Plugin 'dingmingxin/molokai'
+Plugin 'dingmingxin/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'mileszs/ack.vim'
+Plugin 'bash-support.vim'
+Plugin 'mattn/calendar-vim'
+"Plugin 'vim-scripts/vimwiki'
+Plugin 'csv.vim'
+Plugin 'vim-scripts/c.vim'
+"Plugin 'mattn/emmet-vim' 
+" needed for fetching schemes online.
+"Plugin 'mattn/webapi-vim'
+"Plugin 'Gundo'
+Plugin 'EasyMotion'
+Plugin 'vim-scripts/xterm-color-table.vim'
+Plugin 'vim-indent-object'
+Plugin 'The-NERD-Commenter'
+Plugin 'The-NERD-tree'
+Plugin 'repeat.vim'
+Plugin 'snipMate'
+"Plugin "drmingdrmer/xptemplate"
+Plugin 'surround.vim'
+Plugin 'vim-airline'
+Plugin 'AutoComplPop'
+"Plugin 'Shougo/neocomplete.vim'
+Plugin 'tpope/vim-markdown'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-fugitive'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/applescript.vim'
+call vundle#end()
+filetype plugin indent on 
+syntax on 
+set ffs=unix,dos,mac 
+set backspace=indent,eol,start 
+
+"dingmingxin-base
+"dingmingxin-extra
 func! SetMolokaiTheme()
 	set background=dark
 	let g:molokai_original = 1
@@ -10,6 +105,7 @@ if (has("gui_running"))
     set guifont=Menlo\ Regular:h14 
     colo default 
 else 
+	set t_Co=256
 	call SetMolokaiTheme()
 endif 
 "=====================autoCommand 
@@ -93,9 +189,9 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {} 
 endif 
 
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline#extensions#tagbar#flags = 's'
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tagbar#enabled = 1
+"let g:airline#extensions#tagbar#flags = 's'
+"let g:airline#extensions#tabline#enabled = 1
 let s:airline_theme='dark'
 if g:colors_name=='molokai'
 	let s:airline_theme='molokai'
@@ -197,7 +293,7 @@ let g:ctrlp_prompt_mappings = {
             \ }
 nnoremap <Leader>f :CtrlPFunky<cr> 
 nnoremap <Leader>b :CtrlPBuffer<cr> 
-nnoremap <C-j> :CtrlPMRU<cr> 
+nnoremap <C-h> :CtrlPMRU<cr> 
 "=====================ctrlp_tjump 
 nnoremap <C-]> :CtrlPtjump<cr> 
 vnoremap <C-]> :CtrlPtjumpVisual<cr> 
