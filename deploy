@@ -19,7 +19,7 @@
 
 
 DOTFILES_ROOT=~/dotfiles
-deploy()
+deploy_one()
 {
 	if [[ $# -le 0 ]];then
 		return
@@ -41,4 +41,19 @@ deploy()
 	$deploy_script $@
 }
 
-deploy "vim"
+deploy_all()
+{
+	begin_deploy "vim"
+	begin_deploy "tmux"
+}
+
+begin_deploy()
+{
+	if [[ $# -eq 0 ]];then
+		deploy_all
+		return
+	fi
+	deploy_one $@
+}
+
+begin_deploy $@
