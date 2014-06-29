@@ -35,7 +35,7 @@ dp_vimrc()
 	if [[ $step -eq 1 ]]; then
 		sed -n "1,/dingmingxin-base/p" $VIMFILES_DIR/vimrc >> ~/.vimrc
 	else
-		sed "1,/dingmingxin-extra/d" $VIMFILES_DIR/vimrc >> ~/.vimrc
+		sed "1,/dingmingxin-base/d" $VIMFILES_DIR/vimrc >> ~/.vimrc
 	fi
 }
 

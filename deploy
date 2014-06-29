@@ -1,0 +1,44 @@
+#!/bin/bash - 
+#===============================================================================
+#
+#          FILE: deploy.sh
+# 
+#         USAGE: ./deploy.sh 
+# 
+#   DESCRIPTION: 
+# 
+#       OPTIONS: ---
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: dingmingxin, 
+#  ORGANIZATION: 
+#       CREATED: 06/29/14 14:10
+#      REVISION:  ---
+#===============================================================================
+
+
+DOTFILES_ROOT=~/dotfiles
+deploy()
+{
+	if [[ $# -le 0 ]];then
+		return
+	fi
+	name=$1
+	config_dir=$DOTFILES_ROOT"/config_"$name
+	deploy_script=$config_dir"/deploy_"$name
+
+	if [[ ! -d $config_dir ]]; then
+		echo $config_dir" not exist"
+		return
+	fi
+	if [[ ! -f $deploy_script ]];then
+		echo "$deploy_script not exist"
+		return
+	fi
+
+	shift 1
+	$deploy_script $@
+}
+
+deploy "vim"
