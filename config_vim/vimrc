@@ -92,7 +92,6 @@ set ffs=unix,dos,mac
 set backspace=indent,eol,start 
 
 "dingmingxin-base
-"dingmingxin-extra
 func! SetMolokaiTheme()
 	set background=dark
 	let g:molokai_original = 1
