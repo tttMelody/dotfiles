@@ -33,19 +33,30 @@ set nocompatible " Disable vi-compatibility
 set mouse=a 
 set pastetoggle=<F2>
 set tags+=./tags
+"====diff mode setting=====
+if &diff
+	" some setting
+else
+	set wh=999 
+endif
+"set diffopt=filler,horizontal "vertical diff by default
+"c-w H -- change to vertical diff mode
+"c-w J -- change to horizontal diff mode
 "=====================textFormat
 set foldmethod=marker
 "set virtualedit=all 
 "=====================autoComplete
 "set dict+=/usr/share/dict/words 
-set completeopt=longest,menuone
+set completeopt = ".,w,b,u,t,i,]" 
+"set omnifunc=syntaxcomplete#Complete 
 "=====================search
 set incsearch 
 set hlsearch 
 set ignorecase smartcase "infercase
 set completeopt=longest,menu 
 filetype off 
-"=====================statusline
+"=====================for debug
+set verbosefile=/data/log/vimscript.log
 "=====================vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
