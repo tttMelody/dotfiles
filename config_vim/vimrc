@@ -96,6 +96,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/applescript.vim'
+Plugin 'vim-scripts/LargeFile'
 call vundle#end()
 filetype plugin indent on 
 syntax on 
@@ -175,6 +176,8 @@ let g:Align_xstrlen= 3  "align support multibyte
 "imap <Leader>is <ESC>:IHS<CR>:A<CR>
 "nmap <Leader>is :IHS<CR>:A<CR>
 "a.vim 和c.vim 同时安装的时候，打开c文件这两个映射会冲突，注掉a.vim中得即可
+"=====================LargeFile
+let g:LargeFile = 10 "consider file that larger than 10 MB a large file
 "=====================gundo 
 let g:gundo_preview_bottom=1 
 let g:gundo_preview_height=40 
@@ -201,7 +204,7 @@ endif
 
 "let g:airline#extensions#tagbar#enabled = 1
 "let g:airline#extensions#tagbar#flags = 's'
-"let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 let s:airline_theme='dark'
 if g:colors_name=='molokai'
 	let s:airline_theme='molokai'
