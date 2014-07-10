@@ -178,6 +178,8 @@ let g:Align_xstrlen= 3  "align support multibyte
 "a.vim 和c.vim 同时安装的时候，打开c文件这两个映射会冲突，注掉a.vim中得即可
 "=====================LargeFile
 let g:LargeFile = 10 "consider file that larger than 10 MB a large file
+"=====================NERD_commenter
+let g:NERDRemoveExtraSpaces = 0
 "=====================gundo 
 let g:gundo_preview_bottom=1 
 let g:gundo_preview_height=40 
