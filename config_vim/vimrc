@@ -43,6 +43,7 @@ endif
 "c-w H -- change to vertical diff mode
 "c-w J -- change to horizontal diff mode
 "=====================textFormat
+set foldopen=search,block,hor,mark,percent,quickfix,tag,undo
 set foldmethod=marker
 "set virtualedit=all 
 "=====================autoComplete
@@ -408,8 +409,9 @@ cnoremap <C-g>  <C-c>
 "let s:IA3 = [ '#4e4e4e' , '#303030' , 14 , 234 , '' ]
 "================================================================
 "=====[搜索按n N时闪烁光标]=============
-nnoremap <silent> n   n:call HLNext(0.1)<cr>
-nnoremap <silent> N   N:call HLNext(0.1)<cr>
+"这个map会导致 搜索时不打开folder
+"nnoremap <silent> n   n:call HLNext(0.1)<cr>
+"nnoremap <silent> N   N:call HLNext(0.1)<cr>
 function! HLNext (blinktime)
 	set invcursorline
 	redraw
