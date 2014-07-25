@@ -7,7 +7,7 @@ snippet ec
 snippet inc
 	include '${1:file}';${2}
 snippet err
-	error_log("dmx--${3:tip}--${2:$1}====".var_export($${1:var},true));
+	error_log("dmx--${3:tip}--".var_export($${1:var},true));
 snippet inc1
 	include_once '${1:file}';${2}
 snippet req
