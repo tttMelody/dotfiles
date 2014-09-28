@@ -70,6 +70,7 @@ Plugin 'dingmingxin/vim-ctrlp-tjump'
 Plugin 'dingmingxin/molokai'
 Plugin 'dingmingxin/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'mattn/ctrlp-mark'
 Plugin 'mileszs/ack.vim'
 Plugin 'bash-support.vim'
 Plugin 'mattn/calendar-vim'
@@ -270,7 +271,7 @@ let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*\|/var/.*\|'
             \'.*\.vim.*' 
 let g:ctrlp_mruf_relative = 0 
 let g:ctrlp_mruf_case_sensitive = 0 
-let g:ctrlp_extensions = ['tag', 'dir' , 'funky', 'buffertag' ] 
+let g:ctrlp_extensions = ['tag', 'dir' , 'mark', 'funky', 'buffertag' ] 
 let g:ctrlp_prompt_mappings = { 
             \ 'PrtBS()': ['<bs>', '<c-]>'], 
             \ 'PrtDelete()': ['<del>'], 
@@ -314,7 +315,7 @@ nnoremap <C-h> :CtrlPMRU<cr>
 nnoremap <C-]> :CtrlPtjump<cr> 
 vnoremap <C-]> :CtrlPtjumpVisual<cr> 
 "=====================tagbar
-let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+let g:tagbar_ctags_bin='/opt/local/bin/ctags'
 let g:tagbar_left=0
 let g:tagbar_width = 45
 let g:tagbar_autoclose = 1
@@ -339,9 +340,9 @@ let g:tagbar_type_php = {
 		\ 'j:jsfunctions'
 	\ ],
 \ }
-nnoremap tt <C-t> 
-nnoremap gt <C-]>
-nnoremap <leader>gt <C-w><C-]><C-w>T "在一个新tab中打开
+"nnoremap tt <C-t> 
+"nnoremap gt <C-]>
+"nnoremap <leader>gt <C-w><C-]><C-w>T "在一个新tab中打开
 "=====================dragvisual
 "vmap  <expr>  <LEFT>   DVB_Drag('left')
 "vmap  <expr>  <RIGHT>  DVB_Drag('right')
