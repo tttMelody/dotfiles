@@ -1,6 +1,6 @@
 "=====================general
 set number 
-set wh=999 
+"set wh=999 
 set ruler 
 set showcmd 
 set confirm 
@@ -37,7 +37,7 @@ set tags+=./tags
 if &diff
 	" some setting
 else
-	set wh=999 
+	"set wh=999 
 endif
 "set diffopt=filler,horizontal "vertical diff by default
 "c-w H -- change to vertical diff mode
@@ -62,8 +62,8 @@ set verbosefile=/data/log/vimscript.log
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+
 Plugin 'Align'
-"Plugin 'CSApprox'
 Plugin 'auto_mkdir'
 Plugin 'a.vim'
 Plugin 'dingmingxin/vim-ctrlp-tjump'
@@ -87,15 +87,18 @@ Plugin 'vim-indent-object'
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
 Plugin 'repeat.vim'
-Plugin 'snipMate'
-"Plugin "drmingdrmer/xptemplate"
+"Plugin 'snipMate'
+Plugin 'honza/vim-snippets'
+Plugin 'SirVer/ultisnips'
 Plugin 'surround.vim'
 Plugin 'vim-airline'
 Plugin 'AutoComplPop'
 "Plugin 'Shougo/neocomplete.vim'
 Plugin 'tpope/vim-markdown'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-dispatch'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/applescript.vim'
 Plugin 'vim-scripts/LargeFile'
