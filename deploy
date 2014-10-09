@@ -19,6 +19,9 @@
 
 
 DOTFILES_ROOT=~/dotfiles
+BASH_CON_ROOT=$DOTFILES_ROOT/config_bash
+VIM_CON_ROOT=$DOTFILES_ROOT/config_vim
+TMUX_CON_ROOT=$DOTFILES_ROOT/config_tmux
 deploy_one()
 {
 	if [[ $# -le 0 ]];then

@@ -39,31 +39,40 @@ dp_vimrc()
 	fi
 }
 
-dp_snippets()
+update_snippets()
 {
 	cp $VIMFILES_DIR/snippets/* ~/.vim/bundle/snipMate/snippets/
 }
 
-deploy_all()
+install_vim()
 {
 	addvundle
 	dp_vimrc 1
+	#自动安装插件
 	vim +PluginInstall +qall
-	dp_snippets
+	#部署snippets
+	update_snippets
+	dp_vimrc 2
+}
+
+update_vimrc()
+{
+	cat /dev/null > ~/.vimrc
+	dp_vimrc 1
 	dp_vimrc 2
 }
 
 deploy()
 {
 	if [[ $# -eq 0 ]]; then
-		deploy_all 
+		install_vim 
+		return
 	fi
 	mod=$1
 	if [[ $mod = "snippets" ]]; then
-		dp_snippets
+		update_snippets
 	elif [[ $mod = "vimrc" ]]; then
-		dp_vimrc 1
-		dp_vimrc 2
+		update_vimrc
 	fi
 }
 

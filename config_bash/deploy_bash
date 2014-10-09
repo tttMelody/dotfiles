@@ -1,0 +1,17 @@
+#!/bin/bash - 
+
+DOTFILES_ROOT=~/dotfiles
+
+update_aliases()
+{
+	profile="common"
+	if [[ -n $1 ]]; then
+	fi
+}
+
+deploy()
+{
+	profile="common"
+}
+
+deploy $@
