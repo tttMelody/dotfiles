@@ -5,7 +5,12 @@ set ruler
 set showcmd 
 set confirm 
 set novisualbell 
-set mouse=a
+if has('mouse') 
+	set mouse=a
+	set ttymouse=xterm2
+endif
+"set clipboard=unnamedplus,unnamed,autoselect
+"set clipboard=unnamedplus
 set so=5 
 set listchars=tab:▸\ ,eol:¬  "关于特殊字符请搜索 Unicode character table
 set nolist 
@@ -30,7 +35,6 @@ set smarttab "insert tabs on the start of a line according to shiftwidth,not tab
 "set title "change the terminal title
 set noexpandtab 
 set nocompatible " Disable vi-compatibility 
-set mouse=a 
 set pastetoggle=<F2>
 set tags+=./tags
 "====diff mode setting=====
@@ -380,6 +384,11 @@ cnoremap <M-b>  <S-Left>
 cnoremap <M-f>  <S-Right>
 cnoremap <M-d>  <S-right><Delete>
 cnoremap <C-g>  <C-c>
+"map Alt+, to save file
+"if has('mac')
+"nnoremap ≤ :w<cr>  
+"inoremap ≤ <ESC>:w<cr>
+"endif
 
 "=====================TagHighlight
 "if ! exists('g:TagHighlightSettings')
