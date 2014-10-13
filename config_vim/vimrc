@@ -1,6 +1,6 @@
 "=====================general
 set number 
-"set wh=999 
+set wh=999 
 set ruler 
 set showcmd 
 set confirm 
@@ -27,16 +27,25 @@ set history=1000
 set cindent 
 set autoindent 
 set smartindent 
+set copyindent
 set backspace=indent,eol,start 
+
+set noexpandtab 
 set tabstop=4 
 set softtabstop=4 
 set shiftwidth=4 
 set smarttab "insert tabs on the start of a line according to shiftwidth,not tabstop
-"set title "change the terminal title
-set noexpandtab 
+
+set title "change the terminal title
 set nocompatible " Disable vi-compatibility 
 set pastetoggle=<F2>
 set tags+=./tags
+" Turn on wildmenu -- command-line completion
+set wildmenu
+set wildmode=longest,full
+set wildignore=*.bak,*.o,*.obj,*.e,*~,*.pyc,*.svn
+
+set whichwrap+=<,>,h,l,b,s,[,]
 "====diff mode setting=====
 if &diff
 	" some setting
@@ -47,8 +56,16 @@ endif
 "c-w H -- change to vertical diff mode
 "c-w J -- change to horizontal diff mode
 "=====================textFormat
-set foldopen=search,block,hor,mark,percent,quickfix,tag,undo
 set foldmethod=marker
+"set nofoldenable "dont fold by default
+"set foldmarker={,}
+set foldopen=search,block,hor,mark,percent,quickfix,tag,undo
+set foldmethod=marker "fold based on indent
+set foldnestmax=10 "deepest fold is 10 levels
+set foldlevel=1 "this is just what i use
+map <leader>f1 :set fdm=manual<cr>
+map <leader>f2 :set fdm=indent<cr>
+map <leader>f3 :set fdm=marker<cr>
 "set virtualedit=all 
 "=====================autoComplete
 "set dict+=/usr/share/dict/words 
@@ -359,7 +376,7 @@ noremap <F10> :tabnext<CR>
 noremap <F9> :tabprev<CR>
 noremap tn :tabnew<CR>
 noremap td :tabclose<CR>
-nnoremap <F3> :r! date \+\%F\ \%T<cr>
+"nnoremap <F3> :r! date \+\%F\ \%T<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 nnoremap <leader><space> :noh<cr>
@@ -384,11 +401,14 @@ cnoremap <M-b>  <S-Left>
 cnoremap <M-f>  <S-Right>
 cnoremap <M-d>  <S-right><Delete>
 cnoremap <C-g>  <C-c>
-"map Alt+, to save file
-"if has('mac')
-"nnoremap ≤ :w<cr>  
-"inoremap ≤ <ESC>:w<cr>
-"endif
+
+" insert mode bash like movement
+inoremap <C-a> <Home>
+inoremap <C-b> <Left>
+inoremap <C-e> <End>
+inoremap <C-f> <Right>
+inoremap <C-k> <Esc>d$i
+iab xdate <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
 
 "=====================TagHighlight
 "if ! exists('g:TagHighlightSettings')
