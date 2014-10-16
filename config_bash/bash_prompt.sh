@@ -162,7 +162,7 @@ gen_prompt()
 			;;
 		screen-256color)
              #export PS1="\u@\h:\w\$\n\#>"
-			export PS1=$(build_prompt)
+			export PS1=$(build_prompt 1)
 			;;
 		linux)
 			export PS1="\u@\h:\w\$\n\#>"

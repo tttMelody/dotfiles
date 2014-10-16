@@ -1,17 +1,21 @@
 #!/bin/bash - 
 
 DOTFILES_ROOT=~/dotfiles
+BASHCONFIG_ROOT=$DOTFILES_ROOT/config_bash
+if [[ ! -n $1 ]]; then
+	echo "specify profile [work or macbookpro]"
+	exit
+fi
+if [[ ! -f ~/.bash_profile ]]; then
+	touch ~/.bash_profile
+	echo ". ~/.bashrc" >> ~/.bash_profile
+fi
+profile=$1
+cp $BASHCONFIG_ROOT/bashrc_common ~/.bashrc
+cp $BASHCONFIG_ROOT/bash_aliases_common ~/.bash_aliases
+cat $BASHCONFIG_ROOT/bash_aliases_${profile} >> ~/.bash_aliases
 
-update_aliases()
-{
-	profile="common"
-	if [[ -n $1 ]]; then
-	fi
-}
-
-deploy()
-{
-	profile="common"
-}
-
-deploy $@
+cp $BASHCONFIG_ROOT/bash_path_${profile} ~/.bash_path
+cp $BASHCONFIG_ROOT/bash_prompt.sh ~/.bash_prompt.sh
+cp $BASHCONFIG_ROOT/git-prompt.sh ~/.git-prompt.sh
+. ~/.bash_profile

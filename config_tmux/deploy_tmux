@@ -1,3 +1,7 @@
 #!/bin/bash
 
 cp $TMUX_CON_ROOT/tmux.conf ~/.tmux.conf
+if [[ ! -f ~/.tmuxinator ]]; then
+	mkdir ~/.tmuxinator
+fi
+cp $TMUX_CON_ROOT/tmuxinator/* ~/.tmuxinator

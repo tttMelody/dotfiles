@@ -1,0 +1,47 @@
+# ~/.tmuxinator/sanguo2.yml
+
+name: sanguo2
+root: /data/sanguo2/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - lua:
+      - s2lua
+      - git st
+  - php:
+      layout: even-vertical
+      panes:
+        - php:
+            - s2php
+            - git st
+        - log:
+            - pc log
+  - res: 
+      layout: even-vertical
+      panes:
+        - config:
+            - s2config
+            - svn st
+        - ui:
+            - s2ui
+            - svn st
+  - multi:
+      layout: even-vertical
+      panes:
+        - #empty
+        - #empty
+
