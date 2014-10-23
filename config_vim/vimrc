@@ -83,7 +83,6 @@ set verbosefile=/data/log/vimscript.log
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-
 Plugin 'Align'
 Plugin 'auto_mkdir'
 Plugin 'a.vim'
@@ -112,7 +111,6 @@ Plugin 'snipMate'
 Plugin 'surround.vim'
 Plugin 'vim-airline'
 Plugin 'AutoComplPop'
-"Plugin 'Shougo/neocomplete.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-abolish'
