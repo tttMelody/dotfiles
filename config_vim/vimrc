@@ -80,6 +80,7 @@ filetype off
 "=====================for debug
 set verbosefile=/data/log/vimscript.log
 "=====================vundle
+runtime! ftplugin/man.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
@@ -112,7 +113,6 @@ Plugin 'snipMate'
 Plugin 'surround.vim'
 Plugin 'vim-airline'
 Plugin 'AutoComplPop'
-"Plugin 'Shougo/neocomplete.vim'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-abolish'
@@ -209,17 +209,6 @@ let g:gundo_preview_bottom=1
 let g:gundo_preview_height=40 
 let g:gundo_right=1 
 nnoremap <F5> :GundoToggle<CR> 
-"=====================neocomplete
-"let g:acp_enableAtStartup = 0
-"let g:neocomplete#enable_cursor_hold_i=1
-"let g:neocomplete#enable_at_startup = 1
-"let g:neocomplete#auto_completion_start_length=2
-"let g:neocomplete#manual_completion_start_length=0
-"let g:neocomplete#min_keyword_length=4
-"let g:neocomplete#enable_ignore_case=1
-""let g:neocomplete#enable_smart_case=1
-"let g:neocomplete#enable_auto_select=1
-"let g:neocomplete#enable_fuzzy_completion=1
 "=====================easymotion
 "let g:EasyMotion_leader_key = '<Leader><Leader>'
 "=====================airline 
@@ -230,7 +219,6 @@ endif
 
 "let g:airline#extensions#tagbar#enabled = 1
 "let g:airline#extensions#tagbar#flags = 's'
-let g:airline#extensions#tabline#enabled = 1
 let s:airline_theme='dark'
 if g:colors_name=='molokai'
 	let s:airline_theme='molokai'
@@ -253,7 +241,8 @@ let g:airline#extensions#default#layout = ([
 	 \ [ 'a', 'b', 'c',], 
 	 \ [ 'x', 'y', 'z' ] 
 	 \ ]) 
-let g:airline#extensions#tabline#show_buffers = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#excludes = []
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 let g:airline#extensions#tabline#formatter = 'default'
@@ -261,6 +250,7 @@ let g:airline#extensions#tabline#left_sep = '⮀'
 let g:airline#extensions#tabline#left_alt_sep = '⮁'
 let g:airline#extensions#tabline#right_sep = '⮂'
 let g:airline#extensions#tabline#right_alt_sep = '⮃'
+let g:airline#extensions#tabline#buffer_min_count = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#syntastic#enabled = 0
@@ -269,7 +259,7 @@ let g:airline#extensions#hunks#enabled = 0
 let g:airline#extensions#virtualenv#enabled = 0
 let g:airline#extensions#bufferline#enabled = 0
 "=====================ctrlP 
-let g:ctrlp_open_multiple_files = '2h' 
+let g:ctrlp_open_multiple_files = '5t' 
 let g:ctrlp_arg_map = 0 
 let g:ctrlp_max_height = 15 
 let g:ctrlp_switch_buffer = 'Et'
@@ -331,7 +321,7 @@ let g:ctrlp_prompt_mappings = {
             \ 'PrtExit()': ['<esc>', '<c-c>', '<c-g>'], 
             \ }
 nnoremap <Leader>f :CtrlPFunky<cr> 
-nnoremap <Leader>b :CtrlPBuffer<cr> 
+nnoremap <Leader>[ :CtrlPBuffer<cr> 
 nnoremap <C-h> :CtrlPMRU<cr> 
 "=====================ctrlp_tjump 
 nnoremap <C-]> :CtrlPtjump<cr> 
