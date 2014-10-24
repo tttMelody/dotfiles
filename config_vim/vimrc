@@ -84,7 +84,6 @@ runtime! ftplugin/man.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
-
 Plugin 'Align'
 Plugin 'auto_mkdir'
 Plugin 'a.vim'

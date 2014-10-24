@@ -36,7 +36,9 @@ dp_vimrc()
 		cat /dev/null > ~/.vimrc
 		sed -n "1,/dingmingxin-base/p" $VIMFILES_DIR/vimrc >> ~/.vimrc
 	else
-		sed "1,/dingmingxin-base/d" $VIMFILES_DIR/vimrc >> ~/.vimrc
+		rm ~/.vimrc
+		ln -s $VIMFILES_DIR/vimrc ~/.vimrc
+# 		sed "1,/dingmingxin-base/d" $VIMFILES_DIR/vimrc >> ~/.vimrc
 	fi
 }
 
