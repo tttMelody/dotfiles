@@ -2,8 +2,10 @@
 
 rm ~/.tmux.conf
 ln -s $TMUX_CON_ROOT/tmux.conf ~/.tmux.conf
-# cp $TMUX_CON_ROOT/tmux.conf ~/.tmux.conf
 if [[ ! -d ~/.tmuxinator ]]; then
 	mkdir ~/.tmuxinator
+else
+	rm -r ~/.tmuxinator/*
 fi
-cp $TMUX_CON_ROOT/tmuxinator/* ~/.tmuxinator
+
+ln -s $TMUX_CON_ROOT/tmuxinator/* ~/.tmuxinator/
