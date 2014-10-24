@@ -1,0 +1,129 @@
+"=====================general
+set number 
+set wh=999 
+set ruler 
+set showcmd 
+set confirm 
+set novisualbell 
+if has('mouse') 
+	set mouse=a
+	set ttymouse=xterm2
+endif
+"set clipboard=unnamedplus,unnamed,autoselect
+"set clipboard=unnamedplus
+set so=5 
+set listchars=tab:▸\ ,eol:¬  "关于特殊字符请搜索 Unicode character table
+set nolist 
+set linebreak 
+set wrap 
+"set showbreak=↘ "u21e2 u2198
+set enc=utf-8
+set fileencodings=ucs-bom,utf-8,cp936,GB18030,big5,GBK,GB2312,chinese,latin1,default 
+"set fileencoding=utf-8 
+"set fileencodings=ucs-bom,GBK,utf-8,cp936,gb18030,big5,latin1 
+set formatoptions=tcrqn1
+set undolevels=1000
+set history=1000
+set cindent 
+set autoindent 
+set smartindent 
+set copyindent
+set backspace=indent,eol,start 
+
+set noexpandtab 
+set tabstop=4 
+set softtabstop=4 
+set shiftwidth=4 
+set smarttab "insert tabs on the start of a line according to shiftwidth,not tabstop
+
+set title "change the terminal title
+set nocompatible " Disable vi-compatibility 
+set pastetoggle=<F2>
+set tags+=./tags
+" Turn on wildmenu -- command-line completion
+set wildmenu
+set wildmode=longest,full
+set wildignore=*.bak,*.o,*.obj,*.e,*~,*.pyc,*.svn
+
+set whichwrap+=<,>,h,l,b,s,[,]
+"====diff mode setting=====
+if &diff
+	" some setting
+else
+	"set wh=999 
+endif
+"set diffopt=filler,horizontal "vertical diff by default
+"c-w H -- change to vertical diff mode
+"c-w J -- change to horizontal diff mode
+"=====================textFormat
+set foldmethod=marker
+"set nofoldenable "dont fold by default
+"set foldmarker={,}
+set foldopen=search,block,hor,mark,percent,quickfix,tag,undo
+set foldmethod=marker "fold based on indent
+set foldnestmax=10 "deepest fold is 10 levels
+set foldlevel=1 "this is just what i use
+map <leader>f1 :set fdm=manual<cr>
+map <leader>f2 :set fdm=indent<cr>
+map <leader>f3 :set fdm=marker<cr>
+"set virtualedit=all 
+"=====================autoComplete
+"set dict+=/usr/share/dict/words 
+set completeopt = ".,w,b,u,t,i,]" 
+"set omnifunc=syntaxcomplete#Complete 
+"=====================search
+set incsearch 
+set hlsearch 
+set ignorecase smartcase "infercase
+set completeopt=longest,menu 
+filetype off 
+"=====================for debug
+set verbosefile=/data/log/vimscript.log
+"=====================vundle
+runtime! ftplugin/man.vim
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+Plugin 'Align'
+Plugin 'auto_mkdir'
+Plugin 'a.vim'
+Plugin 'ivalkeen/vim-ctrlp-tjump'
+Plugin 'dingmingxin/molokai'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'mattn/ctrlp-mark'
+Plugin 'mileszs/ack.vim'
+Plugin 'bash-support.vim'
+Plugin 'mattn/calendar-vim'
+"Plugin 'vim-scripts/vimwiki'
+Plugin 'csv.vim'
+Plugin 'vim-scripts/c.vim'
+"Plugin 'mattn/emmet-vim' 
+" needed for fetching schemes online.
+"Plugin 'mattn/webapi-vim'
+"Plugin 'Gundo'
+Plugin 'EasyMotion'
+Plugin 'vim-scripts/xterm-color-table.vim'
+Plugin 'vim-indent-object'
+Plugin 'The-NERD-Commenter'
+Plugin 'The-NERD-tree'
+Plugin 'repeat.vim'
+Plugin 'snipMate'
+Plugin 'surround.vim'
+Plugin 'vim-airline'
+Plugin 'AutoComplPop'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-dispatch'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/applescript.vim'
+Plugin 'vim-scripts/LargeFile'
+call vundle#end()
+filetype plugin indent on 
+syntax on 
+set ffs=unix,dos,mac 
+set backspace=indent,eol,start 
+
+"dingmingxin-base

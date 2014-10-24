@@ -33,11 +33,10 @@ dp_vimrc()
 		return
 	fi
 	if [[ $step -eq 1 ]]; then
-		cat /dev/null > ~/.vimrc
-		sed -n "1,/dingmingxin-base/p" $VIMFILES_DIR/vimrc >> ~/.vimrc
+		ln -sif $VIMFILES_DIR/vimrc_base ~/.vimrc
+# 		sed -n "1,/dingmingxin-base/p" $VIMFILES_DIR/vimrc >> ~/.vimrc
 	else
-		rm ~/.vimrc
-		ln -s $VIMFILES_DIR/vimrc ~/.vimrc
+		ln -sif $VIMFILES_DIR/vimrc ~/.vimrc
 # 		sed "1,/dingmingxin-base/d" $VIMFILES_DIR/vimrc >> ~/.vimrc
 	fi
 }
@@ -60,7 +59,6 @@ install_vim()
 
 update_vimrc()
 {
-	cat /dev/null > ~/.vimrc
 	dp_vimrc 1
 	dp_vimrc 2
 }
