@@ -20,17 +20,17 @@ root: ~/dotfiles/
 
 windows:
   - vim:
-      layout: main-vertical
+      layout: even-vertical
       panes:
         -
         -
   - bash:
-      layout: main-vertical
+      layout: even-vertical
       panes:
         -
         -
   - tmux:
-      layout: main-vertical
+      layout: even-vertical
       panes:
         -
         -

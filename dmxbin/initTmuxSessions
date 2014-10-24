@@ -28,9 +28,10 @@ if [[  ! $? -eq 0 ]]; then
 	echo "please 'sudo gem install tmuxinator'"
 	return
 fi
+tmux start-server
+wait
 need_sessions=(
 	'test'
-	'hohoplay'
 	'todo'
 	'dotfiles'
 	'sanguo2'
@@ -50,13 +51,11 @@ do
 	if [[ $found -eq 0 ]]; then
 		(( need_start_num=$need_start_num+1 ))
 		(
-		sleep 1
-		mux start $nsname &
+		echo "start session "$nsname
+		mux start $nsname > /dev/null 2>&1 &
 		)
 	fi
 done
-# show project sanguo2
-sleep 1
 if [[ ! $need_start_num -eq 0 ]]; then
 	mux start sanguo2
 else
