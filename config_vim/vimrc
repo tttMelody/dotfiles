@@ -418,6 +418,8 @@ iab xdate <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
 " insert 模式下输入下面的编码
 " 输入方式 Ctrl-V u2764
 "❤ u2764
+"u2b80 ~ u2b83
+"⮀⮁⮂⮃
 "=====================helps
 "insert ,插入
 "holy-grail ,ex_cmd_list

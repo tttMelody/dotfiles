@@ -21,10 +21,12 @@ wfg="colour240"
 wbg="colour255"
 wafg="colour31"
 
+color="#[fg=colour234,bg=colour254]"
+promt=""
 cur_session_window_num=$(tmux display -p '#{session_windows}')
 cur_session_cur_window_index=$(tmux display -p '#I')
 if [[ $cur_session_cur_window_index -gt 1 ]]; then
-	echo "hah"
+	color="#[fg=,bg=]"
 fi
-echo "#[fg=colour234,bg=colour254] #I #W #F⮀"
+echo $color" #I #W #F⮀"
 
