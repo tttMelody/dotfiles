@@ -120,6 +120,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/applescript.vim'
 Plugin 'vim-scripts/LargeFile'
+Plugin 'vim-scripts/vimwiki'
 call vundle#end()
 filetype plugin indent on 
 syntax on 
@@ -323,8 +324,8 @@ nnoremap <Leader>f :CtrlPFunky<cr>
 nnoremap <Leader>[ :CtrlPBuffer<cr> 
 nnoremap <C-h> :CtrlPMRU<cr> 
 "=====================ctrlp_tjump 
-nnoremap <C-]> :CtrlPtjump<cr> 
-vnoremap <C-]> :CtrlPtjumpVisual<cr> 
+nnoremap <C-j> :CtrlPtjump<cr> 
+vnoremap <C-j> :CtrlPtjumpVisual<cr> 
 "=====================tagbar
 let g:tagbar_ctags_bin='/opt/local/bin/ctags'
 let g:tagbar_left=0
