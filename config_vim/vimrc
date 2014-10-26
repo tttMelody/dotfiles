@@ -110,7 +110,7 @@ Plugin 'The-NERD-tree'
 Plugin 'repeat.vim'
 Plugin 'snipMate'
 Plugin 'surround.vim'
-Plugin 'vim-airline'
+Plugin 'bling/vim-airline'
 Plugin 'AutoComplPop'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-fugitive'
@@ -241,7 +241,7 @@ let g:airline#extensions#default#layout = ([
 	 \ [ 'x', 'y', 'z' ] 
 	 \ ]) 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#excludes = []
 let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
 let g:airline#extensions#tabline#formatter = 'default'
