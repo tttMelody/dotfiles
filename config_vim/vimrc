@@ -334,9 +334,9 @@ let wiki_1 = {'path': '~/wiki/common/',
 			\ 'template_path': '~/wiki/templates/',
 			\ 'template_default': 'def_template',
 			\ 'template_ext': '.html',
-			\ 'css_name': 'css/main.css',
+			\ 'css_name': '../css/main.css',
 			\ 'nested_syntaxes': {'python': 'python', 'c++': 'cpp'},
-			\ 'diary_rel_path': 'diary/',
+			\ 'diary_rel_path': '../diary/',
 			\ 'diary_index': 'diary'}
 let g:vimwiki_list = [wiki_1]
  
