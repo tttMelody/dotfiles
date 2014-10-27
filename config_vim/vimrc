@@ -1,6 +1,6 @@
 "=====================general
 set number 
-set wh=999 
+"set wh=999 
 set ruler 
 set showcmd 
 set confirm 
@@ -89,8 +89,10 @@ Plugin 'auto_mkdir'
 Plugin 'a.vim'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'dingmingxin/molokai'
-"Plugin 'skammer/vim-css-color'
 Plugin 'gorodinskiy/vim-coloresque'
+" needed for fetching schemes online.
+Plugin 'Rykka/colorv.vim'
+Plugin 'mattn/webapi-vim' 
 Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'mattn/ctrlp-mark'
@@ -116,6 +118,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-dispatch'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/applescript.vim'
 Plugin 'vim-scripts/LargeFile'
@@ -383,9 +386,8 @@ let g:tagbar_type_php = {
 		\ 'j:jsfunctions'
 	\ ],
 \ }
-"nnoremap tt <C-t> 
-"nnoremap gt <C-]>
-"nnoremap <leader>gt <C-w><C-]><C-w>T "在一个新tab中打开
+"=====================colorv.vim
+let g:colorv_python_cmd = 'python'
 "=====================dragvisual
 "vmap  <expr>  <LEFT>   DVB_Drag('left')
 "vmap  <expr>  <RIGHT>  DVB_Drag('right')
@@ -393,6 +395,9 @@ let g:tagbar_type_php = {
 "vmap  <expr>  <UP>     DVB_Drag('up')
 "vmap  <expr>  D        DVB_Duplicate()
 "=====================maps
+"nnoremap tt <C-t> 
+"nnoremap gt <C-]>
+"nnoremap <leader>gt <C-w><C-]><C-w>T "在一个新tab中打开
 noremap <F10> :tabnext<CR>
 noremap <F9> :tabprev<CR>
 noremap tn :tabnew<CR>
