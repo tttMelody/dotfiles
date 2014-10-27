@@ -97,12 +97,9 @@ Plugin 'mattn/ctrlp-mark'
 Plugin 'mileszs/ack.vim'
 Plugin 'bash-support.vim'
 Plugin 'mattn/calendar-vim'
-"Plugin 'vim-scripts/vimwiki'
 Plugin 'csv.vim'
 Plugin 'vim-scripts/c.vim'
 "Plugin 'mattn/emmet-vim' 
-" needed for fetching schemes online.
-"Plugin 'mattn/webapi-vim'
 "Plugin 'Gundo'
 Plugin 'EasyMotion'
 Plugin 'vim-scripts/xterm-color-table.vim'
@@ -346,7 +343,7 @@ let g:vimwiki_list = [wiki_1]
 " 对中文用户来说，我们并不怎么需要驼峰英文成为维基词条
 let g:vimwiki_camel_case = 0
 " 高亮 header
-let g:vimwiki_hl_headers = 1
+let g:vimwiki_hl_headers = 0
 let g:vimwiki_hl_cb_checked = 1
 let g:vimwiki_menu = ''
  
