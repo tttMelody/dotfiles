@@ -9,8 +9,8 @@ if has('mouse')
 	set mouse=a
 	set ttymouse=xterm2
 endif
-"set clipboard=unnamedplus,unnamed,autoselect
-"set clipboard=unnamedplus
+" 设置vim剪切板和系统剪切板共享
+set clipboard+=unnamed
 set so=5 
 set listchars=tab:▸\ ,eol:¬  "关于特殊字符请搜索 Unicode character table
 set nolist 
@@ -136,11 +136,16 @@ func! SetMolokaiTheme()
 	let g:rehash256 = 1
     colo molokai 
 	set cursorline
+	if has('gui_running')
+		hi cursorline guibg=NONE gui=underline
+	else
+		hi cursorline ctermbg=NONE cterm=underline
+	endif
 endfunc
 
 if (has("gui_running")) 
-    set guifont=Menlo\ Regular:h14 
-    colo default 
+    set guifont=Menlo\ Regular:h18 
+    call SetMolokaiTheme()
 else 
 	set t_Co=256
 	call SetMolokaiTheme()
