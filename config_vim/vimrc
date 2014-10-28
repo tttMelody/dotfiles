@@ -324,10 +324,10 @@ let g:ctrlp_prompt_mappings = {
             \ }
 nnoremap <Leader>f :CtrlPFunky<cr> 
 nnoremap <Leader>[ :CtrlPBuffer<cr> 
-nnoremap <C-h> :CtrlPMRU<cr> 
+nnoremap <C-m> :CtrlPMRU<cr> 
 "=====================ctrlp_tjump 
-nnoremap <C-j> :CtrlPtjump<cr> 
-vnoremap <C-j> :CtrlPtjumpVisual<cr> 
+nnoremap <Leader>] :CtrlPtjump<cr> 
+vnoremap <Leader>] :CtrlPtjumpVisual<cr> 
 "=====================vimwiki
 let wiki_1 = {'path': '~/wiki/common/',
 			\ 'path_html': '~/wiki/common_html',
