@@ -1,6 +1,6 @@
 "=====================general
 set number 
-"set wh=999 
+set wh=999 
 set ruler 
 set showcmd 
 set confirm 
@@ -18,6 +18,7 @@ set linebreak
 set wrap 
 "set showbreak=↘ "u21e2 u2198
 set enc=utf-8
+set cursorline
 set fileencodings=ucs-bom,utf-8,cp936,GB18030,big5,GBK,GB2312,chinese,latin1,default 
 "set fileencoding=utf-8 
 "set fileencodings=ucs-bom,GBK,utf-8,cp936,gb18030,big5,latin1 
@@ -89,10 +90,10 @@ Plugin 'auto_mkdir'
 Plugin 'a.vim'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'dingmingxin/molokai'
-Plugin 'gorodinskiy/vim-coloresque'
+"Plugin 'gorodinskiy/vim-coloresque'
 " needed for fetching schemes online.
-Plugin 'Rykka/colorv.vim'
-Plugin 'mattn/webapi-vim' 
+"Plugin 'Rykka/colorv.vim'
+"Plugin 'mattn/webapi-vim' 
 Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'mattn/ctrlp-mark'
@@ -104,7 +105,6 @@ Plugin 'vim-scripts/c.vim'
 "Plugin 'mattn/emmet-vim' 
 "Plugin 'Gundo'
 Plugin 'EasyMotion'
-Plugin 'vim-scripts/xterm-color-table.vim'
 Plugin 'vim-indent-object'
 Plugin 'The-NERD-Commenter'
 Plugin 'The-NERD-tree'
@@ -116,7 +116,7 @@ Plugin 'AutoComplPop'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-abolish'
-Plugin 'tpope/vim-dispatch'
+"Plugin 'tpope/vim-dispatch'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'majutsushi/tagbar'
@@ -135,20 +135,16 @@ func! SetMolokaiTheme()
 	let g:molokai_original = 1
 	let g:rehash256 = 1
     colo molokai 
-	set cursorline
-	if has('gui_running')
-		hi cursorline guibg=NONE gui=underline
-	else
-		hi cursorline ctermbg=NONE cterm=underline
-	endif
 endfunc
 
 if (has("gui_running")) 
+	"hi cursorline guibg=NONE gui=underline
     set guifont=Menlo\ Regular:h18 
     call SetMolokaiTheme()
 else 
 	set t_Co=256
 	call SetMolokaiTheme()
+	"hi cursorline ctermbg=NONE cterm=underline
 endif 
 "=====================autoCommand 
 "获取文件名的后缀，防止对vim.otl zsh.otl crontab.otl 之类的文件类型误判
@@ -304,7 +300,7 @@ let g:ctrlp_prompt_mappings = {
             \ 'PrtSelectMove("d")': ['<PageDown>', '<kPageDown>'], 
             \ 'PrtHistory(-1)': ['<c-n>'], 
             \ 'PrtHistory(1)': ['<c-p>'], 
-            \ 'AcceptSelection("e")': ['<c-e>', '<2-LeftMouse>'], 
+            \ 'AcceptSelection("e")': ['<c-e>','<2-LeftMouse>'], 
             \ 'AcceptSelection("h")': ['<c-x>'], 
             \ 'AcceptSelection("t")': ['<c-t>', '<cr>'], 
             \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'], 
@@ -329,7 +325,7 @@ let g:ctrlp_prompt_mappings = {
             \ }
 nnoremap <Leader>f :CtrlPFunky<cr> 
 nnoremap <Leader>[ :CtrlPBuffer<cr> 
-nnoremap <C-m> :CtrlPMRU<cr> 
+nnoremap <Leader>u :CtrlPMRUFiles<cr> 
 "=====================ctrlp_tjump 
 nnoremap <Leader>] :CtrlPtjump<cr> 
 vnoremap <Leader>] :CtrlPtjumpVisual<cr> 
