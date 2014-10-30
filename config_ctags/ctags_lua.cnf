@@ -1,0 +1,15 @@
+--langdef=lua 
+--langmap=lua:.lua 
+--regex-lua=/newClass\(\'([^ ]+)\',.*/\1/c/
+--regex-lua=/.*subclass\([\'\"]([^ ]+)[\'\"]\)/\1/c/
+--regex-lua=/[ ]?([a-zA-Z_]+Layout)[ ]?=.*/\1/l/
+/*--regex-lua=/^([^:.= ]+)[ =]+\{\}/\1/c/*/
+/*--regex-lua=/^function[ ]+[^:]+:([^ \(]+)/\1/f/*/
+/*--regex-lua=/^function[ ]+([^:. ]+)\(/\1/f/*/
+/*--regex-lua=/^function[ ]+[^:]+\.([a-zA-Z_]+)\(/\1/f/*/
+/*--regex-lua=/^function[ ]+[^:.]+\.class:([a-zA-Z_]+)\(/\1/f/*/
+--regex-lua=/[ ]?local[ ]+function[ ]+([^:.= ]+)\(/\1/f/
+--regex-lua=/[ ]?local[ ]+([a-zA-Z_]+)[ ]?=[ ]?function\(/\1/f/
+--regex-lua=/([^ ]+)[ ]+=[a-zA-z_ ]+or[ ]+{}/\1/m/
+--regex-lua=/.*:mapEvent\(([^,:]+)[, ]+[^ ,:_]+\).\1/e/
+--regex-lua=/([ ]?[a-zA-Z_-]+)[ ]?=[ ]?InitStaticInt.*/\1/e/
