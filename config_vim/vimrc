@@ -3,12 +3,14 @@ set number
 set wh=999 
 set ruler 
 set showcmd 
+"set scrolljump=-5
 set confirm 
 set novisualbell 
 if has('mouse') 
 	set mouse=a
 	set ttymouse=xterm2
 endif
+set ttyfast
 " 设置vim剪切板和系统剪切板共享
 set clipboard+=unnamed
 set so=5 
@@ -22,6 +24,7 @@ set cursorline
 set fileencodings=ucs-bom,utf-8,cp936,GB18030,big5,GBK,GB2312,chinese,latin1,default 
 "set fileencoding=utf-8 
 "set fileencodings=ucs-bom,GBK,utf-8,cp936,gb18030,big5,latin1 
+set lazyredraw "wait to redraw
 set formatoptions=tcrqn1
 set undolevels=1000
 set history=1000
@@ -138,13 +141,14 @@ func! SetMolokaiTheme()
 endfunc
 
 if (has("gui_running")) 
-	"hi cursorline guibg=NONE gui=underline
+	hi cursorline guibg=NONE gui=underline
     set guifont=Menlo\ Regular:h18 
     call SetMolokaiTheme()
 else 
 	set t_Co=256
 	call SetMolokaiTheme()
-	"hi cursorline ctermbg=NONE cterm=underline
+	hi cursorline ctermbg=NONE cterm=underline
+	hi NonText cterm=NONE ctermfg=NONE
 endif 
 "=====================autoCommand 
 "获取文件名的后缀，防止对vim.otl zsh.otl crontab.otl 之类的文件类型误判
@@ -387,6 +391,16 @@ let g:tagbar_type_php = {
 		\ 'j:jsfunctions'
 	\ ],
 \ }
+let g:tagbar_type_lua = {
+	\ 'ctagstype' : 'lua',
+	\ 'kinds'     : [
+		\ 'c:classes', 
+		\ 'l:layout', 
+		\ 'f:functions' 
+	\ ],
+	\ 'sort' : 0
+\ }
+	"\ 'deffile' : expand('<sfile>:p:h:h') . '/ctags/latex.cnf'
 "=====================colorv.vim
 let g:colorv_python_cmd = 'python'
 "=====================dragvisual
