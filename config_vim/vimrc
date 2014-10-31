@@ -10,7 +10,6 @@ if has('mouse')
 	set mouse=a
 	set ttymouse=xterm2
 endif
-set ttyfast
 " 设置vim剪切板和系统剪切板共享
 set clipboard+=unnamed
 set so=5 
@@ -20,11 +19,12 @@ set linebreak
 set wrap 
 "set showbreak=↘ "u21e2 u2198
 set enc=utf-8
-set cursorline
+"set cursorline
 set fileencodings=ucs-bom,utf-8,cp936,GB18030,big5,GBK,GB2312,chinese,latin1,default 
 "set fileencoding=utf-8 
 "set fileencodings=ucs-bom,GBK,utf-8,cp936,gb18030,big5,latin1 
 set lazyredraw "wait to redraw
+set ttyfast
 set formatoptions=tcrqn1
 set undolevels=1000
 set history=1000
@@ -75,6 +75,10 @@ map <leader>f3 :set fdm=marker<cr>
 "set dict+=/usr/share/dict/words 
 set completeopt = ".,w,b,u,t,i,]" 
 "set omnifunc=syntaxcomplete#Complete 
+""=====================statusline
+"set statusline=%f%m%r
+"set statusline+=[%4l/%-4L]
+"set statusline+=%y[&fileformat]
 "=====================search
 set incsearch 
 set hlsearch 
@@ -102,8 +106,7 @@ Plugin 'dingmingxin/molokai'
 "Plugin 'chazy/cscope_maps'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
-Plugin 'mattn/ctrlp-mark'
-Plugin 'mileszs/ack.vim'
+"Plugin 'mattn/ctrlp-mark'
 Plugin 'bash-support.vim'
 Plugin 'mattn/calendar-vim'
 Plugin 'csv.vim'
@@ -127,7 +130,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/applescript.vim'
-Plugin 'vim-scripts/LargeFile'
+"Plugin 'vim-scripts/LargeFile'
 Plugin 'vim-scripts/vimwiki'
 call vundle#end()
 filetype plugin indent on 
@@ -144,13 +147,13 @@ func! SetMolokaiTheme()
 endfunc
 
 if (has("gui_running")) 
-	hi cursorline guibg=NONE gui=underline
+	"hi cursorline guibg=NONE gui=underline
     set guifont=Menlo\ Regular:h18 
     call SetMolokaiTheme()
 else 
 	set t_Co=256
 	call SetMolokaiTheme()
-	hi cursorline ctermbg=NONE cterm=underline
+	"hi cursorline ctermbg=NONE cterm=underline
 	hi NonText cterm=NONE ctermfg=NONE
 endif 
 "=====================autoCommand 
@@ -275,7 +278,7 @@ let g:ctrlp_max_height = 15
 let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:15' 
 let g:ctrlp_use_caching = 1 
-let g:ctrlp_clear_cache_on_exit = 1 
+let g:ctrlp_clear_cache_on_exit = 0 
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp' 
 let g:ctrlp_funky_sort_by_mru = 1
 let g:ctrlp_open_new_file = 't'
@@ -293,7 +296,7 @@ let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*\|/var/.*\|'
             \'.*\.vim.*' 
 let g:ctrlp_mruf_relative = 0 
 let g:ctrlp_mruf_case_sensitive = 0 
-let g:ctrlp_extensions = ['tag', 'dir' , 'mark', 'funky', 'buffertag' ] 
+let g:ctrlp_extensions = ['tag', 'dir' , 'funky', 'buffertag' ] 
 let g:ctrlp_prompt_mappings = { 
             \ 'PrtBS()': ['<bs>', '<c-]>'], 
             \ 'PrtDelete()': ['<del>'], 
