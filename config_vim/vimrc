@@ -3,6 +3,7 @@ set number
 set wh=999 
 set ruler 
 set showcmd 
+set showtabline=0
 "set scrolljump=-5
 set confirm 
 set novisualbell 
@@ -175,7 +176,7 @@ augroup csvFile
 	au FileType csv nnoremap <Leader><Leader>s <ESC>:%s/\ //g<CR> 
 	au FileType csv nnoremap <Leader><Leader>t :noh<CR> :%Align ,<CR> 
 augroup END
-au FileType yaml set tabstop=2 softtabstop=2 shiftwidth=2
+"au FileType yaml set tabstop=2 softtabstop=2 shiftwidth=2
 au FileType lua call SetLuaTagsFile()
 au FileType php call SetPhpTagsFile()
 au FileType otl set tags+=/data/dwork/learn/tags 
@@ -240,7 +241,7 @@ let g:ctrlp_max_height = 15
 let g:ctrlp_switch_buffer = 'Et'
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:15,results:15' 
 let g:ctrlp_use_caching = 1 
-let g:ctrlp_clear_cache_on_exit = 0 
+let g:ctrlp_clear_cache_on_exit = 1 
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp' 
 let g:ctrlp_funky_sort_by_mru = 1
 let g:ctrlp_open_new_file = 't'
