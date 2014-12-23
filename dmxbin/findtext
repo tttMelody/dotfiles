@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# find . \( ! -regex '.*/\..*' \) |xargs -I{} grep -H -n "$@" "{}"
+
+grep -nr "$@" .

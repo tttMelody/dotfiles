@@ -1,0 +1,22 @@
+#!/bin/bash - 
+#===============================================================================
+#
+#          FILE: proxy.sh
+# 
+#         USAGE: ./proxy.sh 
+# 
+#   DESCRIPTION: 
+# 
+#       OPTIONS: ---
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: YOUR NAME (), 
+#  ORGANIZATION: 
+#       CREATED: 06/20/14 23:41
+#      REVISION:  ---
+#===============================================================================
+
+set -o nounset                              # Treat unset variables as an error
+autossh -f -M 12000 -fTnN -D 9527 dingmingxin@proxy.hohoplay.com
+
