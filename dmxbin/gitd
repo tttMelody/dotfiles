@@ -1,0 +1,5 @@
+#!/bin/sh
+versions=`git log --oneline $1 | awk -v first=$2 -v second=$3 '{a[NR]=$1}END{print a[first]"\t"a[second]}'`
+echo $versions
+
+git d $versions -- $1

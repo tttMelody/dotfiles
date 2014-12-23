@@ -1,0 +1,4 @@
+#!/bin/sh
+ngc start
+pc start
+cd /data/db_deploy; ./db start mongo.log.35060 ; ./db start mongo.test.35050 ; ./db start redis.session.53002 ; cd -

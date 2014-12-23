@@ -1,0 +1,27 @@
+#!/bin/bash
+SCRIPTDIR="$( cd -P "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+host="fanqiang@122.147.40.69"
+host="fanqiang@27.105.83.211"
+case "$1" in
+    bad)
+        ssh -p2222 dennisli@174.132.104.137
+        ;;
+    eu)
+        host="fanqiang@ec2-46-137-65-215.eu-west-1.compute.amazonaws.com"
+        ;;
+    us)
+        host="fanqiang@ec2-50-19-168-246.compute-1.amazonaws.com"
+        ;;
+    tw)
+        host="fanqiang@122.147.40.69"
+        ;;
+    tw2)
+        host="fanqiang@27.105.83.211"
+        ;;
+    jp)
+        host="fanqiang@ec2-175-41-224-83.ap-northeast-1.compute.amazonaws.com"
+        ;;
+esac
+
+ssh -Nv -D *:8527 -i $SCRIPTDIR/tunnelkey $host

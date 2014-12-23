@@ -1,0 +1,57 @@
+#! /bin/sh
+
+
+LOG_ROOT=/data/log
+PHP_ROOT=/opt/local
+DAEMON=$PHP_ROOT/sbin/php-fpm
+
+CONF_FILE=$PHP_ROOT/etc/php54/php-fpm.conf
+INI_FILE=$PHP_ROOT/etc/php54/php.ini
+
+PID_FILE=$(grep pid $CONF_FILE | awk '{print $NF}')
+
+if test "${PID_FILE:0:1}" != "/"; then
+    PID_FILE=$PHP_ROOT/var/$PID_FILE
+fi
+LOG_FILE=$(grep error_log $CONF_FILE | awk '{print $NF}' | tail -n 1 )
+
+if test "${LOG_FILE:0:1}" != "/"; then
+    LOG_FILE=$PHP_ROOT/var/$LOG_FILE
+fi
+
+
+case "$1" in
+    start)
+        echo "\n====== before $1 ======\n" && (ps aux | grep php)
+        $DAEMON
+        sleep 1 && echo "\n====== after $1 ======\n" && (ps aux | grep php)
+        ;;
+    stop)
+        echo "\n====== before $1 ======\n" && (ps aux | grep php)
+        kill -s QUIT $(cat $PID_FILE)
+        sleep 1 && echo "\n====== after $1 ======\n" && (ps aux | grep php)
+        ;;
+    restart)
+        $0 stop
+        $0 start
+        ;;
+    reload)
+        echo "\n====== before $1 ======\n" && (ps aux | grep php)
+        kill -s USR2 $(cat $PID_FILE)
+        sleep 1 && echo "\n====== after $1 ======\n" && (ps aux | grep php)
+        ;;
+    config)
+        sudo vi $CONF_FILE
+        ;;
+    ini)
+        sudo vi $INI_FILE
+        ;;
+    log)
+        shift 1
+        tail -n 30 $LOG_FILE $@
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|restart|reload|config|ini|log}"
+        exit 1
+    ;;
+esac

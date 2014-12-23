@@ -1,0 +1,27 @@
+#! /bin/sh
+
+NGINX_ROOT=/opt/local
+DAEMON=$NGINX_ROOT/sbin/nginx
+CONF_FILE=/opt/local/etc/nginx/nginx.conf
+
+case "$1" in
+    start)
+        sudo $DAEMON
+        sleep 1
+        echo "\n======================\n" && (ps aux | grep nginx) 
+        ;;
+    stop|reload|reopen|quit)
+        echo "\n========= before $1 =========\n" && (ps aux | grep nginx) 
+        sudo $DAEMON -s $1
+        sleep 1
+        echo "\n========= after $1 =========\n" && (ps aux | grep nginx) 
+        ;;
+    config)
+        sudo vi $CONF_FILE
+        ;;
+    *)
+        echo "Usage: $0 {start|stop|reload|config}"
+        exit 1
+        ;;
+esac
+
