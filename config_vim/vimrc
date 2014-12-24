@@ -95,7 +95,7 @@ set ignorecase smartcase "infercase
 set completeopt=longest,menu 
 filetype off 
 "=====================for debug
-set verbosefile=/data/log/vimscript.log
+"set verbosefile=/data/log/vimscript.log
 "=====================vundle
 runtime! ftplugin/man.vim
 set rtp+=~/.vim/bundle/Vundle.vim
