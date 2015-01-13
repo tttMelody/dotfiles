@@ -1,0 +1,3 @@
+set-max-intset-entries 1024
+hash-max-zipmap-entries 16
+hash-max-zipmap-value 256

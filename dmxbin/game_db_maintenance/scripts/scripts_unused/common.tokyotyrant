@@ -1,0 +1,42 @@
+#  key-value options
+#  -host name : specify the host name or the address of the server. By default, every network address is bound.
+#  -port num : specify the port number. By default, it is 1978.
+#  -thnum num : specify the number of worker threads. By default, it is 8.
+#  -tout num : specify the timeout of each session in seconds. By default, no timeout is specified.
+#  -pid path : output the process ID into the file.
+#  -log path : output log messages into the file.
+#  -ulog path : specify the update log directory.
+#  -ulim num : specify the limit size of each update log file.
+#  -sid num : specify the server ID.
+#  -mhost name : specify the host name of the replication master server.
+#  -mport num : specify the port number of the replication master server.
+#  -rts path : specify the replication time stamp file.
+
+# This is a shell script to be sourced by other scipt,
+# so add 'option_' prefix to avoid variable name confiction
+option_sid=1
+option_pid=pid
+option_log=log
+option_ulog=ulog
+option_ulim=256m
+option_rts=rts
+
+#  value only options, value=1 means use the param '-value' in command line
+
+#  -dmn : work as a daemon process.
+#  -kl : kill the existing process if the process ID file is detected.
+#  -ld : log debug messages also.
+#  -le : log error messages only.
+#  -uas : use asynchronous I/O for the update log.
+#  -rcc : check consistency of replication.
+option_dmn=1
+option_le=1
+
+#  unused
+#  -skel name : specify the name of the skeleton database library.
+#  -mul num : specify the division number of the multiple database mechanism.
+#  -ext path : specify the script language extension file.
+#  -extpc name period : specify the function name and the calling period of a periodic command.
+#  -mask expr : specify the names of forbidden commands.
+#  -unmask expr : specify the names of allowed commands.
+

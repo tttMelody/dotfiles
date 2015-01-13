@@ -1,0 +1,6 @@
+
+每个db类型实现以下
+init
+start
+stop
+log

@@ -1,0 +1,9 @@
+daemonize yes
+timeout 300
+loglevel notice
+databases 1
+activerehashing yes
+pidfile ./pid
+logfile ./log
+dir ./
+appendonly yes
