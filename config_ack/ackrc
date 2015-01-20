@@ -8,6 +8,8 @@
 --type-set=ini:ext:ini
 --type-set=csv:ext:csv
 --type-set=md:ext:markdown,md
+--type-set=conf:ext:properties
+--type-set=text:ext:txt
 #ack uses Perl's Term::ANSIColor module, so you can check what is available to you with:
 # > perldoc Term::ANSIColor
 #
