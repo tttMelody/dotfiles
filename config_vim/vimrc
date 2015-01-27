@@ -142,6 +142,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/applescript.vim'
 "Plugin 'vim-scripts/LargeFile'
 Plugin 'vim-scripts/vimwiki'
+Plugin 'vim-scripts/matchit.zip'
 call vundle#end()
 filetype plugin indent on 
 syntax on 
@@ -385,6 +386,17 @@ let g:tagbar_type_javascript = {
 	\ ],
 	\ 'sort' : 0,
 	\ 'deffile' : '~/.config_ctags/ctags_js.cnf'
+\ }
+let g:tagbar_type_html = {
+	\ 'ctagstype' : 'html',
+	\ 'kinds'     : [
+		\ 'f:functions',
+		\ 'c:ng-ctrl',
+		\ 'm:ng-factory',
+		\ 't:ng-click'
+	\ ],
+	\ 'sort' : 0,
+	\ 'deffile' : '~/.config_ctags/ctags_html.cnf'
 \ }
 "=====================mattn-emmet
 let g:user_emmet_mode='inv'  

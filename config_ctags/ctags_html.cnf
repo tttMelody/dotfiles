@@ -1,0 +1,3 @@
+--langdef=html 
+--langmap=html:.html 
+--regex-html=/ng-controller[ ]*=[ ]*\"([^ \'\",]+).*/\1/c/

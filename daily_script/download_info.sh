@@ -101,4 +101,7 @@ do
 done
 
 
-
+<<desc
+./download_info.sh cn iPhone 畅销
+mongo localhost:35050 cn_2015-01-27_iPhone_38_js.js
+desc
