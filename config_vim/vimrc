@@ -120,7 +120,7 @@ Plugin 'bash-support.vim'
 Plugin 'mattn/calendar-vim'
 Plugin 'csv.vim'
 Plugin 'vim-scripts/c.vim'
-"Plugin 'mattn/emmet-vim' 
+Plugin 'mattn/emmet-vim' 
 "Plugin 'Gundo'
 Plugin 'EasyMotion'
 Plugin 'vim-indent-object'
@@ -350,6 +350,10 @@ let g:tagbar_autoshowtag = 1
 "let g:tagbar_previewwin_pos = "topleft"
 "let g:tagbar_autopreview = 1
 nnoremap tb :TagbarToggle<CR>
+" NOTICE:
+" kinds here must be single word, 
+" c:classes is right
+" cc:controller is wrong
 let g:tagbar_type_php = {
 	\ 'ctagstype' : 'php',
 	\ 'kinds'     : [
@@ -371,6 +375,19 @@ let g:tagbar_type_lua = {
 	\ 'sort' : 0,
 	\ 'deffile' : '~/.config_ctags/ctags_lua.cnf'
 \ }
+let g:tagbar_type_javascript = {
+	\ 'ctagstype' : 'js',
+	\ 'kinds'     : [
+		\ 'c:classes', 
+		\ 'f:functions',
+		\ 'n:ng-ctrl',
+		\ 'q:ng-factory'
+	\ ],
+	\ 'sort' : 0,
+	\ 'deffile' : '~/.config_ctags/ctags_js.cnf'
+\ }
+"=====================mattn-emmet
+let g:user_emmet_mode='inv'  
 "=====================colorv.vim
 let g:colorv_python_cmd = 'python'
 "=====================dragvisual
