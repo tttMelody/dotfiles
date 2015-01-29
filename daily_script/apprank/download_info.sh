@@ -59,13 +59,36 @@ device=$2 # iPhone iPad
 channel_name=$3
 day_offset=$4
 date=$($DATE  -d "$day_offset day ago" "+%Y-%m-%d")
-pop_id=38 #排行榜类型, 畅销 38 ,免费 27 , 付费 30
+pop_id=38 
+<<desc
+pop_id
+iPhone
+	畅销：38
+	付费: 30
+	免费: 27
+iPad
+	畅销：46
+	付费: 47
+	免费: 44
+desc
 case $3 in
-	"畅销") pop_id=38
+	"畅销") 
+			pop_id=38
+			if [[ $device == "iPad" ]]; then
+				pop_id=46
+			fi
 		;;
-	"免费") pop_id=27
+	"付费") 
+			pop_id=30
+			if [[ $device == "iPad" ]]; then
+				pop_id=47
+			fi
 		;;
-	"付费") pop_id=30
+	"免费") 
+			pop_id=27
+			if [[ $device == "iPad" ]]; then
+				pop_id=44
+			fi
 		;;
 	*) pop_id=1
 		echo "请输入正确的排行榜名称：畅销、免费、付费"
@@ -92,20 +115,20 @@ pup=$HOME/gocode/bin/pup
 basename=${area}_${date}_${device}_${pop_id}
 filename=${basename}.html
 
-echo -e "1. 下载数据:\t${area}_${device}_${date}_$3"
+echo -e "1. 下载数据:\t\t ${area}_${date}_${device}_$3"
 download_file "$url" "$filename"
 
-echo -e "2. 解析html:\t${filename}"
+echo -e "2. 解析html:\t\t ${filename}"
 # tidy -im $filename > /dev/null 2>&1  # 整理html代码
 rankfilename=${basename}_rank.txt
 idfilename=${basename}_id.txt
 infofilename=${basename}_info.txt
-finalinfofile=${basename}_final.txt
 imgfilename=${basename}_img.txt
+
 cat $filename | $pup 'dl[class="dldefault"] text{}'|sed -n '/[0-9]*\./ s/\./;/ p' > ${rankfilename}
 cat $filename | $pup 'a[target="_blank"]' |sed -n -e '/itunes.apple.com/ s/.*id// ' -e 's/\?mt.*// p' > ${idfilename}
 cat $filename | $pup 'img[class="img-rounded\ cssshadow"] attr{src}' > ${imgfilename}
-if [[ $system == 'Darwin' ]]; then
+if [[ $system == "Darwin" ]]; then
 	sed -i '' '1,2 d' ${imgfilename}
 else
 	sed -i '1,2 d' ${imgfilename}
@@ -114,47 +137,30 @@ fi
 line=$(wc -l ${rankfilename}|awk '{print $1}')
 line_arr=$(seq 1 $line)
 
-for i in ${line_arr}
-do
-	info1=$(sed -n "${i} p" ${rankfilename})
-	info2=$(sed -n "${i} p" ${idfilename})
-	image=$(sed -n "${i} p" ${imgfilename})
-	total_info="${info2};${info1};${area};${device};${channel_name};${date};${image}"
-	echo $total_info >> ${infofilename}
-done
-
-sort -u ${infofilename} > ${finalinfofile}
-new_line=$(wc -l ${finalinfofile} |awk '{print $1}')
-new_line_arr=$(seq 1 $new_line)
-
 js_filename=${basename}_js.js
-echo -e "3. 生成mongo-js 文件:\t ${js_filename}"
+echo -e "3. 生成mongo文件:\t ${js_filename}"
 cat > $js_filename << EOF
 var conn = new Mongo("127.0.0.1:35050");
 var db = conn.getDB('app_rank');
 var dbinstance = db.getSiblingDB('app_rank');
 EOF
 
-MONGO_TABLE_NAME=app_rank
-for j in ${new_line_arr}
+for i in ${line_arr}
 do
-	_id=$(awk -F\; -v lineno=${j} '{if (NR==lineno) print $1}' ${infofilename})
-	_rank=$(awk -F\; -v lineno=${j} '{if (NR==lineno) print $2}' ${infofilename})
-	_appname=$(awk -F\; -v lineno=${j} '{if (NR==lineno) print $3}' ${infofilename})
-	_area=$(awk -F\; -v lineno=${j} '{if (NR==lineno) print $4}' ${infofilename})
-	_device=$(awk -F\; -v lineno=${j} '{if (NR==lineno) print $5}' ${infofilename})
-	_rank_type=$(awk -F\; -v lineno=${j} '{if (NR==lineno) print $6}' ${infofilename})
-	_rank_date=$(awk -F\; -v lineno=${j} '{if (NR==lineno) print $7}' ${infofilename})
-	_icon=$(awk -F\; -v lineno=${j} '{if (NR==lineno) print $8}' ${infofilename})
+	info1=$(sed -n "${i} p" ${rankfilename})
+	rank=$(echo $info1|awk -F\; '{print $1}')
+	app_name=$(echo $info1|awk -F\; '{print $2}')
+	app_name=$(echo $app_name |sed 's/\"//g')
+	app_id=$(sed -n "${i} p" ${idfilename})
+	image=$(sed -n "${i} p" ${imgfilename})
 	echo "dbinstance.appinfos.insert({" \
-		"\"app_id\":\"${_id}\"," \
-		"\"rank\":\"${_rank}\"," \
-		"\"app_name\":\"${_appname}\"," \
-		"\"area\":\"${_area}\"," \
-		"\"rank_type\":\"${_rank_type}\"," \
-		"\"date\":\"${_rank_date}\","\
-		"\"device\":\"${_device}\"," \
-		"\"icon\":\"${_icon}\"})" >> ${js_filename}
+		"\"_id\":\"${app_id}_${date}_${device}_${area}_${pop_id}_${genre_id}\"," \
+		"\"app_id\":\"${app_id}\"," \
+		"\"rank\":\"${rank}\"," \
+		"\"app_name\":\"${app_name}\"," \
+		"\"area\":\"${area}\"," \
+		"\"rank_type\":\"${channel_name}\"," \
+		"\"date\":\"${date}\","\
+		"\"device\":\"${device}\"," \
+		"\"icon\":\"${image}\"})" >> ${js_filename}
 done
-echo -e "========================finish==============================\t "
-
