@@ -1,4 +1,4 @@
--i
+#-i
 --color
 --color-match=black on_yellow
 --color-lineno=bright_blue
