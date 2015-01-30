@@ -115,8 +115,12 @@ pup=$HOME/gocode/bin/pup
 basename=${area}_${date}_${device}_${pop_id}
 filename=${basename}.html
 
-echo -e "1. 下载数据:\t\t ${area}_${date}_${device}_$3"
-download_file "$url" "$filename"
+if [[ -f $filename ]]; then
+	echo -e "1. 现有数据:\t\t ${area}_${date}_${device}_$3"
+else
+	echo -e "1. 下载数据:\t\t ${area}_${date}_${device}_$3"
+	download_file "$url" "$filename"
+fi
 
 echo -e "2. 解析html:\t\t ${filename}"
 # tidy -im $filename > /dev/null 2>&1  # 整理html代码
@@ -126,7 +130,7 @@ infofilename=${basename}_info.txt
 imgfilename=${basename}_img.txt
 
 cat $filename | $pup 'dl[class="dldefault"] text{}'|sed -n '/[0-9]*\./ s/\./;/ p' > ${rankfilename}
-cat $filename | $pup 'a[target="_blank"]' |sed -n -e '/itunes.apple.com/ s/.*id// ' -e 's/\?mt.*// p' > ${idfilename}
+cat $filename | $pup 'a[target="_blank"]' |sed -n '/itunes.apple.com/ s/.*id\([0-9]\+\).*/\1/ p' > ${idfilename}
 cat $filename | $pup 'img[class="img-rounded\ cssshadow"] attr{src}' > ${imgfilename}
 if [[ $system == "Darwin" ]]; then
 	sed -i '' '1,2 d' ${imgfilename}
