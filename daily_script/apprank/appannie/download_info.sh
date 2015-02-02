@@ -81,7 +81,7 @@ case $area in
 esac
 genre_id=36
 url_1="http://www.appannie.com/apps/ios/top/${url_area}/overall/?device=${device}&date=${url_date}"
-url_2="http://www.appannie.com/apps/ios/top-table/${date}-${area}-${genre_id}-${device}/?p=2-&h=23&iap=undefined"
+url_2="http://www.appannie.com/apps/ios/top-table/${date}-${area}-${genre_id}-${device}/?p=2-&h=11&iap=undefined"
 app_url_base="http://www.appannie.com/apps/ios/app"
 info_search_url_base="https://itunes.apple.com/lookup?"
 
@@ -149,10 +149,13 @@ do
 	rank_type="free"
 	case $mod in
 		1) rank_type="free"
+			rank=$(( ($i+2)/3 ))
 			;;
 		2) rank_type="paied"
+			rank=$(( ($i+1)/3 ))
 			;;
 		0) rank_type="bestsell"
+			rank=$(( $i/3 ))
 			;;
 	esac
 	info_url="${info_search_url_base}id=${app_id}&country=${area_lower}"
@@ -166,7 +169,7 @@ do
 	echo "dbinstance.appinfos.insert({" \
 		"\"_id\":\"${app_id}_${date}_${device}_${area_lower}_${rank_type}_${genre_id}\"," \
 		"\"app_id\":\"${app_id}\"," \
-		"\"rank\":\"${i}\"," \
+		"\"rank\":\"${rank}\"," \
 		"\"app_name\":\"${app_name}\"," \
 		"\"area\":\"${area_lower}\"," \
 		"\"rank_type\":\"${rank_type}\"," \
