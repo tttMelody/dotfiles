@@ -81,7 +81,6 @@ case $area in
 esac
 genre_id=36
 url_1="http://www.appannie.com/apps/ios/top/${url_area}/overall/?device=${device}&date=${url_date}"
-url_2="http://www.appannie.com/apps/ios/top-table/${date}-${area}-${genre_id}-${device}/?p=2-&h=11&iap=undefined"
 app_url_base="http://www.appannie.com/apps/ios/app"
 info_search_url_base="https://itunes.apple.com/lookup?"
 
@@ -110,6 +109,8 @@ fi
 if [[ $need_download -gt 0 ]]; then
 	echo -e "1. 下载html:\t\t ${area_lower}_${date}_${device}"
 	./curl_html.sh "$url_1" "${filename}"
+	chart_hour=$(sed -n '/chart_hour/ s/[^0-9]//g p' $filename)
+	url_2="http://www.appannie.com/apps/ios/top-table/${date}-${area}-${genre_id}-${device}/?p=2-&h=${chart_hour}&iap=undefined"
 	./curl_html.sh "$url_2" "${filename}"
 else
 	echo -e "1. 使用现有html:\t\t ${area_lower}_${date}_${device}"
