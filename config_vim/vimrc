@@ -143,6 +143,8 @@ Plugin 'vim-scripts/applescript.vim'
 "Plugin 'vim-scripts/LargeFile'
 Plugin 'vim-scripts/vimwiki'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'airblade/vim-gitgutter'
+
 call vundle#end()
 filetype plugin indent on 
 syntax on 
