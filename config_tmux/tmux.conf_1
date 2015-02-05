@@ -10,8 +10,10 @@ set -sg repeat-time 600                   # increase repeat timeout
 set -s quiet on                           # disable various messages
 
 unbind C-b
-set -g prefix C-s                        # GNU-Screen compatible prefix
-set -g prefix2 C-i                        # GNU-Screen compatible prefix
+set -g prefix C-s                        
+set -g prefix2 C-a                        
+bind C-s send-prefix
+bind C-a send-prefix -2
 
 # uncomment to force vi-style key bindings
 set -g status-keys vi
@@ -240,6 +242,7 @@ run 'for name in $(printenv | grep -Eo ^tmux_conf_[^=]+); do tmux setenv -gu $na
 #         status_left="$status_left "
 #       fi
 #       tmux set -g status-left-length 32 \; set -g status-left "$status_left"
+#       tmux set -g status-position top
 #
 #       window_status_fg=colour245 # light gray
 #       window_status_bg=colour232 # dark gray
