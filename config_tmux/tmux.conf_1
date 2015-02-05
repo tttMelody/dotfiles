@@ -9,7 +9,10 @@ set -s escape-time 0                      # fastest command sequences
 set -sg repeat-time 600                   # increase repeat timeout
 set -s quiet on                           # disable various messages
 
-set -g prefix2 C-s                        # GNU-Screen compatible prefix
+unbind C-b
+set -g prefix C-s                        
+set -g prefix2 C-a                        
+bind C-s send-prefix
 bind C-a send-prefix -2
 
 # uncomment to force vi-style key bindings
@@ -108,8 +111,8 @@ bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys 'C-\\') || ( tmux select-pane -l && changeInputSource 'com.apple.keylayout.US' ) "
 
 # window navigation
-bind -r C-h previous-window # select previous window
-bind -r C-l next-window     # select next window
+bind -r p previous-window # select previous window
+bind -r n next-window     # select next window
 bind space resize-pane -Z   # move to last active window
 
 # toggle mouse
@@ -154,7 +157,7 @@ bind -t vi-copy L end-of-line
 
 # -- window split -----
 unbind %
-bind | split-window -h
+bind \ split-window -h
 bind - split-window -v
 
 # copy to Mac OSX pasteboard
@@ -239,6 +242,7 @@ run 'for name in $(printenv | grep -Eo ^tmux_conf_[^=]+); do tmux setenv -gu $na
 #         status_left="$status_left "
 #       fi
 #       tmux set -g status-left-length 32 \; set -g status-left "$status_left"
+#       tmux set -g status-position top
 #
 #       window_status_fg=colour245 # light gray
 #       window_status_bg=colour232 # dark gray
