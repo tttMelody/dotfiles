@@ -4,7 +4,7 @@
 # -- general -------------------------------------------------------------------
 
 set -g default-terminal "screen-256color" # colors!
-setw -g xterm-keys on
+setw -g xterm-keys off 
 set -s escape-time 0                      # fastest command sequences
 set -sg repeat-time 600                   # increase repeat timeout
 set -s quiet on                           # disable various messages
@@ -16,7 +16,6 @@ bind C-s send-prefix
 bind C-b send-prefix -2
 
 # uncomment to force vi-style key bindings
-# emacs is the default unless $EDITOR or $VISUAL contain 'vi'
 set -g status-keys vi
 setw -g mode-keys vi
 
@@ -234,6 +233,7 @@ run 'for name in $(printenv | grep -Eo ^tmux_conf_[^=]+); do tmux setenv -gu $na
 #       status_fg=colour253 # white
 #       status_bg=colour232 # dark gray
 #       tmux set -g status-style fg=$status_fg,bg=$status_bg
+#       tmux set -g status-position top
 #
 #       session_fg=colour16  # black
 #       session_bg=colour226 # yellow
