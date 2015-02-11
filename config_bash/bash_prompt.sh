@@ -121,7 +121,7 @@ prompt_end()
 		local tmux_prompt="[$t_p_index]"
 	fi
 	if [[ -n $1 ]]; then
-		local text="\n${tmux_prompt}>"
+		local text="\n${tmux_prompt}\#>"
 		echo -n $text
 	else
 		prompt_segment 256 $CURRENT_BG_C 
