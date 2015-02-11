@@ -12,10 +12,10 @@ The \033 is the escape code. The [38; directs command to the foreground. If you 
 
 desc
 
-CC_OFF='\033[0m'       # Text Reset
+CC_OFF='\e[0m'       # Text Reset
 CURRENT_BG_C="NONE"
-CC_FG_PRE="\033[38;5;"
-CC_BG_PRE="\033[48;5;"
+CC_FG_PRE="\e[38;5;"
+CC_BG_PRE="\e[48;5;"
 SEGMENG_SEPRATOR="⮀"
 GIT_PS1_SHOWDIRTYSTATE="1"
 GIT_PS1_SHOWSTASHSTATE=1
@@ -24,13 +24,13 @@ GIT_PS1_SHOWUNTRACKEDFILES=1
 fg_color()
 {
 	color=$1
-	echo -n -e "${CC_FG_PRE}${color}m"
+	echo -n "${CC_FG_PRE}${color}m"
 }
 
 bg_color()
 {
 	color=$1
-	echo -n -e "${CC_BG_PRE}${color}m"
+	echo -n "${CC_BG_PRE}${color}m"
 }
 
 parse_git_branch() 
@@ -49,12 +49,12 @@ prompt_segment()
 	local FG=$(fg_color $FG_C)
 	if [[ $CURRENT_BG_C != 'NONE' ]]; then
 		local CURRENT_BG=$(fg_color $CURRENT_BG_C)
-		echo -n -e "${BG}${CURRENT_BG}${SEGMENG_SEPRATOR}${FG}"
+		echo -n "${BG}${CURRENT_BG}${SEGMENG_SEPRATOR}${FG}"
 	else
-		echo -n -e "${BG}${FG}"
+		echo -n "${BG}${FG}"
 	fi
 	[[ -n $TEXT ]] && echo -n "${TEXT}"
-	echo -n -e $CC_OFF
+	echo -n $CC_OFF
 	CURRENT_BG_C=$BG_C
 }
 
@@ -62,8 +62,8 @@ prompt_simple()
 {
 	local text_c=$1
 	local text=$2
-	echo -n -e $(fg_color $text_c)${text}
-	echo -n -e $CC_OFF
+	echo -n $(fg_color $text_c)${text}
+	echo -n $CC_OFF
 }
 
 prompt_job()
@@ -116,9 +116,13 @@ prompt_date()
 }
 prompt_end()
 {
+	if [[ -n $TMUX ]]; then
+		local t_p_index=$(tmux display -p '#{pane_index}')
+		local tmux_prompt="[$t_p_index]"
+	fi
 	if [[ -n $1 ]]; then
-		echo -n -e "\$\n\#>"
-# 		prompt_simple 138 "\#>"
+		local text="\n${tmux_prompt}>"
+		echo -n $text
 	else
 		prompt_segment 256 $CURRENT_BG_C 
 		CURRENT_BG_C="NONE"
