@@ -179,6 +179,8 @@ augroup csvFile
 	au FileType csv nnoremap <Leader><Leader>t :noh<CR> :%Align ,<CR> 
 augroup END
 "au FileType yaml set tabstop=2 softtabstop=2 shiftwidth=2
+au BufRead,BufNewFile */Slua/*.txt set filetype=lua
+
 au FileType lua call SetLuaTagsFile()
 au FileType php call SetPhpTagsFile()
 au FileType otl set tags+=/data/dwork/learn/tags 
@@ -253,9 +255,9 @@ let g:ctrlp_show_hidden = 0
 let g:ctrlp_map = '\p' 
 let g:ctrlp_cmd = 'CtrlP' 
 let g:ctrlp_custom_ignore = { 
-    \ 'dir': '\v[\/]\.(git|svn)$', 
-    \ 'file': '\v\.(log|jpg|png|jpeg)$', 
-    \} 
+	\ 'dir': '\v[\/]\.(git|svn)$', 
+	\ 'file': '\v\.(log|jpg|png|jpeg|meta)$', 
+	\} 
 let g:ctrlp_mruf_max = 1000 
 let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*\|/var/.*\|'
             \'/private/.*\|\.git.*\|'

@@ -10,6 +10,7 @@
 --type-set=md:ext:markdown,md
 --type-set=conf:ext:properties
 --type-set=text:ext:txt
+--type-set=asset:ext:asset
 #ack uses Perl's Term::ANSIColor module, so you can check what is available to you with:
 # > perldoc Term::ANSIColor
 #
