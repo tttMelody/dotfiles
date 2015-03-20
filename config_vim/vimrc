@@ -20,7 +20,7 @@ set linebreak
 set wrap 
 "set showbreak=↘ "u21e2 u2198
 set enc=utf-8
-"set cursorline
+set cursorline
 set fileencodings=ucs-bom,utf-8,cp936,GB18030,big5,GBK,GB2312,chinese,latin1,default 
 "set fileencoding=utf-8 
 "set fileencodings=ucs-bom,GBK,utf-8,cp936,gb18030,big5,latin1 
@@ -238,6 +238,11 @@ let g:gundo_preview_bottom=1
 let g:gundo_preview_height=40 
 let g:gundo_right=1 
 nnoremap <F5> :GundoToggle<CR> 
+"=====================vim-gitgutter
+nmap [a <Plug>GitGutterPrevHunk
+nmap ]a <Plug>GitGutterNextHunk
+"nmap <Leader>g <Plug>GitGutterLineHighlightsToggle
+let g:gitgutter_diff_args = '-w'
 "=====================easymotion
 "let g:EasyMotion_leader_key = '<Leader><Leader>'
 "=====================ctrlP 
