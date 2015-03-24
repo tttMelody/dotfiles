@@ -263,7 +263,7 @@ let g:ctrlp_map = '\p'
 let g:ctrlp_cmd = 'CtrlP' 
 let g:ctrlp_custom_ignore = { 
 	\ 'dir': '\v[\/]\.(git|svn)$', 
-	\ 'file': '\v\.(log|jpg|png|jpeg|meta)$', 
+	\ 'file': '\v\.(log|jpg|png|jpeg|meta|prefab)$', 
 	\} 
 let g:ctrlp_mruf_max = 1000 
 let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*\|/var/.*\|'
