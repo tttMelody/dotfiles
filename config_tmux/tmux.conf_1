@@ -105,11 +105,11 @@ bind K select-pane -U \; resize-pane -Z
 bind J select-pane -D \; resize-pane -Z
 # vim interaction
 # 当发现pane中有vim运行的时候，会将c-h/j/k/l 发送给vim
-bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-h) || ( tmux select-pane -L && ~/bin/changeInputSource 'com.apple.keylayout.US' ) "
-bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-j) || ( tmux select-pane -D && changeInputSource 'com.apple.keylayout.US' )"
-bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-k) || ( tmux select-pane -U && changeInputSource 'com.apple.keylayout.US' )"
-bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-l) || ( tmux select-pane -R && changeInputSource 'com.apple.keylayout.US' )"
-bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys 'C-\\') || ( tmux select-pane -l && changeInputSource 'com.apple.keylayout.US' ) "
+#bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-h) || ( tmux select-pane -L && ~/bin/changeInputSource 'com.apple.keylayout.US' ) "
+#bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-j) || ( tmux select-pane -D && changeInputSource 'com.apple.keylayout.US' )"
+#bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-k) || ( tmux select-pane -U && changeInputSource 'com.apple.keylayout.US' )"
+#bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-l) || ( tmux select-pane -R && changeInputSource 'com.apple.keylayout.US' )"
+#bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys 'C-\\') || ( tmux select-pane -l && changeInputSource 'com.apple.keylayout.US' ) "
 
 # window navigation
 bind -r p previous-window # select previous window

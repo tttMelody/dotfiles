@@ -113,6 +113,8 @@ Plugin 'dingmingxin/molokai'
 "Plugin 'wesleyche/SrcExpl'
 "Plugin 'wesleyche/Trinity'
 "Plugin 'chazy/cscope_maps'
+Plugin 'vim-scripts/PDV--phpDocumentor-for-Vim'
+Plugin 'rizzatti/dash.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 "Plugin 'mattn/ctrlp-mark'
@@ -519,10 +521,6 @@ nnoremap ; :
 vnoremap ; :
 nnoremap : ;
 vnoremap : ;
-nnoremap <F7> :tabmove -1<cr>
-vnoremap <F7> :tabmove -1<cr>
-nnoremap <F8> :tabmove +1<cr>
-vnoremap <F8> :tabmove +1<cr>
 nnoremap <UP> <Nop>
 nnoremap <DOWN> <Nop>
 nnoremap <LEFT> <Nop>
@@ -577,10 +575,10 @@ iab xdate <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
 "这个map会导致 搜索时不打开folder
 "nnoremap <silent> n   n:call HLNext(0.1)<cr>
 "nnoremap <silent> N   N:call HLNext(0.1)<cr>
-function! HLNext (blinktime)
-	set invcursorline
-	redraw
-	exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-	set invcursorline
-	redraw
-endfunction
+"function! HLNext (blinktime)
+"    set invcursorline
+"    redraw
+"    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+"    set invcursorline
+"    redraw
+"endfunction

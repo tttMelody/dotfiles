@@ -22,8 +22,11 @@ windows:
   - lua:
       layout: even-vertical
       panes:
-        - 
-        - 
+        - lua: 
+            - wlua
+            - git st
+        - lua:
+            - wlua
   - csharp:
       layout: even-vertical
       panes:
