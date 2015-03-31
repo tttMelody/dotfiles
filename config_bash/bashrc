@@ -20,9 +20,11 @@ SOURCE_FILES=(
 	~/.git-completion.bash \
 	/etc/git-completion.bash \
 	~/.git-prompt.sh \
+	~/.bash_utils.sh \
 	~/.bash_prompt.sh \
-	~/.bash_aliases \
-	~/.bash_path)
+	~/.bash_aliases.sh \
+	~/.bash_aliases_custom.sh \
+	~/.bash_path.sh)
 
 for file in ${SOURCE_FILES[@]}
 do
