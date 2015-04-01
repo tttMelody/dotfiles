@@ -31,3 +31,12 @@ search_dash()
 			;;
 	esac
 }
+
+backup()
+{
+	if [[ $# -lt 1 ]]; then
+		echo "args too less"
+		exit
+	fi
+	cp "$1"{,.bak};
+}
