@@ -22,8 +22,8 @@ SOURCE_FILES=(
 	~/.git-prompt.sh \
 	~/.bash_utils.sh \
 	~/.bash_prompt.sh \
-	~/.bash_aliases.sh \
-	~/.bash_aliases_custom.sh \
+	~/.bash_alias.sh \
+	~/.bash_alias_custom.sh \
 	~/.bash_path.sh)
 
 for file in ${SOURCE_FILES[@]}
