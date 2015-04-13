@@ -185,36 +185,10 @@ augroup END
 "au FileType yaml set tabstop=2 softtabstop=2 shiftwidth=2
 au BufRead,BufNewFile */Slua/*.txt set filetype=lua
 
-au FileType lua call SetLuaTagsFile()
-au FileType php call SetPhpTagsFile()
 au FileType otl set tags+=/data/dwork/learn/tags 
 "au FileType lua nested :TagbarOpen
 "autocmd! BufWritePost .vimrc source %
 
-func! SetLuaTagsFile()
-	let path=expand('%:p')
-	if matchstr(path,'gundam')!="" 
-		set tags+=~/.vim/gundam-luatags
-	endif
-	if matchstr(path,'sanguo2')!=""
-		set tags+=~/.vim/sanguo2-luatags
-	endif
-	return
-	if matchstr(path,'sanguo')!=""
-		set tags+=~/.vim/luatags
-	endif
-endfunc
-fun! SetPhpTagsFile()
-	let path=expand('%:p')
-	if matchstr(path,'gundam')!=""
-		set tags+=/data/work/gundam/apps/mingxin/tags
-		set tags-=/data/work/sanguo/apps/mingxin/tags
-	endif
-	if matchstr(path,'sanguo')!=""
-		set tags-=/data/work/gundam/apps/mingxin/tags
-		set tags+=/data/work/sanguo/apps/mingxin/tags
-	endif
-endfunc
 "=== browsing code setting, ex, cscope global .. 
 "set cscopetag
 "set cscopeprg=gtags-cscope
@@ -467,6 +441,7 @@ let g:tagbar_type_lua = {
 	\ 'kinds'     : [
 		\ 'c:classes', 
 		\ 'l:layout', 
+		\ 'v:global_v',
 		\ 'f:functions',
 		\ 'e:events'
 	\ ],

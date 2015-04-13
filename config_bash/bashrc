@@ -28,7 +28,7 @@ SOURCE_FILES=(
 
 for file in ${SOURCE_FILES[@]}
 do
-	[[ -f $file ]] && . $file
+	[[ -f $file ]] && . $file 
 done
 
 shopt -s histappend

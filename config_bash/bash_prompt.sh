@@ -116,12 +116,12 @@ prompt_date()
 }
 prompt_end()
 {
-	if [[ -n $TMUX ]]; then
-		local t_p_index=$(tmux display -p '#{pane_index}')
-		local tmux_prompt="[$t_p_index]"
-	fi
+# 	if [[ -n $TMUX ]]; then
+# 		local t_p_index=$(tmux display -p '#{pane_index}')
+# 		local tmux_prompt="[$t_p_index]"
+# 	fi
 	if [[ -n $1 ]]; then
-		local text="\n${tmux_prompt}\#>"
+		local text="\n\#>"
 		echo -n $text
 	else
 		prompt_segment 256 $CURRENT_BG_C 
