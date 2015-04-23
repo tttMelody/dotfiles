@@ -110,12 +110,14 @@ if [[ $need_download -gt 0 ]]; then
 	echo -e "1. 下载html:\t\t ${area_lower}_${date}_${device}"
 	./curl_html.sh "$url_1" "${filename}"
 	chart_hour=$(sed -n '/chart_hour/ s/[^0-9]//g p' $filename)
-	url_2="http://www.appannie.com/apps/ios/top-table/${date}-${area}-${genre_id}-${device}/?p=2-&h=${chart_hour}&iap=undefined"
+	echo $chart_hour
+	url_2="https://www.appannie.com/apps/ios/top-table/${date}-${area}-${genre_id}-${device}/?p=2-&h=${chart_hour}&iap=undefined"
 	./curl_html.sh "$url_2" "${filename}"
 else
 	echo -e "1. 使用现有html:\t\t ${area_lower}_${date}_${device}"
 fi
 
+exit 1
 echo -e "2. 解析html:\t\t ${filename}"
 # tidy -im $filename > /dev/null 2>&1  # 整理html代码
 
