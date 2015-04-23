@@ -30,13 +30,11 @@ function curl_file
 {
 	echo $url
 curl ${url} \
-	-H 'Host: www.appannie.com'  \
-	-H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:35.0) Gecko/20100101 Firefox/35.0'  \
 	-H 'Accept: */*'  \
-	-H 'Accept-Language: zh-cn,en-us;q=0.7,en;q=0.3'  \
-	-H 'Cookie: csrftoken=1bef7d794e2a611a2c293d89fe35ee81; __utma=143309285.1426002496.1421637787.1422941358.1422957117.19; __utmz=143309285.1422514797.11.3.utmcsr=192.168.30.168|utmccn=(referral)|utmcmd=referral|utmcct=/xiaosanguo/publish/index.php; __atuvc=21%7C3%2C71%7C4%2C14%7C5; km_ai=dingmingxin%40babeltime.com; km_uq=; km_lv=x; km_ni=dingmingxin%40babeltime.com; __utmv=143309285.|2=UserID=402587=1; sessionId=".eJxNzU1KA0EQhuGxExMdCf6cwYXZDIKewKw06CJY4K6p6S6SJm3N9FS1EkFwJXqG3MhLeBUJRHH38sHD92Ze084ZHAuJhIZb6iSIEusHjLabFcVOpwXsReR5xjk9mKIoHMPIYtaFzUKdDf5mfToo4PBXEWMdyU8N9FGCv4MDbcTm1qOST-YTTv7pGt2S2MP5M9XIGFcanFToXJNZqwkKXbMQS9DwRLeNp3i1FUcYqVPrFuSWVsMjuc3BJsq_SD0oh9-mt38xHl5-uXalL6WF-0mZ-uNZ2n2fpUGufgDTnF4b:1YIa8z:bqKiuNa9Vq93sK79toGQ9c58Kh4"; __utmc=143309285; kvcd=1422958033038; _bizo_bzid=5e857748-2ce9-4673-be24-73f5caae1e00; _bizo_cksm=2B7E155C58A3FC44; _bizo_np_stats=6256%3D376%2C14%3D611%2C; django_language=zh-cn; aa_user_token=".eJxrYKotZNQI5SxNLqmIz0gszihkClVINTBOszA1NbNMSk1JMjcwSjZOMTRNTTNITE1NNUlLMg8Vik8sLcmILy1OLYpPSkzOTs1LKWQONShPTUrMS8ypLMlMLtZLTE7OL80r0XNOLE71zCtOzSvOLMksS_XNT0nNcYLqYQnlRTIpM6WQ1Wu2ChtDqR4ADzw0Lw:1YIW6f:ppQ3UIl5alS-Jcm-RO_xGJrcllU"; __atuvs=54d09a38984a1d9c002; __utmb=143309285.3.10.1422958031969; km_vs=1' \
-	-H 'X-NewRelic-ID: VwcPUFJXGwEBUlJSDgc=' \
-	-H 'X-Requested-With: XMLHttpRequest' \
-	-H 'Connection: keep-alive' >> $filename
+	-H 'Accept-Language: zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3'  \
+	-H 'Connection: keep-alive'  \
+	-H 'Cookie: csrftoken=f7cf511bc3daf78c5ba3c57abd5f966c; __atuvc=0%7C12%2C0%7C13%2C0%7C14%2C0%7C15%2C3%7C16; __utma=143309285.2391747.1425275904.1425544491.1429780421.3; __utmz=143309285.1425544491.2.2.utmcsr=apprank.hohoplay.com|utmccn=(referral)|utmcmd=referral|utmcct=/index.php; km_ai=1029217068%40qq.com; km_uq=; km_lv=x; sessionId=".eJxNzU1KA0EQhuG2HR0dGfzZeAXdDG7dmpUGXUQL3DU13UXSpO2ZnqpWIgSyEj2SJ_AYXkUCUdy9fPDwrfQybZ3BMROz72JPA3sWivIO9WYzLDjIWMFewDjNOKVHrZSyMWmoDWaZmcw0GO9uvopSweGvo4htIDfWUCB7dwcH0rHJvUMhl7Y_4OSfbtHOKTq4eKEWI4aFeMsNWtvlKM0Ima4jU2Qv_pluO0fhaiOOMNAgxs7Izo34J7Lrg3VUf5EKqMrv4nS_vtSf97ZfyGtl4GFUpZ3zSdp9m6QyNz9m516p:1YlDCn:ty9QyYe5u4e4Fj4cgmCD8ZDUc00"; aa_language=cn; django_language=zh-cn; __utmb=143309285.9.10.1429780480592; __utmc=143309285; __utmt=1; kvcd=1429780481817; km_vs=1; _bizo_bzid=4ba9fe8a-9525-4dc0-98dd-e734888f454e; _bizo_cksm=9BB3C16331A1878C; _bizo_np_stats=14%3D90%2C6256%3D541%2C; aa_user_token=".eJxrYKotZNQI5SxNLqmIz0gszihkClVINTBOszA1NbNMSk1JMjcwSjZOMTRNTTNITE1NNUlLMg8Vik8sLcmILy1OLYpPSkzOTs1LKWQONShPTUrMS8ypLMlMLtZLTE7OL80r0XNOLE71zCtOzSvOLMksS_XNT0nNcYLqYQnlRTIpM6WQ1es4CztDqR4AD6g0PA:1YlDCm:ceRhzALUXNakrVZxXZj0VppOibE"; __utmv=143309285.|2=UserID=459975=1^3=Account%20Type=Internet%20Firms=1^4=Account%20Type=150%20to%20499%20employees=1; km_ni=1029217068%40qq.com; X-Mapping-fjhppofk=73E7B97E05DF7476CDEA44D9A1D1487F; _ga=GA1.2.2391747.1425275904; _gat=1; _mkto_trk=id:071-QED-284&token:_mch-appannie.com-1429780451821-17087; __atuvs=5538b7ea2549baa6002'  \
+	-H 'Host: www.appannie.com'  \
+	-H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:36.0) Gecko/20100101 Firefox/36.0' >> $filename
 }
 curl_file

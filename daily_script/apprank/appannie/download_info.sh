@@ -80,8 +80,8 @@ case $area in
 		;;
 esac
 genre_id=36
-url_1="http://www.appannie.com/apps/ios/top/${url_area}/overall/?device=${device}&date=${url_date}"
-app_url_base="http://www.appannie.com/apps/ios/app"
+url_1="https://www.appannie.com/apps/ios/top/${url_area}/overall/?device=${device}&date=${url_date}"
+app_url_base="https://www.appannie.com/apps/ios/app"
 info_search_url_base="https://itunes.apple.com/lookup?"
 
 pup=$HOME/gocode/bin/pup
