@@ -1,0 +1,146 @@
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+ZSH_THEME="dmx"
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+HIST_STAMPS="yyyy-mm-dd"
+
+# Would you like to use another custom folder than $ZSH/custom?
+ZSH_CUSTOM=~/.zsh_custom/
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+# autojump plugin need install: sudo port install autojump
+plugins=(git autojump osx vundle xcode macports)
+
+#start zsh
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+autoload -U compinit promptinit
+compinit
+promptinit
+
+# enable color prompt
+autoload -U colors && colors
+
+SOURCE_FILES=(
+	~/.zsh_prompt.sh \
+	~/.zsh_alias.sh \
+	~/.zsh_alias_custom.sh \
+	~/.zsh_path.sh)
+
+for file in $SOURCE_FILES[@]
+do
+	[[ -f $file ]] && . $file 
+done
+
+#bindkey to emacs mode
+bindkey -e
+
+# set editor
+if [[ -n $SSH_CONNECTION ]]; then
+	export EDITOR='vim'
+else
+	export EDITOR='vim'
+fi
+
+#locale setting
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+#以附加的方式写入历史纪录
+setopt INCAPPENDHISTORY
+##如果连续输入的命令相同，历史纪录中只保留一个
+setopt HISTIGNOREDUPS
+#启用 cd 命令的历史纪录，cd -[TAB]进入历史路径
+setopt AUTOPUSHD
+##相同的历史路径只保留一个
+setopt PUSHDIGNORE_DUPS
+# 自动补全
+setopt AUTOLIST
+setopt AUTOMENU
+#开启此选项，补全时会直接选中菜单项
+setopt MENU_COMPLETE
+
+#自动补全缓存
+zstyle ':completion::complete:' use-cache on
+zstyle ':completion::complete:' cache-path .zcache
+zstyle ':completion::cd:' ignore-parents parent pwd
+
+#自动补全选项
+zstyle ':completion::match:' original only
+zstyle ':completion::prefix-1:' completer _complete
+zstyle ':completion:predict:' completer _complete
+zstyle ':completion:incremental:*' completer _complete _correct
+zstyle ':completion:*' completer _complete _prefix _correct _prefix _match _approximate
+
+##路径补全
+zstyle ':completion:' expand 'yes'
+zstyle ':completion:' squeeze-shlashes 'yes'
+zstyle ':completion::complete:*' '\'
+
+#zstyle ':completion:' menu select
+#zstyle ':completion::*:default' force-list always
+
+##彩色补全菜单 
+#eval $(dircolors -b) 
+#export ZLSCOLORS="${LSCOLORS}"
+#zmodload zsh/complist
+#zstyle ':completion:*' list-colors ${(s.:.)LSCOLORS}
+#zstyle ':completion:::kill::processes' list-colors '=(#b) #([0-9]#)=0=01;31'
+
+
+
+##错误校正      
+#zstyle ':completion:' completer _complete _match _approximate
+#zstyle ':completion::match:' original only
+#zstyle ':completion::approximate:*' max-errors 1 numeric
+
+##kill 命令补全      
+#compdef pkill=kill
+#compdef pkill=killall
+#zstyle ':completion:::kill:' menu yes select
+#zstyle ':completion:::::processes' force-list always
+#zstyle ':completion::processes' command 'ps -au$USER'
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"

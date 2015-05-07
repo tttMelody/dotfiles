@@ -4,6 +4,7 @@
 # -- general -------------------------------------------------------------------
 
 set -g default-terminal "screen-256color" # colors!
+set-option -g default-shell /bin/zsh
 setw -g xterm-keys off 
 set -s escape-time 0                      # fastest command sequences
 set -sg repeat-time 600                   # increase repeat timeout
@@ -34,7 +35,7 @@ bind z confirm-befor -p "kill-session #S ? (y/n)" kill-session
 # see https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
 #if 'which -s reattach-to-user-namespace' 'set -g default-command "tmux rename-window initializing; tmux set -w automatic-rename; reattach-to-user-namespace $SHELL -l"'
 
-set-option -g default-command "reattach-to-user-namespace -l bash"
+set-option -g default-command "reattach-to-user-namespace -l zsh"
 
 # -- display -------------------------------------------------------------------
 
