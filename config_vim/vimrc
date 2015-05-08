@@ -489,8 +489,8 @@ let g:colorv_python_cmd = 'python'
 "nnoremap <leader>gt <C-w><C-]><C-w>T "在一个新tab中打开
 noremap <F10> :tabnext<CR>
 noremap <F9> :tabprev<CR>
-noremap tn :tabnew<CR>
-noremap td :tabclose<CR>
+"noremap tn :tabnew<CR>
+"noremap td :tabclose<CR>
 "nnoremap <F3> :r! date \+\%F\ \%T<cr>
 nnoremap <tab> %
 vnoremap <tab> %
