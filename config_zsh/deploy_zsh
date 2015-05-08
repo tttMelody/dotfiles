@@ -1,0 +1,17 @@
+#!/bin/bash - 
+
+DOTFILES_ROOT=~/dotfiles
+ZSHCONFIG_ROOT=$DOTFILES_ROOT/config_zsh
+
+if [[ ! -d  ~/.oh-my-zsh ]]; then
+	git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
+
+if [[ ! -f ~/.zprofile ]]; then
+	touch ~/.zprofile
+	echo ". ~/.zshrc" >> ~/.zprofile
+fi
+
+ln -sf $ZSHCONFIG_ROOT/zshrc ~/.zshrc
+ln -sf $ZSHCONFIG_ROOT/zsh_custom ~/.zsh_custom
+
