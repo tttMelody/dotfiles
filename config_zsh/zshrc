@@ -93,6 +93,7 @@ setopt INCAPPENDHISTORY
 setopt HISTIGNOREDUPS
 #启用 cd 命令的历史纪录，cd -[TAB]进入历史路径
 setopt AUTOPUSHD
+setopt NONOMATCH
 ##相同的历史路径只保留一个
 setopt PUSHDIGNORE_DUPS
 # 自动补全
