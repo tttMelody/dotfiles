@@ -1,6 +1,6 @@
 # ~/.tmuxinator/todo.yml
 
-name: radi
+name: raid
 root: /data/raid/
 
 # Optional tmux socket
