@@ -101,6 +101,7 @@ setopt AUTOLIST
 setopt AUTOMENU
 #开启此选项，补全时会直接选中菜单项
 #setopt MENU_COMPLETE
+setopt extended_glob          # put this in your .zshrc
 
 #自动补全缓存
 zstyle ':completion::complete:' use-cache on

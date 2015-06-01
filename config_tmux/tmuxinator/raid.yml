@@ -19,7 +19,7 @@ root: /data/raid/
 # tmux_command: byobu
 
 windows:
-  - raid_client:
+  - client:
       layout: even-vertical
       panes:
         - lua: 
@@ -27,7 +27,15 @@ windows:
             - git st
         - lua:
             - rlua
-  - csharp:
+  - server:
+      layout: even-vertical
+      panes:
+        - lua:
+            - rserver
+            - git st
+        - lua:
+            - rserver
+  - util:
       layout: even-vertical
       panes:
         - csharp:
