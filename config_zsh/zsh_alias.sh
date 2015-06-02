@@ -23,7 +23,7 @@ alias svnci='svnrmall; svnaddall; svn ci'
 alias hg='history | grep '
 alias la="ls -lhG"
 alias ll='ls -dltr ^*.(meta|csproj|userprefs|sln|unityproj|csproj)'
-alias ld='ll|grep "^d"'
+alias ld='ls -lhG -d *(/)'
 alias op='open'
 alias bs='source ~/.bash_profile'
 
