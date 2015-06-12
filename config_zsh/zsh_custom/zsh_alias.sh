@@ -31,6 +31,7 @@ alias wserver='cd /data/wtcg/server/'
 alias rclient="cd /data/raid/client/"
 alias rlua="cd /data/raid/client/Assets/Slua/Resources"
 alias rserver="cd /data/raid/server"
+alias rconfig="cd /data/raid/client/config"
 
 #ssh
 alias dphoho='ssh deploy@hohoplay.com'

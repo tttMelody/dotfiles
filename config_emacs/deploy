@@ -1,0 +1,20 @@
+#!/bin/bash - 
+#===============================================================================
+#
+#          FILE: deploy.sh
+# 
+#         USAGE: ./deploy.sh 
+# 
+#   DESCRIPTION: 
+# 
+#       OPTIONS: ---
+#  REQUIREMENTS: ---
+#          BUGS: ---
+#         NOTES: ---
+#        AUTHOR: YOUR NAME (), 
+#  ORGANIZATION: 
+#       CREATED: 06/12/2015 10:51
+#      REVISION:  ---
+#===============================================================================
+
+ln -sif ~/dotfiles/config_emacs/emacs_rc ~/.emacs

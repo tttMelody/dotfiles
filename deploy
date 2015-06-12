@@ -29,7 +29,7 @@ deploy_one()
 	fi
 	name=$1
 	config_dir=$DOTFILES_ROOT"/config_"$name
-	deploy_script=$config_dir"/deploy_"$name
+	deploy_script=$config_dir"/deploy"
 
 	if [[ ! -d $config_dir ]]; then
 		echo $config_dir" not exist"
