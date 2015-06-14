@@ -1,4 +1,5 @@
 ;; for melpa package manager
+
 ;(require 'package)
 ;(add-to-list 'package-archives
 ;             '("melpa-stable" . "http://stable.melpa.org/packages/") t )
@@ -42,6 +43,13 @@
 
 ;; common settings
 (setq global-linum-mode 1)
+;; backup file setting
+(setq backup-directory-alist `((".*" . , "~/.emacs.d/backup")))
+(setq backup-by-copying t)
+(setq delete-old-versions t
+	  kept-new-versions 6
+	  kept-old-versions 2
+	  version-control t)
 ;; enable syntax highlight
 (setq global-font-lock-mode 1)
 ;; set tab stop
