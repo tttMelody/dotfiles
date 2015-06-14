@@ -42,7 +42,9 @@
 (slime-setup  '(slime-repl slime-asdf slime-fancy slime-banner))
 
 ;; common settings
-(setq global-linum-mode 1)
+
+(global-linum-mode 1)
+
 ;; backup file setting
 (setq backup-directory-alist `((".*" . , "~/.emacs.d/backup")))
 (setq backup-by-copying t)
@@ -56,7 +58,13 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
-;(setq linum-format "%d ")
+(setq linum-format
+      (lambda
+        (line)
+        (propertize
+         (format
+          (let
+              ((w (length (number-to-string (count-lines (point-min) (point-max)))))) (concat "%" (number-to-string w) "d ")) line) 'face 'linum)))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
