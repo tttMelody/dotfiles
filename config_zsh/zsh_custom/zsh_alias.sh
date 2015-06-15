@@ -1,6 +1,5 @@
 #common
 alias svnci='svnrmall; svnaddall; svn ci'
-alias hg='history | grep '
 alias op='open'
 
 #sanguo2

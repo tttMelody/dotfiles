@@ -20,7 +20,6 @@ unamestr=$(uname)
 platform="unknown"
 
 alias svnci='svnrmall; svnaddall; svn ci'
-alias hg='history | grep '
 alias la="ls -lhG"
 alias ll='ls -dlh ^*.(meta|csproj|userprefs|sln|unityproj|csproj)'
 alias ld='ls -lhG -d *(/)'
