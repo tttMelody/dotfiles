@@ -33,8 +33,13 @@
 
 ;; el-get 自动安装插件
 (setq my-packages
-	(append '(slime lua-mode projectile yasnippet auto-complete)))
+	(append '(slime lua-mode projectile yasnippet auto-complete evil)))
 (el-get 'sync my-packages)
+
+;;== evil ==
+(add-to-list 'load-path "~/.emacs.d/el-get/evil")
+(require 'evil)
+;(evil-mode 1)
 
 ;;== slime ==
 ;; Set your lisp system and, optionally, some contribs
@@ -62,8 +67,14 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
-;; common settings
+;;== yasnipet
+(require 'yasnippet)
+(yas-global-mode 1)
 
+;; common settings
+(setq scroll-step 1)
+(setq scroll-conservatively 10000)
+(setq auto-window-vscroll nil)
 (global-linum-mode 1)
 
 ;; backup file setting
