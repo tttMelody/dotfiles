@@ -1,23 +1,4 @@
-;; for melpa package manager
-
-;(require 'package)
-;(add-to-list 'package-archives
-;             '("melpa-stable" . "http://stable.melpa.org/packages/") t )
-;(package-initialize)
-
 ;;== el-get ==
-;; el-get configuration
-;;(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-;;(unless (require 'el-get nil 'noerror)
-;;  (with-current-buffer
-;;	(url-retrieve-synchronously
-;;	  "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
-;;	(goto-char (point-max))
-;;	(eval-print-last-sexp)))
-;;
-;;(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-;;(el-get 'sync)
-
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (setq el-get-emacs "/opt/local/bin/emacs")
 (unless (require 'el-get nil 'noerror)
@@ -35,6 +16,13 @@
 (setq my-packages
 	(append '(slime lua-mode projectile yasnippet auto-complete evil fiplr expand-region ido-better-flex ido-vertical-mode smex)))
 (el-get 'sync my-packages)
+
+;; 自定义的 package
+;; 如果package和el-get recipes 中有重名，则会重写其中的属性
+(el-get-bundle csharp-mode
+	:url "https://github.com/josteink/csharp-mode.git"
+	:type git
+	:features csharp-mode)
 
 ;;== evil ==
 (add-to-list 'load-path "~/.emacs.d/el-get/evil")
@@ -54,8 +42,9 @@
 
 ;;== fiplr ==
 (setq fiplr-root-markers '(".git" ".svn"))
-(setq fiplr-ignored-globs '((directories (".git" ".svn"))
-							(files ("*.jpg" "*.png" "*.zip" "*~"))))
+(setq fiplr-ignored-globs '(
+		(directories (".git" ".svn" "Temp" "Library/ShaderCache" ))
+		(files ("*.jpg" "*.png" "*.zip" "*~" "*.asset" "*.db" "*.bin" "*.meta" "*.dll"))))
 ;;== ido mode ==
 (require 'ido)
 (ido-mode 1)
@@ -97,6 +86,7 @@
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 ;; This is your old M-x.
 (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+;(global-set-key (kbd "C-x f") 'fiplr-find-file)
 
 
 
