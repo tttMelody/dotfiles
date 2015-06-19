@@ -33,7 +33,7 @@
 
 ;; el-get 自动安装插件
 (setq my-packages
-	(append '(slime lua-mode projectile yasnippet auto-complete evil)))
+	(append '(slime lua-mode projectile yasnippet auto-complete evil expand-region ido-better-flex ido-vertical-mode smex)))
 (el-get 'sync my-packages)
 
 ;;== evil ==
@@ -55,6 +55,19 @@
 ;;== ido mode ==
 (require 'ido)
 (ido-mode 1)
+(ido-everywhere 1)
+;(ido-better-flex/enable)
+(require 'ido-vertical-mode)
+(ido-vertical-mode 1)
+(setq ido-vertical-show-count 5)
+
+;; ido completion in org-mode and magit
+(setq org-completion-use-ido 1)
+(setq magit-completing-read-function 'magit-ido-completing-read)
+
+(add-to-list 'load-path "~/.emacs.d/el-get/ido-ubiquitous")
+(require 'ido-ubiquitous)
+(ido-ubiquitous-mode 1)
 
 ;;== lua-mode ==
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
@@ -67,9 +80,26 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
-;;== yasnipet
+;;== yasnipet ==
 (require 'yasnippet)
 (yas-global-mode 1)
+
+;;== smex ==
+;; better command prompt
+(require 'smex) ; Not needed if you use package.el
+(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+; * Bind some keys:
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+
+
+;;== expand-region ==
+(add-to-list 'load-path "~/.emacs.d/el-get/expand-region")
+(require 'expand-region)
+;(global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; common settings
 (setq scroll-step 1)
