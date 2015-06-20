@@ -1,4 +1,6 @@
 ;;== el-get ==
+(add-to-list 'load-path "~/.emacs.d/emacs-config")
+(require 'dmx-emacs)
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 (setq el-get-emacs "/opt/local/bin/emacs")
 (unless (require 'el-get nil 'noerror)
@@ -86,10 +88,7 @@
 
 ;;== helm ==
 ;; helm is plugin like ctrlp-in-vim
-(require 'helm-config)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(helm-mode 1)
-
+(dmx-require 'init-helm)
 
 ;;== projectile ==
 ;; all projectile command has prefix C-c p

@@ -18,3 +18,4 @@
 #===============================================================================
 
 ln -sif ~/dotfiles/config_emacs/emacs_rc ~/.emacs
+ln -sif ~/dotfiles/config_emacs/emacs-config ~/.emacs.d/emacs-config
