@@ -80,4 +80,4 @@
       "http://fr.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=")
 
 
-(provide 'init-helm)
+(provide 'dmx-init-helm)

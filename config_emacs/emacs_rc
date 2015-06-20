@@ -1,71 +1,18 @@
 ;;== el-get ==
 (add-to-list 'load-path "~/.emacs.d/emacs-config")
 (require 'dmx-emacs)
-(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
-(setq el-get-emacs "/opt/local/bin/emacs")
-(unless (require 'el-get nil 'noerror)
-  (require 'package)
-  (add-to-list 'package-archives
-               '("melpa" . "http://melpa.org/packages/"))
-  (package-refresh-contents)
-  (package-initialize)
-  (package-install 'el-get)
-  (require 'el-get))
+(dmx-require 'dmx-init-el-get)
+(dmx-require 'dmx-init-slime)
+(dmx-require 'dmx-init-helm)
+(dmx-require 'dmx-init-evil)
+(dmx-require 'dmx-init-projectile)
 
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-
-;; el-get 自动安装插件
-(setq my-packages
-	(append '(slime 
-			  lua-mode 
-			  projectile 
-			  yasnippet 
-			  auto-complete
-			  evil
-			  fiplr
-			  expand-region
-              ;company-mode
-			  ;ido-vertical-mode
-			  ido-ubiquitous
-			  helm)))
-(el-get 'sync my-packages)
-
-;; 自定义的 package
-;; 如果package和el-get recipes 中有重名，则会重写其中的属性
-(el-get-bundle csharp-mode
-	:url "https://github.com/josteink/csharp-mode.git"
-	:type git
-	:features csharp-mode)
-
-;;== evil ==
-(add-to-list 'load-path "~/.emacs.d/el-get/evil")
-(require 'evil)
 ;(evil-mode 1)
 
-;;== slime ==
-;; Set your lisp system and, optionally, some contribs
-(require 'slime-autoloads)
-(setq slime-contribs '(slime-fancy))
-(setq slime-lisp-implementations
-     `((sbcl ("/opt/local/bin/sbcl"))
-       (abcl ("/opt/local/bin/abcl"))
-       (clisp ("/opt/local/bin/clisp"))))
-(setq inferior-lisp-program "/opt/local/bin/sbcl")
-(slime-setup  '(slime-repl slime-asdf slime-fancy slime-banner))
-
-;;== fiplr ==
-(setq fiplr-root-markers '(".git" ".svn"))
-(setq fiplr-ignored-globs '(
-		(directories (".git" ".svn" "Temp" "Library/ShaderCache" ))
-		(files ("*.jpg" "*.png" "*.zip" "*~" "*.asset" "*.db" "*.bin" "*.meta" "*.dll"))))
 ;;== ido mode ==
 (require 'ido)
 (ido-mode 1)
 ;(ido-everywhere 1)
-
-;; ido completion in org-mode and magit
-;(setq org-completion-use-ido 1)
-;(setq magit-completing-read-function 'magit-ido-completing-read)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/ido-ubiquitous")
 (require 'ido-ubiquitous)
@@ -85,19 +32,6 @@
 ;;== yasnipet ==
 (require 'yasnippet)
 (yas-global-mode 1)
-
-;;== helm ==
-;; helm is plugin like ctrlp-in-vim
-(dmx-require 'init-helm)
-
-;;== projectile ==
-;; all projectile command has prefix C-c p
-;; ex. C-c p f  find file in project
-(projectile-global-mode)
-(setq projectile-completion-system 'helm)
-(helm-projectile-on)
-(add-hook 'lua-mode-hook 'projectile-mode)
-(add-hook 'csharp-mode-hook 'projectile-mode)
 
 
 
