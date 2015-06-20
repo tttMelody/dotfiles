@@ -19,6 +19,8 @@
 			  yasnippet 
 			  auto-complete
 			  evil
+			  evil-leader
+			  evil-org-mode
 			  expand-region
               ;company-mode
 			  ;ido-vertical-mode

@@ -7,7 +7,8 @@
 (dmx-require 'dmx-init-evil)
 (dmx-require 'dmx-init-projectile)
 
-;(evil-mode 1)
+(evil-mode 1)
+
 
 ;;== ido mode ==
 (require 'ido)
