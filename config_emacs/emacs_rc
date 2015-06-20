@@ -14,7 +14,18 @@
 
 ;; el-get 自动安装插件
 (setq my-packages
-	(append '(slime lua-mode projectile yasnippet auto-complete evil fiplr expand-region ido-better-flex ido-vertical-mode smex)))
+	(append '(slime 
+			  lua-mode 
+			  projectile 
+			  yasnippet 
+			  auto-complete
+			  evil
+			  fiplr
+			  expand-region
+              ;company-mode
+			  ;ido-vertical-mode
+			  ido-ubiquitous
+			  helm)))
 (el-get 'sync my-packages)
 
 ;; 自定义的 package
@@ -48,15 +59,11 @@
 ;;== ido mode ==
 (require 'ido)
 (ido-mode 1)
-(ido-everywhere 1)
-;(ido-better-flex/enable)
-(require 'ido-vertical-mode)
-(ido-vertical-mode 1)
-(setq ido-vertical-show-count 5)
+;(ido-everywhere 1)
 
 ;; ido completion in org-mode and magit
-(setq org-completion-use-ido 1)
-(setq magit-completing-read-function 'magit-ido-completing-read)
+;(setq org-completion-use-ido 1)
+;(setq magit-completing-read-function 'magit-ido-completing-read)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/ido-ubiquitous")
 (require 'ido-ubiquitous)
@@ -77,16 +84,22 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-;;== smex ==
-;; better command prompt
-(require 'smex) ; Not needed if you use package.el
-(smex-initialize) ; Can be omitted. This might cause a (minimal) delay
-; * Bind some keys:
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; This is your old M-x.
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-;(global-set-key (kbd "C-x f") 'fiplr-find-file)
+;;== helm ==
+;; helm is plugin like ctrlp-in-vim
+(require 'helm-config)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(helm-mode 1)
+
+
+;;== projectile ==
+;; all projectile command has prefix C-c p
+;; ex. C-c p f  find file in project
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+(add-hook 'lua-mode-hook 'projectile-mode)
+(add-hook 'csharp-mode-hook 'projectile-mode)
+
 
 
 
@@ -129,7 +142,6 @@
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(custom-enabled-themes (quote (tsdh-dark)))
- '(ido-enable-flex-matching t)
  '(ido-mode (quote both) nil (ido))
  '(menu-bar-mode nil)
  '(tool-bar-mode nil))
