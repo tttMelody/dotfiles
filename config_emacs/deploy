@@ -18,4 +18,5 @@
 #===============================================================================
 
 ln -sif ~/dotfiles/config_emacs/emacs_rc ~/.emacs
-ln -sif ~/dotfiles/config_emacs/emacs-config ~/.emacs.d/emacs-config
+ln -sif ~/dotfiles/config_emacs/config ~/.emacs.d/config
+ln -sif ~/dotfiles/config_emacs/el-get-user ~/.emacs.d/el-get-user

@@ -1,0 +1,5 @@
+(:name molokai-theme
+   :url "https://github.com/hbin/molokai-theme.git"
+   :type git
+   :features molokai-theme)
+

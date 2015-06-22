@@ -10,6 +10,8 @@
 (evil-leader/set-key
   "e" 'helm-find-files
   "b" 'helm-buffers-list
+  "r" 'helm-recentf
+  "p" 'helm-projectile-find-file
   "k" 'kill-buffer)
 
 ;;== evil-org-mode

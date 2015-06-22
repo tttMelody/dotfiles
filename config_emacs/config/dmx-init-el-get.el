@@ -24,6 +24,7 @@
 			  expand-region
               ;company-mode
 			  ;ido-vertical-mode
+			  molokai-theme
 			  ido-ubiquitous
 			  helm)))
 (el-get 'sync my-packages)

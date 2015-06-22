@@ -1,5 +1,5 @@
 ;;== el-get ==
-(add-to-list 'load-path "~/.emacs.d/emacs-config")
+(add-to-list 'load-path "~/.emacs.d/config")
 (require 'dmx-emacs)
 (dmx-require 'dmx-init-el-get)
 (dmx-require 'dmx-init-slime)
@@ -34,9 +34,6 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-
-
-
 ;;== expand-region ==
 (add-to-list 'load-path "~/.emacs.d/el-get/expand-region")
 (require 'expand-region)
@@ -55,6 +52,7 @@
 	  kept-new-versions 6
 	  kept-old-versions 2
 	  version-control t)
+
 ;; enable syntax highlight
 (setq global-font-lock-mode 1)
 ;; set tab stop
@@ -75,7 +73,9 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
- '(custom-enabled-themes (quote (tsdh-dark)))
+ '(custom-safe-themes
+   (quote
+    ("c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" default)))
  '(ido-mode (quote both) nil (ido))
  '(menu-bar-mode nil)
  '(tool-bar-mode nil))
