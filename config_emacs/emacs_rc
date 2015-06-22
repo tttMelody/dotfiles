@@ -42,6 +42,11 @@
 (require 'expand-region)
 ;(global-set-key (kbd "C-=") 'er/expand-region)
 
+;;== powerline ==
+;(require 'powerline)
+;(powerline-center-evil-theme)
+
+
 ;; common settings
 (setq scroll-step 1)
 (setq scroll-conservatively 10000)

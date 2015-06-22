@@ -21,9 +21,11 @@
 			  evil
 			  evil-leader
 			  evil-org-mode
+              evil-nerd-commenter
 			  expand-region
               ;company-mode
 			  ;ido-vertical-mode
+              powerline
               emmet-mode
 			  molokai-theme
               rainbow-mode
