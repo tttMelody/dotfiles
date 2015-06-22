@@ -34,6 +34,9 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
+;;== emmet-mode ==
+(require 'emmet-mode)
+
 ;;== expand-region ==
 (add-to-list 'load-path "~/.emacs.d/el-get/expand-region")
 (require 'expand-region)
