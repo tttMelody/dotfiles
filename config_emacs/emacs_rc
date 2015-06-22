@@ -43,6 +43,8 @@
 (require 'expand-region)
 ;(global-set-key (kbd "C-=") 'er/expand-region)
 
+;;== o-blog ==
+(require 'o-blog)
 ;;== powerline ==
 ;(require 'powerline)
 ;(powerline-center-evil-theme)

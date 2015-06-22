@@ -26,6 +26,7 @@
               ;evil-easymotion
               evil-matchit
 			  expand-region
+              o-blog
               ;company-mode
 			  ;ido-vertical-mode
               powerline
