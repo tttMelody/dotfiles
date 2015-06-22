@@ -7,8 +7,9 @@
 (dmx-require 'dmx-init-evil)
 (dmx-require 'dmx-init-projectile)
 
-(evil-mode 1)
-
+(add-to-list 'load-path "~/.emacs.d/el-get/magit")
+(add-to-list 'load-path "~/.emacs.d/el-get/git-modes")
+;(add-to-list 'load-path "~/.emacs.d/el-get/avy")
 
 ;;== ido mode ==
 (require 'ido)

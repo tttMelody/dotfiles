@@ -22,6 +22,9 @@
 			  evil-leader
 			  evil-org-mode
               evil-nerd-commenter
+              ;avy ;; need by evil-easymotion
+              ;evil-easymotion
+              evil-matchit
 			  expand-region
               ;company-mode
 			  ;ido-vertical-mode

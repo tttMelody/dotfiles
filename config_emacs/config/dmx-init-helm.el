@@ -1,9 +1,11 @@
 (require 'helm)
 (require 'helm-config)
 (helm-mode 1)
+
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x b") 'helm-buffers-list)
+(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) 
 
 ;;; Helm-variables
 ;;
@@ -54,7 +56,7 @@
       ;helm-follow-mode-persistent                t
       helm-apropos-fuzzy-match                    t
       helm-M-x-fuzzy-match                        t
-      helm-lisp-fuzzy-completion                  t
+      ;; helm-lisp-fuzzy-completion                  t
       ;helm-locate-fuzzy-match                     t
       helm-completion-in-region-fuzzy-match       t
       helm-move-to-line-cycle-in-source           t

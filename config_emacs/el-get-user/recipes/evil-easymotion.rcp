@@ -1,0 +1,4 @@
+(:name evil-easymotion
+   :url "https://github.com/PythonNut/evil-easymotion.git"
+   :type git
+   :features evil-easymotion)
