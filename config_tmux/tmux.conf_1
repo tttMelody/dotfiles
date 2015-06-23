@@ -92,10 +92,10 @@ bind < swap-pane -U       # swap current pane with the previous one
 bind + run 'cut -c3- ~/.tmux.conf | sh -s circled_digit 19'
 
 # pane resizing
-bind -n M-h resize-pane -L 5
-bind -n M-j resize-pane -D 5
-bind -n M-k resize-pane -U 5
-bind -n M-l resize-pane -R 5
+bind -n M-[ resize-pane -L 5
+bind -n M-] resize-pane -R 5
+bind -n M-_ resize-pane -D 5
+bind -n M-+ resize-pane -U 5
 bind h select-pane -L \; refresh-client -S
 bind l select-pane -R \; refresh-client -S
 bind k select-pane -U \; refresh-client -S

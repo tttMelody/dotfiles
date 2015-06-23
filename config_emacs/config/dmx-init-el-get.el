@@ -34,7 +34,8 @@
 			  molokai-theme
               rainbow-mode
 			  ido-ubiquitous
-			  helm)))
+			  helm
+              helm-ag)))
 (el-get 'sync my-packages)
 
 ;; 自定义的 package

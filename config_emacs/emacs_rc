@@ -44,6 +44,7 @@
 ;(global-set-key (kbd "C-=") 'er/expand-region)
 
 ;;== o-blog ==
+;; need install pandoc : sudo port install pandoc
 (require 'o-blog)
 ;;== powerline ==
 ;(require 'powerline)

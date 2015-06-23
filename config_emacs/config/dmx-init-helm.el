@@ -82,5 +82,9 @@
       helm-wikipedia-summary-url
       "http://fr.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=")
 
+;;== helm-ag ==
+(require 'helm-ag)
+(global-set-key (kbd "M-p") 'helm-ag-project-root)
+(setq helm-ag-use-grep-ignore-list '("*.debug.log*"))
 
 (provide 'dmx-init-helm)
