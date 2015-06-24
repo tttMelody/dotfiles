@@ -47,7 +47,8 @@
       helm-dabbrev-cycle-threshold                5
       helm-surfraw-duckduckgo-url                "https://duckduckgo.com/?q=%s&ke=-1&kf=fw&kl=fr-fr&kr=b&k1=-1&k4=-1"
       ;helm-surfraw-default-browser-function      'w3m-browse-url
-      helm-boring-file-regexp-list               '("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "\\._darcs$" "\\.la$" "\\.o$" "\\.i$")
+      helm-boring-file-regexp-list               '("\\.git$" "\\.hg$" "\\.svn$" "\\.CVS$" "\\._darcs$" "\\.la$" "\\.o$" "\\.i$" "\\.meta$" "\\.swp")
+      helm-ff-skip-boring-files                  t
       ;helm-mode-handle-completion-in-region      t
       ;helm-moccur-always-search-in-current        t
       ;helm-tramp-verbose                         6
@@ -56,7 +57,7 @@
       ;helm-follow-mode-persistent                t
       helm-apropos-fuzzy-match                    t
       helm-M-x-fuzzy-match                        t
-      ;; helm-lisp-fuzzy-completion                  t
+      helm-lisp-fuzzy-completion                  t
       ;helm-locate-fuzzy-match                     t
       helm-completion-in-region-fuzzy-match       t
       helm-move-to-line-cycle-in-source           t
