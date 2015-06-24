@@ -35,7 +35,8 @@
 			  ido-ubiquitous
               git-gutter
 			  helm
-              helm-dash
+              ;; helm-dash
+              helm-gtags
               helm-ag)))
 (el-get 'sync my-packages)
 

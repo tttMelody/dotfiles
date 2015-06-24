@@ -43,6 +43,8 @@
 (require 'expand-region)
 ;(global-set-key (kbd "C-=") 'er/expand-region)
 
+;;== tag files ==
+(setq tags-file-name "./tags")
 ;;== powerline ==
 ;(require 'powerline)
 ;(powerline-center-evil-theme)
