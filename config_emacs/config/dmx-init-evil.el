@@ -11,7 +11,7 @@
 (global-evil-leader-mode)
 (evil-leader/set-key
   "e" 'helm-find-files
-  "b" 'helm-buffers-list
+  "[" 'helm-buffers-list
   "t" 'helm-mini
   "r" 'helm-recentf
   "p" 'helm-projectile-find-file

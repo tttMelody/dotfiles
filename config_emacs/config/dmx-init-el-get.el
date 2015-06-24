@@ -33,7 +33,9 @@
 			  molokai-theme
               rainbow-mode
 			  ido-ubiquitous
+              git-gutter
 			  helm
+              helm-dash
               helm-ag)))
 (el-get 'sync my-packages)
 
