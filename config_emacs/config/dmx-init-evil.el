@@ -1,8 +1,12 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/evil")
+(setq evil-want-C-u-scroll t)
 (require 'evil)
 
 (define-key evil-motion-state-map ":" 'undefined)
 (define-key evil-motion-state-map ";" 'evil-ex)
+(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+(define-key evil-visual-state-map (kbd "C-u") 'evil-scroll-up)
+
 (evil-mode 1)
 
 
