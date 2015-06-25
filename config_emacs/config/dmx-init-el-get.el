@@ -33,6 +33,7 @@
 			  molokai-theme
               rainbow-mode
 			  ido-ubiquitous
+              eim
               git-gutter
 			  helm
               ;; helm-dash

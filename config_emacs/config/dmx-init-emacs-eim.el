@@ -1,5 +1,6 @@
 ;;== emacs-eim ==
 (add-to-list 'load-path "~/.emacs.d/self_install/eim")
+(add-to-list 'load-path "~/.emacs.d/el-get/emacs-eim")
 (autoload 'eim-use-package "eim" "Another emacs input method")
 ;; (setq eim-use-tooltip nil)
 (register-input-method
