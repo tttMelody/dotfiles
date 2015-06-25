@@ -1,9 +1,9 @@
 #!/bin/bash - 
 #===============================================================================
 #
-#          FILE: bash_aliases_usefull.sh
+#          FILE: zsh_alias.sh
 # 
-#         USAGE: ./bash_aliases_usefull.sh 
+#         USAGE: ./zsh_alias.sh 
 # 
 #   DESCRIPTION: 
 # 
@@ -25,6 +25,7 @@ alias ll='ls -dlh ^*.(meta|csproj|userprefs|sln|unityproj|csproj)'
 alias ld='ls -lhG -d *(/)'
 alias op='open'
 alias bs='source ~/.bash_profile'
+alias emax='emacsclient -t'
 
 if [[ $unamestr == "Darwin" ]]; then
 	platform="osx"

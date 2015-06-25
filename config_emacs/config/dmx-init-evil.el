@@ -16,6 +16,8 @@
 (evil-leader/set-key
   "e" 'helm-find-files
   "[" 'helm-buffers-list
+  "]" 'helm-gtags-find-tag-from-here
+  "gl" 'helm-gtags-select
   "t" 'helm-mini
   "r" 'helm-recentf
   "p" 'helm-projectile-find-file

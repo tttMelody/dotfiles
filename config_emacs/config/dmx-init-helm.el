@@ -100,9 +100,10 @@
 
 ;; customize
 (custom-set-variables
- '(helm-gtags-path-style 'relative)
+ '(helm-gtags-path-style 'absolute)
+ '(helm-gtags-fuzzy-match t)
  '(helm-gtags-ignore-case t)
-  '(helm-gtags-auto-update t))
+ '(helm-gtags-auto-update t))
 
 (require 'helm-gtags)
 
