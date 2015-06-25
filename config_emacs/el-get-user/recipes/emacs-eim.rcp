@@ -1,0 +1,5 @@
+(:name emacs-eim
+   :url "https://github.com/wenbinye/emacs-eim.git"
+   :type git
+   :buid ("make" "make install")
+   :features emacs-eim)

@@ -6,19 +6,21 @@
 (dmx-require 'dmx-init-helm)
 (dmx-require 'dmx-init-evil)
 (dmx-require 'dmx-init-projectile)
+(dmx-require 'dmx-init-emacs-eim)
+
 
 (add-to-list 'load-path "~/.emacs.d/el-get/magit")
 (add-to-list 'load-path "~/.emacs.d/el-get/git-modes")
 ;(add-to-list 'load-path "~/.emacs.d/el-get/avy")
 
 ;;== ido mode ==
-(require 'ido)
-(ido-mode 1)
+;; (require 'ido)
+;; (ido-mode 1)
 ;(ido-everywhere 1)
 
-(add-to-list 'load-path "~/.emacs.d/el-get/ido-ubiquitous")
-(require 'ido-ubiquitous)
-(ido-ubiquitous-mode 1)
+;; (add-to-list 'load-path "~/.emacs.d/el-get/ido-ubiquitous")
+;; (require 'ido-ubiquitous)
+;; (ido-ubiquitous-mode 1)
 
 ;;== lua-mode ==
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
