@@ -452,7 +452,7 @@ let g:tagbar_type_lua = {
 		\ 'e:events'
 	\ ],
 	\ 'sort' : 0,
-	\ 'deffile' : '~/.config_ctags/ctags_lua.cnf'
+	\ 'deffile' : '~/dotfiles/config_tagsystem/ctags_lua.cnf'
 \ }
 let g:tagbar_type_javascript = {
 	\ 'ctagstype' : 'js',
@@ -463,7 +463,7 @@ let g:tagbar_type_javascript = {
 		\ 'q:ng-factory'
 	\ ],
 	\ 'sort' : 0,
-	\ 'deffile' : '~/.config_ctags/ctags_js.cnf'
+	\ 'deffile' : '~/dotfiles/config_tagsystem/ctags_js.cnf'
 \ }
 let g:tagbar_type_html = {
 	\ 'ctagstype' : 'html',
@@ -474,7 +474,7 @@ let g:tagbar_type_html = {
 		\ 't:ng-click'
 	\ ],
 	\ 'sort' : 0,
-	\ 'deffile' : '~/.config_ctags/ctags_html.cnf'
+	\ 'deffile' : '~/dotfiles/config_tagsystem/ctags_html.cnf'
 \ }
 "=====================mattn-emmet
 let g:user_emmet_mode='inv'  
