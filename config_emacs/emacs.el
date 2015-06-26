@@ -7,6 +7,7 @@
 (dmx-require 'dmx-init-evil)
 (dmx-require 'dmx-init-projectile)
 (dmx-require 'dmx-init-emacs-eim)
+(dmx-require 'dmx-init-yasnippet)
 
 
 (add-to-list 'load-path "~/.emacs.d/el-get/magit")
@@ -18,9 +19,9 @@
 ;; (ido-mode 1)
 ;(ido-everywhere 1)
 
-;; (add-to-list 'load-path "~/.emacs.d/el-get/ido-ubiquitous")
-;; (require 'ido-ubiquitous)
-;; (ido-ubiquitous-mode 1)
+;(add-to-list 'load-path "~/.emacs.d/el-get/ido-ubiquitous")
+;(require 'ido-ubiquitous)
+;(ido-ubiquitous-mode 1)
 
 ;;== lua-mode ==
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
@@ -32,10 +33,6 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
-
-;;== yasnipet ==
-(require 'yasnippet)
-(yas-global-mode 1)
 
 ;;== emmet-mode ==
 (require 'emmet-mode)
@@ -73,12 +70,12 @@
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 (setq linum-format
-      (lambda
-        (line)
-        (propertize
-         (format
-          (let
-              ((w (length (number-to-string (count-lines (point-min) (point-max)))))) (concat "%" (number-to-string w) "d ")) line) 'face 'linum)))
+	  (lambda
+		(line)
+		(propertize
+		 (format
+		  (let
+			  ((w (length (number-to-string (count-lines (point-min) (point-max)))))) (concat "%" (number-to-string w) "d ")) line) 'face 'linum)))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -88,7 +85,7 @@
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(custom-safe-themes
    (quote
-    ("c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" default)))
+	("c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" default)))
  '(ido-mode (quote both) nil (ido))
  '(menu-bar-mode nil)
  '(tool-bar-mode nil))

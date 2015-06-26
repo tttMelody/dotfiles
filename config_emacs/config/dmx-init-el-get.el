@@ -34,6 +34,7 @@
               rainbow-mode
 			  ido-ubiquitous
               eim
+              ;; emacs-eim
               git-gutter
 			  helm
               ;; helm-dash

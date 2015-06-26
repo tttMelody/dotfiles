@@ -25,5 +25,5 @@ if [[ ! -L ~/.emacs.d/el-get-user ]]; then
 	ln -sif ~/dotfiles/config_emacs/el-get-user ~/.emacs.d/el-get-user
 fi
 if [[ ! -L ~/.emacs.d/self_install ]]; then
-	ln -sif ~/dotfiles/config_emacs/el-get-user ~/.emacs.d/el-get-user
+	ln -sif ~/dotfiles/config_emacs/self_install ~/.emacs.d/self_install
 fi
