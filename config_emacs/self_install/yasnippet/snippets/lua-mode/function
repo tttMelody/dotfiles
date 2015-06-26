@@ -1,6 +1,6 @@
 # -*- mode: snippet -*-
-# name: fun
-# key: fun
+# name: function
+# key: function
 # --
 function ()
          ${1:return something}

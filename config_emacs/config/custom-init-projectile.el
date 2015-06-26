@@ -24,4 +24,4 @@
 (add-hook 'lua-mode-hook 'projectile-mode)
 (add-hook 'csharp-mode-hook 'projectile-mode)
 
-(provide 'dmx-init-projectile)
+(provide 'custom-init-projectile)

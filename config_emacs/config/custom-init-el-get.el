@@ -49,4 +49,4 @@
 	:type git
 	:features csharp-mode)
 
-(provide 'dmx-init-el-get)
+(provide 'custom-init-el-get)

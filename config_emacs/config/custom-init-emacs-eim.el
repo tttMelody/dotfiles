@@ -10,4 +10,4 @@
 (global-set-key ";" 'eim-insert-ascii)
 (set-input-method 'eim-py)
 
-(provide 'dmx-init-emacs-eim)
+(provide 'custom-init-emacs-eim)

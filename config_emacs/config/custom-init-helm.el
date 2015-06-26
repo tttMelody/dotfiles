@@ -108,4 +108,4 @@
 
 (require 'helm-gtags)
 
-(provide 'dmx-init-helm)
+(provide 'custom-init-helm)

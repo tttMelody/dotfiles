@@ -49,4 +49,4 @@
 (require 'evil-org)
 
 
-(provide 'dmx-init-evil)
+(provide 'custom-init-evil)

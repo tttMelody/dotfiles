@@ -1,14 +1,15 @@
 ;;== el-get ==
 (add-to-list 'load-path "~/.emacs.d/config")
-(require 'dmx-emacs)
-(dmx-require 'dmx-init-el-get)
-(dmx-require 'dmx-init-slime)
-(dmx-require 'dmx-init-helm)
-(dmx-require 'dmx-init-evil)
-(dmx-require 'dmx-init-projectile)
-(dmx-require 'dmx-init-emacs-eim)
-(dmx-require 'dmx-init-yasnippet)
+(require 'custom-emacs)
 
+(custom-require 'custom-init-el-get)
+(custom-require 'custom-init-slime)
+(custom-require 'custom-init-helm)
+(custom-require 'custom-init-evil)
+(custom-require 'custom-init-projectile)
+(custom-require 'custom-init-emacs-eim)
+(custom-require 'custom-init-yasnippet)
+(custom-require 'custom-init-lua-mode)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/magit")
 (add-to-list 'load-path "~/.emacs.d/el-get/git-modes")
@@ -22,12 +23,6 @@
 ;(add-to-list 'load-path "~/.emacs.d/el-get/ido-ubiquitous")
 ;(require 'ido-ubiquitous)
 ;(ido-ubiquitous-mode 1)
-
-;;== lua-mode ==
-(autoload 'lua-mode "lua-mode" "Lua editing mode." t)
-(add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
-(add-to-list 'auto-mode-alist '("[Ss]lua.*\\.txt$" . lua-mode))
-(add-to-list 'interpreter-mode-alist '("lua" . lua-mode))
 
 ;;== auto-complete ==
 (require 'auto-complete)
@@ -43,7 +38,7 @@
 ;(global-set-key (kbd "C-=") 'er/expand-region)
 
 ;;== tag files ==
-(setq tags-file-name "./tags")
+;(setq tags-file-name "./tags")
 ;;== powerline ==
 ;(require 'powerline)
 ;(powerline-center-evil-theme)

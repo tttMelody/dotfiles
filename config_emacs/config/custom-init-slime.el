@@ -7,4 +7,4 @@
 (setq inferior-lisp-program "/opt/local/bin/sbcl")
 (slime-setup  '(slime-repl slime-asdf slime-fancy slime-banner))
 
-(provide 'dmx-init-slime)
+(provide 'custom-init-slime)
