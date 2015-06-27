@@ -32,6 +32,9 @@
 ;;== emmet-mode ==
 (require 'emmet-mode)
 
+;; 禁止对global_gnu 等类似带有下划线的字符串做特殊处理
+(setq org-export-with-sub-superscripts nil)
+;; org 工程配置
 (setq org-publish-project-alist
            '(("orgfiles"
                :base-directory "~/wb/evblog/"
