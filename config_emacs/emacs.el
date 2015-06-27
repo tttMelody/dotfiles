@@ -32,6 +32,21 @@
 ;;== emmet-mode ==
 (require 'emmet-mode)
 
+(setq org-publish-project-alist
+           '(("orgfiles"
+               :base-directory "~/wb/evblog/"
+               :base-extension "org"
+               :publishing-directory "~/wb/evblog_export/"
+               :publishing-function org-html-publish-to-html
+               :headline-levels 3
+               :section-numbers nil
+               :with-toc nil
+               :html-head "<link rel=\"stylesheet\"
+                       href=\"../other/mystyle.css\" type=\"text/css\"/>"
+               :html-preamble t)
+     
+              ("notes" :components ("orgfiles"))))
+
 ;;== expand-region ==
 (add-to-list 'load-path "~/.emacs.d/el-get/expand-region")
 (require 'expand-region)
