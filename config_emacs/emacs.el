@@ -37,6 +37,7 @@
                :select-tags t
                :section-numbers t
                :with-toc t
+               :html-head-include-default-style nil
                :html-head "<link rel=\"stylesheet\" href=\"other/mystyle.css\" type=\"text/css\"/>"
                :html-head-include-scripts nil ;; 导出html时禁止include default javascript snippets
                :html-preamble t)
