@@ -11,18 +11,10 @@
 (custom-require 'custom-init-yasnippet)
 (custom-require 'custom-init-lua-mode)
 
+
 (add-to-list 'load-path "~/.emacs.d/el-get/magit")
 (add-to-list 'load-path "~/.emacs.d/el-get/git-modes")
 ;(add-to-list 'load-path "~/.emacs.d/el-get/avy")
-
-;;== ido mode ==
-;; (require 'ido)
-;; (ido-mode 1)
-;(ido-everywhere 1)
-
-;(add-to-list 'load-path "~/.emacs.d/el-get/ido-ubiquitous")
-;(require 'ido-ubiquitous)
-;(ido-ubiquitous-mode 1)
 
 ;;== auto-complete ==
 (require 'auto-complete)
@@ -42,10 +34,11 @@
                :publishing-directory "~/wb/evblog_export/"
                :publishing-function org-html-publish-to-html
                :headline-levels 3
-               :section-numbers nil
-               :with-toc nil
-               :html-head "<link rel=\"stylesheet\"
-                       href=\"../other/mystyle.css\" type=\"text/css\"/>"
+               :select-tags t
+               :section-numbers t
+               :with-toc t
+               :html-head "<link rel=\"stylesheet\" href=\"other/mystyle.css\" type=\"text/css\"/>"
+               :html-head-include-scripts nil ;; 导出html时禁止include default javascript snippets
                :html-preamble t)
      
               ("notes" :components ("orgfiles"))))
@@ -55,8 +48,6 @@
 (require 'expand-region)
 ;(global-set-key (kbd "C-=") 'er/expand-region)
 
-;;== tag files ==
-;(setq tags-file-name "./tags")
 ;;== powerline ==
 ;(require 'powerline)
 ;(powerline-center-evil-theme)
