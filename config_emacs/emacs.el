@@ -41,8 +41,15 @@
                :html-head "<link rel=\"stylesheet\" href=\"other/mystyle.css\" type=\"text/css\"/>"
                :html-head-include-scripts nil ;; 导出html时禁止include default javascript snippets
                :html-preamble t)
+
+             ("org-static"
+              :base-directory "~/wb/evblog/"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+              :publishing-directory "~/wb/evblog_export/"
+              :recursive t
+              :publishing-function org-publish-attachment)
      
-              ("notes" :components ("orgfiles"))))
+              ("notes" :components ("orgfiles" "org-static"))))
 
 ;;== expand-region ==
 (add-to-list 'load-path "~/.emacs.d/el-get/expand-region")
