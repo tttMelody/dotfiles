@@ -40,7 +40,8 @@
                :html-head-include-default-style nil
                :html-head "<link rel=\"stylesheet\" href=\"other/mystyle.css\" type=\"text/css\"/>"
                :html-head-include-scripts nil ;; 导出html时禁止include default javascript snippets
-               :html-preamble t)
+               :html-preamble t
+               :html-postamble nil)
 
              ("org-static"
               :base-directory "~/wb/evblog/"
