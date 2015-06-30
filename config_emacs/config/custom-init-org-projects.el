@@ -1,0 +1,32 @@
+;; 禁止对global_gnu 等类似带有下划线的字符串做特殊处理
+(setq org-export-with-sub-superscripts nil)
+;; org 工程配置
+(setq org-publish-project-alist
+           '(("ontes-org"
+               :base-directory "~/wb/evblog/"
+               :base-extension "org"
+               :publishing-directory "~/wb/evblog_export/"
+               :publishing-function org-html-publish-to-html
+               :headline-levels 3
+               :select-tags t
+               :section-numbers t
+               :with-timestamps nil
+               :with-toc t
+               :html-head-include-default-style nil
+               :html-head-include-scripts nil ;; 导出html时禁止include default javascript snippets
+               :html-head "<link  rel=\"stylesheet\" href=\"fancy/bower_components/bootstrap/dist/css/bootstrap.min.css\" type=\"text/css\"/>
+<link  rel=\"stylesheet\" href=\"fancy/mystyle.css\" type=\"text/css\"/>
+<script type=\"text/javascript\" src=\"fancy/bower_components/bootstrap/dist/js/bootstrap.min.js\"></script>"
+               :html-preamble t
+               :html-postamble nil)
+
+             ("notes-static"
+              :base-directory "~/wb/evblog/"
+              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+              :publishing-directory "~/wb/evblog_export/"
+              :recursive t
+              :publishing-function org-publish-attachment)
+     
+              ("notes" :components ("notes-org" "notes-static"))))
+
+(provide 'custom-init-org-projects)

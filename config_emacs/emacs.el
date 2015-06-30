@@ -10,7 +10,7 @@
 (custom-require 'custom-init-emacs-eim)
 (custom-require 'custom-init-yasnippet)
 (custom-require 'custom-init-lua-mode)
-
+(custom-require 'custom-init-org-projects)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/magit")
 (add-to-list 'load-path "~/.emacs.d/el-get/git-modes")
@@ -23,34 +23,6 @@
 
 ;;== emmet-mode ==
 (require 'emmet-mode)
-
-;; 禁止对global_gnu 等类似带有下划线的字符串做特殊处理
-(setq org-export-with-sub-superscripts nil)
-;; org 工程配置
-(setq org-publish-project-alist
-           '(("orgfiles"
-               :base-directory "~/wb/evblog/"
-               :base-extension "org"
-               :publishing-directory "~/wb/evblog_export/"
-               :publishing-function org-html-publish-to-html
-               :headline-levels 3
-               :select-tags t
-               :section-numbers t
-               :with-toc t
-               :html-head-include-default-style nil
-               :html-head "<link rel=\"stylesheet\" href=\"other/mystyle.css\" type=\"text/css\"/>"
-               :html-head-include-scripts nil ;; 导出html时禁止include default javascript snippets
-               :html-preamble t
-               :html-postamble nil)
-
-             ("org-static"
-              :base-directory "~/wb/evblog/"
-              :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
-              :publishing-directory "~/wb/evblog_export/"
-              :recursive t
-              :publishing-function org-publish-attachment)
-     
-              ("notes" :components ("orgfiles" "org-static"))))
 
 ;;== expand-region ==
 (add-to-list 'load-path "~/.emacs.d/el-get/expand-region")
