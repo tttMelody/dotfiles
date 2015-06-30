@@ -1,0 +1,3 @@
+--langdef=ORG
+--langmap=ORG:.org
+--regex-ORG=/^([\*]+)[ ]+(.*)/\2/h/ 

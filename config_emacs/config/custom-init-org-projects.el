@@ -3,22 +3,36 @@
 ;; org 工程配置
 (setq org-publish-project-alist
            '(("ontes-org"
-               :base-directory "~/wb/evblog/"
-               :base-extension "org"
-               :publishing-directory "~/wb/evblog_export/"
-               :publishing-function org-html-publish-to-html
-               :headline-levels 3
-               :select-tags t
-               :section-numbers t
-               :with-timestamps nil
-               :with-toc t
-               :html-head-include-default-style nil
-               :html-head-include-scripts nil ;; 导出html时禁止include default javascript snippets
-               :html-head "<link  rel=\"stylesheet\" href=\"fancy/bower_components/bootstrap/dist/css/bootstrap.min.css\" type=\"text/css\"/>
+			  :base-directory "~/wb/evblog/"
+			  :base-extension "org"
+			  :publishing-directory "~/wb/evblog_export/"
+			  :publishing-function org-html-publish-to-html
+			  :headline-levels 3
+			  :select-tags t
+			  :section-numbers t
+			  :with-timestamps t
+			  :with-toc t
+			  :with-tags t
+              :recursive t
+			  :makeindex t
+			  :html-head-include-default-style nil
+			  :html-head-include-scripts nil ;; 导出html时禁止include default javascript snippets
+			  :html-head "<link  rel=\"stylesheet\" href=\"fancy/bower_components/bootstrap/dist/css/bootstrap.min.css\" type=\"text/css\"/>
 <link  rel=\"stylesheet\" href=\"fancy/mystyle.css\" type=\"text/css\"/>
 <script type=\"text/javascript\" src=\"fancy/bower_components/bootstrap/dist/js/bootstrap.min.js\"></script>"
-               :html-preamble t
-               :html-postamble nil)
+			  :html-preamble t
+			  :html-postamble nil
+			  :auto-sitemap	t
+			  ;:sitemap-filename	 ;; default sitemap.html
+			  :sitemap-title "dmx-notes"
+			  ;:sitemap-function	org-publish-org-sitema
+			  ;:sitemap-sort-folders	
+			  ;:sitemap-sort-files	
+			  :sitemap-ignore-case t
+			  ;:sitemap-file-entry-format
+			  ;:sitemap-date-format	
+			  ;:sitemap-sans-extension
+			  )
 
              ("notes-static"
               :base-directory "~/wb/evblog/"
