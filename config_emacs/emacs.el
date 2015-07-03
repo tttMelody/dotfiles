@@ -39,6 +39,8 @@
 (setq scroll-conservatively 10000)
 (setq auto-window-vscroll nil)
 (global-linum-mode 1)
+;; when line is too long, wrap it to show
+(global-visual-line-mode t)
 
 ;; backup file setting
 (setq backup-directory-alist `((".*" . , "~/.emacs.d/backup")))
