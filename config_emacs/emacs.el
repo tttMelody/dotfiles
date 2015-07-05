@@ -29,9 +29,13 @@
 (require 'expand-region)
 ;(global-set-key (kbd "C-=") 'er/expand-region)
 
-;;== powerline ==
-;(require 'powerline)
-;(powerline-center-evil-theme)
+;;== smarttabs ==
+(add-to-list 'load-path "~/.emacs.d/el-get/smarttabs")
+(autoload 'smart-tabs-mode "smart-tabs-mode" "Intelligently indent with tabs, align with spaces!")
+(autoload 'smart-tabs-mode-enable "smart-tabs-mode")
+(autoload 'smart-tabs-advice "smart-tabs-mode")
+(autoload 'smart-tabs-insinuate "smart-tabs-mode")
+(smart-tabs-insinuate 'c 'c++ 'java 'javascript 'python )
 
 
 ;; common settings
@@ -56,13 +60,13 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
-(setq linum-format
-	  (lambda
-		(line)
-		(propertize
-		 (format
-		  (let
-			  ((w (length (number-to-string (count-lines (point-min) (point-max)))))) (concat "%" (number-to-string w) "d ")) line) 'face 'linum)))
+;(setq linum-format
+;      (lambda
+;        (line)
+;        (propertize
+;         (format
+;          (let
+;              ((w (length (number-to-string (count-lines (point-min) (point-max)))))) (concat "%" (number-to-string w) "d ")) line) 'face 'linum)))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

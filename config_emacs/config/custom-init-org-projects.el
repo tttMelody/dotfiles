@@ -1,7 +1,7 @@
 ;; 禁止对global_gnu 等类似带有下划线的字符串做特殊处理
 (setq org-export-with-sub-superscripts nil)
-(add-to-list 'load-path "~/.emacs.d/el-get/htmlize")
-(require 'htmlize)
+;; (add-to-list 'load-path "~/.emacs.d/el-get/htmlize")
+;; (require 'htmlize)
 ;; org 工程配置
 (setq org-publish-project-alist
            '(("ontes-org"
@@ -21,8 +21,9 @@
 			  :html-head-include-scripts nil ;; 导出html时禁止include default javascript snippets
 			  :html-head "<link  rel=\"stylesheet\" href=\"fancy/bower_components/bootstrap/dist/css/bootstrap.min.css\" type=\"text/css\"/>
 <link  rel=\"stylesheet\" href=\"fancy/mystyle.css\" type=\"text/css\"/>
+<script type=\"text/javascript\" src=\"fancy/bower_components/jquery/dist/jquery.min.js\"></script>
 <script type=\"text/javascript\" src=\"fancy/bower_components/bootstrap/dist/js/bootstrap.min.js\"></script>
-<script type=\"text/javascript\" src=\"fancy/bower_components/jquery/dist/jquery.min.js\"></script>"
+<script type=\"text/javascript\" src=\"fancy/custom_script.js\"></script>"
 			  :html-preamble t
 			  :html-postamble nil
 			  :auto-sitemap	t
@@ -46,6 +47,6 @@
      
               ("notes" :components ("notes-org" "notes-static"))))
 
-(setq org-src-fontify-natively t)
+;; (setq org-src-fontify-natively t)
 
 (provide 'custom-init-org-projects)

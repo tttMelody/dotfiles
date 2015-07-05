@@ -33,6 +33,7 @@
 			  molokai-theme
               rainbow-mode
 			  ido-ubiquitous
+			  smarttabs
               eim
               ;; emacs-eim
               git-gutter
