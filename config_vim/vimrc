@@ -124,6 +124,8 @@ Plugin 'csv.vim'
 Plugin 'vim-scripts/c.vim'
 Plugin 'mattn/emmet-vim' 
 "Plugin 'Gundo'
+" for better lua-indent
+Plugin 'raymond-w-ko/vim-lua-indent'
 Plugin 'EasyMotion'
 Plugin 'vim-indent-object'
 Plugin 'The-NERD-Commenter'
