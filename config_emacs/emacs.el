@@ -43,6 +43,14 @@
 (setq scroll-conservatively 10000)
 (setq auto-window-vscroll nil)
 (global-linum-mode 1)
+;; (setq linum-format "%d ")
+(setq linum-format
+     (lambda
+       (line)
+       (propertize
+        (format
+         (let
+             ((w (length (number-to-string (count-lines (point-min) (point-max)))))) (concat "%" (number-to-string w) "d ")) line) 'face 'linum)))
 ;; when line is too long, wrap it to show
 (global-visual-line-mode t)
 
@@ -57,16 +65,9 @@
 ;; enable syntax highlight
 (setq global-font-lock-mode 1)
 ;; set tab stop
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
+(setq default-indent-tabs-mode nil)
 (setq indent-line-function 'insert-tab)
-;(setq linum-format
-;      (lambda
-;        (line)
-;        (propertize
-;         (format
-;          (let
-;              ((w (length (number-to-string (count-lines (point-min) (point-max)))))) (concat "%" (number-to-string w) "d ")) line) 'face 'linum)))
+(setq default-tab-width 4)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

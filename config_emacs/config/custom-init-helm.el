@@ -53,7 +53,7 @@
       ;helm-moccur-always-search-in-current        t
       ;helm-tramp-verbose                         6
       helm-buffer-skip-remote-checking            t
-      ;helm-ff-file-name-history-use-recentf      t
+      helm-ff-file-name-history-use-recentf      t
       ;helm-follow-mode-persistent                t
       helm-apropos-fuzzy-match                    t
       helm-M-x-fuzzy-match                        t

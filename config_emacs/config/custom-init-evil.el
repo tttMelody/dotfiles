@@ -18,6 +18,8 @@
   "[" 'helm-buffers-list
   "]" 'helm-gtags-find-tag-from-here
   "gl" 'helm-gtags-select
+  "g]" 'helm-gtags-pop-stack
+  "i" 'helm-imenu
   "t" 'helm-mini
   "r" 'helm-recentf
   "p" 'helm-projectile-find-file
