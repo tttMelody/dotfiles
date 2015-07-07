@@ -30,6 +30,7 @@
 			  ;ido-vertical-mode
               powerline
               emmet-mode
+			  swift-mode
 			  molokai-theme
               rainbow-mode
 			  ido-ubiquitous

@@ -24,6 +24,8 @@
 ;;== emmet-mode ==
 (require 'emmet-mode)
 
+(require 'swift-mode)
+
 ;;== expand-region ==
 (add-to-list 'load-path "~/.emacs.d/el-get/expand-region")
 (require 'expand-region)
