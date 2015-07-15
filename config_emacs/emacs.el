@@ -11,6 +11,7 @@
 (custom-require 'custom-init-yasnippet)
 (custom-require 'custom-init-lua-mode)
 (custom-require 'custom-init-org-projects)
+(custom-require 'custom-init-theme)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/magit")
 (add-to-list 'load-path "~/.emacs.d/el-get/git-modes")
@@ -39,7 +40,6 @@
 (autoload 'smart-tabs-insinuate "smart-tabs-mode")
 (smart-tabs-insinuate 'c 'c++ 'java 'javascript 'python )
 
-
 ;; common settings
 (setq scroll-step 1)
 (setq scroll-conservatively 10000)
@@ -55,6 +55,7 @@
              ((w (length (number-to-string (count-lines (point-min) (point-max)))))) (concat "%" (number-to-string w) "d ")) line) 'face 'linum)))
 ;; when line is too long, wrap it to show
 (global-visual-line-mode t)
+(setq org-src-fontify-natively t)
 
 ;; backup file setting
 (setq backup-directory-alist `((".*" . , "~/.emacs.d/backup")))
@@ -79,7 +80,7 @@
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(custom-safe-themes
    (quote
-	("c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" default)))
+ 	("c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" default)))
  '(ido-mode (quote both) nil (ido))
  '(menu-bar-mode nil)
  '(tool-bar-mode nil))

@@ -30,8 +30,8 @@
 			  ;ido-vertical-mode
               powerline
               emmet-mode
+			  color-theme ;; org-color-theme
 			  swift-mode
-			  molokai-theme
               rainbow-mode
 			  ido-ubiquitous
 			  smarttabs

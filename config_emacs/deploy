@@ -27,3 +27,6 @@ fi
 if [[ ! -L ~/.emacs.d/self_install ]]; then
 	ln -sif ~/dotfiles/config_emacs/self_install ~/.emacs.d/self_install
 fi
+if [[ ! -L ~/.emacs.d/themes ]]; then
+	ln -sif ~/dotfiles/config_emacs/themes ~/.emacs.d/themes
+fi
