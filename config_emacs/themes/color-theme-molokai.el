@@ -98,12 +98,12 @@
      (outline-6 ((t (:foreground "#66D9EF"))))
      (outline-7 ((t (:foreground "#F92672"))))
      (outline-8 ((t (:foreground "#A6E22E"))))
-     (org-block-begin-line
-       ((t (:foreground "#008ED1" :background "#CDCDB6"))))
+     ;(org-block-begin-line
+     ;  ((t (:foreground "#008ED1" :background "#CDCDB6"))))
      (org-block-background
        ((t (:background "#3B3B3B"))))
-     (org-block-end-line
-       ((t (:foreground "#008ED1" :background "#CDCDB6"))))
+     ;(org-block-end-line
+     ;  ((t (:foreground "#008ED1" :background "#CDCDB6"))))
      (secondary-selection ((t (:background "#272822"))))
      (show-paren-match-face ((t (:foreground "#000000" :background "#FD971F"))))
      (show-paren-mismatch-face ((t (:foreground "#960050" :background "#1E0010"))))

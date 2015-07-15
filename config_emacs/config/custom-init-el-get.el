@@ -22,9 +22,9 @@
 			  evil-leader
 			  evil-org-mode
               evil-nerd-commenter
+              evil-matchit
               ;avy ;; need by evil-easymotion
               ;evil-easymotion
-              evil-matchit
 			  expand-region
               ;company-mode
 			  ;ido-vertical-mode
@@ -38,6 +38,7 @@
               eim
               ;; emacs-eim
               git-gutter
+			  magit
 			  helm
               ;; helm-dash
               helm-gtags

@@ -13,8 +13,8 @@
 (custom-require 'custom-init-theme)
 (custom-require 'custom-init-org-projects)
 
-(add-to-list 'load-path "~/.emacs.d/el-get/magit")
-(add-to-list 'load-path "~/.emacs.d/el-get/git-modes")
+;(add-to-list 'load-path "~/.emacs.d/el-get/magit")
+;(add-to-list 'load-path "~/.emacs.d/el-get/git-modes")
 ;(add-to-list 'load-path "~/.emacs.d/el-get/avy")
 
 ;;== auto-complete ==
