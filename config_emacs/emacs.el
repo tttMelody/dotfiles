@@ -17,10 +17,8 @@
 ;(add-to-list 'load-path "~/.emacs.d/el-get/git-modes")
 ;(add-to-list 'load-path "~/.emacs.d/el-get/avy")
 
-;;== auto-complete ==
-(require 'auto-complete)
-(require 'auto-complete-config)
-(ac-config-default)
+;;== company-mode ==
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;;== emmet-mode ==
 (require 'emmet-mode)

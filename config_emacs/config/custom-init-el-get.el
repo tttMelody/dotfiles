@@ -17,7 +17,6 @@
 			  lua-mode 
 			  projectile 
 			  yasnippet 
-			  auto-complete
 			  evil
 			  evil-leader
 			  evil-org-mode
@@ -26,7 +25,7 @@
               ;avy ;; need by evil-easymotion
               ;evil-easymotion
 			  expand-region
-              ;company-mode
+              company-mode
 			  ;ido-vertical-mode
               powerline
               emmet-mode
