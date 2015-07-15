@@ -10,8 +10,8 @@
 (custom-require 'custom-init-emacs-eim)
 (custom-require 'custom-init-yasnippet)
 (custom-require 'custom-init-lua-mode)
-(custom-require 'custom-init-org-projects)
 (custom-require 'custom-init-theme)
+(custom-require 'custom-init-org-projects)
 
 (add-to-list 'load-path "~/.emacs.d/el-get/magit")
 (add-to-list 'load-path "~/.emacs.d/el-get/git-modes")
