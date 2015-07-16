@@ -22,7 +22,7 @@
   "i" 'helm-imenu
   "t" 'helm-mini
   "r" 'helm-recentf
-  "p" 'helm-projectile-find-file
+  "p" 'projectile-find-file
   "k" 'kill-buffer)
 
 ;;== evil-nerd-comment with evil-leader ==
