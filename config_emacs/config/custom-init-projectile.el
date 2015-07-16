@@ -3,7 +3,7 @@
 (projectile-global-mode)
 
 (setq projectile-completion-system 'helm)
-;(helm-projectile-on)
+(helm-projectile-on)
 (setq projectile-globally-ignored-file-suffixes 
   '(;; elisp
 	"elc"
