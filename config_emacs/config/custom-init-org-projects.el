@@ -3,6 +3,13 @@
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/htmlize")
 ;; (require 'htmlize)
 ;; org 工程配置
+
+(setq org-tag-alist '((:startgroup . nil)
+					  ("work" . ?w)
+					  ("life" . ?f)
+					  ("linux" . ?l)
+					  ("learn" . ?e)
+					  (:endgroup . nil)))
 (setq org-publish-project-alist
            '(("ontes-org"
 			  :base-directory "~/wb/evblog/"

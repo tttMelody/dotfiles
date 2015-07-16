@@ -15,6 +15,7 @@
 (setq my-packages
 	(append '(slime 
 			  lua-mode 
+			  php-mode
 			  projectile 
 			  yasnippet 
 			  evil
