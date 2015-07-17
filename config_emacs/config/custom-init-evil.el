@@ -23,7 +23,11 @@
   "t" 'helm-mini
   "r" 'helm-recentf
   "p" 'projectile-find-file
-  "k" 'kill-buffer)
+  "k" 'kill-buffer
+  "dj" 'org-timestamp-down-day
+  "dk" 'org-timestamp-up-day
+  "mj" 'org-timestamp-down
+  "mk" 'org-timestamp-up)
 
 ;;== evil-nerd-comment with evil-leader ==
 (evilnc-default-hotkeys)

@@ -56,4 +56,8 @@
 
 ;; (setq org-src-fontify-natively t)
 
+(setq-default org-display-custom-times t)
+(setq org-time-stamp-formats '("<%Y-%m-%d %A>" . "<%Y-%m-%d %A %H:%M>"))
+(setq org-time-stamp-custom-formats  '("<%Y-%m-%d %A>" . "<%Y-%m-%d %A %H:%M>"))
+
 (provide 'custom-init-org-projects)

@@ -2,6 +2,7 @@
 (add-to-list 'load-path "~/.emacs.d/config")
 (require 'custom-emacs)
 
+;;== load important plugins ==
 (custom-require 'custom-init-el-get)
 (custom-require 'custom-init-slime)
 (custom-require 'custom-init-helm)
@@ -12,10 +13,7 @@
 (custom-require 'custom-init-lua-mode)
 (custom-require 'custom-init-theme)
 (custom-require 'custom-init-org-projects)
-
-;(add-to-list 'load-path "~/.emacs.d/el-get/magit")
-;(add-to-list 'load-path "~/.emacs.d/el-get/git-modes")
-;(add-to-list 'load-path "~/.emacs.d/el-get/avy")
+(custom-require 'custom-init-cal-china-x)
 
 ;;== company-mode ==
 (add-hook 'after-init-hook 'global-company-mode)
@@ -23,6 +21,7 @@
 ;;== emmet-mode ==
 (require 'emmet-mode)
 
+;;== swift-mode ==
 (require 'swift-mode)
 
 ;;== expand-region ==
@@ -69,6 +68,9 @@
 (setq default-indent-tabs-mode nil)
 (setq indent-line-function 'insert-tab)
 (setq default-tab-width 4)
+;; make org timestamp show Chinese format
+(set-locale-environment "zh_CN.utf-8")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
