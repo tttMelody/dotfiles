@@ -1,0 +1,4 @@
+(:name org-journal
+   :url "https://github.com/bastibe/org-journal.git"
+   :type git
+   :features org-journal)

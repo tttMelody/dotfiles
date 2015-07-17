@@ -36,6 +36,7 @@
 			  ido-ubiquitous
 			  smarttabs
               eim
+			  org-journal
               ;; emacs-eim
               git-gutter
 			  magit
