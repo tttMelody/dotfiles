@@ -36,6 +36,7 @@
 			  ido-ubiquitous
 			  smarttabs
               eim
+			  cal-china-x
 			  org-journal
               ;; emacs-eim
               git-gutter
