@@ -16,6 +16,11 @@
 (custom-require 'custom-init-org-journal)
 (custom-require 'custom-init-cal-china-x)
 
+;== powerline ==
+(require 'powerline)
+(powerline-center-evil-theme)
+(setq powerline-default-separator 'arrow)
+
 ;;== company-mode ==
 (add-hook 'after-init-hook 'global-company-mode)
 
