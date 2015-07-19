@@ -42,6 +42,7 @@
               git-gutter
 			  magit
 			  helm
+			  helm-swoop
               ;; helm-dash
               helm-gtags
               helm-ag)))
