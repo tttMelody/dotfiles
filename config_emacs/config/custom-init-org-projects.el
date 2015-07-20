@@ -91,4 +91,10 @@ This function makes sure that dates are aligned for easy reading."
 ;; add files to agenda mode 
 (setq org-agenda-files '("~/wb/gtd"))
 
+;;== todo setting ==
+(setq org-todo-keywords
+	  '((sequence "TODO(t)" "DOING(o)" "|" "DONE(d)")
+		(sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
+		(sequence "|" "CANCELED(c)")))
+
 (provide 'custom-init-org-projects)
