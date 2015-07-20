@@ -9,6 +9,7 @@
 
 (evil-mode 1)
 
+(setq evil-flash-delay 2)
 
 ;;== evil-leader ==
 (require 'evil-leader)

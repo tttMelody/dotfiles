@@ -19,7 +19,6 @@
 ;== powerline ==
 (require 'powerline)
 (powerline-center-evil-theme)
-(setq powerline-default-separator 'arrow)
 
 ;;== company-mode ==
 (add-hook 'after-init-hook 'global-company-mode)
