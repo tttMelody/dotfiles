@@ -86,7 +86,7 @@ This function makes sure that dates are aligned for easy reading."
 		 (weekstring (if (= day-of-week 1)
 						 (format " W%02d" iso-week)
 					   "")))
-	(format "%-10s %4d/%s/%2d %s" dayname year monthname day weekstring)))
+	(format "%-10s %4d/%s/%02d %s" dayname year monthname day weekstring)))
 
 ;; add files to agenda mode 
 (setq org-agenda-files '("~/wb/gtd"))
