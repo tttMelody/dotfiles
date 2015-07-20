@@ -34,6 +34,10 @@
 (require 'expand-region)
 ;(global-set-key (kbd "C-=") 'er/expand-region)
 
+;;== auto-save-place ==
+(require 'saveplace)
+(setq-default save-place t)
+
 ;;== smarttabs ==
 (add-to-list 'load-path "~/.emacs.d/el-get/smarttabs")
 (autoload 'smart-tabs-mode "smart-tabs-mode" "Intelligently indent with tabs, align with spaces!")
