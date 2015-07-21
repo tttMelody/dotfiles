@@ -51,8 +51,9 @@
 ;; 自定义的 package
 ;; 如果package和el-get recipes 中有重名，则会重写其中的属性
 (el-get-bundle csharp-mode
-	:url "https://github.com/josteink/csharp-mode.git"
-	:type git
-	:features csharp-mode)
+  :url "https://github.com/josteink/csharp-mode.git"
+  :type git
+  :features csharp-mode)
+
 
 (provide 'custom-init-el-get)
