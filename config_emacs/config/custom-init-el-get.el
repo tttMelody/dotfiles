@@ -32,6 +32,8 @@
               emmet-mode
 			  color-theme ;; org-color-theme
 			  swift-mode
+			  highlight-parentheses
+			  autopair
               rainbow-mode
 			  ido-ubiquitous
 			  smarttabs
