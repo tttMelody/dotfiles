@@ -5,11 +5,19 @@
 ;; org 工程配置
 
 (setq org-tag-alist '((:startgroup . nil)
-					  ("work" . ?w)
-					  ("life" . ?f)
+					  ("@work" . ?w)
+					  ("@life" . ?L)
+					  ("@learn" . ?l)
+					  ("@programming" . nil)
+					  (:endgroup . nil)
 					  ("linux" . ?l)
-					  ("learn" . ?e)
-					  (:endgroup . nil)))
+					  ("unity". ?u)
+					  ("emacs" . ?E)
+					  ("common_lisp" . nil)
+					  ("lua" . nil)
+					  ("c/c++" . nil)
+					  ("opengl" . nil)))
+(org-set-local 'org-tag-alist org-tag-alist)
 (setq org-publish-project-alist
            '(("ontes-org"
 			  :base-directory "~/wb/evblog/"

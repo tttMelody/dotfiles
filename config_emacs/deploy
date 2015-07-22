@@ -17,7 +17,7 @@
 #      REVISION:  ---
 #===============================================================================
 
-ln -sif ~/dotfiles/config_emacs/emacs.el ~/.emacs
+ln -sif ~/dotfiles/config_emacs/init.el ~/.emacs.d/init.el
 if [[ ! -L ~/.emacs.d/config ]]; then
 	ln -sif ~/dotfiles/config_emacs/config ~/.emacs.d/config
 fi
