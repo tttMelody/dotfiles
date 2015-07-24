@@ -23,6 +23,7 @@
 			  evil-org-mode
               evil-nerd-commenter
               evil-matchit
+              auctex
               ;avy ;; need by evil-easymotion
               ;evil-easymotion
 			  expand-region

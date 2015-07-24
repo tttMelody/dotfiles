@@ -17,7 +17,9 @@
 					  ("lua" . nil)
 					  ("c/c++" . nil)
 					  ("opengl" . nil)))
-(org-set-local 'org-tag-alist org-tag-alist)
+(setq org-use-fast-todo-selection t)
+(setq org-use-fast-tag-selection t)
+
 (setq org-publish-project-alist
            '(("ontes-org"
 			  :base-directory "~/wb/evblog/"
@@ -105,4 +107,11 @@ This function makes sure that dates are aligned for easy reading."
 		(sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
 		(sequence "|" "CANCELED(c)")))
 
+;;== org-babel setting ==
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (sh . t)
+   (lisp . t)
+   ))
 (provide 'custom-init-org-projects)

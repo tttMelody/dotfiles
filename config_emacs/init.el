@@ -34,6 +34,11 @@
 (require 'expand-region)
 ;(global-set-key (kbd "C-=") 'er/expand-region)
 
+;;==tex setting ==
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq TeX-save-query nil)
+
 ;;== auto-save-place ==
 (require 'saveplace)
 (setq-default save-place t)
@@ -65,20 +70,21 @@
   (lambda ()
 	(highlight-parentheses-mode t)))
 (global-highlight-parentheses-mode t)
+(autopair-global-mode t)
 
 ;; common settings
 (setq scroll-step 1)
 (setq scroll-conservatively 10000)
 (setq auto-window-vscroll nil)
-(global-linum-mode 1)
+;(global-linum-mode 1)
 ;; (setq linum-format "%d ")
-(setq linum-format
-     (lambda
-       (line)
-       (propertize
-        (format
-         (let
-             ((w (length (number-to-string (count-lines (point-min) (point-max)))))) (concat "%" (number-to-string w) "d ")) line) 'face 'linum)))
+;(setq linum-format
+;     (lambda
+;       (line)
+;       (propertize
+;        (format
+;         (let
+;             ((w (length (number-to-string (count-lines (point-min) (point-max)))))) (concat "%" (number-to-string w) "d ")) line) 'face 'linum)))
 ;; when line is too long, wrap it to show
 (global-visual-line-mode t)
 (setq org-src-fontify-natively t)
