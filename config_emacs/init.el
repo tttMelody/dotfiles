@@ -15,6 +15,7 @@
 (custom-require 'custom-init-org-projects)
 (custom-require 'custom-init-org-journal)
 (custom-require 'custom-init-cal-china-x)
+(custom-require 'custom-init-auctex)
 
 ;== powerline ==
 (require 'powerline)
@@ -33,11 +34,6 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/expand-region")
 (require 'expand-region)
 ;(global-set-key (kbd "C-=") 'er/expand-region)
-
-;;==tex setting ==
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-(setq TeX-save-query nil)
 
 ;;== auto-save-place ==
 (require 'saveplace)
