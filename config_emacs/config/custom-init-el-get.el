@@ -24,6 +24,8 @@
               evil-nerd-commenter
               evil-matchit
               auctex
+			  company-auctex
+			  predictive
               ;avy ;; need by evil-easymotion
               ;evil-easymotion
 			  expand-region
