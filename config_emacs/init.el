@@ -15,6 +15,7 @@
 (custom-require 'custom-init-org-projects)
 (custom-require 'custom-init-org-journal)
 (custom-require 'custom-init-cal-china-x)
+(custom-require 'custom-init-auctex)
 
 ;== powerline ==
 (require 'powerline)
@@ -33,22 +34,6 @@
 (add-to-list 'load-path "~/.emacs.d/el-get/expand-region")
 (require 'expand-region)
 ;(global-set-key (kbd "C-=") 'er/expand-region)
-
-;;==tex setting ==
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
-(setq TeX-auto-save t)
-(setq TeX-auto-untabify t)
-(setq TeX-parse-self t)
-(setq TeX-save-query nil)
-(setq-default TeX-master nil)
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
-(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
-(add-hook 'latex-mode-hook 'turn-on-reftex)
-
-(require 'company-auctex)
-(company-auctex-init)
-
 
 ;;== auto-save-place ==
 (require 'saveplace)
