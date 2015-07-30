@@ -43,7 +43,7 @@ git_dirty() {
 # Display information about the current repository
 #
 repo_information() {
-	echo "%F{red}%n%f@%F{blue}%m%f:%F{blue}${vcs_info_msg_0_%%/.} %F{8}$vcs_info_msg_1_`git_dirty` $vcs_info_msg_2_%f"
+	echo "%(1j.[%j].)%F{red}%n%f@%F{blue}%m%f:%F{blue}${vcs_info_msg_0_%%/.} %F{8}$vcs_info_msg_1_`git_dirty` $vcs_info_msg_2_%f"
 	#echo "%F{red}%n%f@%F{blue}%m%f:%F{blue}%~ %F{8}$vcs_info_msg_1_`git_dirty` $vcs_info_msg_2_%f"
 }
 
@@ -66,7 +66,8 @@ preexec() {
 #
 precmd() {
 	vcs_info # Get version control info before we start outputting stuff
-	print -P "\n$(repo_information) %F{yellow}$(cmd_exec_time)%f"
+	#print -P "\n$(repo_information) %F{yellow}$(cmd_exec_time)%f"
+	print -P "\n$(repo_information)"
 }
 
 # Define prompts
