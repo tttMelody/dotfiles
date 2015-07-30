@@ -25,9 +25,7 @@
               evil-matchit
               auctex
 			  company-auctex
-			  predictive
-              ;avy ;; need by evil-easymotion
-              ;evil-easymotion
+			  ;; predictive ;; package for latex completion
 			  expand-region
               company-mode
 			  ;ido-vertical-mode
@@ -42,7 +40,7 @@
 			  smarttabs
               eim
 			  cal-china-x
-			  org-journal
+			  ;; org-journal ;; has encryption problem
               ;; emacs-eim
               git-gutter
 			  magit

@@ -13,7 +13,7 @@
 (custom-require 'custom-init-lua-mode)
 (custom-require 'custom-init-theme)
 (custom-require 'custom-init-org-projects)
-(custom-require 'custom-init-org-journal)
+;; (custom-require 'custom-init-org-journal)
 (custom-require 'custom-init-cal-china-x)
 (custom-require 'custom-init-auctex)
 
