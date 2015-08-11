@@ -26,6 +26,8 @@
 
 ;;== emmet-mode ==
 (require 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'html-mode-hook 'emmet-mode)
 
 ;;== swift-mode ==
 (require 'swift-mode)
