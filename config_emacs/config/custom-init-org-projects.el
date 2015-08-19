@@ -108,6 +108,8 @@ This function makes sure that dates are aligned for easy reading."
 		(sequence "|" "CANCELED(c)")))
 
 ;;== org-babel setting ==
+(setq org-babel-sh-command "/opt/local/bin/bash")
+(setq org-hide-leading-stars t)
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((emacs-lisp . t)

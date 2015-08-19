@@ -30,7 +30,7 @@ bind e new-window -n '~/.tmux.conf' '${EDITOR:-vim} ~/.tmux.conf && tmux source 
 
 # reload configuration
 bind r source-file ~/.tmux.conf \; display '~/.tmux.conf sourced'
-bind z confirm-befor -p "kill-session #S ? (y/n)" kill-session 
+bind z confirm-before -p "kill-session #S ? (y/n)" kill-session 
 
 # see https://github.com/ChrisJohnsen/tmux-MacOSX-pasteboard
 #if 'which -s reattach-to-user-namespace' 'set -g default-command "tmux rename-window initializing; tmux set -w automatic-rename; reattach-to-user-namespace $SHELL -l"'
@@ -105,7 +105,7 @@ bind L select-pane -R \; resize-pane -Z
 bind K select-pane -U \; resize-pane -Z
 bind J select-pane -D \; resize-pane -Z
 # vim interaction
-# 当发现pane中有vim运行的时候，会将c-h/j/k/l 发送给vim
+# #当发现pane中有vim运行的时候，会将c-h/j/k/l 发送给vim
 #bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-h) || ( tmux select-pane -L && ~/bin/changeInputSource 'com.apple.keylayout.US' ) "
 #bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-j) || ( tmux select-pane -D && changeInputSource 'com.apple.keylayout.US' )"
 #bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-k) || ( tmux select-pane -U && changeInputSource 'com.apple.keylayout.US' )"

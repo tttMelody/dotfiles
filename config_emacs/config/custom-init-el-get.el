@@ -25,6 +25,7 @@
               evil-matchit
               auctex
 			  company-auctex
+			  applescript-mode
 			  ;; predictive ;; package for latex completion
 			  expand-region
               company-mode
