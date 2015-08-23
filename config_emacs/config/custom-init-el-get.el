@@ -32,6 +32,7 @@
 			  ;ido-vertical-mode
               powerline
               emmet-mode
+			  ruby-mode
 			  color-theme ;; org-color-theme
 			  swift-mode
 			  highlight-parentheses
