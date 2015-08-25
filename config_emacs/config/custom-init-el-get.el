@@ -32,6 +32,7 @@
 			  ;ido-vertical-mode
               powerline
               emmet-mode
+			  js2-mode ;; for javascript
 			  ruby-mode
 			  color-theme ;; org-color-theme
 			  swift-mode
