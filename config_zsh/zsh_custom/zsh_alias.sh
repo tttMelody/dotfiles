@@ -38,6 +38,7 @@ alias dphoho='ssh deploy@hohoplay.com'
 #tetris
 alias tphp="cd /data/wwwroot/tetris/apps/mingxin"
 alias tclient="cd /data/tetris/client/"
-alias tlua="cd /data/tetris/client/Resources/res/"
+alias tlua="cd /data/tetris/client/Resources/src/"
+alias tdoc="cd ~/Documents/tetris/Tetris/"
 
 
