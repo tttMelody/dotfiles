@@ -14,6 +14,7 @@ fi
 
 ln -sf $ZSHCONFIG_ROOT/zshrc ~/.zshrc
 ln -sf $ZSHCONFIG_ROOT/zsh_custom ~/.zsh_custom
-ln -sf $ZSHCONFIG_ROOT/zsh_alias.sh ~/.zsh_alias.sh
-ln -sf $ZSHCONFIG_ROOT/zsh_custom/zsh_alias.sh ~/.zsh_alias_custom.sh
+ln -sf $ZSHCONFIG_ROOT/zsh_alias.zsh ~/.zsh_alias.zsh
+ln -sf $ZSHCONFIG_ROOT/zsh_custom/zsh_alias.zsh ~/.zsh_alias_custom.zsh
+. ~/.zprofile
 
