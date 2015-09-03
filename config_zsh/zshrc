@@ -61,15 +61,22 @@ promptinit
 autoload -U colors && colors
 
 SOURCE_FILES=(
-	~/.zsh_prompt.sh \
-	~/.zsh_alias.sh \
-	~/.zsh_alias_custom.sh \
-	~/.zsh_path.sh)
+	~/.zsh_prompt.zsh \
+	~/.zsh_alias.zsh \
+	~/.zsh_path.zsh)
 
 for file in $SOURCE_FILES[@]
 do
 	[[ -f $file ]] && . $file 
 done
+
+if [[ -e ~/.zsh_custom ]]; then
+	for file in $(ls ~/.zsh_custom) 
+	do
+		file="~/.zsh_custom/${file}"
+		[[ -f $file ]] && source $file
+	done
+fi
 
 #bindkey to emacs mode
 bindkey -e
@@ -154,3 +161,5 @@ export PATH=$COCOS_CONSOLE_ROOT:$PATH
 # Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
 export COCOS_TEMPLATES_ROOT=/data/cocos2d-x-3.7.1/templates
 export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
