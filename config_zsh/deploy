@@ -13,8 +13,8 @@ if [[ ! -f ~/.zprofile ]]; then
 fi
 
 ln -sf $ZSHCONFIG_ROOT/zshrc ~/.zshrc
-ln -sf $ZSHCONFIG_ROOT/zsh_custom ~/.zsh_custom
+if [[ ! -L ~/.zsh_custom ]]; then 
+	ln -sf $ZSHCONFIG_ROOT/zsh_custom ~/.zsh_custom
+fi
 ln -sf $ZSHCONFIG_ROOT/zsh_alias.zsh ~/.zsh_alias.zsh
-ln -sf $ZSHCONFIG_ROOT/zsh_custom/zsh_alias.zsh ~/.zsh_alias_custom.zsh
-. ~/.zprofile
 
