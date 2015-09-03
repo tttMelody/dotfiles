@@ -1,3 +1,4 @@
+#!/bin/zsh
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -73,8 +74,8 @@ done
 if [[ -e ~/.zsh_custom ]]; then
 	for file in $(ls ~/.zsh_custom) 
 	do
-		file="~/.zsh_custom/${file}"
-		[[ -f $file ]] && source $file
+		file=~/.zsh_custom/${file}
+		source $file
 	done
 fi
 
