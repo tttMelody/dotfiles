@@ -153,7 +153,7 @@ Plugin 'vim-scripts/applescript.vim'
 "Plugin 'vim-scripts/LargeFile'
 Plugin 'vim-scripts/vimwiki'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'airblade/vim-gitgutter'
+"Plugin 'airblade/vim-gitgutter'
 Plugin 'jceb/vim-orgmode'
 call vundle#end()
 filetype plugin indent on 
@@ -222,8 +222,8 @@ let g:gundo_preview_height=40
 let g:gundo_right=1 
 nnoremap <F5> :GundoToggle<CR> 
 "=====================vim-gitgutter
-nmap [a <Plug>GitGutterPrevHunk
-nmap ]a <Plug>GitGutterNextHunk
+"nmap [a <Plug>GitGutterPrevHunk
+"nmap ]a <Plug>GitGutterNextHunk
 "nmap <Leader>g <Plug>GitGutterLineHighlightsToggle
 let g:gitgutter_diff_args = '-w'
 "=====================easymotion
