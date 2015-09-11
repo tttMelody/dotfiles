@@ -16,16 +16,6 @@ alias s2upanim='svn up /data/sanguo2/program/Assets/anim'
 alias s2upconfig='svn up /data/sanguo2/program/config'
 alias s2phpconfig='cd /data/sanguo2/tmp/package/phpconfig/'
 
-#wtcg
-alias wasset="cd /data/wtcg/client/Assets/"
-alias ws="cd /data/wtcg/client/Assets/Script/"
-alias wclient="cd /data/wtcg/client/"
-alias wlua="cd /data/wtcg/client/Assets/Slua/Resources/"
-alias wexpconfig="python /data/wtcg/client/tool.py cfg q"
-alias whost="ssh pirate@192.168.1.181"
-alias wconfig="cd /data/wtcg/client/Assets/Resources/config"
-alias wserver='cd /data/wtcg/server/'
-
 #raid
 alias rclient="cd /data/raid/client/"
 alias rlua="cd /data/raid/client/Assets/Slua/Resources"
@@ -38,7 +28,7 @@ alias dphoho='ssh deploy@hohoplay.com'
 #tetris
 alias tphp="cd /data/wwwroot/tetris/apps/mingxin"
 alias tclient="cd /data/tetris/client/"
-alias tlua="cd /data/tetris/client/Resources/src/"
+alias tlua="cd /data/tetris/script"
 alias tdoc="cd ~/Documents/tetris/Tetris/"
 
 

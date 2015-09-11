@@ -25,7 +25,7 @@ alias ll='ls -dlh ^*.(meta|csproj|userprefs|sln|unityproj|csproj)'
 alias ld='ls -lhG -d *(/)'
 alias op='open'
 alias bs='source ~/.bash_profile'
-alias emax='emacsclient -t'
+alias e='emacsclient -t'
 
 if [[ $unamestr == "Darwin" ]]; then
 	platform="osx"
