@@ -72,3 +72,26 @@ cho() {
 	fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
 }
 
+# fzf quickly access to emacs buffer
+febf() 
+{
+	buffers=$(/opt/local/bin/emacsclient -e "(mapcar #'(lambda(x) (buffer-name x)) (buffer-list))")
+	buffers=$(echo $buffers |sed -E -e "s/\(//g" \
+		-e "s/\)//g" \
+		-e "s/\" \"/,/g" \
+		-e "s/\"//g" \
+		-e "s/[\ ]?\*([^,])*\*[-_a-zA-Z0-9]*[,]?//g" \
+		-e "s/[^,]*mode,//g" \
+		-e "s/,$//g")
+
+	#bash using : read -a
+	IFS=', ' read -A bname_arr <<< "$buffers"
+	target_buffer=$( \
+	for b in ${bname_arr[@]}
+	do
+		echo $b
+	done | fzf-tmux --query="$1" --select-1) && \
+		/opt/local/bin/emacsclient -t -e "(switch-to-buffer \"${target_buffer}\")"
+
+}
+

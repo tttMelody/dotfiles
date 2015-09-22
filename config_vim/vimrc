@@ -244,7 +244,7 @@ let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_show_hidden = 0 
 let g:ctrlp_map = '\p' 
 let g:ctrlp_cmd = 'CtrlP' 
-let g:ctrlp_regexp = 1
+let g:ctrlp_regexp = 0
 let g:ctrlp_custom_ignore = { 
 	\ 'dir': '\v[\/]\.(git|svn)$', 
 	\ 'file': '\v\.(log|jpg|png|jpeg|meta|prefab)$', 
