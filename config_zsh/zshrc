@@ -63,8 +63,7 @@ autoload -U colors && colors
 
 SOURCE_FILES=(
 	~/.zsh_prompt.zsh \
-	~/.zsh_alias.zsh \
-	~/.zsh_path.zsh)
+	~/.zsh_alias.zsh)
 
 for file in $SOURCE_FILES[@]
 do
