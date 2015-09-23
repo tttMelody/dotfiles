@@ -84,8 +84,12 @@ febf()
 		-e "s/[^,]*mode,//g" \
 		-e "s/,$//g")
 
-	#bash using : read -a
-	IFS=', ' read -A bname_arr <<< "$buffers"
+	bname_arra=()
+	if [[ $SHELL == *zsh ]]; then
+		IFS=', ' read -A bname_arr <<< "$buffers"
+	elif [[ $SHELL == *bash ]]; then
+		IFS=', ' read -a bname_arr <<< "$buffers"
+	fi
 	target_buffer=$( \
 	for b in ${bname_arr[@]}
 	do
