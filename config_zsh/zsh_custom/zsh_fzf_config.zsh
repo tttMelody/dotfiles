@@ -75,8 +75,16 @@ cho() {
 # fzf quickly access to emacs buffer
 febf() 
 {
-	buffers=$(/opt/local/bin/emacsclient -e "(mapcar #'(lambda(x) (buffer-name x)) (buffer-list))")
-	buffers=$(echo $buffers |sed -E -e "s/\(//g" \
+	#NOTICE: emacs must work in daemon mode
+	local EMACSCLIENT=$(which emacsclient)
+	buffers=$($EMACSCLIENT -e "(mapcar #'(lambda(x) (buffer-name x)) (buffer-list))")
+	local SYSTEM_TYPE=$(uname -a | awk '{print $1}')
+	local sed_regex_opt="-E"
+	if [[ $SYSTEM_TYPE == Linux ]]; then
+		sed_regex_opt="-r"
+	fi
+
+	buffers=$(echo $buffers |sed $sed_regex_opt -e "s/\(//g" \
 		-e "s/\)//g" \
 		-e "s/\" \"/,/g" \
 		-e "s/\"//g" \
@@ -90,12 +98,17 @@ febf()
 	elif [[ $SHELL == *bash ]]; then
 		IFS=', ' read -a bname_arr <<< "$buffers"
 	fi
-	target_buffer=$( \
-	for b in ${bname_arr[@]}
-	do
-		echo $b
-	done | fzf-tmux --query="$1" --select-1) && \
-		/opt/local/bin/emacsclient -t -e "(switch-to-buffer \"${target_buffer}\")"
 
+	target_buffer_info=$(for b in ${bname_arr[@]}
+	do
+		bfilename=$(emacsclient -e "(with-current-buffer \"${b}\" (buffer-file-name))")
+		if [[ $bfilename != nil ]] then
+			info=$(printf "%-30s  %s" ${b} ${bfilename})
+			echo $info
+		fi
+	done| fzf-tmux --query="$1" --select-1) && \
+		target_buffer=$(echo $target_buffer_info |awk '{print $1}') && \
+		$EMACSCLIENT -t -e "(switch-to-buffer \"${target_buffer}\")"
 }
+
 
