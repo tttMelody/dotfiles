@@ -1,5 +1,6 @@
 export FZF_DEFAULT_OPTS='
---extended
+--extended-exact
++s
 --bind ctrl-f:page-down,ctrl-b:page-up
 --color fg:252,bg:233,hl:220,fg+:252,bg+:235,hl+:226
 --color info:144,prompt:161,spinner:135,pointer:135,marker:118
@@ -8,13 +9,16 @@ export FZF_DEFAULT_OPTS='
 # for tmux select-pane
 ftpane () {
 	local panes current_window target target_window target_pane
-	panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
+	#panes=$(tmux list-panes -s -F '#I:#P - #{pane_current_path} #{pane_current_command}')
+	panes=$(tmux list-panes -a -F \
+		'#{?session_attached,*,}#{session_name} #W#{?window_active,*,} #{pane_current_command} #{pane_current_path} #P #I'| \
+		awk '{printf("%10s - %-8s  %-8s %-50s %5s %5s\n",$1,$2,$3,$4,$5,$6)}')
 	current_window=$(tmux display-message  -p '#I')
 
 	target=$(echo "$panes" | fzf) || return
 
-	target_window=$(echo $target | awk 'BEGIN{FS=":|-"} {print$1}')
-	target_pane=$(echo $target | awk 'BEGIN{FS=":|-"} {print$2}' | cut -c 1)
+	target_window=$(echo $target | awk '{print $7}')
+	target_pane=$(echo $target | awk '{print $6}')
 
 	if [[ $current_window -eq $target_window ]]; then
 		tmux select-pane -t ${target_window}.${target_pane}
@@ -106,7 +110,7 @@ febf()
 			info=$(printf "%-30s  %s" ${b} ${bfilename})
 			echo $info
 		fi
-	done| fzf-tmux --query="$1" --select-1) && \
+	done| fzf --query="$1" --select-1) && \
 		target_buffer=$(echo $target_buffer_info |awk '{print $1}') && \
 		$EMACSCLIENT -t -e "(switch-to-buffer \"${target_buffer}\")"
 }
