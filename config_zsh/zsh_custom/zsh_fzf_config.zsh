@@ -96,7 +96,7 @@ febf()
 		-e "s/[^,]*mode,//g" \
 		-e "s/,$//g")
 
-	bname_arra=()
+	bname_arr=()
 	if [[ $SHELL == *zsh ]]; then
 		IFS=', ' read -A bname_arr <<< "$buffers"
 	elif [[ $SHELL == *bash ]]; then
@@ -115,4 +115,26 @@ febf()
 		$EMACSCLIENT -t -e "(switch-to-buffer \"${target_buffer}\")"
 }
 
+# fzf osx opening application
+foapps()
+{
+	declare -a list
+	list=$(osascript << EOF
+	tell application "System Events"
+		set listOfProcesses to (name of every process where background only is false)
+		return listOfProcesses
+	end tell
+EOF)
+	app_arr=()
+	if [[ $SHELL == *zsh ]]; then
+		IFS=', ' read -A app_arr <<< "$list"
+	elif [[ $SHELL == *bash ]]; then
+		IFS=', ' read -a app_arr <<< "$list"
+	fi
+	app=$(for b in ${app_arr[@]}
+	do
+		echo $b
+	done| fzf --query="$1" --select-1) 
+	echo $app
+}
 
