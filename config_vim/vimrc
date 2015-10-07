@@ -182,6 +182,7 @@ endif
 "=====================autoCommand 
 "获取文件名的后缀，防止对vim.otl zsh.otl crontab.otl 之类的文件类型误判
 au BufReadPost * if expand("%:e")=='otl' |set filetype=otl |endif
+au BufReadPost * if expand("%:e")=='applescript' |set filetype=applescript |endif
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif  
 "align plugin is installed 
 augroup csvFile
@@ -256,7 +257,7 @@ let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*\|/var/.*\|'
 let g:ctrlp_mruf_relative = 0 
 let g:ctrlp_mruf_case_sensitive = 0 
 let g:ctrlp_extensions = ['tag', 'dir' , 'funky', 'buffertag' ] 
-let g:ctrlp_user_command ='find -E %s -regex ".*/*\.(txt|csv|cs|php|lua|h|cpp|c|sh|py|yaml|java|js|el)"'
+let g:ctrlp_user_command ='find -E %s -regex ".*/*\.(css|txt|csv|cs|php|lua|h|cpp|c|sh|py|yaml|java|js|el|html)"'
 let g:ctrlp_prompt_mappings = { 
             \ 'PrtBS()': ['<bs>', '<c-]>'], 
             \ 'PrtDelete()': ['<del>'], 

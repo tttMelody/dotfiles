@@ -119,9 +119,10 @@ febf()
 foapps()
 {
 	declare -a list
+		#set listOfProcesses to (name of every process whose visible only is false)
 	list=$(osascript << EOF
 	tell application "System Events"
-		set listOfProcesses to (name of every process where background only is false)
+		set listOfProcesses to (displayed name of every application process whose background only is false)
 		return listOfProcesses
 	end tell
 EOF)
@@ -134,7 +135,11 @@ EOF)
 	app=$(for b in ${app_arr[@]}
 	do
 		echo $b
-	done| fzf --query="$1" --select-1) 
-	echo $app
+	done| fzf --query="$1" --select-1) && \
+	osascript << EOF
+	tell application "$app"
+		activate
+	end tell
+EOF
 }
 
