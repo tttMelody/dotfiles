@@ -19,17 +19,17 @@ root: ~/
 # tmux_command: byobu
 
 windows:
-  - notes:
+  - p1:
       layout: main-horizontal
       panes:
         - 
         - 
-  - test: 
+  - p2: 
       layout: main-horizontal
       panes:
         - 
         - 
-  - common: 
+  - log: 
       layout: main-horizontal
       panes:
         - 
