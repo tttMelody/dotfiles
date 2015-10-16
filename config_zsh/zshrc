@@ -47,7 +47,7 @@ ZSH_CUSTOM=~/.zsh_custom/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # autojump plugin need install: sudo port install autojump
-plugins=(git autojump osx xcode history-substring-search)
+plugins=(git osx xcode history-substring-search)
 
 #start zsh
 source $ZSH/oh-my-zsh.sh
