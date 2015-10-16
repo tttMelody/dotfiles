@@ -1,0 +1,8 @@
+* Good Apps
+** CheatSheet 
+   后台运行，长按command键，弹出当前应用的所有快捷键
+** Alfred
+*** workflows
+**** 有道翻译
+**** APP 快速启动
+   	 
