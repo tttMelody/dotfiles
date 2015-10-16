@@ -153,6 +153,7 @@
 #
 # Password / passphrase caching parameters:
 store-passwords = yes
-# store-plaintext-passwords = no
+store-auth-creds = yes
+store-plaintext-passwords = yes
 # store-ssl-client-cert-pp = no
 # store-ssl-client-cert-pp-plaintext = no
