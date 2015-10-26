@@ -100,8 +100,8 @@
      (outline-8 ((t (:foreground "#A6E22E"))))
      ;(org-block-begin-line
      ;  ((t (:foreground "#008ED1" :background "#CDCDB6"))))
-     (org-block-background
-       ((t (:background "#3B3B3B"))))
+     ;; (org-block-background
+     ;;   ((t (:background "#3B3B3B"))))
      ;(org-block-end-line
      ;  ((t (:foreground "#008ED1" :background "#CDCDB6"))))
      (secondary-selection ((t (:background "#272822"))))
