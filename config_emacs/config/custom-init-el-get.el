@@ -16,6 +16,7 @@
 	(append '(slime 
 			  lua-mode 
 			  php-mode
+			  yaml-mode
 			  projectile 
 			  yasnippet 
 			  evil
