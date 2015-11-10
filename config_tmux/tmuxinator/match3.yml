@@ -1,6 +1,6 @@
 # ~/.tmuxinator/tetris.yml
 
-name: tetris
+name: match3
 root: /data/match3/
 
 # Optional tmux socket
