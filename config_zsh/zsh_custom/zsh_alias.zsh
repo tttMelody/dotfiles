@@ -35,4 +35,6 @@ alias texpimage="python /data/tetris/dev_tool/tool.py tp2 q"
 alias texpconfig='python /data/tetris/dev_tool/tool.py cfg q'
 alias tdevtool='cd /data/www/tetris/dev_tool'
 
+#match3
+alias mlua="cd /data/match3/client/Assets/Slua/Resources"
 
