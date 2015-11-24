@@ -19,18 +19,53 @@ root: ~/
 # tmux_command: byobu
 
 windows:
-  - p1:
+  - dp:
       layout: main-horizontal
       panes:
-        - 
-        - 
-  - p2: 
+        - ssh -t dingmingxin@tetris_dp_entrance
+        - ssh -t dingmingxin@tetris_dp_entrance
+  - lvs7100: 
       layout: main-horizontal
       panes:
-        - 
-        - 
-  - log: 
+        - ssh -t dingmingxin@tetris_dp_entrance ssh pirate@192.168.7.100
+        - ssh -t dingmingxin@tetris_dp_entrance ssh pirate@192.168.7.100
+  - lvs7101: 
       layout: main-horizontal
       panes:
-        - 
-        - 
+        - ssh -t dingmingxin@tetris_dp_entrance ssh pirate@192.168.7.101
+        - ssh -t dingmingxin@tetris_dp_entrance ssh root@192.168.7.101
+  - db7102: 
+      layout: main-horizontal
+      panes:
+        - ssh -t dingmingxin@tetris_dp_entrance ssh pirate@192.168.7.102
+        - ssh -t dingmingxin@tetris_dp_entrance ssh root@192.168.7.102
+  - db7103: 
+      layout: main-horizontal
+      panes:
+        - ssh -t dingmingxin@tetris_dp_entrance ssh pirate@192.168.7.103
+        - ssh -t dingmingxin@tetris_dp_entrance ssh root@192.168.7.103
+  - db7104: 
+      layout: main-horizontal
+      panes:
+        - ssh -t dingmingxin@tetris_dp_entrance ssh pirate@192.168.7.104
+        - ssh -t dingmingxin@tetris_dp_entrance ssh root@192.168.7.104
+  - db7105: 
+      layout: main-horizontal
+      panes:
+        - ssh -t dingmingxin@tetris_dp_entrance ssh pirate@192.168.7.105
+        - ssh -t dingmingxin@tetris_dp_entrance ssh root@192.168.7.105
+  - web756: 
+      layout: main-horizontal
+      panes:
+        - ssh -t dingmingxin@tetris_dp_entrance ssh pirate@192.168.7.56
+        - ssh -t dingmingxin@tetris_dp_entrance ssh root@192.168.7.56
+  - web757: 
+      layout: main-horizontal
+      panes:
+        - ssh -t dingmingxin@tetris_dp_entrance ssh pirate@192.168.7.57
+        - ssh -t dingmingxin@tetris_dp_entrance ssh root@192.168.7.57
+  - web758: 
+      layout: main-horizontal
+      panes:
+        - ssh -t dingmingxin@tetris_dp_entrance ssh pirate@192.168.7.58
+        - ssh -t dingmingxin@tetris_dp_entrance ssh root@192.168.7.58

@@ -118,9 +118,17 @@
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(custom-safe-themes
    (quote
- 	("c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" default)))
+	("c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" default)))
+ '(helm-gtags-auto-update t)
+ '(helm-gtags-display-style (quote detail))
+ '(helm-gtags-fuzzy-match t)
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-path-style (quote absolute))
  '(ido-mode (quote both) nil (ido))
  '(menu-bar-mode nil)
+ '(org-agenda-files
+   (quote
+	("~/wb/learn/postgresql/note.org" "/Users/dmx/wb/learn/README.org" "/Users/dmx/wb/orgs/credit_card.org" "/Users/dmx/wb/orgs/learn.org" "/Users/dmx/wb/orgs/life_2015.org" "/Users/dmx/wb/orgs/resume.org" "/Users/dmx/wb/orgs/work.org" "/Users/dmx/wb/orgs/work_2015.org")))
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

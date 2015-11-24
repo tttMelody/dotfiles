@@ -106,6 +106,7 @@ Plugin 'auto_mkdir'
 Plugin 'a.vim'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'dingmingxin/molokai'
+Plugin 'tfnico/vim-gradle' " for gradle file syntax highlight
 "Plugin 'gorodinskiy/vim-coloresque'
 " needed for fetching schemes online.
 "Plugin 'Rykka/colorv.vim'
