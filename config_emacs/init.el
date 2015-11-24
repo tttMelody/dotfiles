@@ -2,6 +2,9 @@
 (add-to-list 'load-path "~/.emacs.d/config")
 (require 'custom-emacs)
 
+; http://andrewjamesjohnson.com/suppressing-ad-handle-definition-warnings-in-emacs/
+;(setq ad-redefinition-action 'accept)
+
 ;;== load important plugins ==
 (custom-require 'custom-init-el-get)
 (custom-require 'custom-init-slime)
@@ -136,3 +139,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+;; 如果是软连接，跟随
+(setq vc-follow-symlinks t)
+;; vc中的文件保存时不提示
+(setq vc-suppress-confirm t)

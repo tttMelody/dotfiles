@@ -22,15 +22,14 @@
 			  evil
 			  evil-leader
 			  evil-org-mode
-              evil-nerd-commenter
-              evil-matchit
+			  evil-nerd-commenter
+			  evil-matchit
               auctex
 			  company-auctex
 			  applescript-mode
 			  ;; predictive ;; package for latex completion
 			  expand-region
               company-mode
-			  ;ido-vertical-mode
               powerline
               emmet-mode
 			  js2-mode ;; for javascript
@@ -50,7 +49,6 @@
 			  magit
 			  helm
 			  helm-swoop
-              ;; helm-dash
               helm-gtags
               helm-ag)))
 (el-get 'sync my-packages)
