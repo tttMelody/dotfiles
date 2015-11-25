@@ -258,7 +258,7 @@ let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*\|/var/.*\|'
 let g:ctrlp_mruf_relative = 0 
 let g:ctrlp_mruf_case_sensitive = 0 
 let g:ctrlp_extensions = ['tag', 'dir' , 'funky', 'buffertag' ] 
-let g:ctrlp_user_command ='find -E %s -regex ".*/*\.(css|txt|csv|cs|php|lua|h|cpp|c|sh|py|yaml|java|js|el|html)"'
+let g:ctrlp_user_command ='find -E %s -regex ".*/*\.(css|txt|csv|cs|php|lua|h|cpp|c|sh|py|yaml|java|js|el|html|mm|hpp)"'
 let g:ctrlp_prompt_mappings = { 
             \ 'PrtBS()': ['<bs>', '<c-]>'], 
             \ 'PrtDelete()': ['<del>'], 

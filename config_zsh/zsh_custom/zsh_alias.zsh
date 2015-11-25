@@ -38,3 +38,7 @@ alias tdevtool='cd /data/www/tetris/dev_tool'
 #match3
 alias mlua="cd /data/match3/client/Assets/Slua/Resources"
 
+#hohoplatform
+alias plua='cd /data/hohoplatform/script'
+alias pclient='cd /data/hohoplatform/client'
+
