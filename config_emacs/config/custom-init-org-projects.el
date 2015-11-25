@@ -1,7 +1,7 @@
 ;; 禁止对global_gnu 等类似带有下划线的字符串做特殊处理
 (add-hook 'org-mode-hook
 		  (lambda ()
-			(local-set-key (kbd "C-c a") 'org-insert-heading-after-current)))
+			(local-set-key (kbd "M-O") 'org-insert-heading-after-current)))
 (setq org-export-with-sub-superscripts nil)
 ;; (add-to-list 'load-path "~/.emacs.d/el-get/htmlize")
 ;; (require 'htmlize)
