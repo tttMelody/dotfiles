@@ -1,9 +1,10 @@
 (require 'helm)
 (require 'helm-config)
-(add-hook 'after-init-hook
-		  (lambda ()
-			(progn
-			  (helm-mode 1))))
+(helm-mode 1)
+;(add-hook 'after-init-hook
+;          (lambda ()
+;            (progn
+;              (helm-mode 1))))
 
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
@@ -41,8 +42,8 @@
 	  helm-echo-input-in-header-line             t
 	  helm-always-two-windows                    t
 	  ;helm-persistent-action-use-special-display t
-	  ;helm-buffers-favorite-modes                (append helm-buffers-favorite-modes
-	  ;                                                   '(picture-mode artist-mode))
+	  helm-buffers-favorite-modes                (append helm-buffers-favorite-modes
+														 '(picture-mode artist-mode))
 	  helm-ls-git-status-command                 'magit-status
 	  ;helm-never-delay-on-input                  nil
 	  ;helm-candidate-number-limit                200
