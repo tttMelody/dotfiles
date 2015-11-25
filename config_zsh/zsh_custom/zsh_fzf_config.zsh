@@ -116,30 +116,30 @@ febf()
 }
 
 # fzf osx opening application
-foapps()
-{
-	declare -a list
-		#set listOfProcesses to (name of every process whose visible only is false)
-	list=$(osascript << EOF
-	tell application "System Events"
-		set listOfProcesses to (displayed name of every application process whose background only is false)
-		return listOfProcesses
-	end tell
-EOF)
-	app_arr=()
-	if [[ $SHELL == *zsh ]]; then
-		IFS=', ' read -A app_arr <<< "$list"
-	elif [[ $SHELL == *bash ]]; then
-		IFS=', ' read -a app_arr <<< "$list"
-	fi
-	app=$(for b in ${app_arr[@]}
-	do
-		echo $b
-	done| fzf --query="$1" --select-1) && \
-	osascript << EOF
-	tell application "$app"
-		activate
-	end tell
-EOF
-}
+#foapps()
+#{
+#    declare -a list
+#        #set listOfProcesses to (name of every process whose visible only is false)
+#    list=$(osascript << EOF
+#    tell application "System Events"
+#        set listOfProcesses to (displayed name of every application process whose background only is false)
+#        return listOfProcesses
+#    end tell
+#EOF)
+#    app_arr=()
+#    if [[ $SHELL == *zsh ]]; then
+#        IFS=', ' read -A app_arr <<< "$list"
+#    elif [[ $SHELL == *bash ]]; then
+#        IFS=', ' read -a app_arr <<< "$list"
+#    fi
+#    app=$(for b in ${app_arr[@]}
+#    do
+#        echo $b
+#    done| fzf --query="$1" --select-1) && \
+#    osascript << EOF
+#    tell application "$app"
+#        activate
+#    end tell
+#EOF
+#}
 
