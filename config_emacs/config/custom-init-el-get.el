@@ -39,10 +39,10 @@
 			  highlight-parentheses
 			  autopair
               rainbow-mode
-			  ido-ubiquitous
 			  smarttabs
               eim
 			  cal-china-x
+			  solarized-emacs
 			  ;; org-journal ;; has encryption problem
               ;; emacs-eim
               git-gutter
