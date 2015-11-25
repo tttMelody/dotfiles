@@ -11,7 +11,7 @@
 (custom-require 'custom-init-helm)
 (custom-require 'custom-init-evil)
 (custom-require 'custom-init-projectile)
-(custom-require 'custom-init-emacs-eim)
+;(custom-require 'custom-init-emacs-eim)
 (custom-require 'custom-init-yasnippet)
 (custom-require 'custom-init-lua-mode)
 (custom-require 'custom-init-theme)

@@ -1,9 +1,8 @@
 ;; all projectile command has prefix C-c p
 ;; ex. C-c p f  find file in project
-(projectile-global-mode)
 
 (setq projectile-completion-system 'helm)
-(helm-projectile-on)
+;(helm-projectile-on)
 (setq projectile-globally-ignored-file-suffixes 
   '(;; elisp
 	"elc"
@@ -23,5 +22,11 @@
 
 (add-hook 'lua-mode-hook 'projectile-mode)
 (add-hook 'csharp-mode-hook 'projectile-mode)
+(add-hook 'after-init-hook
+		  (lambda ()
+			(progn
+			  (projectile-global-mode)
+			  (helm-projectile-on)
+			  )))
 
 (provide 'custom-init-projectile)
