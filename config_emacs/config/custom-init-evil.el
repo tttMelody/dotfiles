@@ -52,8 +52,10 @@
 ;  "w" (evilem-create 'evil-forward-word-begin))
 
 
-;;== evil-org-mode
+;;== evil-org-mode ==
 (require 'evil-org)
 
+;;== evil-smartparens ==
+;; (add-hook 'smartparens-enabled-hook 'evil-smartparens-mode)
 
 (provide 'custom-init-evil)
