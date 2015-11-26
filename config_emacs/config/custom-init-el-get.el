@@ -24,6 +24,7 @@
 			  evil-org-mode
 			  evil-nerd-commenter
 			  evil-matchit
+			  ;evil-smartparens
               auctex
 			  company-auctex
 			  applescript-mode
@@ -37,12 +38,13 @@
 			  color-theme ;; org-color-theme
 			  swift-mode
 			  highlight-parentheses
-			  autopair
+			  ;autopair
               rainbow-mode
-			  ido-ubiquitous
 			  smarttabs
+			  smartparens
               eim
 			  cal-china-x
+			  solarized-emacs
 			  ;; org-journal ;; has encryption problem
               ;; emacs-eim
               git-gutter
@@ -60,5 +62,10 @@
   :type git
   :features csharp-mode)
 
+(el-get-bundle evil-smartparens
+  :url "https://github.com/expez/evil-smartparens.git"
+  :type git
+  :features evil-smartparens
+  )
 
 (provide 'custom-init-el-get)

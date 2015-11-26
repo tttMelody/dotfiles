@@ -52,26 +52,33 @@
 (autoload 'smart-tabs-insinuate "smart-tabs-mode")
 (smart-tabs-insinuate 'c 'c++ 'java 'javascript 'python )
 
-;; 显示匹配的括号
 
+;; highlight-parentheses and autopair need to install manually
+;;== highlight-parentheses ==
+;; 显示匹配的括号
 (show-paren-mode 1) ;; buildin show-paren-mode
 (setq show-paren-delay 0)
-;; highlight-parentheses and autopair need to install manually
-(add-hook 'highlight-parentheses-mode-hook
-		  '(lambda ()
-			 (setq autopair-handle-action-fns
-				   (append
-					(if autopair-handle-action-fns
-						autopair-handle-action-fns
-					  '(autopair-default-handle-action))
-					'((lambda (action pair pos-before)
-						(hl-paren-color-update)))))))
-(define-globalized-minor-mode global-highlight-parentheses-mode
-  highlight-parentheses-mode
-  (lambda ()
-	(highlight-parentheses-mode t)))
 (global-highlight-parentheses-mode t)
-(autopair-global-mode t)
+
+;;== autopair ==
+;(add-hook 'highlight-parentheses-mode-hook
+;          '(lambda ()
+;             (setq autopair-handle-action-fns
+;                   (append
+;                    (if autopair-handle-action-fns
+;                        autopair-handle-action-fns
+;                      '(autopair-default-handle-action))
+;                    '((lambda (action pair pos-before)
+;                        (hl-paren-color-update)))))))
+;(define-globalized-minor-mode global-highlight-parentheses-mode
+;  highlight-parentheses-mode
+;  (lambda ()
+;    (highlight-parentheses-mode t)))
+;(autopair-global-mode t)
+
+;;== smartparens ==
+(require 'smartparens-config)
+(smartparens-global-mode t)
 
 ;; common settings
 (setq scroll-step 1)
@@ -121,7 +128,7 @@
    ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
  '(custom-safe-themes
    (quote
-	("c3c0a3702e1d6c0373a0f6a557788dfd49ec9e66e753fb24493579859c8e95ab" default)))
+	("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" default)))
  '(helm-gtags-auto-update t)
  '(helm-gtags-display-style (quote detail))
  '(helm-gtags-fuzzy-match t)

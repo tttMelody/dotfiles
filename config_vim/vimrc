@@ -156,6 +156,7 @@ Plugin 'vim-scripts/vimwiki'
 Plugin 'vim-scripts/matchit.zip'
 "Plugin 'airblade/vim-gitgutter'
 Plugin 'jceb/vim-orgmode'
+Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 filetype plugin indent on 
 syntax on 
@@ -170,13 +171,20 @@ func! SetMolokaiTheme()
     colo molokai 
 endfunc
 
+func! SetSolarizedTheme()
+	set background=light
+	let g:solarized_termcolors=256
+	color solarized
+endfunc
+
 if (has("gui_running")) 
 	"hi cursorline guibg=NONE gui=underline
     set guifont=Menlo\ Regular:h18 
     call SetMolokaiTheme()
 else 
 	set t_Co=256
-	call SetMolokaiTheme()
+	"call SetMolokaiTheme()
+	call SetSolarizedTheme()
 	"hi cursorline ctermbg=NONE cterm=underline
 	hi NonText cterm=NONE ctermfg=NONE
 endif 
