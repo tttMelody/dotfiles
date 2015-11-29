@@ -81,9 +81,9 @@
 (smartparens-global-mode t)
 
 ;; common settings
-(setq scroll-step 1)
-(setq scroll-conservatively 10000)
-(setq auto-window-vscroll nil)
+;(setq scroll-step 1)
+;(setq scroll-conservatively 10000)
+;(setq auto-window-vscroll nil)
 ;(global-linum-mode 1)
 ;; (setq linum-format "%d ")
 ;(setq linum-format
@@ -139,13 +139,14 @@
  '(org-agenda-files
    (quote
 	("~/wb/learn/postgresql/note.org" "/Users/dmx/wb/learn/README.org" "/Users/dmx/wb/orgs/credit_card.org" "/Users/dmx/wb/orgs/learn.org" "/Users/dmx/wb/orgs/life_2015.org" "/Users/dmx/wb/orgs/resume.org" "/Users/dmx/wb/orgs/work.org" "/Users/dmx/wb/orgs/work_2015.org")))
+ '(show-paren-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:inherit nil :stipple nil :background "#fdf6e3" :foreground "#657b83" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 180 :width normal :foundry "nil" :family "Menlo for Powerline")))))
 ;; 如果是软连接，跟随
 (setq vc-follow-symlinks t)
 ;; vc中的文件保存时不提示

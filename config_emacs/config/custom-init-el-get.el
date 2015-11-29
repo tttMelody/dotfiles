@@ -26,6 +26,7 @@
 			  evil-matchit
 			  ;evil-smartparens
               auctex
+			  smooth-scroll
 			  company-auctex
 			  applescript-mode
 			  ;; predictive ;; package for latex completion
