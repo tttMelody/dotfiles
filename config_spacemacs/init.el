@@ -28,7 +28,7 @@ values."
      emacs-lisp
      git
      markdown
-     ;;org
+	 org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -40,13 +40,13 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(cal-china-x)
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '()
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
    ;; are declared in a layer which is not a member of
    ;; the list `dotspacemacs-configuration-layers'. (default t)
-   dotspacemacs-delete-orphan-packages t))
+   dotspacemacs-delete-orphan-packages nil))
 
 (defun dotspacemacs/init ()
   "Initialization function.
@@ -194,17 +194,39 @@ It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
   (setq spacemacs-theme-comment-bg nil)
   (setq spacemacs-theme-org-height nil)
+  ;;== solarized theme setting ==
+  ;; make the fringe stand out from the background
+  ;; (setq solarized-distinct-fringe-background t)
+  ;; Don't change the font for some headings and titles
+  (setq solarized-use-variable-pitch nil)
+  ;; Use more italics
+  ;(setq solarized-use-more-italic t)
+  
+  ;; Use less colors for indicators such as git:gutter, flycheck and similar
+  ;(setq solarized-emphasize-indicators nil)
+  
+  ;; Don't change size of org-mode headlines (but keep other size-changes)
+  (setq solarized-scale-org-headlines nil)
+
+  ;; Avoid all font-size changes
+  (setq solarized-height-minus-1 1)
+  (setq solarized-height-plus-1 1)
+  (setq solarized-height-plus-2 1)
+  (setq solarized-height-plus-3 1)
+  (setq solarized-height-plus-4 1)
+  (add-to-list 'load-path "~/.spacemacs.d/config")
+  (require 'custom-emacs)
+  (custom-require 'custom-init-org-projects)
   )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
- This function is called at the very end of Spacemacs initialization after
-layers configuration. You are free to put any user code."
+  This function is called at the very end of Spacemacs initialization after
+  layers configuration. You are free to put any user code."
   (define-key evil-normal-state-map ";" 'evil-ex)
   (define-key evil-visual-state-map ";" 'evil-ex)
-  
-  (setq solarized-use-variable-pitch nil)
-)
+  (custom-require 'custom-init-cal-china-x)
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
