@@ -29,6 +29,7 @@ values."
      git
      markdown
 	 org
+	 osx
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -217,7 +218,13 @@ user code."
   (add-to-list 'load-path "~/.spacemacs.d/config")
   (require 'custom-emacs)
   (custom-require 'custom-init-org-projects)
-  )
+
+  ;(setq org-bullets-bullet-list
+  ;      '( "◉" "○" "✸" "✿" "◆" "♠" "♣" "♥" "●" "☢" "❀" "☯" "◇" "✚" "✜" "♦" "◆" "◖" "▶"))
+  ;前12个是：子鼠、丑牛、寅虎、卯兔、辰龙、巳蛇、午马、未羊、申猴、酉鸡、戌狗、亥猪
+  (setq org-bullets-bullet-list
+		'("🐢 " "🐀 " "🐂 " "🐅 " "🐇 " "🐉 " "🐍 " "🐎 " "🐐 " "🐒 " "🐓 " "🐕 " "🐖 " "🐠 " "🐘 " "🐙 " "🐜 " "🐝 " "🐟 " "🐪 " "🐬 " "🐳 "))
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -225,7 +232,9 @@ user code."
   layers configuration. You are free to put any user code."
   (define-key evil-normal-state-map ";" 'evil-ex)
   (define-key evil-visual-state-map ";" 'evil-ex)
+  (set-locale-environment "zh_CN.utf-8")
   (custom-require 'custom-init-cal-china-x)
+  ;; font for all unicode characters
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

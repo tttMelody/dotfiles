@@ -1,0 +1,75 @@
+🐀  rat 
+🐁  mouse 
+🐂  ox 
+🐃  water buffalo 
+🐄  cow 
+🐅  tiger 
+🐆  leopard 
+🐇  rabbit 
+🐈  cat 
+🐉  dragon 
+🐊  crocodile 
+🐋  whale 
+🐌  snail 
+🐍  snake 
+🐎  horse 
+🐏  ram 
+🐐  goat 
+🐑  sheep 
+🐒  monkey 
+🐓  rooster 
+🐔  chicken 
+🐕  dog 
+🐖  pig 
+🐗  boar 
+🐘  elephant 
+🐙  octopus 
+🐚  spiral shell 
+🐛  bug 
+🐜  ant 
+🐝  honeybee 
+🐞  lady beetle 
+🐟  fish 
+🐠  tropical fish 
+🐡  blowfish 
+🐢  turtle 
+🐣  hatching chick 
+🐤  baby chick 
+🐥  front-facing baby chick 
+🐦  bird 
+🐧  penguin 
+🐨  koala 
+🐩  poodle 
+🐪  dromedary camel 
+🐫  bactrian camel 
+🐬  dolphin 
+🐭  mouse face 
+🐮  cow face 
+🐯  tiger face 
+🐰  rabbit face 
+🐱  cat face 
+🐲  dragon face 
+🐳  spouting whale 
+🐴  horse face 
+🐵  monkey face 
+🐶  dog face 
+🐷  pig face 
+🐸  frog face 
+🐹  hamster face 
+🐺  wolf face 
+🐻  bear face 
+🐼  panda face 
+🐽  pig nose 
+🐾  paw prints 
+😸  grinning cat face with smiling eyes 
+😹  cat face with tears of joy 
+😺  smiling cat face with open mouth 
+😻  smiling cat face with heart-shaped eyes 
+😼  cat face with wry smile 
+😽  kissing cat face with closed eyes 
+😾  pouting cat face 
+😿  crying cat face 
+🙀  weary cat face 
+🙈  see-no-evil monkey 
+🙉  hear-no-evil monkey 
+🙊  speak-no-evil monkey 
