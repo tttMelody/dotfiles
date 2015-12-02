@@ -1,0 +1,6 @@
+#!/bin/bash - 
+
+ln -sif ~/dotfiles/config_spacemacs/init.el ~/.spacemacs.d/init.el
+if [[ ! -L ~/.spacemacs.d/config ]]; then
+	ln -sif ~/dotfiles/config_spacemacs/config ~/.spacemacs.d/config
+fi
