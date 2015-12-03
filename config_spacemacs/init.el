@@ -23,7 +23,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
+     auto-completion
 	 better-defaults
      emacs-lisp
      git
@@ -215,9 +215,6 @@ user code."
   (setq solarized-height-plus-2 1)
   (setq solarized-height-plus-3 1)
   (setq solarized-height-plus-4 1)
-  (add-to-list 'load-path "~/.spacemacs.d/config")
-  (require 'custom-emacs)
-  (custom-require 'custom-init-org-projects)
 
   ;(setq org-bullets-bullet-list
   ;      '( "◉" "○" "✸" "✿" "◆" "♠" "♣" "♥" "●" "☢" "❀" "☯" "◇" "✚" "✜" "♦" "◆" "◖" "▶"))
@@ -233,7 +230,12 @@ user code."
   (define-key evil-normal-state-map ";" 'evil-ex)
   (define-key evil-visual-state-map ";" 'evil-ex)
   (set-locale-environment "zh_CN.utf-8")
+
+  (add-to-list 'load-path "~/.spacemacs.d/config")
+  (require 'custom-emacs)
   (custom-require 'custom-init-cal-china-x)
+  (custom-require 'custom-init-org-projects)
+  ;; (custom-require 'custom-init-yasnippet)
   ;; font for all unicode characters
   )
 
