@@ -107,7 +107,7 @@ febf()
 	do
 		bfilename=$(emacsclient -e "(with-current-buffer \"${b}\" (buffer-file-name))")
 		if [[ $bfilename != nil ]] then
-			info=$(printf "%-30s  %s" ${b} ${bfilename})
+			info=$(printf "%030s  %s" ${b} ${bfilename})
 			echo $info
 		fi
 	done| fzf --query="$1" --select-1) && \
