@@ -458,7 +458,7 @@ let g:tagbar_type_php = {
 	\ ],
 \ }
 let g:tagbar_type_lua = {
-	\ 'ctagstype' : 'lua',
+	\ 'ctagstype' : 'MYLUA',
 	\ 'kinds'     : [
 		\ 'c:classes', 
 		\ 'l:layout', 
