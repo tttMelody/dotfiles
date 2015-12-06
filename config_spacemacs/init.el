@@ -24,18 +24,32 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      auto-completion
-	 better-defaults
-     emacs-lisp
+     better-defaults
      git
      markdown
-	 org
-	 ;;osx
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     org
+     ;; pandoc
+     javascript
+     lua
+     c-c++
+     html
+     java
+     python
+     emacs-lisp
+     yaml
+     search-engine
+     tmux
+     games
+     dash
+
+     ;;osx
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
+     ;; dmx
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -221,12 +235,15 @@ user code."
   ;前12个是：子鼠、丑牛、寅虎、卯兔、辰龙、巳蛇、午马、未羊、申猴、酉鸡、戌狗、亥猪
   ;(setq org-bullets-bullet-list
   ;      '("🐢 " "🐀 " "🐂 " "🐅 " "🐇 " "🐉 " "🐍 " "🐎 " "🐐 " "🐒 " "🐓 " "🐕 " "🐖 " "🐠 " "🐘 " "🐙 " "🐜 " "🐝 " "🐟 " "🐪 " "🐬 " "🐳 "))
+  ;;for dash layer
+  (setq dash-helm-dash-docset-path "~/Library/Application Support/Dash/DocSets")
 )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
   This function is called at the very end of Spacemacs initialization after
   layers configuration. You are free to put any user code."
+  ;;(setq powerline-default-separator 'arrow)
   (define-key evil-normal-state-map ";" 'evil-ex)
   (define-key evil-visual-state-map ";" 'evil-ex)
   (set-locale-environment "zh_CN.utf-8")
