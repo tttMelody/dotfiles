@@ -36,6 +36,7 @@ values."
      java
      python
      emacs-lisp
+     vimscript
      yaml
      search-engine
      tmux
@@ -230,11 +231,11 @@ user code."
   (setq solarized-height-plus-3 1)
   (setq solarized-height-plus-4 1)
 
-  (setq org-bullets-bullet-list
-		'( "◉" "○" "✸" "✿" "◆" "♠" "♣" "♥" "●" "☢" "❀" "☯" "◇" "✚" "✜" "♦" "◆" "◖" "▶"))
-  ;前12个是：子鼠、丑牛、寅虎、卯兔、辰龙、巳蛇、午马、未羊、申猴、酉鸡、戌狗、亥猪
   ;(setq org-bullets-bullet-list
-  ;      '("🐢 " "🐀 " "🐂 " "🐅 " "🐇 " "🐉 " "🐍 " "🐎 " "🐐 " "🐒 " "🐓 " "🐕 " "🐖 " "🐠 " "🐘 " "🐙 " "🐜 " "🐝 " "🐟 " "🐪 " "🐬 " "🐳 "))
+  ;      '( "◉" "○" "✸" "✿" "◆" "♠" "♣" "♥" "●" "☢" "❀" "☯" "◇" "✚" "✜" "♦" "◆" "◖" "▶"))
+  ;前12个是：子鼠、丑牛、寅虎、卯兔、辰龙、巳蛇、午马、未羊、申猴、酉鸡、戌狗、亥猪
+  (setq org-bullets-bullet-list
+		'("🐢 " "🐀 " "🐂 " "🐅 " "🐇 " "🐉 " "🐍 " "🐎 " "🐐 " "🐒 " "🐓 " "🐕 " "🐖 " "🐠 " "🐘 " "🐙 " "🐜 " "🐝 " "🐟 " "🐪 " "🐬 " "🐳 "))
   ;;for dash layer
   (setq dash-helm-dash-docset-path "~/Library/Application Support/Dash/DocSets")
 )
@@ -254,6 +255,10 @@ user code."
   (custom-require 'custom-init-org-projects)
   ;; (custom-require 'custom-init-yasnippet)
   ;; font for all unicode characters
+  ;; 如果是软连接，跟随
+  (setq vc-follow-symlinks t)
+  ;; vc中的文件保存时不提示
+  (setq vc-suppress-confirm t)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
