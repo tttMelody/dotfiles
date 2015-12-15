@@ -1,0 +1,35 @@
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[alias]
+	d = difftool
+	st = status
+	ci = commit -a
+	co = checkout
+	mg = mergetool
+	pl = pull
+	ph = push
+[color]
+	diff = auto
+[user]
+	name = dmx
+	email = dingmingxin@babeltime.com
+[core]
+	pager = less -x4
+	quotepath = false
+[push]
+	default = simple
+[credential]
+	helper = osxkeychain
+[http]
+[https]
+[merge]
+	tool = Kaleidoscope
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustexitcode = true
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool]
+	prompt = false
