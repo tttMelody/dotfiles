@@ -29,4 +29,5 @@
 - cd ~/dotfiles && ./deploy tmux
 ** ag
 mac 下安装（依赖 Macports）: sudo port install the_silver_searcher
+
 ag 搜索速度比 ack 快一些
