@@ -1,0 +1,23 @@
+* Description
+这是我本人平时用到的命令行工具的配置
+包括：
+- Vim
+- Emacs && spacemacs
+- Tmux
+- zsh
+- ctags
+- ag && ack
+- git
+- alfred
+- osx
+* Using
+** zsh
+我用的是 zsh
+配置用的是 https://github.com/robbyrussell/oh-my-zsh
+使用方式：
+
+- cd ~/dotfiles && ./deploy zsh
+- 然后把环境变量复制到文件 ~/.zsh_env.zsh, 参考文件为 ~/dotfiles/config_zsh/zsh_env_macbookpro.zsh
+- source ~/.zprofile
+** vim
+cd ~/dotfiles && ./deploy vim
