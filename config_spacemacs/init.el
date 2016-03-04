@@ -37,12 +37,17 @@ values."
      python
      emacs-lisp
      vimscript
+     go
      yaml
      search-engine
      tmux
      games
      dash
      chinese
+     ;; (colors :variables
+     ;;         colors-enable-rainbow-identifiers t
+     ;;         colors-enable-nyan-cat-progress-bar t)
+
      ;;osx
      (shell :variables
             shell-default-height 30
@@ -50,7 +55,7 @@ values."
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
-     ;; dmx
+     dmx
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -232,10 +237,10 @@ user code."
   (setq solarized-height-plus-4 1)
 
   (setq org-bullets-bullet-list
-		'( "◉" "○" "✸" "✿" "◆" "♠" "♣" "♥" "●" "☢" "❀" "☯" "◇" "✚" "✜" "♦" "◆" "◖" "▶"))
+       '( "◉" "○" "✸" "✿" "◆" "♠" "♣" "♥" "●" "☢" "❀" "☯" "◇" "✚" "✜" "♦" "◆" "◖" "▶"))
   ;前12个是：子鼠、丑牛、寅虎、卯兔、辰龙、巳蛇、午马、未羊、申猴、酉鸡、戌狗、亥猪
-  ;(setq org-bullets-bullet-list
-  ;      '("🐢 " "🐀 " "🐂 " "🐅 " "🐇 " "🐉 " "🐍 " "🐎 " "🐐 " "🐒 " "🐓 " "🐕 " "🐖 " "🐠 " "🐘 " "🐙 " "🐜 " "🐝 " "🐟 " "🐪 " "🐬 " "🐳 "))
+  ;; (setq org-bullets-bullet-list
+  ;; 	'("🐢 " "🐀 " "🐂 " "🐅 " "🐇 " "🐉 " "🐍 " "🐎 " "🐐 " "🐒 " "🐓 " "🐕 " "🐖 " "🐠 " "🐘 " "🐙 " "🐜 " "🐝 " "🐟 " "🐪 " "🐬 " "🐳 "))
   ;;for dash layer
   (setq dash-helm-dash-docset-path "~/Library/Application Support/Dash/DocSets")
 )

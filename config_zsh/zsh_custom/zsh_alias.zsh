@@ -43,4 +43,7 @@ alias plua='cd /data/hohoplatform/script'
 alias pclient='cd /data/hohoplatform/client'
 alias pexpimage='python /data/hohoplatform/dev_tool/tool.py tp2 q'
 alias pexpconfig='python /data/hohoplatform/dev_tool/tool.py cfg q'
+alias pdevtool='cd /data/www/hohoplatform/dev_tool'
+alias pandroid='cd /data/hohoplatform/client/proj.android-studio'
+
 
