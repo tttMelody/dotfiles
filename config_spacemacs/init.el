@@ -42,7 +42,7 @@ values."
      tmux
      games
      dash
-
+     chinese
      ;;osx
      (shell :variables
             shell-default-height 30
@@ -259,6 +259,7 @@ user code."
   (setq vc-follow-symlinks t)
   ;; vc中的文件保存时不提示
   (setq vc-suppress-confirm t)
+  (setq default-tab-width 4)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
