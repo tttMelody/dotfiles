@@ -1,0 +1,10 @@
+{
+	"color_scheme": "Packages/Solarized Color Scheme/Solarized (light).tmTheme",
+	"font_face": "Menlo",
+	"font_size": 18,
+	"ignored_packages":
+	[
+		"Git",
+		"Vintage"
+	]
+}

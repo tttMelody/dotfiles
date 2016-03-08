@@ -43,7 +43,7 @@ values."
      tmux
      games
      dash
-     chinese
+     ;;chinese
      ;; (colors :variables
      ;;         colors-enable-rainbow-identifiers t
      ;;         colors-enable-nyan-cat-progress-bar t)
