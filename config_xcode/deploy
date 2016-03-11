@@ -1,0 +1,3 @@
+#!/bin/bash - 
+cp ./colortheme/* ~/Library/Developer/Xcode/UserData/FontAndColorThemes/
+

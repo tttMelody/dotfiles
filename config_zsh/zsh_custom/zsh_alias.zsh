@@ -50,5 +50,5 @@ alias pandroid='cd /data/hohoplatform/client/proj.android-studio'
 alias hlua='cd /work/heracles/svn/Resources/script/'
 alias hclient="cd /work/heracles/frameworks/runtime-src/proj.ios_mac"
 alias huiflash="cd /work/heracles/svn/Assets/flahsUITools/assets/ui"
-alias hdevtool="cd /work/wall-e && python tool.py"
+alias hdevtool="cd /work/wall-e && python tool.py && cd -"
 
