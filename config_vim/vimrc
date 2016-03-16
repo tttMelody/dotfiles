@@ -78,16 +78,6 @@ set completeopt = ".,w,b,u,t,i,]"
 "set omnifunc=syntaxcomplete#Complete 
 "=====================user defined color
 "hi User1 term=inverse,bold cterm=inverse,bold ctermfg=red
-"====================statusline
-set laststatus=2 " Always show the statusline 
-set statusline=%f\ %-m%r
-set statusline+=\ %{tagbar#currenttag('%s','')}
-set statusline+=%=
-set statusline+=\ %{fugitive#statusline()}
-set statusline+=%4l/%-4L\ %%%p
-set statusline+=\ %y
-set statusline+=\ [%{(&fenc==\"\"?&enc:&fenc)}]
-set statusline+=\ [%{&fileformat}]
 "=====================search
 set incsearch 
 set hlsearch 
@@ -114,6 +104,7 @@ Plugin 'tfnico/vim-gradle' " for gradle file syntax highlight
 "Plugin 'wesleyche/SrcExpl'
 "Plugin 'wesleyche/Trinity'
 "Plugin 'chazy/cscope_maps'
+Plugin 'osyo-manga/vim-anzu'
 Plugin 'vim-scripts/PDV--phpDocumentor-for-Vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'kien/ctrlp.vim'
@@ -216,6 +207,17 @@ au FileType otl set tags+=/data/dwork/learn/tags
 "================================================
 "==              thirdPardPlugin               ==
 "================================================
+"=====================anzu
+" if start anzu-mode key mapping
+" anzu-mode is anzu(12/51) in screen
+"nmap n <Plug>(anzu-mode-n)
+"nmap N <Plug>(anzu-mode-N)
+" mapping
+nmap n <Plug>(anzu-n-with-echo)
+nmap N <Plug>(anzu-N-with-echo)
+nmap * <Plug>(anzu-star-with-echo)
+nmap # <Plug>(anzu-sharp-with-echo)
+
 "=====================csv
 let g:csv_nomap_cr = 1 "csv文件阻止回车折行
 "=====================Align
@@ -578,3 +580,15 @@ iab xdate <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
 "    set invcursorline
 "    redraw
 "endfunction
+"==========after all plugins has loaded ====================
+"====================statusline
+set laststatus=2 " Always show the statusline 
+set statusline=%f\ %-m%r
+set statusline+=%{anzu#search_status()}
+set statusline+=\ %{tagbar#currenttag('%s','')}
+set statusline+=%=
+set statusline+=\ %{fugitive#statusline()}
+set statusline+=%4l/%-4L\ %%%p
+set statusline+=\ %y
+set statusline+=\ [%{(&fenc==\"\"?&enc:&fenc)}]
+set statusline+=\ [%{&fileformat}]
