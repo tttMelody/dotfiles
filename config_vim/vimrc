@@ -150,6 +150,7 @@ Plugin 'vim-scripts/matchit.zip'
 "Plugin 'airblade/vim-gitgutter'
 Plugin 'jceb/vim-orgmode'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'leafgarland/typescript-vim'
 call vundle#end()
 filetype plugin indent on 
 syntax on 
