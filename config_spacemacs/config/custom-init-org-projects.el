@@ -105,7 +105,7 @@ This function makes sure that dates are aligned for easy reading."
 	(format "%-10s %4d/%s/%02d %s" dayname year monthname day weekstring)))
 
 ;; add files to agenda mode 
-(setq org-agenda-files '("~/wb/learn/" "~/wb/orgs/"))
+(setq org-agenda-files '("~/wb/learn/" "~/wb/orgs/" "~/wb/orgs/playcrab/"))
 
 ;;== todo setting ==
 (setq org-todo-keywords

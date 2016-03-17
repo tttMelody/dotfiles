@@ -51,4 +51,5 @@ alias hlua='cd /work/heracles/svn/Resources/script/'
 alias hclient="cd /work/heracles/frameworks/runtime-src/proj.ios_mac"
 alias huiflash="cd /work/heracles/svn/Assets/flahsUITools/assets/ui"
 alias hdevtool="cd /work/wall-e && python tool.py && cd -"
+alias hsvn="cd /work/heracles/svn"
 
