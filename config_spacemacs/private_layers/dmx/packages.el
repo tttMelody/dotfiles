@@ -15,6 +15,7 @@
 (setq dmx-packages
     '(
       	org-pomodoro
+        cal-china-x
       ))
 
 ;; List of packages to exclude.
@@ -23,7 +24,7 @@
 ;; For each package, define a function dmx/init-<package-name>
 ;;
 (defun dmx/init-org-pomodoro ()
-  "Initialize my package"
+  "Initialize org-pomodoro"
   (use-package org-pomodoro
     :defer t
     :init
@@ -38,7 +39,14 @@
       (setq org-pomodoro-killed-hook '(lambda () (dmx/terminal-notify "Oh no, don not leave" "Pomodoro has been killed!")))
       ))
   )
-;;
+(defun dmx/init-cal-china-x ()
+  "Initialize cal-china-x"
+  (use-package cal-china-x
+    :defer t
+    :init 
+    (progn
+     (message "Loading %s..." "cal-china-x")
+    )))
 ;; Often the body of an initialize function uses `use-package'
 ;; For more info on `use-package', see readme:
 ;; https://github.com/jwiegley/use-package
