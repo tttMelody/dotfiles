@@ -23,7 +23,9 @@ VIMFILES_DIR=$DOTFILES_ROOT/config_vim
 addvundle()
 {
 	#git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-	git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	if [[ ! -d ~/.vim/bundle/Vundle.vim ]]; then
+		git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+	fi
 }
 
 dp_vimrc()
@@ -33,11 +35,11 @@ dp_vimrc()
 		return
 	fi
 	if [[ $step -eq 1 ]]; then
-		ln -sif $VIMFILES_DIR/vimrc_base ~/.vimrc
-# 		sed -n "1,/dingmingxin-base/p" $VIMFILES_DIR/vimrc >> ~/.vimrc
+		rm ~/.vimrc
+		sed -n "1,/dingmingxin-base/p" $VIMFILES_DIR/vimrc >> ~/.vimrc
 	else
+		rm ~/.vimrc
 		ln -sif $VIMFILES_DIR/vimrc ~/.vimrc
-# 		sed "1,/dingmingxin-base/d" $VIMFILES_DIR/vimrc >> ~/.vimrc
 	fi
 }
 

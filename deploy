@@ -18,10 +18,11 @@
 #===============================================================================
 
 
-export DOTFILES_ROOT=~/dotfiles
+export DOTFILES_ROOT=$(pwd $(dirname $0))
 export BASH_CON_ROOT=$DOTFILES_ROOT/config_bash
 export VIM_CON_ROOT=$DOTFILES_ROOT/config_vim
 export TMUX_CON_ROOT=$DOTFILES_ROOT/config_tmux
+
 deploy_one()
 {
 	if [[ $# -le 0 ]];then
