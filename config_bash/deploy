@@ -1,6 +1,5 @@
 #!/bin/bash - 
 
-DOTFILES_ROOT=~/dotfiles
 BASHCONFIG_ROOT=$DOTFILES_ROOT/config_bash
 
 if [[ ! -f ~/.bash_profile ]]; then

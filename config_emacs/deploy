@@ -1,32 +1,15 @@
 #!/bin/bash - 
-#===============================================================================
-#
-#          FILE: deploy.sh
-# 
-#         USAGE: ./deploy.sh 
-# 
-#   DESCRIPTION: 
-# 
-#       OPTIONS: ---
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
-#  ORGANIZATION: 
-#       CREATED: 06/12/2015 10:51
-#      REVISION:  ---
-#===============================================================================
-
-ln -sif ~/dotfiles/config_emacs/init.el ~/.emacs.d/init.el
+root=$DOTFILES_ROOT
+ln -sif $root/config_emacs/init.el ~/.emacs.d/init.el
 if [[ ! -L ~/.emacs.d/config ]]; then
-	ln -sif ~/dotfiles/config_emacs/config ~/.emacs.d/config
+	ln -sif $root/config_emacs/config ~/.emacs.d/config
 fi
 if [[ ! -L ~/.emacs.d/el-get-user ]]; then
-	ln -sif ~/dotfiles/config_emacs/el-get-user ~/.emacs.d/el-get-user
+	ln -sif $root/config_emacs/el-get-user ~/.emacs.d/el-get-user
 fi
 if [[ ! -L ~/.emacs.d/self_install ]]; then
-	ln -sif ~/dotfiles/config_emacs/self_install ~/.emacs.d/self_install
+	ln -sif $root/config_emacs/self_install ~/.emacs.d/self_install
 fi
 if [[ ! -L ~/.emacs.d/themes ]]; then
-	ln -sif ~/dotfiles/config_emacs/themes ~/.emacs.d/themes
+	ln -sif $root/config_emacs/themes ~/.emacs.d/themes
 fi

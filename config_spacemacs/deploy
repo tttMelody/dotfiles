@@ -1,13 +1,13 @@
 #!/bin/bash - 
-
+root=$DOTFILES_ROOT
 if [[ ! -d ~/.spacemacs.d ]]; then
 	mkdir ~/.spacemacs.d
 fi
-ln -sif ~/dotfiles/config_spacemacs/init.el ~/.spacemacs.d/init.el
+ln -sif $root/config_spacemacs/init.el ~/.spacemacs.d/init.el
 if [[ ! -L ~/.spacemacs.d/config ]]; then
-	ln -sif ~/dotfiles/config_spacemacs/config ~/.spacemacs.d/config
+	ln -sif $root/config_spacemacs/config ~/.spacemacs.d/config
 fi
 
 if [[ ! -L ~/.emacs.d/private/dmx ]]; then
-	ln -sif ~/dotfiles/config_spacemacs/private_layers/dmx ~/.emacs.d/private/dmx
+	ln -sif $root/config_spacemacs/private_layers/dmx ~/.emacs.d/private/dmx
 fi

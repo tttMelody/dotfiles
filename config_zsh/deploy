@@ -1,6 +1,5 @@
 #!/bin/bash - 
 
-DOTFILES_ROOT=~/dotfiles
 ZSHCONFIG_ROOT=$DOTFILES_ROOT/config_zsh
 
 if [[ ! -d  ~/.oh-my-zsh ]]; then

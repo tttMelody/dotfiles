@@ -1,23 +1,4 @@
 #!/bin/bash - 
-#===============================================================================
-#
-#          FILE: deploy_ag.sh
-# 
-#         USAGE: ./deploy_ag.sh 
-# 
-#   DESCRIPTION: 
-# 
-#       OPTIONS: ---
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
-#  ORGANIZATION: 
-#       CREATED: 06/10/2015 11:12
-#      REVISION:  ---
-#===============================================================================
 
+ln -isf $DOTFILES_ROOT/config_ag/agignore ~/.agignore
 
-ln -isf ~/dotfiles/config_ag/agignore ~/.agignore
-
-# ln -isf ~/dotfiles/config_ack/ackrc ~/.ackrc

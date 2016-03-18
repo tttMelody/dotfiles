@@ -1,21 +1,4 @@
 #!/bin/bash - 
-#===============================================================================
-#
-#          FILE: deploy_git.sh
-# 
-#         USAGE: ./deploy_git.sh 
-# 
-#   DESCRIPTION: 
-# 
-#       OPTIONS: ---
-#  REQUIREMENTS: ---
-#          BUGS: ---
-#         NOTES: ---
-#        AUTHOR: YOUR NAME (), 
-#  ORGANIZATION: 
-#       CREATED: 12/24/2014 11:17
-#      REVISION:  ---
-#===============================================================================
 
 #use vimdiff compare file changes
 #用法：git d filename
@@ -39,5 +22,6 @@
 # #设置diff 使用的tabstop                         # 
 # #git diff filename 时，起作用                   # 
 # git config --global core.pager 'less -x4'       # 
-ln -sif ~/dotfiles/config_git/gitconfig ~/.gitconfig
+root=$DOTFILES_ROOT
+ln -sif $root/config_git/gitconfig ~/.gitconfig
 

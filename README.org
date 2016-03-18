@@ -11,6 +11,13 @@
 - alfred
 - osx
 * Using
+** common
+1. git clone https://github.com/dingmingxin/dotfiles.git path_to_somewhere
+2. cd path_to_somewhere && deploy `config_key`
+3. `config_key` is prefix of subfolders in path_to_somwhere path, 
+   for example: zsh, vim, tmux ....
+   If you want deploy vim , do this:
+   cd path_to_somewhere && deploy vim
 ** zsh
 我用的是 zsh
 
@@ -18,15 +25,10 @@
 
 使用方式：
 
-- cd ~/dotfiles && ./deploy zsh
 - 然后把环境变量复制到文件 ~/.zsh_env.zsh, 参考文件为 ~/dotfiles/config_zsh/zsh_env_macbookpro.zsh
 - source ~/.zprofile
-** vim
-- cd ~/dotfiles && ./deploy vim
 ** tmux
 需要安装 tmuxinator: [[https://github.com/tmuxinator/tmuxinator][tmuxinator]]
-
-- cd ~/dotfiles && ./deploy tmux
 ** ag
 mac 下安装（依赖 Macports）: sudo port install the_silver_searcher
 
