@@ -1,0 +1,18 @@
+* 比较赞的MacPorts
+** the_silver_searcher
+ag command 
+命令行文件内容搜索工具
+** p5-rename
+批量重明命名
+** luarocks
+lua库安装
+** tree
+文件树查看
+** tmux
+终端会话管理工具
+** rlwrap
+a readline wrapper
+更方便的命令行交互
+** most
+终端pager
+
