@@ -1,9 +1,11 @@
 * 比较赞的MacPorts
+** tig
+终端git log 查看器
 ** the_silver_searcher
 ag command 
 命令行文件内容搜索工具
 ** p5-rename
-批量重明命名
+批量重命名
 ** luarocks
 lua库安装
 ** tree
