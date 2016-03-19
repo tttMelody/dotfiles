@@ -22,6 +22,12 @@
 # #设置diff 使用的tabstop                         # 
 # #git diff filename 时，起作用                   # 
 # git config --global core.pager 'less -x4'       # 
+
 root=$DOTFILES_ROOT
+which tig > /dev/null
+if [[ ! $? -eq 0 ]]; then
+	echo "请安装tig, for mac user: sudo port install tig"
+fi
+ln -sif $root/config_git/tigrc ~/.tigrc
 ln -sif $root/config_git/gitconfig ~/.gitconfig
 

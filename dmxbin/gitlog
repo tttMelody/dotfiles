@@ -1,10 +1,10 @@
 #!/bin/sh
 git log --pretty=format:"%h %ad %an %s" --date=short $@ | awk '{print NR"\t"$0}' | head -20
-#while 1 ; do
+while true; do
 	read first
 	if [ -z $first ] ; then exit ; fi
 	read second
 	versions=`git log --oneline $@ | awk -v first=$first -v second=$second '{a[NR]=$1}END{print a[first]"\t"a[second]}'`
 	git d $versions -- $1
-#done
+done
 
