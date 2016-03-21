@@ -15,3 +15,8 @@ for (( i = 0; i < ${#private_layers[@]}; i++ )); do
 		ln -sif $root/config_spacemacs/private/${p_layername} ~/.emacs.d/private/${p_layername}
 	fi
 done
+
+if [[ -d ~/.emacs.d/private/snippets ]]; then
+	rm -rf ~/.emacs.d/private/snippets
+	ln -sif $root/config_spacemacs/private/snippets ~/.emacs.d/private/snippets
+fi

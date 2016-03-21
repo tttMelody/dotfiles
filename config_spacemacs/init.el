@@ -267,11 +267,12 @@ user code."
 
   (setq-default indent-tabs-mode nil)
   (setq-default tab-width 4)
-  (setq-default indent-line-function 'insert-tab)
+  ;; (setq-default indent-line-function 'insert-tab)
 	;(setq default-indent-tabs-mode nil)
 	;(setq indent-line-function 'insert-tab)
 	;(setq default-tab-width 4)
 
+  (setq yas-indent-line 'fixed)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
