@@ -16,6 +16,8 @@
     '(
       	org-pomodoro
         cal-china-x
+        smart-tabs-mode
+        smart-tab
       ))
 
 ;; List of packages to exclude.
@@ -39,6 +41,7 @@
       (setq org-pomodoro-killed-hook '(lambda () (dmx/terminal-notify "Oh no, don not leave" "Pomodoro has been killed!")))
       ))
   )
+
 (defun dmx/init-cal-china-x ()
   "Initialize cal-china-x"
   (use-package cal-china-x
@@ -46,6 +49,23 @@
     :init 
     (progn
      (message "Loading %s..." "cal-china-x")
+    )))
+
+(defun dmx/init-smart-tabs-mode()
+  "Initialize smart-tabs-mode"
+  (use-package cal-china-x
+    :defer t
+    :init 
+    (progn
+     (message "Loading %s..." "smart-tabs-mode")
+    )))
+(defun dmx/init-smart-tab()
+  "Initialize smart-tab"
+  (use-package cal-china-x
+    :defer t
+    :init 
+    (progn
+     (message "Loading %s..." "smart-tab")
     )))
 ;; Often the body of an initialize function uses `use-package'
 ;; For more info on `use-package', see readme:

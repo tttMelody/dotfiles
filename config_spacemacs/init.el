@@ -30,7 +30,6 @@ values."
      org
      ;; pandoc
      javascript
-     lua
      c-c++
      html
      java
@@ -56,6 +55,7 @@ values."
      ;; syntax-checking
      ;; version-control
      dmx
+     dmx-lua
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -249,7 +249,7 @@ user code."
   "Configuration function for user code.
   This function is called at the very end of Spacemacs initialization after
   layers configuration. You are free to put any user code."
-  (setq powerline-default-separator nil)
+  ;;(setq powerline-default-separator 'arrow)
   (define-key evil-normal-state-map ";" 'evil-ex)
   (define-key evil-visual-state-map ";" 'evil-ex)
   (set-locale-environment "zh_CN.utf-8")
@@ -264,7 +264,14 @@ user code."
   (setq vc-follow-symlinks t)
   ;; vc中的文件保存时不提示
   (setq vc-suppress-confirm t)
-  (setq default-tab-width 4)
+
+  (setq-default indent-tabs-mode nil)
+  (setq-default tab-width 4)
+  (setq-default indent-line-function 'insert-tab)
+	;(setq default-indent-tabs-mode nil)
+	;(setq indent-line-function 'insert-tab)
+	;(setq default-tab-width 4)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

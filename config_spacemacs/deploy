@@ -8,6 +8,10 @@ if [[ ! -L ~/.spacemacs.d/config ]]; then
 	ln -sif $root/config_spacemacs/config ~/.spacemacs.d/config
 fi
 
-if [[ ! -L ~/.emacs.d/private/dmx ]]; then
-	ln -sif $root/config_spacemacs/private_layers/dmx ~/.emacs.d/private/dmx
-fi
+private_layers=(dmx dmx-lua)
+for (( i = 0; i < ${#private_layers[@]}; i++ )); do
+	p_layername=${private_layers[i]}
+	if [[ ! -L ~/.emacs.d/private/${p_layername} ]]; then
+		ln -sif $root/config_spacemacs/private/${p_layername} ~/.emacs.d/private/${p_layername}
+	fi
+done
