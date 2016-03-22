@@ -249,7 +249,7 @@ user code."
   "Configuration function for user code.
   This function is called at the very end of Spacemacs initialization after
   layers configuration. You are free to put any user code."
-  ;;(setq powerline-default-separator 'arrow)
+  (setq powerline-default-separator nil)
   (define-key evil-normal-state-map ";" 'evil-ex)
   (define-key evil-visual-state-map ";" 'evil-ex)
   (set-locale-environment "zh_CN.utf-8")
