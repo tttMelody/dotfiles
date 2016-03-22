@@ -16,7 +16,7 @@
     '(
       	org-pomodoro
         cal-china-x
-        smart-tabs-mode
+        ;; smart-tabs-mode
         smart-tab
       ))
 
@@ -51,22 +51,23 @@
      (message "Loading %s..." "cal-china-x")
     )))
 
-(defun dmx/init-smart-tabs-mode()
-  "Initialize smart-tabs-mode"
-  (use-package cal-china-x
-    :defer t
-    :init 
-    (progn
-     (message "Loading %s..." "smart-tabs-mode")
-    )))
+;; (defun dmx/init-smart-tabs-mode()
+;;   "Initialize smart-tabs-mode"
+;;   (use-package smart-tabs-mode
+;;     :defer t
+;;     :init 
+;;     (progn
+;;      (message "Loading %s..." "smart-tabs-mode")
+;;     )))
 (defun dmx/init-smart-tab()
   "Initialize smart-tab"
-  (use-package cal-china-x
+  (use-package smart-tab
     :defer t
     :init 
     (progn
-     (message "Loading %s..." "smart-tab")
-    )))
+      (setq smart-tab-using-hippie-expand t)
+      (message "Loading %s..." "smart-tab")
+      )))
 ;; Often the body of an initialize function uses `use-package'
 ;; For more info on `use-package', see readme:
 ;; https://github.com/jwiegley/use-package
