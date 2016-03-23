@@ -31,11 +31,13 @@ values."
      ;; pandoc
      javascript
      c-c++
+     php
      html
      java
      python
      emacs-lisp
      vimscript
+     shell-script
      go
      yaml
      search-engine
@@ -265,14 +267,19 @@ user code."
   ;; vc中的文件保存时不提示
   (setq vc-suppress-confirm t)
 
-  (setq-default indent-tabs-mode nil)
-  (setq-default tab-width 4)
-  ;; (setq-default indent-line-function 'insert-tab)
-	;(setq default-indent-tabs-mode nil)
-	;(setq indent-line-function 'insert-tab)
-	;(setq default-tab-width 4)
 
+  ;; 设置yasnippet 补全的时候不增加缩进
   (setq yas-indent-line 'fixed)
+  ;; 设置c-c++mode 缩进
+  (setq-default c-basic-offset 4
+                tab-width 4
+				tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60)
+                indent-tabs-mode t)
+  (c-set-offset 'substatement-open 0)
+  ;; (add-hook 'c++-mode-hook '(
+  ;; 							 (setq c-basic-offset 4)
+  ;; 							 (c-set-offset 'substatement-open 0)
+  ;; 							 ))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
