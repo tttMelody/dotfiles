@@ -209,25 +209,20 @@ values."
    ;; specified with an installed package.
    ;; Not used for now. (default nil)
    dotspacemacs-default-package-repository nil
+   dotspacemacs-elpa-https nil
    ))
 
-(defun dotspacemacs/user-init ()
-  "Initialization function for user code.
-It is called immediately after `dotspacemacs/init'.  You are free to put any
-user code."
-  (setq spacemacs-theme-comment-bg nil)
-  (setq spacemacs-theme-org-height nil)
+(defun dmx-init-spacemacs-theme ()
   ;;== solarized theme setting ==
   ;; make the fringe stand out from the background
   ;; (setq solarized-distinct-fringe-background t)
   ;; Don't change the font for some headings and titles
   (setq solarized-use-variable-pitch nil)
   ;; Use more italics
-  ;(setq solarized-use-more-italic t)
-  
+  ;;(setq solarized-use-more-italic t)
+
   ;; Use less colors for indicators such as git:gutter, flycheck and similar
-  ;(setq solarized-emphasize-indicators nil)
-  
+  ;;(setq solarized-emphasize-indicators nil)
   ;; Don't change size of org-mode headlines (but keep other size-changes)
   (setq solarized-scale-org-headlines nil)
 
@@ -236,8 +231,15 @@ user code."
   (setq solarized-height-plus-1 1)
   (setq solarized-height-plus-2 1)
   (setq solarized-height-plus-3 1)
-  (setq solarized-height-plus-4 1)
+  (setq solarized-height-plus-4 1))
 
+(defun dotspacemacs/user-init ()
+  "Initialization function for user code.
+It is called immediately after `dotspacemacs/init'.  You are free to put any
+user code."
+  (setq spacemacs-theme-comment-bg nil)
+  (setq spacemacs-theme-org-height nil)
+  (dmx-init-spacemacs-theme)
   (setq org-bullets-bullet-list
        '( "◉" "○" "✸" "✿" "◆" "♠" "♣" "♥" "●" "☢" "❀" "☯" "◇" "✚" "✜" "♦" "◆" "◖" "▶"))
   ;前12个是：子鼠、丑牛、寅虎、卯兔、辰龙、巳蛇、午马、未羊、申猴、酉鸡、戌狗、亥猪
@@ -257,8 +259,7 @@ user code."
 				c-default-style "linux"
                 tab-width 4
 				tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60)
-                indent-tabs-mode t)
-  )
+                indent-tabs-mode t))
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
   This function is called at the very end of Spacemacs initialization after
