@@ -260,6 +260,7 @@ user code."
                 tab-width 4
 				tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60)
                 indent-tabs-mode t))
+
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
   This function is called at the very end of Spacemacs initialization after
@@ -291,9 +292,7 @@ user code."
   (c-set-offset 'substatement-open '0)
   (add-hook 'c++-mode-hook 'dmx-c-mode-hook)
   (add-hook 'c-mode-hook 'dmx-c-mode-hook)
-  (global-linum-mode)
-  (with-eval-after-load 'linum
-	(linum-relative-toggle))
+  (dmx/linum-config)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
