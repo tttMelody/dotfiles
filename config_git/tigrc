@@ -1,1 +1,1 @@
-bind generic K !git difftool --no-prompt %(commit)
+bind generic K !git difftool --no-prompt %(commit) %(commit)^1
