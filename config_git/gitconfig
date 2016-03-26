@@ -14,7 +14,7 @@
 	diff = auto
 [user]
 	name = dmx
-	email = dingmingxin@babeltime.com
+	email = dingmingxin@playcrab.com
 [core]
 	pager = less -x4
 	quotepath = false
