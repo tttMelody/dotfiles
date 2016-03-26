@@ -6,6 +6,7 @@
    (setq dmx-notification-command (format "/opt/local/bin/terminal-notifier -message \"%s\" -title \"%s\" -sound moof" title message))
    (shell-command-to-string dmx-notification-command))
  )
+
 (defun dmx/linum-config ()
   ;; 开启行号
   (global-linum-mode)

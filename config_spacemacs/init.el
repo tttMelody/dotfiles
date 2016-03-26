@@ -266,24 +266,14 @@ user code."
   This function is called at the very end of Spacemacs initialization after
   layers configuration. You are free to put any user code."
   (setq powerline-default-separator nil)
-  (define-key evil-normal-state-map ";" 'evil-ex)
-  (define-key evil-visual-state-map ";" 'evil-ex)
   (set-locale-environment "zh_CN.utf-8")
 
   (add-to-list 'load-path "~/.spacemacs.d/config")
   (require 'custom-emacs)
   (custom-require 'custom-init-cal-china-x)
   (custom-require 'custom-init-org-projects)
-  ;; (custom-require 'custom-init-yasnippet)
   ;; font for all unicode characters
-  ;; 如果是软连接，跟随
-  (setq vc-follow-symlinks t)
-  ;; vc中的文件保存时不提示
-  (setq vc-suppress-confirm t)
 
-
-  ;; 设置yasnippet 补全的时候不增加缩进
-  (setq yas-indent-line 'fixed)
   ;; 设置c-c++mode 缩进
   (setq-default c-basic-offset 4
                 tab-width 4
