@@ -1,1 +1,3 @@
 bind generic K !git difftool --no-prompt %(commit) %(commit)^1
+set diff-options = --pretty=format:"%h %ad %an %s"
+set log-options = --pretty=format:"%h %ad %an %s" --date=short
