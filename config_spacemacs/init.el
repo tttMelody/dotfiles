@@ -275,8 +275,13 @@ user code."
   ;; font for all unicode characters
 
   ;; 设置c-c++mode 缩进
-  (setq-default tab-width 4
-				tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
+  ;(setq-default tab-width 4
+  ;              tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
+  (setq-default c-basic-offset 4
+				c-default-style "linux"
+                tab-width 4
+				tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60)
+                indent-tabs-mode t)
 
   ;; 设置按tab键输入\t
   (global-set-key (kbd "TAB") 'self-insert-command)

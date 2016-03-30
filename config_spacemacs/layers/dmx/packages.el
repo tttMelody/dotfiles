@@ -18,6 +18,8 @@
         cal-china-x
         ;; smart-tabs-mode
         smart-tab
+        company-ycmd
+        ycmd
       ))
 
 ;; List of packages to exclude.
@@ -28,37 +30,38 @@
 (defun dmx/init-org-pomodoro ()
   "Initialize org-pomodoro"
   (use-package org-pomodoro
-    :defer t
-    :init
-    (progn
-      (when (spacemacs/system-is-mac)
-        (setq org-pomodoro-audio-player "/usr/bin/afplay"))
-      (spacemacs/set-leader-keys-for-major-mode 'org-mode "p" 'org-pomodoro)
-      (setq org-pomodoro-started-hook '(lambda () (dmx/terminal-notify "Pomodoro Started" "Go go go!" )))
-      (setq org-pomodoro-finished-hook '(lambda () (dmx/terminal-notify "Pomodoro Finished" "☕️ Have a break!")))
-      (setq org-pomodoro-short-break-finished-hook '(lambda () (dmx/terminal-notify "Short Break" "🐝 Ready to Go?")))
-      (setq org-pomodoro-long-break-finished-hook '(lambda () (dmx/terminal-notify "Long Break" " 💪 Ready to Go?")))
-      (setq org-pomodoro-killed-hook '(lambda () (dmx/terminal-notify "Oh no, don not leave" "Pomodoro has been killed!")))
-      ))
-  )
+			   :defer t
+			   :init
+			   (progn
+				 (when (spacemacs/system-is-mac)
+				   (setq org-pomodoro-audio-player "/usr/bin/afplay"))
+				 (spacemacs/set-leader-keys-for-major-mode 'org-mode "p" 'org-pomodoro)
+				 (setq org-pomodoro-started-hook '(lambda () (dmx/terminal-notify "Pomodoro Started" "Go go go!" )))
+				 (setq org-pomodoro-finished-hook '(lambda () (dmx/terminal-notify "Pomodoro Finished" "☕️ Have a break!")))
+				 (setq org-pomodoro-short-break-finished-hook '(lambda () (dmx/terminal-notify "Short Break" "🐝 Ready to Go?")))
+				 (setq org-pomodoro-long-break-finished-hook '(lambda () (dmx/terminal-notify "Long Break" " 💪 Ready to Go?")))
+				 (setq org-pomodoro-killed-hook '(lambda () (dmx/terminal-notify "Oh no, don not leave" "Pomodoro has been killed!"))))))
 
 (defun dmx/init-cal-china-x ()
   "Initialize cal-china-x"
   (use-package cal-china-x
-    :defer t
-    :init 
-    (progn
-     (message "Loading %s..." "cal-china-x"))))
+			   :defer t
+			   :init 
+			   (progn
+				 (message "Loading %s..." "cal-china-x"))))
 
 (defun dmx/init-smart-tab()
   "Initialize smart-tab"
   (use-package smart-tab
-    :defer t
-    :init 
-    (progn
-      (setq smart-tab-using-hippie-expand t)
-      (message "Loading %s..." "smart-tab"))))
-;; 	  (message "Loading %s..." "smart-tab"))))
-;; Often the body of an initialize function uses `use-package'
-;; For more info on `use-package', see readme:
-;; https://github.com/jwiegley/use-package
+			   :defer t
+			   :init 
+			   (progn
+				 (setq smart-tab-using-hippie-expand t)
+				 (message "Loading %s..." "smart-tab"))))
+;(defun dmx/init-ycmd()
+;  "Initialize ycmd"
+;  (use-package ycmd
+;               :defer t
+;               :init
+;               (progn
+;                 (ycmd-mode))))
