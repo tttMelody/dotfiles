@@ -275,10 +275,11 @@ user code."
   ;; font for all unicode characters
 
   ;; 设置c-c++mode 缩进
-  (setq-default c-basic-offset 4
-                tab-width 4
-				tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60)
-                indent-tabs-mode t)
+  (setq-default tab-width 4
+				tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
+
+  ;; 设置按tab键输入\t
+  (global-set-key (kbd "TAB") 'self-insert-command)
   (c-set-offset 'substatement-open '0)
   (add-hook 'c++-mode-hook 'dmx-c-mode-hook)
   (add-hook 'c-mode-hook 'dmx-c-mode-hook)

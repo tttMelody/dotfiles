@@ -1,7 +1,7 @@
 # ~/.tmuxinator/learn.yml
 
 name: learn
-root: ~/wb/learn/
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
