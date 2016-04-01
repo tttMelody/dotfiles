@@ -30,6 +30,7 @@ values."
      org
      ;; pandoc
      javascript
+	 ycmd
      c-c++
      php
      html

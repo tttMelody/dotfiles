@@ -10,3 +10,6 @@
 	  ;; vc中的文件保存时不提示
 	  vc-suppress-confirm t
 	  )
+
+(set-variable 'ycmd-server-command (list "python" (expand-file-name "Documents/github/ycmd/ycmd" "~/")))
+(add-hook 'c++-mode-hook 'ycmd-mode)
