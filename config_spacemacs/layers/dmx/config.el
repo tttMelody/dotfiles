@@ -11,5 +11,7 @@
 	  vc-suppress-confirm t
 	  )
 
+(add-hook 'after-init-hook 'global-company-mode)
+(company-ycmd-setup)
 (set-variable 'ycmd-server-command (list "python" (expand-file-name "Documents/github/ycmd/ycmd" "~/")))
 (add-hook 'c++-mode-hook 'ycmd-mode)
