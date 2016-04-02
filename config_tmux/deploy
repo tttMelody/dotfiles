@@ -2,7 +2,7 @@
 
 rm ~/.tmux.conf
 rm ~/.tmux.conf.local
-ln -s $TMUX_CON_ROOT/tmux.conf_1 ~/.tmux.conf
+ln -s $TMUX_CON_ROOT/tmux.conf ~/.tmux.conf
 ln -s $TMUX_CON_ROOT/tmux.conf.local ~/.tmux.conf.local
 if [[ ! -d ~/.tmuxinator ]]; then
 	mkdir ~/.tmuxinator
