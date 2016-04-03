@@ -98,6 +98,7 @@ Plugin 'a.vim'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'dingmingxin/molokai'
 Plugin 'tfnico/vim-gradle' " for gradle file syntax highlight
+Plugin 'junegunn/fzf.vim'
 "Plugin 'gorodinskiy/vim-coloresque'
 " needed for fetching schemes online.
 "Plugin 'Rykka/colorv.vim'
@@ -244,6 +245,40 @@ nnoremap <F5> :GundoToggle<CR>
 let g:gitgutter_diff_args = '-w'
 "=====================easymotion
 "let g:EasyMotion_leader_key = '<Leader><Leader>'
+"=====================fzf.vim
+let g:fzf_command_prefix = 'Fzf'
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+noremap <Leader>f :FzfFiles<cr>
+noremap <Leader>b :FzfBuffers<cr>
+noremap <Leader>t :FzfTags<cr>
+noremap <Leader>a :FzfAg<cr>
+
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+inoremap <expr> <c-x><c-k> fzf#complete('cat /usr/share/dict/words')
+" Default fzf layout
+" - down / up / left / right
+" - window (nvim only)
+let g:fzf_layout = { 'down': '~40%' }
+
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
+" [[B]Commits] to customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+" Advanced customization using autoload functions
+autocmd VimEnter * command! Colors
+  \ call fzf#vim#colors({'left': '15%', 'options': '--reverse --margin 30%,0'})
+
 "=====================ctrlP 
 let g:ctrlp_open_multiple_files = '5t' 
 let g:ctrlp_arg_map = 0 
@@ -309,9 +344,9 @@ let g:ctrlp_prompt_mappings = {
             \ 'OpenMulti()': ['<c-o>'], 
             \ 'PrtExit()': ['<esc>', '<c-c>', '<c-g>'], 
             \ }
-nnoremap <Leader>f :CtrlPFunky<cr> 
-nnoremap <Leader>[ :CtrlPBuffer<cr> 
-nnoremap <Leader>u :CtrlPMRUFiles<cr> 
+"nnoremap <Leader>f :CtrlPFunky<cr> 
+"nnoremap <Leader>[ :CtrlPBuffer<cr> 
+"nnoremap <Leader>u :CtrlPMRUFiles<cr> 
 "=====================ctrlp_tjump 
 nnoremap <Leader>] :CtrlPtjump<cr> 
 vnoremap <Leader>] :CtrlPtjumpVisual<cr> 
