@@ -17,3 +17,12 @@ if [[ ! -L ~/.zsh_custom ]]; then
 fi
 ln -sf $ZSHCONFIG_ROOT/zsh_alias.zsh ~/.zsh_alias.zsh
 
+cat <<EOF
+1. you need zshmarks plugin
+ git clone https://github.com/jocelynmallon/zshmarks.git ~/.zsh_custom/plugins/
+
+2. you need fzf-zshmarks
+ git clone https://github.com/urbainvaes/fzf-marks.git ~/.zsh_custom/plugins/fzf-marks
+
+EOF
+

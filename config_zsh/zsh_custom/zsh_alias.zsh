@@ -54,3 +54,7 @@ alias hdevtool="cd /work/wall-e && python tool.py && cd -"
 alias hsvn="cd /work/heracles/svn"
 alias hdmxtool="cd /work/heracles_tools/"
 
+alias j=fzf-bookmarks
+alias s="bookmark"
+alias p="showmarks"
+

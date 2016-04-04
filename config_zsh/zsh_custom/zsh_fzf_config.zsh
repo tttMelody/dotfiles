@@ -76,6 +76,10 @@ cho() {
 	fzf --ansi --multi | sed 's#.*\(https*://\)#\1#' | xargs open
 }
 
+fzfcmd() {
+   [ ${FZF_TMUX:-1} -eq 1 ] && echo "fzf-tmux -d${FZF_TMUX_HEIGHT:-40%}" || echo "fzf"
+}
+
 # fzf quickly access to emacs buffer
 febf() 
 {
@@ -115,6 +119,15 @@ febf()
 		$EMACSCLIENT -t -e "(switch-to-buffer \"${target_buffer}\")"
 }
 
+fzf-bookmarks()
+{
+	local bookmark_file="$HOME/.bookmarks"
+    jumpline=$(cat ${bookmark_file} | $(fzfcmd) --query="$1" --select-1)
+	if [[ -n ${jumpline} ]]; then
+		jumpdir=$(echo $jumpline | awk -F\| '{print $1}')
+		cd $(eval "echo \"$jumpdir\"")
+	fi
+}
 # fzf osx opening application
 #foapps()
 #{
