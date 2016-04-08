@@ -32,6 +32,7 @@ values."
      javascript
 	 ycmd
      c-c++
+	 swift
      php
      html
      java
