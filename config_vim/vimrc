@@ -246,6 +246,8 @@ let g:gitgutter_diff_args = '-w'
 "=====================easymotion
 "let g:EasyMotion_leader_key = '<Leader><Leader>'
 "=====================fzf.vim
+"set rtp+=~/.vim/bundle/fzf.vim
+set rtp+=~/.fzf
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
