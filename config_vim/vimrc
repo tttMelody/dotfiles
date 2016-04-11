@@ -347,8 +347,8 @@ let g:ctrlp_prompt_mappings = {
             \ 'PrtExit()': ['<esc>', '<c-c>', '<c-g>'], 
             \ }
 "nnoremap <Leader>f :CtrlPFunky<cr> 
-"nnoremap <Leader>[ :CtrlPBuffer<cr> 
-"nnoremap <Leader>u :CtrlPMRUFiles<cr> 
+nnoremap <Leader>[ :CtrlPBuffer<cr> 
+nnoremap <Leader>u :CtrlPMRUFiles<cr> 
 "=====================ctrlp_tjump 
 nnoremap <Leader>] :CtrlPtjump<cr> 
 vnoremap <Leader>] :CtrlPtjumpVisual<cr> 
