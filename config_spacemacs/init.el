@@ -286,7 +286,8 @@ user code."
                 indent-tabs-mode t)
 
   ;; 设置按tab键输入\t
-  (global-set-key (kbd "TAB") 'self-insert-command)
+  ;(global-set-key (kbd "TAB") 'self-insert-command)
+  (define-key evil-insert-state-map (kbd "TAB") 'self-insert-command)
   (c-set-offset 'substatement-open '0)
   (add-hook 'c++-mode-hook 'dmx-c-mode-hook)
   (add-hook 'c-mode-hook 'dmx-c-mode-hook)
