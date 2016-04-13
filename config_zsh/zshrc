@@ -54,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-autoload -U compinit promptinit colors
+autoload -U compinit promptinit colors zmv
 compinit
 promptinit
 colors
