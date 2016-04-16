@@ -26,6 +26,9 @@ alias ld='ls -lhG -d *(/)'
 alias op='open'
 alias bs='source ~/.bash_profile'
 alias e='emacsclient -t'
+alias gpp="git pull && git push"
+alias gpl="git pull"
+alias gph="git push"
 
 if [[ $unamestr == "Darwin" ]]; then
 	platform="osx"
