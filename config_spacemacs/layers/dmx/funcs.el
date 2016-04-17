@@ -15,8 +15,8 @@
 
   ;; org mode 禁用行号
   (add-hook 'org-mode-hook (lambda ()
-							  "disable linum in org mode"
-							  (linum-mode 0)))
+  							  "disable linum in org mode"
+  							  (linum-mode 0)))
   ;; helm buffer 禁用行号
   (add-hook 'helm-after-initialize-hook (lambda ()
 										  (with-helm-buffer
