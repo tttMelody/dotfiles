@@ -18,50 +18,50 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     auto-completion
-     better-defaults
-     git
-     markdown
-     org
-     ;; pandoc
-     javascript
+	 ;; ----------------------------------------------------------------
+	 ;; Example of useful layers you may want to use right away.
+	 ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
+	 ;; <M-m f e R> (Emacs style) to install them.
+	 ;; ----------------------------------------------------------------
+	 auto-completion
+	 better-defaults
+	 git
+	 markdown
+	 org
+	 ;; pandoc
+	 javascript
 	 ycmd
-     c-c++
+	 c-c++
 	 swift
-     php
-     html
-     java
-     python
-     emacs-lisp
-     vimscript
-     shell-script
-     go
-     yaml
-     search-engine
-     tmux
-     games
-     dash
+	 php
+	 html
+	 java
+	 python
+	 emacs-lisp
+	 vimscript
+	 shell-script
+	 go
+	 yaml
+	 search-engine
+	 tmux
+	 games
+	 dash
 	 shell-scripts
-     ;;chinese
-     ;; (colors :variables
-     ;;         colors-enable-rainbow-identifiers t
-     ;;         colors-enable-nyan-cat-progress-bar t)
+	 ;;chinese
+	 ;; (colors :variables
+	 ;;         colors-enable-rainbow-identifiers t
+	 ;;         colors-enable-nyan-cat-progress-bar t)
 
-     ;;osx
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
-     dmx
-     dmx-lua
-     )
+	 ;;osx
+	 (shell :variables
+			shell-default-height 30
+			shell-default-position 'bottom)
+	 ;; spell-checking
+	 ;; syntax-checking
+	 ;; version-control
+	 dmx
+	 dmx-lua
+	 )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
@@ -105,21 +105,21 @@ values."
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(solarized-light
-                         solarized-dark
-                         spacemacs-light
-                         spacemacs-dark
-                         leuven
-                         monokai
-                         zenburn)
+						 solarized-dark
+						 spacemacs-light
+						 spacemacs-dark
+						 leuven
+						 monokai
+						 zenburn)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Menlo For Powerline"
-                               :size 18
-                               :weight normal
-                               :width normal
-                               :powerline-scale 1.1)
+							   :size 18
+							   :weight normal
+							   :width normal
+							   :powerline-scale 1.1)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -244,10 +244,10 @@ user code."
   (setq spacemacs-theme-org-height nil)
   (dmx-init-spacemacs-theme)
   (setq org-bullets-bullet-list
-       '( "◉" "○" "✸" "✿" "◆" "♠" "♣" "♥" "●" "☢" "❀" "☯" "◇" "✚" "✜" "♦" "◆" "◖" "▶"))
+	   '( "◉" "○" "✸" "✿" "◆" "♠" "♣" "♥" "●" "☢" "❀" "☯" "◇" "✚" "✜" "♦" "◆" "◖" "▶"))
   ;前12个是：子鼠、丑牛、寅虎、卯兔、辰龙、巳蛇、午马、未羊、申猴、酉鸡、戌狗、亥猪
   ;; (setq org-bullets-bullet-list
-  ;; 	'("🐢 " "🐀 " "🐂 " "🐅 " "🐇 " "🐉 " "🐍 " "🐎 " "🐐 " "🐒 " "🐓 " "🐕 " "🐖 " "🐠 " "🐘 " "🐙 " "🐜 " "🐝 " "🐟 " "🐪 " "🐬 " "🐳 "))
+  ;;	'("🐢 " "🐀 " "🐂 " "🐅 " "🐇 " "🐉 " "🐍 " "🐎 " "🐐 " "🐒 " "🐓 " "🐕 " "🐖 " "🐠 " "🐘 " "🐙 " "🐜 " "🐝 " "🐟 " "🐪 " "🐬 " "🐳 "))
   ;;for dash layer
   (setq dash-helm-dash-docset-path "~/Library/Application Support/Dash/DocSets")
 )
@@ -260,9 +260,9 @@ user code."
   (c-set-offset 'case-label '+)       ; in
   (setq-default c-basic-offset 4
 				c-default-style "linux"
-                tab-width 4
+				tab-width 4
 				tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60)
-                indent-tabs-mode t))
+				indent-tabs-mode t))
 (defun dmx-hideshow-config()
   (spacemacs/set-leader-keys "mhha" 'hs-hide-all)
   (spacemacs/set-leader-keys "mhhb" 'hs-hide-block)
@@ -287,9 +287,9 @@ user code."
   ;              tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
   (setq-default c-basic-offset 4
 				c-default-style "linux"
-                tab-width 4
+				tab-width 4
 				tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60)
-                indent-tabs-mode t)
+				indent-tabs-mode t)
 
   ;; 设置按tab键输入\t
   ;(global-set-key (kbd "TAB") 'self-insert-command)
@@ -314,6 +314,8 @@ user code."
 							"hide linenum when hs-hide-mode is deactive"
 							(linum-mode 1)))
 
+  (spacemacs/set-leader-keys "aaw" 'avy-goto-word-or-subword-1)
+  (spacemacs/set-leader-keys "aac" 'avy-goto-char-in-line)
 
   (add-hook 'lua-mode-hook 'dmx-hideshow-config)
   )
