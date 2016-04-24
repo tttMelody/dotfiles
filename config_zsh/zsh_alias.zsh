@@ -20,8 +20,9 @@ unamestr=$(uname)
 platform="unknown"
 
 alias svnci='svnrmall; svnaddall; svn ci'
-alias la="ls -lhG"
-alias ll='ls -dlh ^*.(meta|csproj|userprefs|sln|unityproj|csproj)'
+alias la="ls -lhGa"
+alias ll="ls -lhG"
+alias lll='ls -dlh ^*.(meta|csproj|userprefs|sln|unityproj|csproj)'
 alias ld='ls -lhG -d *(/)'
 alias op='open'
 alias bs='source ~/.bash_profile'
