@@ -9,8 +9,17 @@
 	  vc-follow-symlinks t
 	  ;; vc中的文件保存时不提示
 	  vc-suppress-confirm t
+
+	  evil-want-C-d-scroll t
+	  evil-want-C-u-scroll t
 	  )
 
+
+;; Make movement keys work like they should
+(define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
 ;(add-hook 'after-init-hook 'global-company-mode)
 ;(company-ycmd-setup)
 (set-variable 'ycmd-server-command (list "python" (expand-file-name "Documents/github/ycmd/ycmd" "~/")))
