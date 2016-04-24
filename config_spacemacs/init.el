@@ -263,6 +263,11 @@ user code."
                 tab-width 4
 				tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60)
                 indent-tabs-mode t))
+(defun dmx-hideshow-config()
+  (spacemacs/set-leader-keys "mhha" 'hs-hide-all)
+  (spacemacs/set-leader-keys "mhhb" 'hs-hide-block)
+  (spacemacs/set-leader-keys "mhsa" 'hs-show-all)
+  (spacemacs/set-leader-keys "mhsb" 'hs-show-block))
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -301,6 +306,16 @@ user code."
 			   [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5]))
 	  (global-unset-key k))
   (dmx/linum-config)
+  (spacemacs/set-leader-keys "mwc" 'whitespace-cleanup)
+  (add-hook 'hs-hide-hook (lambda ()
+							"hide linenum when hs-hide-mode is active"
+							(linum-mode 0)))
+  (add-hook 'hs-show-hook (lambda ()
+							"hide linenum when hs-hide-mode is deactive"
+							(linum-mode 1)))
+
+
+  (add-hook 'lua-mode-hook 'dmx-hideshow-config)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
