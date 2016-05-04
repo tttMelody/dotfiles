@@ -15,6 +15,7 @@
 (setq dmx-packages
     '(
       	org-pomodoro
+		org-page
         cal-china-x
         ;; smart-tabs-mode
         smart-tab
@@ -53,11 +54,11 @@
 (defun dmx/init-smart-tab()
   "Initialize smart-tab"
   (use-package smart-tab
-			   :defer t
-			   :init 
-			   (progn
-				 (setq smart-tab-using-hippie-expand t)
-				 (message "Loading %s..." "smart-tab"))))
+	:defer t
+	:init 
+	(progn
+	  (setq smart-tab-using-hippie-expand t)
+	  (message "Loading %s..." "smart-tab"))))
 ;(defun dmx/init-ycmd()
 ;  "Initialize ycmd"
 ;  (use-package ycmd
@@ -65,3 +66,11 @@
 ;               :init
 ;               (progn
 ;                 (ycmd-mode))))
+(defun dmx/init-org-page()
+  "Initialize org-page"
+  (use-package org-page
+	:defer t
+	:init
+	(progn
+	  (require 'org-page)
+	  (message "Loading %s..." "org-page"))))

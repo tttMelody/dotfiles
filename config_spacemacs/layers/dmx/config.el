@@ -12,6 +12,11 @@
 
 	  evil-want-C-d-scroll t
 	  evil-want-C-u-scroll t
+
+	  op/repository-directory "~/Documents/github/dingmingxin.github.io"
+	  op/site-domain "https://dingmingxin.github.io/"
+	  op/personal-github-link "https://github.com/dingmingxin"
+	  op/theme 'wy
 	  )
 
 
