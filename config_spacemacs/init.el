@@ -316,7 +316,9 @@ user code."
 
   (spacemacs/set-leader-keys "aaw" 'avy-goto-word-or-subword-1)
   (spacemacs/set-leader-keys "aac" 'avy-goto-char-in-line)
+  (spacemacs/set-leader-keys "mhha" 'hs-hide-all)
 
+  (add-hook 'org-mode-hook 'toc-org-enable)
   (add-hook 'lua-mode-hook 'dmx-hideshow-config)
   )
 
