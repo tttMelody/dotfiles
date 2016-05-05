@@ -15,6 +15,7 @@
 (setq dmx-packages
 	'(
 		org-pomodoro
+		org-page
 		cal-china-x
 		;; smart-tabs-mode
 		smart-tab
@@ -82,3 +83,11 @@
 	:init
 	(progn
 	  (message "Loading %s..." "toc-org"))))
+(defun dmx/init-org-page()
+  "Initialize org-page"
+  (use-package org-page
+	:defer t
+	:init
+	(progn
+	  (require 'org-page)
+	  (message "Loading %s..." "org-page"))))

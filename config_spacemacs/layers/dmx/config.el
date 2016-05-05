@@ -1,6 +1,6 @@
 (setq helm-autoresize-max-height 80
 	  helm-autoresize-min-height 20
-	  ;; linum 
+	  ;; linum
 	  linum-relative-format "%3s "
 	  ;; 设置yasnippet 补全的时候不增加缩进
 	  yas-indent-line 'fixed
@@ -12,6 +12,11 @@
 
 	  evil-want-C-d-scroll t
 	  evil-want-C-u-scroll t
+	  ;; org-page
+	  op/repository-directory "~/Documents/github/dingmingxin.github.io"
+	  op/personal-github-link "https://github.com/dingmingxin"
+	  op/site-domain "http://dingmingxin.github.io/"
+	  op/theme 'wy
 	  )
 
 
