@@ -60,7 +60,7 @@ hash -d hsvn="/work/heracles/svn"
 hash -d hconfigs="/work/heracles/svn/configs"
 hash -d hdmxtool="/work/heracles_tools/"
 
-hash -d myblog="~/Documents/github/dingmingxin.github.io"
+hash -d myblog=~/Documents/github/dingmingxin.github.io
 
 #common file type alias
 alias -s zip="unzip"
