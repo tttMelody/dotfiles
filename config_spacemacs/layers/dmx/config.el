@@ -14,11 +14,36 @@
 	  evil-want-C-u-scroll t
 	  ;; org-page
 	  op/repository-directory "~/Documents/github/dingmingxin.github.io"
+	  op/repository-org-branch "source"
+	  op/repository-html-branch "master"
+	  op/personal-google-analytics-id "UA-77360714-1"
 	  op/personal-github-link "https://github.com/dingmingxin"
 	  op/site-domain "http://dingmingxin.github.io/"
-	  op/theme 'wy
+	  op/site-main-title "勿忘初心，方得始终"
+	  op/site-sub-title "()==[:::::::::::::> 重剑无锋，大巧不工 "
+	  op/theme 'mdo
+	  op/category-config-alist '(("blog" ;; this is the default configuration
+								  :show-meta t
+								  :show-comment t
+								  :uri-generator op/generate-uri
+								  :uri-template "/blog/%y/%m/%d/%t/"
+								  :sort-by :date     ;; how to sort the posts
+								  :category-index t) ;; generate category index or not
+								 ("index"
+								  :show-meta nil
+								  :show-comment nil
+								  :uri-generator op/generate-uri
+								  :uri-template "/"
+								  :sort-by :date
+								  :category-index nil)
+								 ("about"
+								  :show-meta nil
+								  :show-comment nil
+								  :uri-generator op/generate-uri
+								  :uri-template "/about/"
+								  :sort-by :date
+								  :category-index nil))
 	  )
-
 
 ;; Make movement keys work like they should
 (define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)

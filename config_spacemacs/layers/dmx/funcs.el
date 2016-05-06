@@ -21,3 +21,5 @@
   (add-hook 'helm-after-initialize-hook (lambda ()
 										  (with-helm-buffer
 											(linum-mode 0)))))
+(defun dmx/org-page-publish ()
+  (op/do-publication t nil nil t))
