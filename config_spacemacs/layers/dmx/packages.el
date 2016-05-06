@@ -56,11 +56,11 @@
 (defun dmx/init-smart-tab()
   "Initialize smart-tab"
   (use-package smart-tab
-			   :defer t
-			   :init
-			   (progn
-				 (setq smart-tab-using-hippie-expand t)
-				 (message "Loading %s..." "smart-tab"))))
+	:defer t
+	:init 
+	(progn
+	  (setq smart-tab-using-hippie-expand t)
+	  (message "Loading %s..." "smart-tab"))))
 
 (defun dmx/init-dash-functional()
   "Initialize dash-functional"
@@ -83,6 +83,7 @@
 	:init
 	(progn
 	  (message "Loading %s..." "toc-org"))))
+
 (defun dmx/init-org-page()
   "Initialize org-page"
   (use-package org-page
