@@ -47,14 +47,22 @@ alias pdevtool='cd /data/www/hohoplatform/dev_tool'
 alias pandroid='cd /data/hohoplatform/client/proj.android-studio'
 
 #heracles
-alias hlua='cd /work/heracles/svn/Resources/script/'
-alias hclient="cd /work/heracles/frameworks/runtime-src/proj.ios_mac"
-alias huiflash="cd /work/heracles/svn/Assets/flahsUITools/assets/ui"
 alias hdevtool="cd /work/wall-e && python tool.py && cd -"
-alias hsvn="cd /work/heracles/svn"
-alias hdmxtool="cd /work/heracles_tools/"
 
 alias j=fzf-bookmarks
 alias s="bookmark"
 alias p="showmarks"
+
+hash -d hlua="/work/heracles/svn/Resources/script"
+hash -d hclient="/work/heracles/svn/Resources/script"
+hash -d huiflash="/work/heracles/svn/Assets/flahsUITools/assets/ui"
+hash -d hsvn="/work/heracles/svn"
+hash -d hconfigs="/work/heracles/svn/configs"
+hash -d hdmxtool="/work/heracles_tools/"
+
+#common file type alias
+alias -s zip="unzip"
+alias -s gz="tar -xzvf"
+alias -s tgz="tar -xzvf"
+alias -s bz2="tar -xjvf"
 
