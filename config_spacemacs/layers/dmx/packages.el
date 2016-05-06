@@ -13,15 +13,17 @@
 ;; List of all packages to install and/or initialize. Built-in packages
 ;; which require an initialization must be listed explicitly in the list.
 (setq dmx-packages
-    '(
-      	org-pomodoro
+	'(
+		org-pomodoro
 		org-page
-        cal-china-x
-        ;; smart-tabs-mode
-        smart-tab
-        company-ycmd
-        ycmd
-      ))
+		cal-china-x
+		;; smart-tabs-mode
+		smart-tab
+		company-ycmd
+		ycmd
+		dash-functional
+		toc-org
+	  ))
 
 ;; List of packages to exclude.
 (setq dmx-excluded-packages '())
@@ -47,7 +49,7 @@
   "Initialize cal-china-x"
   (use-package cal-china-x
 			   :defer t
-			   :init 
+			   :init
 			   (progn
 				 (message "Loading %s..." "cal-china-x"))))
 
@@ -59,6 +61,14 @@
 	(progn
 	  (setq smart-tab-using-hippie-expand t)
 	  (message "Loading %s..." "smart-tab"))))
+
+(defun dmx/init-dash-functional()
+  "Initialize dash-functional"
+  (use-package dash-functional
+	:defer t
+	:init
+	(progn
+	  (message "Loading %s..." "dash-functional"))))
 ;(defun dmx/init-ycmd()
 ;  "Initialize ycmd"
 ;  (use-package ycmd
@@ -66,6 +76,14 @@
 ;               :init
 ;               (progn
 ;                 (ycmd-mode))))
+(defun dmx/init-toc-org()
+  "Initialize toc-org"
+  (use-package toc-org
+	:defer t
+	:init
+	(progn
+	  (message "Loading %s..." "toc-org"))))
+
 (defun dmx/init-org-page()
   "Initialize org-page"
   (use-package org-page

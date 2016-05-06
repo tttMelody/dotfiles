@@ -1,6 +1,6 @@
 (setq helm-autoresize-max-height 80
 	  helm-autoresize-min-height 20
-	  ;; linum 
+	  ;; linum
 	  linum-relative-format "%3s "
 	  ;; 设置yasnippet 补全的时候不增加缩进
 	  yas-indent-line 'fixed
@@ -13,10 +13,14 @@
 	  evil-want-C-d-scroll t
 	  evil-want-C-u-scroll t
 
-	  op/repository-directory "~/Documents/github/dingmingxin.github.io"
-	  op/site-domain "https://dingmingxin.github.io/"
-	  op/personal-github-link "https://github.com/dingmingxin"
-	  op/theme 'wy
+	  op/repository-directory "~/Documents/github/dingmingxin.github.io" ;;本地仓库位置
+	  op/repository-org-branch "source" ;;指定org文件所在分支
+	  op/repository-html-branch "master" ;;指定网页文件所在分支
+	  op/personal-github-link "https://github.com/dingmingxin" ;;github 连接
+	  op/site-domain "http://dingmingxin.github.io/" 
+	  op/site-main-title "从HelloWorld开始"
+	  op/site-sub-title "()==[:::::::::::::> 重剑无锋，大巧不工 "
+	  op/theme 'mdo ;; 主题
 	  )
 
 
