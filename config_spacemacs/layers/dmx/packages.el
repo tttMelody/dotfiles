@@ -49,7 +49,7 @@
 (defun dmx/init-ob-lua ()
   "Initialize ob-lua"
   (use-package ob-lua
-	:defet t
+	:defer t
 	:init
 	(progn
 	  (message "Loading ob-lua"))))
