@@ -85,6 +85,8 @@ This function makes sure that dates are aligned for easy reading."
  '((emacs-lisp . t)
    (sh . t)
    (lisp . t)
+   (python . t)
+   (js . t)
    ))
 ;;--end org config--
 

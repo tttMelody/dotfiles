@@ -23,6 +23,7 @@
 		ycmd
 		dash-functional
 		toc-org
+		ob-lua
 	  ))
 
 ;; List of packages to exclude.
@@ -33,68 +34,76 @@
 (defun dmx/init-org-pomodoro ()
   "Initialize org-pomodoro"
   (use-package org-pomodoro
-			   :defer t
-			   :init
-			   (progn
-				 (when (spacemacs/system-is-mac)
-				   (setq org-pomodoro-audio-player "/usr/bin/afplay"))
-				 (spacemacs/set-leader-keys-for-major-mode 'org-mode "p" 'org-pomodoro)
-				 (setq org-pomodoro-started-hook '(lambda () (dmx/terminal-notify "Pomodoro Started" "Go go go!" )))
-				 (setq org-pomodoro-finished-hook '(lambda () (dmx/terminal-notify "Pomodoro Finished" "☕️ Have a break!")))
-				 (setq org-pomodoro-short-break-finished-hook '(lambda () (dmx/terminal-notify "Short Break" "🐝 Ready to Go?")))
-				 (setq org-pomodoro-long-break-finished-hook '(lambda () (dmx/terminal-notify "Long Break" " 💪 Ready to Go?")))
-				 (setq org-pomodoro-killed-hook '(lambda () (dmx/terminal-notify "Oh no, don not leave" "Pomodoro has been killed!"))))))
+	:defer t
+	:init
+	(progn
+	  (when (spacemacs/system-is-mac)
+		(setq org-pomodoro-audio-player "/usr/bin/afplay"))
+	  (spacemacs/set-leader-keys-for-major-mode 'org-mode "p" 'org-pomodoro)
+	  (setq org-pomodoro-started-hook '(lambda () (dmx/terminal-notify "Pomodoro Started" "Go go go!" )))
+	  (setq org-pomodoro-finished-hook '(lambda () (dmx/terminal-notify "Pomodoro Finished" "☕️ Have a break!")))
+	  (setq org-pomodoro-short-break-finished-hook '(lambda () (dmx/terminal-notify "Short Break" "🐝 Ready to Go?")))
+	  (setq org-pomodoro-long-break-finished-hook '(lambda () (dmx/terminal-notify "Long Break" " 💪 Ready to Go?")))
+	  (setq org-pomodoro-killed-hook '(lambda () (dmx/terminal-notify "Oh no, don not leave" "Pomodoro has been killed!"))))))
+
+(defun dmx/init-ob-lua ()
+  "Initialize ob-lua"
+  (use-package ob-lua
+	:defet t
+	:init
+	(progn
+	  (message "Loading ob-lua"))))
 
 (defun dmx/init-cal-china-x ()
   "Initialize cal-china-x"
   (use-package cal-china-x
-			   :defer t
-			   :init
-			   (require 'cal-china-x)
-			   (progn
-				 ;;--begin cal-china-x config
-				 (setq mark-holidays-in-calendar t)
-				 (setq cal-china-x-dmx-holidays
-					   '((holiday-fixed 1 1 "元旦")
-						 (holiday-lunar 12 30 "春节" 0)
-						 (holiday-lunar 1 1 "春节" 0)
-						 (holiday-lunar 1 2 "春节" 0)
-						 (holiday-solar-term "清明" "清明节")
-						 (holiday-fixed 5 1 "劳动节")
-						 (holiday-lunar 5 5 "端午节" 0)
-						 (holiday-float 6 0 3 "父亲节")
-						 (holiday-lunar 8 15 "中秋节" 0)
-						 (holiday-fixed 10 1 "国庆节")))
-				 (setq cal-china-x-important-holidays cal-china-x-dmx-holidays)
-				 (setq calendar-holidays cal-china-x-important-holidays)
-				 (setq chinese-calendar-celestial-stem
-					   ["甲" "乙" "丙" "丁" "戊" "己" "庚" "辛" "壬" "癸"]
-					   chinese-calendar-terrestrial-branch
-					   ["子" "丑" "寅" "卯" "辰" "巳" "午" "未" "申" "酉" "戌" "亥"])
+	:defer t
+	:init
+	(require 'cal-china-x)
+	(progn
+	  ;;--begin cal-china-x config
+	  (setq mark-holidays-in-calendar t)
+	  (setq cal-china-x-dmx-holidays
+			'((holiday-fixed 1 1 "元旦")
+			  (holiday-lunar 12 30 "春节" 0)
+			  (holiday-lunar 1 1 "春节" 0)
+			  (holiday-lunar 1 2 "春节" 0)
+			  (holiday-solar-term "清明" "清明节")
+			  (holiday-fixed 5 1 "劳动节")
+			  (holiday-lunar 5 5 "端午节" 0)
+			  (holiday-float 6 0 3 "父亲节")
+			  (holiday-lunar 8 15 "中秋节" 0)
+			  (holiday-fixed 10 1 "国庆节")))
+	  (setq cal-china-x-important-holidays cal-china-x-dmx-holidays)
+	  (setq calendar-holidays cal-china-x-important-holidays)
+	  (setq chinese-calendar-celestial-stem
+			["甲" "乙" "丙" "丁" "戊" "己" "庚" "辛" "壬" "癸"]
+			chinese-calendar-terrestrial-branch
+			["子" "丑" "寅" "卯" "辰" "巳" "午" "未" "申" "酉" "戌" "亥"])
 
-				 ;; 显示 星期数
-				 (copy-face font-lock-constant-face 'calendar-iso-week-face)
-				 (set-face-attribute 'calendar-iso-week-face nil
-									 :height 0.7)
-				 (setq calendar-intermonth-text
-					   '(propertize
-						 (format "%2d"
-								 (car
-								  (calendar-iso-from-absolute
-								   (calendar-absolute-from-gregorian (list month day year)))))
-						 'font-lock-face 'calendar-iso-week-face))
-				 (setq calendar-intermonth-header
-					   (propertize "Wk"                  ; or e.g. "KW" in Germany
-								   'font-lock-face 'calendar-iso-week-header-face))
+	  ;; 显示 星期数
+	  (copy-face font-lock-constant-face 'calendar-iso-week-face)
+	  (set-face-attribute 'calendar-iso-week-face nil
+						  :height 0.7)
+	  (setq calendar-intermonth-text
+			'(propertize
+			  (format "%2d"
+					  (car
+					   (calendar-iso-from-absolute
+						(calendar-absolute-from-gregorian (list month day year)))))
+			  'font-lock-face 'calendar-iso-week-face))
+	  (setq calendar-intermonth-header
+			(propertize "Wk"                  ; or e.g. "KW" in Germany
+						'font-lock-face 'calendar-iso-week-header-face))
 
-				 ;; 显示当日是否有笔记
-				 (setq view-diary-entries-initially t
-					   mark-diary-entries-in-calendar t
-					   number-of-diary-entries 7)
-				 (add-hook 'diary-display-hook 'fancy-diary-display)
-				 (add-hook 'today-visible-calendar-hook 'calendar-mark-today)
-				 ;;--end cal-china-x config
-				 (message "Loading %s..." "cal-china-x"))))
+	  ;; 显示当日是否有笔记
+	  (setq view-diary-entries-initially t
+			mark-diary-entries-in-calendar t
+			number-of-diary-entries 7)
+	  (add-hook 'diary-display-hook 'fancy-diary-display)
+	  (add-hook 'today-visible-calendar-hook 'calendar-mark-today)
+	  ;;--end cal-china-x config
+	  (message "Loading %s..." "cal-china-x"))))
 
 (defun dmx/pre-init-cal-china-x()
   "Pre-init cal-china-x"
