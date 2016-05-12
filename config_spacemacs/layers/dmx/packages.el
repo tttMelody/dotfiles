@@ -54,9 +54,19 @@
 			   (progn
 				 ;;--begin cal-china-x config
 				 (setq mark-holidays-in-calendar t)
-				 (message "cal-china-x-important-holidays settting")
-				 ;; (setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
-				 ;; (setq calendar-holidays cal-china-x-important-holidays)
+				 (setq cal-china-x-dmx-holidays
+					   '((holiday-fixed 1 1 "元旦")
+						 (holiday-lunar 12 30 "春节" 0)
+						 (holiday-lunar 1 1 "春节" 0)
+						 (holiday-lunar 1 2 "春节" 0)
+						 (holiday-solar-term "清明" "清明节")
+						 (holiday-fixed 5 1 "劳动节")
+						 (holiday-lunar 5 5 "端午节" 0)
+						 (holiday-float 6 0 3 "父亲节")
+						 (holiday-lunar 8 15 "中秋节" 0)
+						 (holiday-fixed 10 1 "国庆节")))
+				 (setq cal-china-x-important-holidays cal-china-x-dmx-holidays)
+				 (setq calendar-holidays cal-china-x-important-holidays)
 				 (setq chinese-calendar-celestial-stem
 					   ["甲" "乙" "丙" "丁" "戊" "己" "庚" "辛" "壬" "癸"]
 					   chinese-calendar-terrestrial-branch
