@@ -66,7 +66,7 @@ values."
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages then consider to create a layer, you can also put the
    ;; configuration in `dotspacemacs/config'.
-   dotspacemacs-additional-packages '(cal-china-x)
+   dotspacemacs-additional-packages '()
    ;; A list of packages and/or extensions that will not be install and loaded.
    dotspacemacs-excluded-packages '(evil-tutor)
    ;; If non-nil spacemacs will delete any orphan packages, i.e. packages that
@@ -276,10 +276,6 @@ user code."
   (setq powerline-default-separator nil)
   (set-locale-environment "zh_CN.utf-8")
 
-  (add-to-list 'load-path "~/.spacemacs.d/config")
-  (require 'custom-emacs)
-  (custom-require 'custom-init-cal-china-x)
-  (custom-require 'custom-init-org-projects)
   ;; font for all unicode characters
 
   ;; 设置c-c++mode 缩进
