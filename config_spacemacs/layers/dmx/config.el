@@ -20,74 +20,71 @@
 			(local-set-key (kbd "M-O") 'org-insert-heading-after-current)
 			(evil-define-key 'normal evil-jumper-mode-map (kbd "TAB") nil)
 			(define-key evil-normal-state-map (kbd "TAB") 'org-cycle)
-			))
-;; 禁止对global_gnu 等类似带有下划线的字符串做特殊处理
-(setq org-export-with-sub-superscripts nil)
-(setq org-tag-alist '((:startgroup . nil)
-					  ("@work" . ?w)
-					  ("@life" . ?L)
-					  ("@learn" . ?l)
-					  ("@programming" . nil)
-					  (:endgroup . nil)
-					  ("linux" . ?l)
-					  ("unity". ?u)
-					  ("emacs" . ?E)
-					  ("common_lisp" . nil)
-					  ("lua" . nil)
-					  ("c/c++" . nil)
-					  ("opengl" . nil)))
-(setq org-use-fast-todo-selection t)
-(setq org-use-fast-tag-selection t)
-(setq-default org-display-custom-times t)
-(setq org-time-stamp-formats '("<%Y-%m-%d %A>" . "<%Y-%m-%d %A %H:%M>"))
-(setq org-time-stamp-custom-formats  '("<%Y-%m-%d %A>" . "<%Y-%m-%d %A %H:%M>"))
 
-;; org-agenda setting
+			;; add files to agenda mode
+			(setq org-agenda-files '("~/orgs/" "~/orgs/playcrab/" "~/orgs/common/"))
+			;;== todo setting ==
+			(setq org-todo-keywords
+				  '((sequence "TODO(t)" "DOING(o)" "|" "DONE(d)")
+					(sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
+					(sequence "|" "CANCELED(c)")))
+
+			;;== org-babel setting ==
+			(setq org-babel-sh-command "/opt/local/bin/bash")
+			(setq org-hide-leading-stars t)
+			(org-babel-do-load-languages
+			  'org-babel-load-languages
+			  '((emacs-lisp . t)
+				(sh . t)
+				(lisp . t)))
+			;; 禁止对global_gnu 等类似带有下划线的字符串做特殊处理
+			(setq org-export-with-sub-superscripts nil)
+			(setq org-tag-alist '((:startgroup . nil)
+								  ("@work" . ?w)
+								  ("@life" . ?L)
+								  ("@learn" . ?l)
+								  ("@programming" . nil)
+								  (:endgroup . nil)
+								  ("linux" . ?l)
+								  ("unity". ?u)
+								  ("emacs" . ?E)
+								  ("common_lisp" . nil)
+								  ("lua" . nil)
+								  ("c/c++" . nil)
+								  ("opengl" . nil)))
+			(setq org-use-fast-todo-selection t)
+			(setq org-use-fast-tag-selection t)
+			(setq-default org-display-custom-times t)
+			(setq org-time-stamp-formats '("<%Y-%m-%d %A>" . "<%Y-%m-%d %A %H:%M>"))
+			(setq org-time-stamp-custom-formats  '("<%Y-%m-%d %A>" . "<%Y-%m-%d %A %H:%M>"))
+			))
+
+; org-agenda setting
 ;; 依赖于cal-china-x
-(require 'org-agenda)
-(defun custom-org-agenda-format-date-aligned (date)
-  "Format a date string for display in the daily/weekly agenda, or timeline.
-This function makes sure that dates are aligned for easy reading."
-  (require 'cal-iso)
-  (require 'cal-china-x)
-  (let* ((dayname (cal-china-x-day-name date))
-		 (day (cadr date))
-		 (day-of-week (calendar-day-of-week date))
-		 (month (car date))
-		 (monthname (format "%02d" month))
-		 (year (nth 2 date))
-		 (iso-week (org-days-to-iso-week
-					(calendar-absolute-from-gregorian date)))
-		 (weekyear (cond ((and (= month 1) (>= iso-week 52))
-						  (1- year))
-						 ((and (= month 12) (<= iso-week 1))
-						  (1+ year))
-						 (t year)))
-		 (weekstring (if (= day-of-week 1)
-						 (format " W%02d" iso-week)
-					   "")))
-	(format "%-10s %4d/%s/%02d %s" dayname year monthname day weekstring)))
+ (defun custom-org-agenda-format-date-aligned (date)
+   "Format a date string for display in the daily/weekly agenda, or timeline.
+ This function makes sure that dates are aligned for easy reading."
+   (require 'cal-iso)
+   (require 'cal-china-x)
+   (let* ((dayname (cal-china-x-day-name date))
+		  (day (cadr date))
+		  (day-of-week (calendar-day-of-week date))
+		  (month (car date))
+		  (monthname (format "%02d" month))
+		  (year (nth 2 date))
+		  (iso-week (org-days-to-iso-week
+					 (calendar-absolute-from-gregorian date)))
+		  (weekyear (cond ((and (= month 1) (>= iso-week 52))
+						   (1- year))
+						  ((and (= month 12) (<= iso-week 1))
+						   (1+ year))
+						  (t year)))
+		  (weekstring (if (= day-of-week 1)
+						  (format " W%02d" iso-week)
+						"")))
+	 (format "%-10s %4d/%s/%02d %s" dayname year monthname day weekstring)))
 (defalias 'org-agenda-format-date-aligned 'custom-org-agenda-format-date-aligned)
 
-;; add files to agenda mode
-(setq org-agenda-files '("~/orgs/" "~/orgs/playcrab/" "~/orgs/common/"))
-;;== todo setting ==
-(setq org-todo-keywords
-	  '((sequence "TODO(t)" "DOING(o)" "|" "DONE(d)")
-		(sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
-		(sequence "|" "CANCELED(c)")))
-
-;;== org-babel setting ==
-(setq org-babel-sh-command "/opt/local/bin/bash")
-(setq org-hide-leading-stars t)
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((emacs-lisp . t)
-   (sh . t)
-   (lisp . t)
-   (python . t)
-   (js . t)
-   ))
 ;;--end org config--
 
 ;;--begin org-page config--
