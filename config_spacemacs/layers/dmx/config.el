@@ -36,6 +36,11 @@
 			  'org-babel-load-languages
 			  '((emacs-lisp . t)
 				(sh . t)
+				(js . t)
+				(lua . t)
+				(C . t)
+				(sed . t)
+				(awk . t)
 				(lisp . t)))
 			;; 禁止对global_gnu 等类似带有下划线的字符串做特殊处理
 			(setq org-export-with-sub-superscripts nil)
