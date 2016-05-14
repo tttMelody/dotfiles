@@ -24,6 +24,7 @@
 		dash-functional
 		toc-org
 		ob-lua
+		slime
 	  ))
 
 ;; List of packages to exclude.
@@ -108,6 +109,24 @@
 (defun dmx/pre-init-cal-china-x()
   "Pre-init cal-china-x"
    (message "pre init cal-china-x"))
+(defun dmx/init-slime()
+  "Initialize slime"
+  (use-package slime
+	:defer t
+	:init
+	(progn
+	  (require 'slime-autoloads)
+	  (setq slime-contribs '(slime-fancy))
+	  (setq slime-lisp-implementations
+			`((sbcl ("/opt/local/bin/sbcl"))
+			  (abcl ("/opt/local/bin/abcl"))
+			  (clisp ("/opt/local/bin/clisp"))))
+	  (setq inferior-lisp-program "/opt/local/bin/sbcl")
+	  (slime-setup  '(slime-repl slime-asdf slime-fancy slime-banner))
+	  (message "Loading %s..." "slime")
+	  )
+	)
+  )
 
 (defun dmx/init-smart-tab()
   "Initialize smart-tab"
