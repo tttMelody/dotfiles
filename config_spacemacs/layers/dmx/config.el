@@ -24,46 +24,46 @@
 			;; add files to agenda mode
 			(setq org-agenda-files '("~/orgs/" "~/orgs/playcrab/" "~/orgs/common/"))
 			;;== todo setting ==
-			(setq org-todo-keywords
-				  '((sequence "TODO(t)" "DOING(o)" "|" "DONE(d)")
-					(sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
-					(sequence "|" "CANCELED(c)")))
 
 			;;== org-babel setting ==
 			(setq org-babel-sh-command "/opt/local/bin/bash")
 			(setq org-hide-leading-stars t)
 			(org-babel-do-load-languages
-			  'org-babel-load-languages
-			  '((emacs-lisp . t)
-				(sh . t)
-				(js . t)
-				(lua . t)
-				(C . t)
-				(sed . t)
-				(awk . t)
-				(lisp . t)))
-			;; 禁止对global_gnu 等类似带有下划线的字符串做特殊处理
-			(setq org-export-with-sub-superscripts nil)
-			(setq org-tag-alist '((:startgroup . nil)
-								  ("@work" . ?w)
-								  ("@life" . ?L)
-								  ("@learn" . ?l)
-								  ("@programming" . nil)
-								  (:endgroup . nil)
-								  ("linux" . ?l)
-								  ("unity". ?u)
-								  ("emacs" . ?E)
-								  ("common_lisp" . nil)
-								  ("lua" . nil)
-								  ("c/c++" . nil)
-								  ("opengl" . nil)))
-			(setq org-use-fast-todo-selection t)
-			(setq org-use-fast-tag-selection t)
-			(setq-default org-display-custom-times t)
-			(setq org-time-stamp-formats '("<%Y-%m-%d %A>" . "<%Y-%m-%d %A %H:%M>"))
-			(setq org-time-stamp-custom-formats  '("<%Y-%m-%d %A>" . "<%Y-%m-%d %A %H:%M>"))
-			))
+			 'org-babel-load-languages
+			 '((emacs-lisp . t)
+			   (sh . t)
+			   (js . t)
+			   (lua . t)
+			   (C . t)
+			   (sed . t)
+			   (awk . t)
+			   (lisp . t)))))
 
+;; 有些org 配置直接放到上面的org-mode-hook 中，不知道什么鬼，偶尔有几个配置会不生效
+;; 禁止对global_gnu 等类似带有下划线的字符串做特殊处理
+(setq org-export-with-sub-superscripts nil)
+(setq org-tag-alist '((:startgroup . nil)
+					  ("@work" . ?w)
+					  ("@life" . ?L)
+					  ("@learn" . ?l)
+					  ("@programming" . nil)
+					  (:endgroup . nil)
+					  ("linux" . ?l)
+					  ("unity". ?u)
+					  ("emacs" . ?E)
+					  ("common_lisp" . nil)
+					  ("lua" . nil)
+					  ("c/c++" . nil)
+					  ("opengl" . nil)))
+(setq org-use-fast-todo-selection t)
+(setq org-use-fast-tag-selection t)
+(setq-default org-display-custom-times t)
+(setq org-time-stamp-formats '("<%Y-%m-%d %A>" . "<%Y-%m-%d %A %H:%M>"))
+(setq org-time-stamp-custom-formats  '("<%Y-%m-%d %A>" . "<%Y-%m-%d %A %H:%M>"))
+(setq org-todo-keywords
+	  '((sequence "TODO(t)" "DOING(o)" "|" "DONE(d)")
+		(sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
+		(sequence "|" "CANCELED(c)")))
 ; org-agenda setting
 ;; 依赖于cal-china-x
  (defun custom-org-agenda-format-date-aligned (date)
