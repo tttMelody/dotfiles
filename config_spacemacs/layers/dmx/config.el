@@ -1,7 +1,8 @@
 (setq helm-autoresize-max-height 80
 	  helm-autoresize-min-height 20
+	  heml-ag--ignore-case t
 	  ;; linum
-	  linum-relative-format "%3s "
+	  ;; linum-relative-format "%3s "
 	  ;; 设置yasnippet 补全的时候不增加缩进
 	  yas-indent-line 'fixed
 	  yas-snippet-dirs '("~/.spacemacs.d/yasnippet/snippets" yas-installed-snippets-dir)
@@ -24,7 +25,6 @@
 			;; add files to agenda mode
 			(setq org-agenda-files '("~/orgs/" "~/orgs/playcrab/" "~/orgs/common/"))
 			;;== todo setting ==
-
 			;;== org-babel setting ==
 			(setq org-babel-sh-command "/opt/local/bin/bash")
 			(setq org-hide-leading-stars t)
@@ -143,5 +143,12 @@
 (define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
 ;(add-hook 'after-init-hook 'global-company-mode)
 ;(company-ycmd-setup)
-(set-variable 'ycmd-server-command (list "python" (expand-file-name "Documents/github/ycmd/ycmd" "~/")))
+(set-variable 'ycmd-server-command (list "/opt/local/bin/python" (expand-file-name "Documents/github/ycmd/ycmd" "~/")))
 (add-hook 'c++-mode-hook 'ycmd-mode)
+
+(add-hook 'hs-hide-hook (lambda ()
+						  "hide linenum when hs-hide-mode is active"
+						  (linum-mode 0)))
+(add-hook 'hs-show-hook (lambda ()
+						  "hide linenum when hs-hide-mode is deactive"
+						  (linum-mode 1)))

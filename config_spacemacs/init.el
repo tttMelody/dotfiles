@@ -302,14 +302,7 @@ user code."
 			   [mouse-4] [down-mouse-4] [drag-mouse-4] [double-mouse-4] [triple-mouse-4]
 			   [mouse-5] [down-mouse-5] [drag-mouse-5] [double-mouse-5] [triple-mouse-5]))
 	  (global-unset-key k))
-  (dmx/linum-config)
   (spacemacs/set-leader-keys "mwc" 'whitespace-cleanup)
-  (add-hook 'hs-hide-hook (lambda ()
-							"hide linenum when hs-hide-mode is active"
-							(linum-mode 0)))
-  (add-hook 'hs-show-hook (lambda ()
-							"hide linenum when hs-hide-mode is deactive"
-							(linum-mode 1)))
 
   (spacemacs/set-leader-keys "aaw" 'avy-goto-word-or-subword-1)
   (spacemacs/set-leader-keys "aac" 'avy-goto-char-in-line)
