@@ -1,16 +1,7 @@
 --langdef=MYLUA 
 --langmap=MYLUA:.lua.txt
---regex-MYLUA=/^function[ ]+[^:]+:([^ \(]+)/\1/f/
---regex-MYLUA=/^function[ ]+[^:]+\.([a-zA-Z_]+)\(/\1/f/
---regex-MYLUA=/^function[ ]+([^:. ]+)\(/\1/f/
+--regex-MYLUA=/^function[ ]*([a-zA-Z_:.]+)/\1/f/
 --regex-MYLUA=/([^ ]+)[ ]+=[a-zA-z_ ]+or[ ]+{}/\1/m/
 --regex-MYLUA=/[ ]?local[ ]+([a-zA-Z_]+)[ ]?=[ ]?function\(/\1/f/
 --regex-MYLUA=/[ ]?local[ ]+function[ ]+([^:.= ]+)\(/\1/f/
---regex-MYLUA=/[ ]?([a-zA-Z_]+Layout)[ ]?=/\1/l/
-/*--regex-MYLUA=/^([^:.= ]+)[ =]+\{\}/\1/c/ */
-/*--regex-MYLUA=/class\((\'|\")([^ ]+)(\'|\")\).\2/c[>/*/
-/*--regex-MYLUA=/^function[ ]+[^:.]+\.class:([a-zA-Z_]+)\(/\1/f/*/
-/*--regex-MYLUA=/.*:mapEvent\(([^,:]+)[, ]+[^ ,:_]+\).\1/e/*/
-/*--regex-MYLUA=/([ ]?[a-zA-Z_-]+)[ ]?=[ ]?InitStaticInt.\1/e[>/*/
-/*--regex-MYLUA=/newClass\(\'([^ ]+)\',.\1/c[>/*/
-/*--regex-MYLUA=/.*subclass\([\'\"]([^ ]+)[\'\"]\)/\1/c/*/
+--regex-MYLUA=/^local[ ]*([a-zA-Z_]+)[ ]*=/\1/v/
