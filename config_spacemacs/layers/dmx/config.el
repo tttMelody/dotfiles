@@ -152,3 +152,5 @@
 (add-hook 'hs-show-hook (lambda ()
 						  "hide linenum when hs-hide-mode is deactive"
 						  (linum-mode 1)))
+
+(add-to-list 'quelpa-melpa-recipe-stores (file-name-as-directory (expand-file-name "~/.spacemacs.d/dmx_recipes")))

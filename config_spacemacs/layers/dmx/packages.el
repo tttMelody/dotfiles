@@ -16,6 +16,7 @@
 	'(
 		org-pomodoro
 		org-page
+		org-page-n
 		cal-china-x
 		;; smart-tabs-mode
 		smart-tab
@@ -167,3 +168,11 @@
 	(progn
 	  (require 'org-page)
 	  (message "Loading %s..." "org-page"))))
+(defun dmx/init-org-page-n()
+  "Initialize org-page-n"
+  (use-package org-page-n
+	:defer t
+	:init
+	(progn
+	  (require 'org-page-n)
+	  (message "Loading %s..." "org-page-n"))))
