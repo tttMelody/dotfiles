@@ -13,10 +13,9 @@
 ;; List of all packages to install and/or initialize. Built-in packages
 ;; which require an initialization must be listed explicitly in the list.
 (setq dmx-packages
-	'(
+	  '(
 		org-pomodoro
-		org-page
-		org-page-n
+		(org-page :location (recipe :fetcher github :repo "dingmingxin/org-page"))
 		cal-china-x
 		;; smart-tabs-mode
 		smart-tab
@@ -26,7 +25,7 @@
 		toc-org
 		ob-lua
 		slime
-	  ))
+		))
 
 ;; List of packages to exclude.
 (setq dmx-excluded-packages '())
@@ -168,11 +167,3 @@
 	(progn
 	  (require 'org-page)
 	  (message "Loading %s..." "org-page"))))
-(defun dmx/init-org-page-n()
-  "Initialize org-page-n"
-  (use-package org-page-n
-	:defer t
-	:init
-	(progn
-	  (require 'org-page-n)
-	  (message "Loading %s..." "org-page-n"))))
