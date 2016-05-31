@@ -102,7 +102,7 @@
 	  op/site-domain "http://dingmingxin.github.io/"
 	  op/site-main-title "从Hello World开始"
 	  op/site-sub-title "()==[:::::::::::::> 重剑无锋，大巧不工 "
-	  op/theme 'mdo
+	  op/theme 'dmx
 	  op/category-config-alist '(("blog" ;; this is the default configuration
 								  :show-meta t
 								  :show-comment t

@@ -15,7 +15,7 @@
 (setq dmx-packages
 	  '(
 		org-pomodoro
-		(org-page :location (recipe :fetcher github :repo "dingmingxin/org-page"))
+		(org-page :location (recipe :fetcher github :repo "dingmingxin/org-page" :files ("*.el" "doc" "themes")))
 		cal-china-x
 		;; smart-tabs-mode
 		smart-tab
