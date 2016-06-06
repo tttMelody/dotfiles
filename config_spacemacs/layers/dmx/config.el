@@ -153,3 +153,5 @@
 						  "hide linenum when hs-hide-mode is deactive"
 						  (linum-mode 1)))
 
+(setq user-mail-address "dingmingxin20@gmail.com")
+(setq user-full-name "dingmingxin")

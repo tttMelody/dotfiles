@@ -5,8 +5,8 @@ LOG_ROOT=/data/log
 PHP_ROOT=/opt/local
 DAEMON=$PHP_ROOT/sbin/php-fpm
 
-CONF_FILE=$PHP_ROOT/etc/php54/php-fpm.conf
-INI_FILE=$PHP_ROOT/etc/php54/php.ini
+CONF_FILE=$PHP_ROOT/etc/php55/php-fpm.conf
+INI_FILE=$PHP_ROOT/etc/php55/php.ini
 
 PID_FILE=$(grep pid $CONF_FILE | awk '{print $NF}')
 
@@ -23,7 +23,7 @@ fi
 case "$1" in
     start)
         echo "\n====== before $1 ======\n" && (ps aux | grep php)
-        $DAEMON
+        sudo $DAEMON -D
         sleep 1 && echo "\n====== after $1 ======\n" && (ps aux | grep php)
         ;;
     stop)
