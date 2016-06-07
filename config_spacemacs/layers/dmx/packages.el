@@ -25,6 +25,7 @@
 		toc-org
 		ob-lua
 		slime
+		rainbow-mode
 		))
 
 ;; List of packages to exclude.
@@ -167,3 +168,10 @@
 	(progn
 	  (require 'org-page)
 	  (message "Loading %s..." "org-page"))))
+(defun dmx/init-rainbow-mode()
+  "Initialize rainbow-mode"
+  (use-package rainbow-mode
+	:defer t
+	:init
+	(progn
+	  (message "Loading %s..." "rainbow-mode"))))
