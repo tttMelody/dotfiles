@@ -145,6 +145,7 @@
 ;(company-ycmd-setup)
 (set-variable 'ycmd-server-command (list "/opt/local/bin/python" (expand-file-name "Documents/github/ycmd/ycmd" "~/")))
 (add-hook 'c++-mode-hook 'ycmd-mode)
+(add-hook 'c-mode-hook 'ycmd-mode)
 
 (add-hook 'hs-hide-hook (lambda ()
 						  "hide linenum when hs-hide-mode is active"
