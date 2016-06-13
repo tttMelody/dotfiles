@@ -59,6 +59,7 @@ hash -d huiflash="/work/heracles/svn/Assets/flahsUITools/assets/ui"
 hash -d hsvn="/work/heracles/svn"
 hash -d hconfigs="/work/heracles/svn/configs"
 hash -d hdmxtool="/work/heracles_tools/"
+hash -d handroid="/work/heracles/frameworks/runtime-src/proj.android"
 
 hash -d myblog=~/Documents/github/dingmingxin.github.io
 
