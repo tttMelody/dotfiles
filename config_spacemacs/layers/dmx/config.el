@@ -1,6 +1,7 @@
 (setq helm-autoresize-max-height 80
 	  helm-autoresize-min-height 20
-	  heml-ag--ignore-case t
+	  helm-ag--ignore-case t
+	  helm-ff-skip-boring-files t
 	  ;; linum
 	  ;; linum-relative-format "%3s "
 	  ;; 设置yasnippet 补全的时候不增加缩进
