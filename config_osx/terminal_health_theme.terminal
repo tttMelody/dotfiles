@@ -32,7 +32,7 @@
 	<data>
 	YnBsaXN0MDDUAQIDBAUGGBlYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3AS
 	AAGGoKQHCBESVSRudWxs1AkKCwwNDg8QVk5TU2l6ZVhOU2ZGbGFnc1ZOU05hbWVWJGNs
-	YXNzI0AwAAAAAAAAEBCAAoADXxAZTWVubG9Gb3JQb3dlcmxpbmUtUmVndWxhctITFBUW
+	YXNzI0AyAAAAAAAAEBCAAoADXxAZTWVubG8tUmVndWxhckZvclBvd2VybGluZdITFBUW
 	WiRjbGFzc25hbWVYJGNsYXNzZXNWTlNGb250ohUXWE5TT2JqZWN0XxAPTlNLZXllZEFy
 	Y2hpdmVy0RobVHJvb3SAAQgRGiMtMjc8QktSW2JpcnR2eJSZpK20t8DS1doAAAAAAAAB
 	AQAAAAAAAAAcAAAAAAAAAAAAAAAAAAAA3A==
@@ -50,7 +50,7 @@
 	<key>columnCount</key>
 	<integer>900</integer>
 	<key>name</key>
-	<string>health</string>
+	<string>terminal_health_theme</string>
 	<key>noWarnProcesses</key>
 	<array/>
 	<key>rowCount</key>
