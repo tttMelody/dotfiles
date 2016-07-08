@@ -5,3 +5,6 @@
 --regex-MYLUA=/[ ]?local[ ]+([a-zA-Z_]+)[ ]?=[ ]?function\(/\1/f/
 --regex-MYLUA=/[ ]?local[ ]+function[ ]+([^:.= ]+)\(/\1/f/
 --regex-MYLUA=/^local[ ]*([a-zA-Z_]+)[ ]*=/\1/v/
+--regex-MYLUA=/^([a-zA-Z_.]+)[ ]*=/\1/v/
+--regex-MYLUA=/^message[ ]*([a-zA-Z_]+)$/\1/v/
+

@@ -26,14 +26,14 @@ alias rconfig="cd /data/raid/client/config"
 alias dphoho='ssh deploy@hohoplay.com'
 
 #tetris
-alias tphp="cd /data/www/tetris/apps/mingxin"
-alias tclient="cd /data/tetris/client/"
-alias tlua="cd /data/tetris/script"
-alias tdoc="cd ~/Documents/tetris/Tetris/"
-alias tconfig="cd /data/tetris/res/config"
-alias texpimage="python /data/tetris/dev_tool/tool.py tp2 q"
-alias texpconfig='python /data/tetris/dev_tool/tool.py cfg q'
-alias tdevtool='cd /data/www/tetris/dev_tool'
+#alias tphp="cd /data/www/tetris/apps/mingxin"
+#alias tclient="cd /data/tetris/client/"
+#alias tlua="cd /data/tetris/script"
+#alias tdoc="cd ~/Documents/tetris/Tetris/"
+#alias tconfig="cd /data/tetris/res/config"
+#alias texpimage="python /data/tetris/dev_tool/tool.py tp2 q"
+#alias texpconfig='python /data/tetris/dev_tool/tool.py cfg q'
+#alias tdevtool='cd /data/www/tetris/dev_tool'
 
 #match3
 alias mlua="cd /data/match3/client/Assets/Slua/Resources"
@@ -62,6 +62,10 @@ hash -d hdmxtool="/work/heracles_tools/"
 hash -d handroid="/work/heracles/frameworks/runtime-src/proj.android"
 
 hash -d myblog=~/Documents/github/dingmingxin.github.io
+hash -d tlua="/data/texas/vr-texas/src/"
+hash -d tskynet="/data/texas/vr-texas-server/"
+hash -d tdmxtool="/data/texas/dmxtools/"
+
 
 #common file type alias
 alias -s zip="unzip"

@@ -186,8 +186,6 @@ else
 	hi NonText cterm=NONE ctermfg=NONE
 endif 
 "=====================autoCommand 
-"获取文件名的后缀，防止对vim.otl zsh.otl crontab.otl 之类的文件类型误判
-au BufReadPost * if expand("%:e")=='otl' |set filetype=otl |endif
 au BufReadPost * if expand("%:e")=='applescript' |set filetype=applescript |endif
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif  
 "align plugin is installed 
@@ -199,7 +197,6 @@ augroup END
 au FileType yaml set tabstop=2 softtabstop=2 shiftwidth=2
 au BufRead,BufNewFile */Slua/*.txt set filetype=lua
 
-au FileType otl set tags+=/data/dwork/learn/tags 
 "au FileType lua nested :TagbarOpen
 "autocmd! BufWritePost .vimrc source %
 
@@ -310,7 +307,10 @@ let g:ctrlp_mruf_exclude = '/tmp/.*\|/temp/.*\|/var/.*\|'
 let g:ctrlp_mruf_relative = 0 
 let g:ctrlp_mruf_case_sensitive = 0 
 let g:ctrlp_extensions = ['tag', 'dir' , 'funky', 'buffertag' ] 
-let g:ctrlp_user_command ='find -E %s -regex ".*/*\.(css|txt|csv|cs|php|lua|h|cpp|c|sh|py|yaml|java|js|el|html|mm|hpp)"'
+"包含查找，这样过会有遗漏
+let g:ctrlp_user_command ='find -E %s -regex ".*/*\.(proto|css|txt|csv|cs|php|lua|h|cpp|c|sh|py|yaml|java|js|el|html|mm|hpp)"'
+"剔除查找
+"let g:ctrlp_user_command ='find -E %s -not -regex ".*/*\.(jpg|png|jpeg|psd|meta|prefab)"'
 let g:ctrlp_prompt_mappings = { 
             \ 'PrtBS()': ['<bs>', '<c-]>'], 
             \ 'PrtDelete()': ['<del>'], 
@@ -511,6 +511,14 @@ let g:tagbar_type_lua = {
 	\ 'sort' : 0,
 	\ 'deffile' : '~/dotfiles/config_tagsystem/ctags_lua.cnf'
 \ }
+let g:tagbar_type_proto = {
+	\ 'ctagstype' : 'proto',
+	\ 'kinds'     : [
+		\ 'm:message', 
+	\ ],
+	\ 'sort' : 0,
+	\ 'deffile' : '~/dotfiles/config_tagsystem/ctags_proto.cnf'
+\ }
 let g:tagbar_type_javascript = {
 	\ 'ctagstype' : 'js',
 	\ 'kinds'     : [
@@ -559,10 +567,10 @@ nnoremap ; :
 vnoremap ; :
 nnoremap : ;
 vnoremap : ;
-nnoremap <UP> <Nop>
-nnoremap <DOWN> <Nop>
-nnoremap <LEFT> <Nop>
-nnoremap <RIGHT> <Nop>
+"nnoremap <UP> <Nop>
+"nnoremap <DOWN> <Nop>
+"nnoremap <LEFT> <Nop>
+"nnoremap <RIGHT> <Nop>
 "==commind key shortcut,change vim behave like terminal
 cnoremap <C-a>  <Home>
 cnoremap <C-b>  <Left>

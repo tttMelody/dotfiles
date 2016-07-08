@@ -1,0 +1,75 @@
+# ~/.tmuxinator/todo.yml
+
+name: texas
+root: /data/texas/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+windows:
+  - lua:
+      layout: even-vertical
+      panes:
+        - lua: 
+            - ~tlua
+            - git st
+        - lua:
+            - #empty
+  - note:
+      layout: even-vertical
+      panes:
+        - #empty
+        - #empty
+  - client:
+      layout: even-vertical
+      panes:
+        - #empty
+        - #empty
+  - skynet:
+      layout: even-vertical
+      panes:
+        - skynet:
+          - cd /data/texas/vr-texas-server
+          - git st
+        - skynet:
+          - cd /data/texas/vr-texas-server
+          - git st
+  - texas-tclient:
+      layout: b549,165x45,0,0[165x22,0,0{82x22,0,0,220,82x22,83,0,233},165x22,0,23{57x22,0,23,226,56x22,58,23,227,50x22,115,23,234}]
+      panes:
+        - skynet:
+          - cd /data/texas/vr-texas-server
+          - git st
+        - skynet:
+          - cd /data/texas/vr-texas-server
+          - git st
+        - skynet:
+          - cd /data/texas/dmxtools
+  - skynet-runtime:
+      layout: 1663,165x45,0,0[165x22,0,0{52x22,0,0,88,56x22,53,0,96,55x22,110,0,97},165x22,0,23{52x22,0,23,94,56x22,53,23,95,55x22,110,23,98}]
+      panes:
+        - skynet:
+          - cd /data/texas/vr-texas-server
+        - skynet:
+          - cd /data/texas/vr-texas-server
+        - skynet:
+          - cd /data/texas/vr-texas-server
+        - skynet:
+          - cd /data/texas/vr-texas-server
+        - skynet:
+          - cd /data/texas/vr-texas-server
+        - skynet:
+          - cd /data/texas/dmxtools
+

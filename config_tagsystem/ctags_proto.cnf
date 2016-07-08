@@ -1,0 +1,4 @@
+--langdef=proto 
+--langmap=proto:.proto
+--regex-proto=/^message[ ]*([a-zA-Z_]+).*/\1/m/
+
