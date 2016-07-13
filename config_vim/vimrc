@@ -308,9 +308,10 @@ let g:ctrlp_mruf_relative = 0
 let g:ctrlp_mruf_case_sensitive = 0 
 let g:ctrlp_extensions = ['tag', 'dir' , 'funky', 'buffertag' ] 
 "包含查找，这样过会有遗漏
-let g:ctrlp_user_command ='find -E %s -regex ".*/*\.(proto|css|txt|csv|cs|php|lua|h|cpp|c|sh|py|yaml|java|js|el|html|mm|hpp)"'
+"let g:ctrlp_user_command ='find -E %s -regex ".*/*\.(proto|css|txt|csv|cs|php|lua|h|cpp|c|sh|py|yaml|java|js|el|html|mm|hpp)"'
 "剔除查找
-"let g:ctrlp_user_command ='find -E %s -not -regex ".*/*\.(jpg|png|jpeg|psd|meta|prefab)"'
+let g:ctrlp_user_command ='find -E %s \( -not -regex ".*/*\.(tar.gz|jpg|png|jpeg|psd|prefab)$" -and -not -path "*\.git*" -and -not -path "*\.svn" \)'
+
 let g:ctrlp_prompt_mappings = { 
             \ 'PrtBS()': ['<bs>', '<c-]>'], 
             \ 'PrtDelete()': ['<del>'], 
