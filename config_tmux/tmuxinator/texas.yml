@@ -58,7 +58,7 @@ windows:
         - skynet:
           - cd /data/texas/dmxtools
   - skynet-runtime:
-      layout: 1663,165x45,0,0[165x22,0,0{52x22,0,0,88,56x22,53,0,96,55x22,110,0,97},165x22,0,23{52x22,0,23,94,56x22,53,23,95,55x22,110,23,98}]
+      layout: 692f,165x45,0,0[165x22,0,0{52x22,0,0,210,56x22,53,0,217,55x22,110,0,218},165x22,0,23{79x22,0,23,219,85x22,80,23,220}]
       panes:
         - skynet:
           - cd /data/texas/vr-texas-server
@@ -67,9 +67,8 @@ windows:
         - skynet:
           - cd /data/texas/vr-texas-server
         - skynet:
-          - cd /data/texas/vr-texas-server
-        - skynet:
-          - cd /data/texas/vr-texas-server
+          - cd /data/texas/vr-texas-server-http
         - skynet:
           - cd /data/texas/dmxtools
+          - ./workflow.sh
 
