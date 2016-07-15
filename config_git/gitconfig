@@ -14,10 +14,11 @@
 	diff = auto
 [user]
 	name = dmx
-	email = dingmingxin@playcrab.com
+	email = dingmingxin20@gmail.com
 [core]
 	pager = less -x4
 	quotepath = false
+	excludesfile = /Users/dmx/.gitignore_global
 [push]
 	default = simple
 [credential]
@@ -35,3 +36,9 @@
 	prompt = false
 [tig]
 	line-graphics = utf-8
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
