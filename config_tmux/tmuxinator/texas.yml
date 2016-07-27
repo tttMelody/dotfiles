@@ -69,6 +69,6 @@ windows:
         - skynet:
           - cd /data/texas/vr-texas-server-http
         - skynet:
-          - cd /data/texas/dmxtools
+          - cd ~/Documents/test/texastools/
           - ./workflow.sh
 

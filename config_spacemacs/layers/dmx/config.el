@@ -24,7 +24,7 @@
 			(define-key evil-normal-state-map (kbd "TAB") 'org-cycle)
 
 			;; add files to agenda mode
-			(setq org-agenda-files '("~/orgs/" "~/orgs/playcrab/" "~/orgs/common/"))
+			(setq org-agenda-files '("~/orgs/" "~/orgs/work/" "~/orgs/work/yytx" "~/orgs/work/playcrab" "~/orgs/common/"))
 			;;== todo setting ==
 			;;== org-babel setting ==
 			(setq org-babel-sh-command "/opt/local/bin/bash")

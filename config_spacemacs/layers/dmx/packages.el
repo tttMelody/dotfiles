@@ -20,6 +20,7 @@
 		;; smart-tabs-mode
 		smart-tab
 		company-ycmd
+		applescript-mode
 		ycmd
 		dash-functional
 		toc-org
@@ -168,6 +169,13 @@
 	(progn
 	  (require 'org-page)
 	  (message "Loading %s..." "org-page"))))
+(defun dmx/init-applescript-mode()
+  "Initialize applescript-mode"
+  (use-package applescript-mode
+	:defer t
+	:init
+	(progn
+	  (message "Loading %s..." "applescript-mode"))))
 (defun dmx/init-rainbow-mode()
   "Initialize rainbow-mode"
   (use-package rainbow-mode
