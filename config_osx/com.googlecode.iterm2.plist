@@ -71,11 +71,11 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>731 162 757 301 0 0 1920 1057 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>269 342 606 456 0 0 1920 1057 </string>
+	<string>269 458 606 456 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>74 0 1846 1057 0 0 1920 1057 </string>
+	<string>80 0 1840 1057 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>55 0 1862 1057 0 0 1920 1057 </string>
+	<string>70 504 905 552 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>289 61 905 552 0 0 1920 1057 </string>
 	<key>New Bookmarks</key>
@@ -878,9 +878,7 @@
 				<real>0.27671992778778076</real>
 			</dict>
 			<key>Bound Hosts</key>
-			<array>
-				<string>dmx@localhost*</string>
-			</array>
+			<array/>
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
@@ -1426,9 +1424,7 @@
 				<real>0.50599193572998047</real>
 			</dict>
 			<key>Bound Hosts</key>
-			<array>
-				<string>dmx@iZ28lizp9dtZ:~</string>
-			</array>
+			<array/>
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
@@ -1787,7 +1783,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>18AAD864-B9FD-4658-AD11-DB495748B45A</string>
 	<key>NoSyncLastTipTime</key>
-	<real>491709999.96639198</real>
+	<real>491796400.29019302</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
@@ -1797,6 +1793,7 @@
 		<string>000</string>
 		<string>0000</string>
 		<string>0001</string>
+		<string>0002</string>
 	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
