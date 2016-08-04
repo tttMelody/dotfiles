@@ -6,7 +6,6 @@
 	  ;; linum-relative-format "%3s "
 	  ;; 设置yasnippet 补全的时候不增加缩进
 	  yas-indent-line 'fixed
-	  yas-snippet-dirs '("~/.spacemacs.d/yasnippet/snippets" yas-installed-snippets-dir)
 	  ;; 如果是软连接，跟随
 	  vc-follow-symlinks t
 	  ;; vc中的文件保存时不提示
@@ -15,6 +14,11 @@
 	  evil-want-C-d-scroll t
 	  evil-want-C-u-scroll t
 	  )
+(add-hook 'yas-after-reload-hook
+		  (lambda ()
+			(message "dmx-yas-after-reload-hook called")
+			(setq yas-snippet-dirs (list "~/.spacemacs.d/private/snippets" 'yas-installed-snippets-dir))
+			))
 
 ;;--begin org config--
 (add-hook 'org-mode-hook

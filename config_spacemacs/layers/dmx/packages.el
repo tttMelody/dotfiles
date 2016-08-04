@@ -52,9 +52,10 @@
 (defun dmx/init-ob-lua ()
   "Initialize ob-lua"
   (use-package ob-lua
-	:defer t
+	:defer  t
 	:init
 	(progn
+	  (require 'ob-lua)
 	  (message "Loading ob-lua"))))
 
 (defun dmx/init-cal-china-x ()

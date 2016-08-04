@@ -11,7 +11,7 @@ if [[ ! -L ~/.spacemacs.d/layers ]]; then
 	ln -sif $root/config_spacemacs/layers ~/.spacemacs.d/layers
 fi
 
-if [[ -d ~/.emacs.d/private/snippets ]]; then
-	rm -rf ~/.emacs.d/private/snippets
-	ln -sif $root/config_spacemacs/private/snippets ~/.emacs.d/private/snippets
+if [[ -d ~/.spacemacs.d/private ]]; then
+	rm -rf ~/.spacemacs.d/private
 fi
+ln -sif $root/config_spacemacs/private ~/.spacemacs.d/private
