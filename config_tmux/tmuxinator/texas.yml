@@ -47,16 +47,20 @@ windows:
           - cd /data/texas/vr-texas-server
           - git st
   - texas-tclient:
-      layout: b549,165x45,0,0[165x22,0,0{82x22,0,0,220,82x22,83,0,233},165x22,0,23{57x22,0,23,226,56x22,58,23,227,50x22,115,23,234}]
+      layout: 9dc2,165x47,0,0[165x11,0,0{57x11,0,0,10,56x11,58,0,18,50x11,115,0,19},165x11,0,12,17,165x24,0,24{82x24,0,24,11,82x24,83,24,20}]
       panes:
         - skynet:
-          - cd /data/texas/vr-texas-server
-          - git st
+          - cd /data/texas/vr-texas-server/devtools
         - skynet:
-          - cd /data/texas/vr-texas-server
-          - git st
+          - cd /data/texas/vr-texas-server/devtools
         - skynet:
-          - cd /data/texas/dmxtools
+          - cd /data/texas/vr-texas-server/devtools
+        - skynet:
+          - cd /data/texas/vr-texas-server/devtools
+        - skynet:
+          - cd /data/texas/vr-texas-server/devtools
+        - skynet:
+          - cd /data/texas/vr-texas-server/devtools
   - skynet-runtime:
       layout: 692f,165x45,0,0[165x22,0,0{52x22,0,0,210,56x22,53,0,217,55x22,110,0,218},165x22,0,23{79x22,0,23,219,85x22,80,23,220}]
       panes:

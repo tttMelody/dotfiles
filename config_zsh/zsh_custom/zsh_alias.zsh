@@ -1,6 +1,7 @@
 #common
 alias svnci='svnrmall; svnaddall; svn ci'
 alias op='open'
+alias rtelnet="rlwrap telnet"
 
 #sanguo2
 #alias s2root='cd /data/sanguo2'
