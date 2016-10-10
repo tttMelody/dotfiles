@@ -30,7 +30,7 @@ windows:
         -
         -
   - tmux:
-      layout: even-vertical
+      layout: even-horizontal
       panes:
         -
         -

@@ -3,13 +3,17 @@
 # # exit the script if any statement returns a non-true return value
 # set -e
 #
+### ue0b0 
+### ue0b2 
+### ue0b1 
+### ue0b3 
 # apply_theme() {
 #   case "$1" in
 #     powerline_patched_font)
-#       left_separator='⮁'
-#       left_separator_black='⮀'
-#       right_separator='⮃'
-#       right_separator_black='⮂'
+#       left_separator=''
+#       left_separator_black=''
+#       right_separator=''
+#       right_separator_black=''
 #       session_symbol=''
 #       ;;
 #     powerline)
@@ -97,7 +101,7 @@
 #       whoami_bg=colour160     # red
 #       host_fg=colour16        # black
 #       host_bg=colour254       # white
-#       status_right="#{prefix_highlight} ${tmux_conf_battery:-#(cut -c3- ~/.tmux.conf.customsh | sh -s battery ${tmux_conf_battery_symbol:-block} ${tmux_conf_battery_symbol_count:-auto})} #[fg=$time_date_fg,nobold]$right_separator %R $right_separator %m-%d %a #[fg=$whoami_bg,bg=$time_date_bg,nobold]$right_separator_black#[fg=$whoami_fg,bg=$whoami_bg,nobold] #(whoami) $right_separator_black#[fg=$host_fg,bg=$host_bg,bold] #h "
+#       status_right="#{prefix_highlight}${tmux_conf_battery:-#(cut -c3- ~/.tmux.conf | sh -s battery ${tmux_conf_battery_symbol:-block} ${tmux_conf_battery_symbol_count:-auto})} #[fg=$time_date_fg,nobold]$right_separator %R $right_separator %m-%d %a #[fg=$whoami_bg,bg=$time_date_bg,nobold]$right_separator_black#[fg=$whoami_fg,bg=$whoami_bg,nobold] #(whoami) $right_separator_black#[fg=$host_fg,bg=$host_bg,bold] #h "
 #       tmux set -g status-right-length 64 \; set -g status-right "$status_right"
 #
 #       # clock
