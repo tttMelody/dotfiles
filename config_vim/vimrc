@@ -1,6 +1,6 @@
 "=====================general
 set number 
-set relativenumber
+"set relativenumber
 set wh=999 
 set ruler 
 set showcmd 
@@ -325,7 +325,7 @@ let g:ctrlp_extensions = ['tag', 'dir' , 'funky', 'buffertag' ]
 "包含查找，这样过会有遗漏
 "let g:ctrlp_user_command ='find -E %s -regex ".*/*\.(proto|css|txt|csv|cs|php|lua|h|cpp|c|sh|py|yaml|java|js|el|html|mm|hpp)"'
 "剔除查找
-let g:ctrlp_user_command ='find -E %s \( -not -regex ".*/*\.(meta|tar.gz|jpg|png|jpeg|psd|prefab|o|DS_Store|so)" -and -not -path "*\.git*" -and -not -path "*\.svn" \)'
+let g:ctrlp_user_command ='find -E %s \( -not -regex ".*/*\.(meta|tar.gz|jpg|png|jpeg|psd|prefab|o|DS_Store|so|log)" -and -not -path "*\.git*" -and -not -path "*\.svn" \)'
 
 let g:ctrlp_prompt_mappings = { 
             \ 'PrtBS()': ['<bs>', '<c-]>'], 
@@ -625,6 +625,10 @@ iab xdate <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
 " 输入方式 Ctrl-V u2764
 "❤ u2764
 "u2b80 ~ u2b83
+"ue0b0 
+"ue0b2 
+"ue0b1 
+"ue0b3 
 "⮀⮁⮂⮃
 "=====================helps
 "insert ,插入

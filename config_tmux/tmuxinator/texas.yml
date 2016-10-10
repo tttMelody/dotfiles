@@ -61,8 +61,8 @@ windows:
           - cd /data/texas/vr-texas-server/devtools
         - skynet:
           - cd /data/texas/vr-texas-server/devtools
-  - skynet-runtime:
-      layout: 692f,165x45,0,0[165x22,0,0{52x22,0,0,210,56x22,53,0,217,55x22,110,0,218},165x22,0,23{79x22,0,23,219,85x22,80,23,220}]
+  - tclients:
+      layout: 202c,165x48,0,0[165x12,0,0{41x12,0,0,93,40x12,42,0,103,41x12,83,0,104,40x12,125,0,105},165x35,0,13{82x35,0,13[82x8,0,13,106,82x8,0,22,111,82x8,0,31,108,82x8,0,40,110],82x35,83,13[82x17,83,13,107,82x17,83,31,109]}]
       panes:
         - skynet:
           - cd /data/texas/vr-texas-server
@@ -71,8 +71,17 @@ windows:
         - skynet:
           - cd /data/texas/vr-texas-server
         - skynet:
-          - cd /data/texas/vr-texas-server-http
+          - cd /data/texas/vr-texas-server
         - skynet:
-          - cd ~/Documents/test/texastools/
-          - ./workflow.sh
+          - cd /data/texas/vr-texas-server
+        - skynet:
+          - cd /data/texas/vr-texas-server
+        - skynet:
+          - cd /data/texas/vr-texas-server
+        - skynet:
+          - cd /data/texas/vr-texas-server
+        - skynet:
+          - cd /data/texas/vr-texas-server
+        - skynet:
+          - cd /data/texas/vr-texas-server
 
