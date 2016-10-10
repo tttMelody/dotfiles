@@ -21,28 +21,55 @@
 			))
 
 ;;--begin org config--
-(add-hook 'org-mode-hook
-		  (lambda ()
-			(local-set-key (kbd "M-O") 'org-insert-heading-after-current)
-			(evil-define-key 'normal evil-jumper-mode-map (kbd "TAB") nil)
-			(define-key evil-normal-state-map (kbd "TAB") 'org-cycle)
+(with-eval-after-load 'org
+  (local-set-key (kbd "M-O") 'org-insert-heading-after-current)
+  (with-eval-after-load 'evil
+	(evil-define-key 'normal evil-jumper-mode-map (kbd "TAB") nil)
+	(define-key evil-normal-state-map (kbd "TAB") 'org-cycle)
+	)
 
-			;; add files to agenda mode
-			(setq org-agenda-files '("~/orgs/" "~/orgs/work/" "~/orgs/work/yytx" "~/orgs/work/playcrab" "~/orgs/common/"))
-			;;== todo setting ==
-			;;== org-babel setting ==
-			(setq org-babel-sh-command "/opt/local/bin/bash")
-			(setq org-hide-leading-stars t)
-			(org-babel-do-load-languages
-			 'org-babel-load-languages
-			 '((emacs-lisp . t)
-			   (sh . t)
-			   (js . t)
-			   (lua . t)
-			   (C . t)
-			   (sed . t)
-			   (awk . t)
-			   (lisp . t)))))
+  ;; add files to agenda mode
+  (setq org-agenda-files '("~/orgs/" "~/orgs/work/" "~/orgs/work/yytx" "~/orgs/work/playcrab" "~/orgs/common/"))
+  ;;== todo setting ==
+  ;;== org-babel setting ==
+  (setq org-babel-sh-command "/opt/local/bin/bash")
+  (setq org-hide-leading-stars t)
+  (setq org-startup-indented t)
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((emacs-lisp . t)
+	 (sh . t)
+	 (js . t)
+	 (lua . t)
+	 (C . t)
+	 (sed . t)
+	 (awk . t)
+	 (lisp . t)))
+  )
+;; (add-hook 'org-mode-hook
+;; 		  (lambda ()
+;; 			(local-set-key (kbd "M-O") 'org-insert-heading-after-current)
+;; 			(with-eval-after-load 'evil
+;; 								  (evil-define-key 'normal evil-jumper-mode-map (kbd "TAB") nil)
+;; 								  (define-key evil-normal-state-map (kbd "TAB") 'org-cycle)
+;; 								  )
+
+;; 			;; add files to agenda mode
+;; 			(setq org-agenda-files '("~/orgs/" "~/orgs/work/" "~/orgs/work/yytx" "~/orgs/work/playcrab" "~/orgs/common/"))
+;; 			;;== todo setting ==
+;; 			;;== org-babel setting ==
+;; 			(setq org-babel-sh-command "/opt/local/bin/bash")
+;; 			(setq org-hide-leading-stars t)
+;; 			(org-babel-do-load-languages
+;; 			 'org-babel-load-languages
+;; 			 '((emacs-lisp . t)
+;; 			   (sh . t)
+;; 			   (js . t)
+;; 			   (lua . t)
+;; 			   (C . t)
+;; 			   (sed . t)
+;; 			   (awk . t)
+;; 			   (lisp . t)))))
 
 ;; 有些org 配置直接放到上面的org-mode-hook 中，不知道什么鬼，偶尔有几个配置会不生效
 ;; 禁止对global_gnu 等类似带有下划线的字符串做特殊处理
@@ -142,10 +169,11 @@
 (setq visual-line-mode t)
 (setq python-shell-interpreter "/opt/local/bin/python")
 ;; Make movement keys work like they should
-(define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
-(define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
-(define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
-(define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+(with-eval-after-load 'evil
+					  (define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+					  (define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+					  (define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+					  (define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line))
 ;(add-hook 'after-init-hook 'global-company-mode)
 ;(company-ycmd-setup)
 (set-variable 'ycmd-server-command (list "/opt/local/bin/python" (expand-file-name "Documents/github/ycmd/ycmd" "~/")))

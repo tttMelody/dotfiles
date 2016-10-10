@@ -24,7 +24,7 @@
 		ycmd
 		dash-functional
 		toc-org
-		ob-lua
+		chinese-fonts-setup
 		slime
 		rainbow-mode
 		))
@@ -48,15 +48,6 @@
 	  (setq org-pomodoro-short-break-finished-hook '(lambda () (dmx/terminal-notify "Short Break" "🐝 Ready to Go?")))
 	  (setq org-pomodoro-long-break-finished-hook '(lambda () (dmx/terminal-notify "Long Break" " 💪 Ready to Go?")))
 	  (setq org-pomodoro-killed-hook '(lambda () (dmx/terminal-notify "Oh no, don not leave" "Pomodoro has been killed!"))))))
-
-(defun dmx/init-ob-lua ()
-  "Initialize ob-lua"
-  (use-package ob-lua
-	:defer  t
-	:init
-	(progn
-	  (require 'ob-lua)
-	  (message "Loading ob-lua"))))
 
 (defun dmx/init-cal-china-x ()
   "Initialize cal-china-x"
@@ -184,3 +175,11 @@
 	:init
 	(progn
 	  (message "Loading %s..." "rainbow-mode"))))
+
+(defun dmx/init-chinese-fonts-setup ()
+  "Initialize chinese-fonts-setup"
+  (use-package chinese-fonts-setup
+	:defer t
+	:init
+	(progn
+	  (message "Loading %s..." "chinese-font-setup"))))
