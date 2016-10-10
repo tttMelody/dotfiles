@@ -20,12 +20,13 @@ autoload -Uz vcs_info
 # %c => show staged changes in the repository
 # Set vcs_info parameters
 #
+zstyle ':vcs_info:*' disable bzr cdv darcs mtn svk tla
 zstyle ':vcs_info:*' enable git hg svn
 zstyle ':vcs_info:*:*' unstagedstr '!'
 zstyle ':vcs_info:*:*' stagedstr '+'
-zstyle ':vcs_info:*:*' formats "$FX[bold]%~$FX[no-bold]" "%s/%b" "%%u%c"
-zstyle ':vcs_info:*:*' actionformats "$FX[bold]%~$FX[no-bold]" "%s/%b" "%u%c (%a)"
-zstyle ':vcs_info:*:*' nvcsformats "%~" "" ""
+zstyle ':vcs_info:*:*' formats " %s/%b %%u%c"
+zstyle ':vcs_info:*:*' actionformats " %s/%b %u%c (%a)"
+zstyle ':vcs_info:*:*' nvcsformats "%~"
 
 # Fastest possible way to check if repo is dirty
 #
@@ -43,36 +44,19 @@ git_dirty() {
 # Display information about the current repository
 #
 repo_information() {
-	echo "%(1j.[%j].)%F{red}%n%f@%F{blue}%m%f:%F{blue}${vcs_info_msg_0_%%/.} %F{8}$vcs_info_msg_1_`git_dirty` $vcs_info_msg_2_%f"
-	#echo "%F{red}%n%f@%F{blue}%m%f:%F{blue}%~ %F{8}$vcs_info_msg_1_`git_dirty` $vcs_info_msg_2_%f"
-}
-
-# Displays the exec time of the last command if set threshold was exceeded
-#
-cmd_exec_time() {
-    local stop=`date +%s`
-    local start=${cmd_timestamp:-$stop}
-    let local elapsed=$stop-$start
-    [ $elapsed -gt 5 ] && echo ${elapsed}s
-}
-
-# Get the intial timestamp for cmd_exec_time
-#
-preexec() {
-    cmd_timestamp=`date +%s`
+	echo "%F{red}%n%f@%F{blue}%m%f:%F{blue}%~ %F{8}${vcs_info_msg_0_} $vcs_info_msg_1_`git_dirty` $vcs_info_msg_2_%f"
 }
 
 # Output additional information about paths, repos and exec time
 #
 precmd() {
 	vcs_info # Get version control info before we start outputting stuff
-	#print -P "\n$(repo_information) %F{yellow}$(cmd_exec_time)%f"
 	print -P "\n$(repo_information)"
 }
 
 # Define prompts
 #
-PROMPT="%(?.%F{magenta}.%F{red})>%f " # Display a red prompt char on failure
+PS1="%(?.%F{magenta}.%F{red})>%f " # Display a red prompt char on failure
 #RPROMPT="%F{8}${SSH_TTY:+%n@%m}%f"    # Display username if connected via SSH
 
 # ------------------------------------------------------------------------------
