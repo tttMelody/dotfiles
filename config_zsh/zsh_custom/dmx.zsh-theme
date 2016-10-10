@@ -24,9 +24,9 @@ zstyle ':vcs_info:*' disable bzr cdv darcs mtn svk tla
 zstyle ':vcs_info:*' enable git hg svn
 zstyle ':vcs_info:*:*' unstagedstr '!'
 zstyle ':vcs_info:*:*' stagedstr '+'
-zstyle ':vcs_info:*:*' formats " %s/%b %%u%c"
-zstyle ':vcs_info:*:*' actionformats " %s/%b %u%c (%a)"
-zstyle ':vcs_info:*:*' nvcsformats "%~"
+zstyle ':vcs_info:*:*' formats "%F{blue}%~%f %s/%b %%u%c"
+zstyle ':vcs_info:*:*' actionformats "%F{blue}%~%f %s/%b %u%c (%a)"
+zstyle ':vcs_info:*:*' nvcsformats "%F{blue}%~%f"
 
 # Fastest possible way to check if repo is dirty
 #
@@ -44,7 +44,7 @@ git_dirty() {
 # Display information about the current repository
 #
 repo_information() {
-	echo "%F{red}%n%f@%F{blue}%m%f:%F{blue}%~ %F{8}${vcs_info_msg_0_} $vcs_info_msg_1_`git_dirty` $vcs_info_msg_2_%f"
+	echo "%F{red}%n%f@%F{blue}%m%f:${vcs_info_msg_0_}%F{8}$vcs_info_msg_1_`git_dirty` $vcs_info_msg_2_%f"
 }
 
 # Output additional information about paths, repos and exec time
