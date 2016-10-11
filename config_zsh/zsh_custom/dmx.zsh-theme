@@ -44,7 +44,7 @@ git_dirty() {
 # Display information about the current repository
 #
 repo_information() {
-	echo "%F{red}%n%f@%F{blue}%m%f:%~${vcs_info_msg_0_}%F{8}$vcs_info_msg_1_`git_dirty` $vcs_info_msg_2_%f"
+	echo "%F{red}%n%f@%F{blue}%m%f:%F{105}%~%f${vcs_info_msg_0_}%F{8}$vcs_info_msg_1_`git_dirty` $vcs_info_msg_2_%f"
 }
 
 # Output additional information about paths, repos and exec time
