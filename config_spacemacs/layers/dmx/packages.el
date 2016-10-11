@@ -23,6 +23,7 @@
 		applescript-mode
 		ycmd
 		dash-functional
+		(ob-lua :location (recipe :fetcher github :repo "stardiviner/ob-lua"))
 		toc-org
 		chinese-fonts-setup
 		slime
@@ -183,3 +184,12 @@
 	:init
 	(progn
 	  (message "Loading %s..." "chinese-font-setup"))))
+(defun dmx/init-ob-lua()
+  "Initialize ob-lua"
+  (use-package ob-lua
+	:defer t
+	:init
+	(progn
+	 (require 'ob-lua)
+	  (message "Loading %s..." "ob-lua"))))
+
