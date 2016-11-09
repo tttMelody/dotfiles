@@ -52,6 +52,9 @@ set wildmode=longest,full
 set wildignore=*.bak,*.o,*.obj,*.e,*~,*.pyc,*.svn
 
 set whichwrap+=<,>,h,l,b,s,[,]
+" 设置 退出vim后，内容显示在终端屏幕, 可以用于查看和复制, 不需要可以去掉
+" 好处：误删什么的，如果以前屏幕打开，可以找回
+"set t_ti= t_te=
 "====diff mode setting=====
 if &diff
 	" some setting
@@ -99,6 +102,7 @@ Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'dingmingxin/molokai'
 Plugin 'tfnico/vim-gradle' " for gradle file syntax highlight
 Plugin 'junegunn/fzf.vim'
+Plugin 'terryma/vim-expand-region'
 "Plugin 'gorodinskiy/vim-coloresque'
 " needed for fetching schemes online.
 "Plugin 'Rykka/colorv.vim'
