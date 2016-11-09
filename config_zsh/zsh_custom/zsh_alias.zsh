@@ -51,8 +51,6 @@ alias rtelnet="rlwrap telnet"
 #alias hdevtool="cd /work/walle_tools && python tool.py && cd -"
 
 alias j=fzf-bookmarks
-alias s="bookmark"
-alias p="showmarks"
 
 # === heracles ===
 #hash -d hlua="/work/heracles/svn/Resources/script"
@@ -66,11 +64,18 @@ alias p="showmarks"
 hash -d myblog=~/Documents/github/dingmingxin.github.io
 
 # === texas ===
-hash -d tlua="/data/texas/vr-texas/src/"
-hash -d tskynet="/data/texas/vr-texas-server/"
-hash -d tdmxtool="/data/texas/dmxtools/"
-hash -d tnode="/data/texas/vr-texas-server-http/"
-hash -d tart="/data/texas/vr-texas-art/"
+DMX_ENV="home"
+if [[ $DMX_ENV == "home" ]]; then
+	hash -d tlua="/data/staff/texas/client/src/"
+	hash -d tskynet="/data/staff/texas/server/"
+	hash -d tclient="/data/staff/texas/client"
+else
+	hash -d tlua="/data/texas/vr-texas/src/"
+	hash -d tskynet="/data/texas/vr-texas-server/"
+	hash -d tdmxtool="/data/texas/dmxtools/"
+	hash -d tnode="/data/texas/vr-texas-server-http/"
+	hash -d tart="/data/texas/vr-texas-art/"
+fi
 
 
 #common file type alias
