@@ -121,11 +121,11 @@ febf()
 
 fzf-bookmarks()
 {
-	local bookmark_file="$HOME/.bookmarks"
+	local bookmark_file="$HOME/.z"
     jumpline=$(cat ${bookmark_file} | $(fzfcmd) --query="$1" --select-1)
 	if [[ -n ${jumpline} ]]; then
 		jumpdir=$(echo $jumpline | awk -F\| '{print $1}')
-		cd $(eval "echo \"$jumpdir\"")
+		#cd $(eval "echo \"$jumpdir\"")
 	fi
 }
 # fzf osx opening application

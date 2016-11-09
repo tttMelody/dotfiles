@@ -1,4 +1,5 @@
 --langdef=js
---langmap=js:.js 
+--langmap=js:.js.jsfl
+--regex-js=/^function[ ]\([^()]+\).*/\1/f/
 --regex-js=/\.controller\(\'([^ \',]+).*/\1/n/
 --regex-js=/\.factory\(\'([^ \',]+).*/\1/q/
