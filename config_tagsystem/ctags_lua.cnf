@@ -1,8 +1,8 @@
 --langdef=MYLUA 
 --langmap=MYLUA:.lua.txt
---regex-MYLUA=/^function[ ]*([a-zA-Z_:.]+)/\1/f/
+--regex-MYLUA=/^function[ ]*([a-zA-Z_:.0-9]+)/\1/f/
 --regex-MYLUA=/([^ ]+)[ ]+=[a-zA-z_ ]+or[ ]+{}/\1/m/
---regex-MYLUA=/[ ]?local[ ]+([a-zA-Z_]+)[ ]?=[ ]?function\(/\1/f/
+--regex-MYLUA=/[ ]?local[ ]+([a-zA-Z_0-9]+)[ ]?=[ ]?function\(/\1/f/
 --regex-MYLUA=/[ ]?local[ ]+function[ ]+([^:.= ]+)\(/\1/f/
 --regex-MYLUA=/^local[ ]*([a-zA-Z_]+)[ ]*=/\1/v/
 --regex-MYLUA=/^([a-zA-Z_.]+)[ ]*=/\1/v/
