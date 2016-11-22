@@ -1,0 +1,65 @@
+# ~/.tmuxinator/texas_server.yml
+
+name: texas_server
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t texas_server
+
+windows:
+  - texas_entr:
+      layout: main-horizontal
+      panes:
+        - ssh dmx@texas_entrance -p 45321
+        - ssh dmx@texas_entrance -p 45321
+  - node:
+      layout: main-horizontal
+      panes:
+        - ssh -t dmx@texas_entrance -p 45321 ssh -t texas@10.26.33.137
+        - ssh -t dmx@texas_entrance -p 45321 ssh -t texas@10.26.33.137
+  - hall:
+      layout: main-horizontal
+      panes:
+        - ssh -t dmx@texas_entrance -p 45321 ssh -t texas@10.26.33.165
+        - ssh -t dmx@texas_entrance -p 45321 ssh -t texas@10.26.33.165
+  - room:
+      layout: main-horizontal
+      panes:
+        - ssh -t dmx@texas_entrance -p 45321 ssh -t texas@10.26.68.98
+        - ssh -t dmx@texas_entrance -p 45321 ssh -t texas@10.26.68.98
+  - db:
+      layout: main-horizontal
+      panes:
+        - ssh -t dmx@texas_entrance -p 45321 ssh -t texas@10.26.33.112
+        - ssh -t dmx@texas_entrance -p 45321 ssh -t texas@10.26.33.112
+  - test:
+      layout: main-horizontal
+      panes:
+        - ssh deploy@139.129.221.101
+        - ssh deploy@139.129.221.101
+  - local:
+      layout: main-horizontal
+      panes:
+        - 
+        - 
