@@ -28,7 +28,7 @@
 		chinese-fonts-setup
 		slime
 		rainbow-mode
-		osx-clipboard
+		;; osx-clipboard
 		))
 
 ;; List of packages to exclude.
@@ -193,11 +193,11 @@
 	(progn
 	 (require 'ob-lua)
 	  (message "Loading %s..." "ob-lua"))))
-(defun dmx/init-osx-clipboard()
-  "Initialize osx-clipboard"
-  (use-package osx-clipboard
-	:config
-	(progn
-	  (osx-clipboard-mode +1)
-	  (diminish 'osx-clipboard-mode))))
+;; (defun dmx/init-osx-clipboard()
+;;   "Initialize osx-clipboard"
+;;   (use-package osx-clipboard
+;; 	:config
+;; 	(progn
+;; 	  (osx-clipboard-mode +1)
+;; 	  (diminish 'osx-clipboard-mode))))
 
