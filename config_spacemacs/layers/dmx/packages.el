@@ -29,7 +29,10 @@
 		slime
 		rainbow-mode
 		;; osx-clipboard
+<<<<<<< HEAD
 		ob-php
+=======
+>>>>>>> e60e5a0f394e31e775b1afeca73637e53c4fcccf
 		))
 
 ;; List of packages to exclude.
@@ -186,27 +189,11 @@
 	:init
 	(progn
 	  (message "Loading %s..." "chinese-font-setup"))))
-(defun dmx/init-ob-php()
- "Initialize ob-php"
- (use-package ob-php
-   :config
-   (progn
-     ;; (require 'ob-php)
-     (message "Loading %s..." "ob-php"))))
-;; (defun dmx/init-ob-lua()
-;;   "Initialize ob-lua"
-;;   (use-package ob-lua
-;; 	:defer t
-;; 	:init
-;; 	(progn
-;; 	 (require 'ob-lua)
-;; 	  (message "Loading %s..." "ob-lua"))))
-;; (defun dmx/init-osx-clipboard()
-;;   "Initialize osx-clipboard"
-;;   (use-package osx-clipboard
-;; 	:config
-;; 	(progn
-;; 	  (osx-clipboard-mode +1)
-;; 	  (diminish 'osx-clipboard-mode))))
-
-
+(defun dmx/init-ob-lua()
+  "Initialize ob-lua"
+  (use-package ob-lua
+	:defer t
+	:init
+	(progn
+	 (require 'ob-lua)
+	  (message "Loading %s..." "ob-lua"))))

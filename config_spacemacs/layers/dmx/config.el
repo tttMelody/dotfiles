@@ -141,26 +141,26 @@
 ;;--end org config--
 
 ;;--begin org-page config--
-(setq op/repository-directory "~/Documents/github/dingmingxin.github.io"
-	  op/repository-org-branch "source"
-	  op/repository-html-branch "master"
+(setq op/repository-directory "~/Documents/oschina/blog"
+	  op/repository-org-branch "master"
+	  op/repository-html-branch "osc-pages"
 	  op/personal-google-analytics-id "UA-77360714-1"
 	  op/personal-github-link "https://github.com/dingmingxin"
 	  op/personal-disqus-shortname "everding"
-	  op/site-domain "http://dingmingxin.github.io/"
+	  op/site-domain "http://everding.oschina.io/"
 	  op/site-main-title "从Hello World开始"
 	  op/site-sub-title "()==[:::::::::::::> 重剑无锋，大巧不工 "
 	  op/theme 'dmx
 	  op/category-config-alist '(("blog" ;; this is the default configuration
 								  :show-meta t
-								  :show-comment t
+								  :show-comment nil
 								  :uri-generator op/generate-uri
 								  :uri-template "/blog/%y/%m/%d/%t/"
 								  :sort-by :date     ;; how to sort the posts
 								  :category-index t) ;; generate category index or not
 								 ("wiki" ;; this is the default configuration
 								  :show-meta t
-								  :show-comment t
+								  :show-comment nil
 								  :uri-generator op/generate-uri
 								  :uri-template "/wiki/%y/%m/%d/%t/"
 								  :sort-by :date     ;; how to sort the posts
