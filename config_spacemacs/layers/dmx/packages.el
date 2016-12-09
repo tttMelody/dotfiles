@@ -23,12 +23,13 @@
 		applescript-mode
 		ycmd
 		dash-functional
-		(ob-lua :location (recipe :fetcher github :repo "stardiviner/ob-lua"))
+		;; (ob-lua :location (recipe :fetcher github :repo "stardiviner/ob-lua"))
 		toc-org
 		chinese-fonts-setup
 		slime
 		rainbow-mode
-		osx-clipboard
+		;; osx-clipboard
+		ob-php
 		))
 
 ;; List of packages to exclude.
@@ -185,19 +186,27 @@
 	:init
 	(progn
 	  (message "Loading %s..." "chinese-font-setup"))))
-(defun dmx/init-ob-lua()
-  "Initialize ob-lua"
-  (use-package ob-lua
-	:defer t
-	:init
-	(progn
-	 (require 'ob-lua)
-	  (message "Loading %s..." "ob-lua"))))
-(defun dmx/init-osx-clipboard()
-  "Initialize osx-clipboard"
-  (use-package osx-clipboard
-	:config
-	(progn
-	  (osx-clipboard-mode +1)
-	  (diminish 'osx-clipboard-mode))))
+(defun dmx/init-ob-php()
+ "Initialize ob-php"
+ (use-package ob-php
+   :config
+   (progn
+     ;; (require 'ob-php)
+     (message "Loading %s..." "ob-php"))))
+;; (defun dmx/init-ob-lua()
+;;   "Initialize ob-lua"
+;;   (use-package ob-lua
+;; 	:defer t
+;; 	:init
+;; 	(progn
+;; 	 (require 'ob-lua)
+;; 	  (message "Loading %s..." "ob-lua"))))
+;; (defun dmx/init-osx-clipboard()
+;;   "Initialize osx-clipboard"
+;;   (use-package osx-clipboard
+;; 	:config
+;; 	(progn
+;; 	  (osx-clipboard-mode +1)
+;; 	  (diminish 'osx-clipboard-mode))))
+
 

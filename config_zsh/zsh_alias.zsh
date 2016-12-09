@@ -27,9 +27,7 @@ alias op='open'
 alias bs='source ~/.bash_profile'
 alias e="emacsclient -t -a ''"
 alias ek="emacsclient -e '(kill-emacs)'"
-alias gpp="git pull && git push"
-alias gpl="git pull"
-alias gph="git push"
+alias gff="git flow feature"
 
 if [[ $unamestr == "Darwin" ]]; then
 	platform="osx"

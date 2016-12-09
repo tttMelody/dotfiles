@@ -195,6 +195,7 @@ else
 	call SetSolarizedTheme()
 	"hi cursorline ctermbg=NONE cterm=underline
 	hi NonText cterm=NONE ctermfg=NONE
+	"hi Normal ctermbg=NONE "终端背景透明
 endif 
 "=====================autoCommand 
 au BufReadPost * if expand("%:e")=='applescript' |set filetype=applescript |endif
@@ -263,6 +264,21 @@ nnoremap <F5> :GundoToggle<CR>
 let g:gitgutter_diff_args = '-w'
 "=====================easymotion
 "let g:EasyMotion_leader_key = '<Leader><Leader>'
+"=====================expand_region
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
+let g:expand_region_text_objects = {
+      \ 'iw'  :0,
+      \ 'iW'  :0,
+      \ 'i"'  :0,
+      \ 'i''' :0,
+      \ 'i]'  :1, 
+      \ 'ib'  :1, 
+      \ 'iB'  :1, 
+      \ 'il'  :0, 
+      \ 'ip'  :0,
+      \ 'ie'  :0, 
+      \ }
 "=====================fzf.vim
 "set rtp+=~/.vim/bundle/fzf.vim
 set rtp+=~/.fzf

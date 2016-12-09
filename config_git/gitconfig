@@ -10,6 +10,9 @@
 	mg = mergetool
 	pl = pull
 	ph = push
+	ff = flow feature
+	fr = flow release
+	fh = flow hotfix
 [color]
 	diff = auto
 [user]

@@ -35,16 +35,32 @@
   (setq org-babel-sh-command "/opt/local/bin/bash")
   (setq org-hide-leading-stars t)
   (setq org-startup-indented t)
+  (setq org-confirm-babel-evaluate nil)
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((emacs-lisp . t)
 	 (sh . t)
 	 (js . t)
 	 (lua . t)
+	 (php . t)
 	 (C . t)
 	 (sed . t)
 	 (awk . t)
 	 (lisp . t)))
+  ;; (add-hook 'org-mode-hook
+  ;; 			(lambda()
+  ;; 			  (org-babel-do-load-languages
+  ;; 			   'org-babel-load-languages
+  ;; 			   '((emacs-lisp . t)
+  ;; 				 (sh . t)
+  ;; 				 (js . t)
+  ;; 				 (lua . t)
+  ;; 				 (C . t)
+  ;; 				 (sed . t)
+  ;; 				 (awk . t)
+  ;; 				 (lisp . t)))
+  ;; 			  ))
+  
   )
 ;; (add-hook 'org-mode-hook
 ;; 		  (lambda ()
