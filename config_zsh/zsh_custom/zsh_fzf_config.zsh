@@ -156,3 +156,20 @@ fzf-bookmarks()
 #EOF
 #}
 
+#laravel php-artisan fzf helper
+laf()
+{
+	if [[ ! -f artisan ]]; then
+		echo "artisan file not found"
+	else
+		
+		command=$(php artisan |sed -n "1,/Available/d;p"|grep "^  "|fzf --query="$1"  --select-1) && \
+			command=$(echo $command|awk '{print $1}')
+		BUFFER="php artisan $command" ; zle redisplay; zle end-of-line
+	fi
+}
+
+zle -N laf
+bindkey '^[\' laf
+
+
