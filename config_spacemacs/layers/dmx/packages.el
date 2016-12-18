@@ -29,10 +29,7 @@
 		slime
 		rainbow-mode
 		;; osx-clipboard
-<<<<<<< HEAD
-		ob-php
-=======
->>>>>>> e60e5a0f394e31e775b1afeca73637e53c4fcccf
+		ob-lua
 		))
 
 ;; List of packages to exclude.

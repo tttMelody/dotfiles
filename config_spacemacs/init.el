@@ -273,7 +273,8 @@ user code."
   (spacemacs/set-leader-keys "mhha" 'hs-hide-all)
   (spacemacs/set-leader-keys "mhhb" 'hs-hide-block)
   (spacemacs/set-leader-keys "mhsa" 'hs-show-all)
-  (spacemacs/set-leader-keys "mhsb" 'hs-show-block))
+  (spacemacs/set-leader-keys "mhsb" 'hs-show-block)
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -314,7 +315,11 @@ user code."
 
   (spacemacs/set-leader-keys "aaw" 'avy-goto-word-or-subword-1)
   (spacemacs/set-leader-keys "aac" 'avy-goto-char-in-line)
-  (spacemacs/set-leader-keys "mhha" 'hs-hide-all)
+
+  (add-hook 'org-mode-hook
+			'(lambda()
+			   (spacemacs/set-leader-keys "mhee" 'org-encrypt-entry)
+			   (spacemacs/set-leader-keys "mhed" 'org-decrypt-entry)))
 
   (add-hook 'org-mode-hook 'toc-org-enable)
   (add-hook 'lua-mode-hook 'dmx-hideshow-config)
