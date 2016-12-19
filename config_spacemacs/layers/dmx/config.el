@@ -42,50 +42,16 @@
 	 (sh . t)
 	 (js . t)
 	 (lua . t)
-	 (php . t)
 	 (C . t)
 	 (sed . t)
 	 (awk . t)
 	 (lisp . t)))
-  ;; (add-hook 'org-mode-hook
-  ;; 			(lambda()
-  ;; 			  (org-babel-do-load-languages
-  ;; 			   'org-babel-load-languages
-  ;; 			   '((emacs-lisp . t)
-  ;; 				 (sh . t)
-  ;; 				 (js . t)
-  ;; 				 (lua . t)
-  ;; 				 (C . t)
-  ;; 				 (sed . t)
-  ;; 				 (awk . t)
-  ;; 				 (lisp . t)))
-  ;; 			  ))
-  
-  )
-;; (add-hook 'org-mode-hook
-;; 		  (lambda ()
-;; 			(local-set-key (kbd "M-O") 'org-insert-heading-after-current)
-;; 			(with-eval-after-load 'evil
-;; 								  (evil-define-key 'normal evil-jumper-mode-map (kbd "TAB") nil)
-;; 								  (define-key evil-normal-state-map (kbd "TAB") 'org-cycle)
-;; 								  )
 
-;; 			;; add files to agenda mode
-;; 			(setq org-agenda-files '("~/orgs/" "~/orgs/work/" "~/orgs/work/yytx" "~/orgs/work/playcrab" "~/orgs/common/"))
-;; 			;;== todo setting ==
-;; 			;;== org-babel setting ==
-;; 			(setq org-babel-sh-command "/opt/local/bin/bash")
-;; 			(setq org-hide-leading-stars t)
-;; 			(org-babel-do-load-languages
-;; 			 'org-babel-load-languages
-;; 			 '((emacs-lisp . t)
-;; 			   (sh . t)
-;; 			   (js . t)
-;; 			   (lua . t)
-;; 			   (C . t)
-;; 			   (sed . t)
-;; 			   (awk . t)
-;; 			   (lisp . t)))))
+  (require 'org-crypt)
+  ;;(org-crypt-use-before-save-magic)
+  (setq org-tags-exclude-from-inheritance (quote("crypt")))
+  (setq org-crypt-key "dingmignxin <dingmingxin20@gmail.com>")
+  )
 
 ;; 有些org 配置直接放到上面的org-mode-hook 中，不知道什么鬼，偶尔有几个配置会不生效
 ;; 禁止对global_gnu 等类似带有下划线的字符串做特殊处理
