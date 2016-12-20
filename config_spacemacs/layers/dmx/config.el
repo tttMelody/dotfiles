@@ -50,7 +50,7 @@
   (require 'org-crypt)
   ;;(org-crypt-use-before-save-magic)
   (setq org-tags-exclude-from-inheritance (quote("crypt")))
-  (setq org-crypt-key "dingmignxin <dingmingxin20@gmail.com>")
+  (setq org-crypt-key "dingmingxin <dingmingxin20@gmail.com>")
   )
 
 ;; 有些org 配置直接放到上面的org-mode-hook 中，不知道什么鬼，偶尔有几个配置会不生效
