@@ -73,7 +73,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>269 574 606 456 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>69 1 1851 1056 0 0 1920 1057 </string>
+	<string>80 1 1840 1056 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>139 504 905 552 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -853,8 +853,6 @@
 			</dict>
 			<key>Background Image Is Tiled</key>
 			<false/>
-			<key>Background Image Location</key>
-			<string>/Users/dmx/Downloads/IMG_4754.JPG</string>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
