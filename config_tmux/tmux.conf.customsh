@@ -91,7 +91,7 @@
 #       window_status_bell_attr=blink,bold
 #       tmux setw -g window-status-bell-style fg=$window_status_bell_fg,bg=$window_status_bell_bg,$window_status_bell_attr
 #
-#       window_status_last_fg=colour226 # light blue
+#       window_status_last_fg=colour121 # light blue
 #       window_status_last_attr=default
 #       tmux setw -g window-status-last-style $window_status_last_attr,fg=$window_status_last_fg
 #
