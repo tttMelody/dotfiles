@@ -29,7 +29,7 @@
 		slime
 		rainbow-mode
 		;; osx-clipboard
-		ob-lua
+		;;ob-lua
 		))
 
 ;; List of packages to exclude.
@@ -186,11 +186,11 @@
 	:init
 	(progn
 	  (message "Loading %s..." "chinese-font-setup"))))
-(defun dmx/init-ob-lua()
-  "Initialize ob-lua"
-  (use-package ob-lua
-	:defer t
-	:init
-	(progn
-	 (require 'ob-lua)
-	  (message "Loading %s..." "ob-lua"))))
+;; (defun dmx/init-ob-lua()
+;;   "Initialize ob-lua"
+;;   (use-package ob-lua
+;; 	:defer t
+;; 	:init
+;; 	(progn
+;; 	 (require 'ob-lua)
+;; 	  (message "Loading %s..." "ob-lua"))))
