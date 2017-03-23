@@ -70,12 +70,12 @@
 #       tmux set -g status-left-length 32 \; set -g status-left "$status_left"
 #       tmux set -g status-position top
 #
-#       window_status_fg=colour245 # light gray
+#       window_status_fg=colour43 # light gray
 #       window_status_bg=colour232 # dark gray
 #       window_status_format="#I #W"
 #       tmux setw -g window-status-style fg=$window_status_fg,bg=$window_status_bg \; setw -g window-status-format "$window_status_format"
 #
-#       window_status_current_fg=colour195 # white
+#       window_status_current_fg=colour229 # white
 #       window_status_current_bg=colour39 # light blue
 #       window_status_current_format="#[fg=$window_status_bg,bg=$window_status_current_bg]$left_separator_black#[fg=$window_status_current_fg,bg=$window_status_current_bg,bold] #I $left_separator #W #[fg=$window_status_current_bg,bg=$status_bg,nobold]$left_separator_black"
 #       tmux setw -g window-status-current-format "$window_status_current_format"
@@ -91,11 +91,11 @@
 #       window_status_bell_attr=blink,bold
 #       tmux setw -g window-status-bell-style fg=$window_status_bell_fg,bg=$window_status_bell_bg,$window_status_bell_attr
 #
-#       window_status_last_fg=colour39 # light blue
+#       window_status_last_fg=colour121 # light blue
 #       window_status_last_attr=default
 #       tmux setw -g window-status-last-style $window_status_last_attr,fg=$window_status_last_fg
 #
-#       time_date_fg=colour245  # light gray
+#       time_date_fg=colour86  # light gray
 #       time_date_bg=colour232  # dark gray
 #       whoami_fg=colour254     # white
 #       whoami_bg=colour160     # red

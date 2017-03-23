@@ -107,13 +107,13 @@
 ;;--end org config--
 
 ;;--begin org-page config--
-(setq op/repository-directory "~/Documents/oschina/blog"
-	  op/repository-org-branch "master"
-	  op/repository-html-branch "osc-pages"
-	  op/personal-google-analytics-id "UA-77360714-1"
+(setq op/repository-directory "~/Documents/github/dingmingxin.github.io/"
+	  op/repository-org-branch "org-files"
+	  op/repository-html-branch "master"
+	  ;; op/personal-google-analytics-id "UA-77360714-1"
 	  op/personal-github-link "https://github.com/dingmingxin"
 	  op/personal-disqus-shortname "everding"
-	  op/site-domain "http://everding.oschina.io/"
+	  op/site-domain "http://dingmingxin.github.io/"
 	  op/site-main-title "从Hello World开始"
 	  op/site-sub-title "()==[:::::::::::::> 重剑无锋，大巧不工 "
 	  op/theme 'dmx
