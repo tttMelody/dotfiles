@@ -2,13 +2,13 @@
 
 rm ~/.tmux.conf
 rm ~/.tmux.conf.local
-ln -s $TMUX_CON_ROOT/tmux.conf ~/.tmux.conf
-ln -s $TMUX_CON_ROOT/tmux.conf.local ~/.tmux.conf.local
-ln -s $TMUX_CON_ROOT/tmux.conf.customsh ~/.tmux.conf.customsh
+ln -fs $TMUX_CON_ROOT/tmux.conf ~/.tmux.conf
+ln -fs $TMUX_CON_ROOT/tmux.conf.local ~/.tmux.conf.local
+ln -fs $TMUX_CON_ROOT/tmux.conf.customsh ~/.tmux.conf.customsh
 if [[ ! -d ~/.tmuxinator ]]; then
 	mkdir ~/.tmuxinator
 else
 	rm -r ~/.tmuxinator/*
 fi
 
-ln -s $TMUX_CON_ROOT/tmuxinator/* ~/.tmuxinator/
+ln -fs $TMUX_CON_ROOT/tmuxinator/* ~/.tmuxinator/

@@ -20,24 +20,25 @@ root: /data/tt
 
 windows:
   - http:
-    layout: even-vertical
-    panes:
-      - nginx:
-        - cd /data/www/httpserver/
-        - git st
-      - gamehttp:
-        - cd /data/www/gamehttp/
-        - git st
-      - log:
-        - cd /data/www/gamehttp/
-        - tail -f logs/game-dev-error.log
+      layout: even-vertical
+      panes:
+        - nginx:
+            - cd /data/www/httpserver/
+            - git st
+        - gamehttp:
+            - cd /data/www/gamehttp/
+            - git st
+        - log:
+            - cd /data/www/gamehttp/
+            - tail -f logs/game-dev-error.log
   - devtools:
-    layout: even-vertical
-    panes:
-      - devtools:
-        - cd /data/tt/devtools/
-      - common_shell:
-        - cd /data/tt/devtools/common_shell/
+      layout: even-vertical
+      panes:
+        - devtools:
+            - cd /data/tt/devtools/
+        - common_shell:
+            - cd /data/tt/devtools/common_shell/
+        - #empty
   - script:
       layout: even-vertical
       panes:
