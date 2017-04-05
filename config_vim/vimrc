@@ -198,6 +198,7 @@ endif
 au BufReadPost * if expand("%:e")=='applescript' |set filetype=applescript |endif
 au BufReadPost * if expand("%:e")=='jsfl' |set filetype=javascript |endif
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif  
+au BufReadPre * if match(expand("%"), "nginx.conf") > 0 |set filetype=nginx |endif
 "func! CheckSkynetConfig()
 "    if match(expand("%:p"), "texas") > 0
 "        if match(expand("%:p"), "config.") > 0
