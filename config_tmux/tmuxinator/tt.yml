@@ -19,19 +19,33 @@ root: /data/tt
 # tmux_command: byobu
 
 windows:
-  - lua:
+  - http:
+    layout: even-vertical
+    panes:
+      - nginx:
+        - cd /data/www/httpserver/
+        - git st
+      - gamehttp:
+        - cd /data/www/gamehttp/
+        - git st
+      - log:
+        - cd /data/www/gamehttp/
+        - tail -f logs/game-dev-error.log
+  - devtools:
+    layout: even-vertical
+    panes:
+      - devtools:
+        - cd /data/tt/devtools/
+      - common_shell:
+        - cd /data/tt/devtools/common_shell/
+  - script:
       layout: even-vertical
       panes:
         - lua: 
-            - ~tlua
+            - cd /data/tt/script/
             - git st
         - lua:
             - #empty
-  - note:
-      layout: even-vertical
-      panes:
-        - #empty
-        - #empty
   - client:
       layout: even-vertical
       panes:
@@ -41,12 +55,14 @@ windows:
       layout: even-vertical
       panes:
         - skynet:
-          - cd /data/tt
-          - git st
+          - cd /data/tt/gameserver/
         - skynet:
-          - cd /data/tt
-          - git st
-     panes:
+          - cd /data/tt/gameserver/
+  - note:
+      layout: even-vertical
+      panes:
+        - #empty
+        - #empty
   - tclients:
       layout: 202c,165x48,0,0[165x12,0,0{41x12,0,0,93,40x12,42,0,103,41x12,83,0,104,40x12,125,0,105},165x35,0,13{82x35,0,13[82x8,0,13,106,82x8,0,22,111,82x8,0,31,108,82x8,0,40,110],82x35,83,13[82x17,83,13,107,82x17,83,31,109]}]
       panes:
