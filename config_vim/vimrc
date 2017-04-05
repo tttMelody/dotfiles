@@ -103,6 +103,7 @@ Plugin 'dingmingxin/molokai'
 Plugin 'tfnico/vim-gradle' " for gradle file syntax highlight
 Plugin 'junegunn/fzf.vim'
 Plugin 'terryma/vim-expand-region'
+Plugin 'evanmiller/nginx-vim-syntax'
 "Plugin 'gorodinskiy/vim-coloresque'
 " needed for fetching schemes online.
 "Plugin 'Rykka/colorv.vim'
