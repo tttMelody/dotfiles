@@ -47,11 +47,19 @@ repo_information() {
 	echo "%F{red}%n%f@%F{blue}%m%f:%F{105}%~%f${vcs_info_msg_0_}%F{8}$vcs_info_msg_1_`git_dirty` $vcs_info_msg_2_%f"
 }
 
+jobs_info() {
+	if [[ $(jobs|wc -l) -gt 0 ]]; then
+		echo "%F{blue}[%(1j.%j.)]%F{blue}"
+	else
+		echo ""
+	fi
+}
+
 # Output additional information about paths, repos and exec time
 #
 precmd() {
 	vcs_info # Get version control info before we start outputting stuff
-	print -P "\n$(repo_information)"
+	print -P "\n$(jobs_info)$(repo_information)"
 }
 
 # Define prompts
