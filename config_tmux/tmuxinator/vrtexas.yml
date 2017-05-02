@@ -47,7 +47,7 @@ windows:
           - cd /data/vr-texas/vr-texas-server
           - git st
   - texas-tclient:
-      layout: 9dc2,165x47,0,0[165x11,0,0{57x11,0,0,10,56x11,58,0,18,50x11,115,0,19},165x11,0,12,17,165x24,0,24{82x24,0,24,11,82x24,83,24,20}]
+      layout: 5d85,135x43,0,0[135x9,0,0{47x9,0,0,4,46x9,48,0,10,40x9,95,0,11},135x10,0,10{67x10,0,10,12,67x10,68,10,24},135x23,0,21{67x23,0,21,13,67x23,68,21,14}]
       panes:
         - skynet:
           - cd /data/vr-texas/vr-texas-server/devtools
@@ -57,8 +57,8 @@ windows:
           - cd /data/vr-texas/vr-texas-server/devtools
         - skynet:
           - cd /data/vr-texas/vr-texas-server/devtools
-        - skynet:
-          - cd /data/vr-texas/vr-texas-server/devtools
+        - texastools:
+          - cd ~/Documents/test/texastools
         - skynet:
           - cd /data/vr-texas/vr-texas-server/devtools
   - tclients:
