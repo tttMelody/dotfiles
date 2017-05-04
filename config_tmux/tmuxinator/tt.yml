@@ -1,6 +1,6 @@
 # ~/.tmuxinator/todo.yml
 
-name: tt
+name: texas
 root: /data/tt
 
 # Optional tmux socket
@@ -40,6 +40,13 @@ windows:
             - cd /data/tt/devtools/common_shell/
         - devtools:
             - cd /data/tt/devtools/
+  - note:
+      layout: even-vertical
+      panes:
+        - note:
+          - cd /data/tt/doc/
+        - note:
+          - cd /data/tt/doc/
   - script:
       layout: even-vertical
       panes:
@@ -62,13 +69,6 @@ windows:
           - cd /data/tt/gameserver/
         - skynet:
           - cd /data/tt/gameserver/
-  - note:
-      layout: even-vertical
-      panes:
-        - note:
-          - cd /data/tt/doc/
-        - note:
-          - cd /data/tt/doc/
   - tclients:
       layout: 202c,165x48,0,0[165x12,0,0{41x12,0,0,93,40x12,42,0,103,41x12,83,0,104,40x12,125,0,105},165x35,0,13{82x35,0,13[82x8,0,13,106,82x8,0,22,111,82x8,0,31,108,82x8,0,40,110],82x35,83,13[82x17,83,13,107,82x17,83,31,109]}]
       panes:
