@@ -1,6 +1,6 @@
 # ~/.tmuxinator/todo.yml
 
-name: texas
+name: texas1
 root: /data/tt
 
 # Optional tmux socket
