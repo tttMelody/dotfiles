@@ -173,8 +173,18 @@ endfunc
 
 func! SetSolarizedTheme()
 	set background=light
+	if !has('gui_running') 
+		set t_Co=256
+		if $TERM_PROGRAM == 'iTerm.app'
+			let g:solarized_termcolors = &t_Co
+		endif
+		hi NonText cterm=NONE ctermfg=NONE
+		"hi Normal ctermbg=NONE "终端背景透明
+	else
+	endif
 	color solarized
 endfunc
+
 if &term =~ '256color'
 	" disable Background Color Erase (BCE) so that color schemes
 	" render properly when inside 256-color tmux and GNU screen.
@@ -182,18 +192,8 @@ if &term =~ '256color'
 	set t_ut=
 endif
 
-if (has("gui_running")) 
-	"hi cursorline guibg=NONE gui=underline
-    set guifont=Menlo\ Regular:h18 
-    call SetMolokaiTheme()
-else 
-	set t_Co=256
-	"call SetMolokaiTheme()
-	call SetSolarizedTheme()
-	"hi cursorline ctermbg=NONE cterm=underline
-	hi NonText cterm=NONE ctermfg=NONE
-	"hi Normal ctermbg=NONE "终端背景透明
-endif 
+call SetSolarizedTheme()
+
 "=====================autoCommand 
 au BufReadPost * if expand("%:e")=='applescript' |set filetype=applescript |endif
 au BufReadPost * if expand("%:e")=='jsfl' |set filetype=javascript |endif

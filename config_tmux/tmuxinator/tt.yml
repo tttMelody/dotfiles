@@ -62,7 +62,7 @@ windows:
           - cd /data/tt/client/
         - client:
           - cd /data/tt/client/
-  - skynet:
+  - server:
       layout: even-vertical
       panes:
         - skynet:
