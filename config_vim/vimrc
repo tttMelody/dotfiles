@@ -175,7 +175,7 @@ func! SetSolarizedTheme()
 	set background=light
 	if !has('gui_running') 
 		set t_Co=256
-		if $TERM_PROGRAM == 'iTerm.app'
+		if $TERM_PROGRAM == 'Apple_Terminal'
 			let g:solarized_termcolors = &t_Co
 		endif
 		hi NonText cterm=NONE ctermfg=NONE
