@@ -112,6 +112,7 @@ Plugin 'evanmiller/nginx-vim-syntax'
 "Plugin 'wesleyche/Trinity'
 "Plugin 'chazy/cscope_maps'
 Plugin 'osyo-manga/vim-anzu'
+Plugin 'posva/vim-vue'
 Plugin 'vim-scripts/PDV--phpDocumentor-for-Vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'kien/ctrlp.vim'
@@ -138,6 +139,7 @@ Plugin 'spin6lock/vim_sproto'
 Plugin 'peterhoeg/vim-qml' " syntax highlight for qt qml
 "Plugin 'bling/vim-airline'
 "影响速度，弃用airline
+Plugin 'lifepillar/pgsql.vim'
 "Plugin 'AutoComplPop' 
 "回车有问题,弃用Autocomplpop
 Plugin 'tpope/vim-markdown'
