@@ -101,8 +101,8 @@ Plugin 'a.vim'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'dingmingxin/molokai'
 Plugin 'tfnico/vim-gradle' " for gradle file syntax highlight
-Plugin 'hushicai/tagbar-javascript.vim' "need do: npm install -g esctags
 Plugin 'junegunn/fzf.vim'
+Plugin 'ternjs/tern_for_vim'
 Plugin 'terryma/vim-expand-region'
 Plugin 'evanmiller/nginx-vim-syntax'
 "Plugin 'gorodinskiy/vim-coloresque'
