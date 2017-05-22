@@ -165,8 +165,6 @@ if [ ${TMUX} ]; then
 	unset zle_bracketed_paste
 fi
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 if [ -f /opt/local/etc/profile.d/cdargs-bash.sh ]; then
 	source /opt/local/etc/profile.d/cdargs-bash.sh
 fi
