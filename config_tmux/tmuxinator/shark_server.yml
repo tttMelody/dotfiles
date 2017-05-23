@@ -1,0 +1,55 @@
+# ~/.tmuxinator/texas_server.yml
+
+name: shark_server
+root: ~/
+
+# Optional tmux socket
+# socket_name: foo
+
+# Runs before everything. Use it to start daemons etc.
+# pre: sudo /etc/rc.d/mysqld start
+
+# Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
+# pre_window: rbenv shell 2.0.0-p247
+
+# Pass command line options to tmux. Useful for specifying a different tmux.conf.
+# tmux_options: -f ~/.tmux.mac.conf
+
+# Change the command to call tmux.  This can be used by derivatives/wrappers like byobu.
+# tmux_command: byobu
+
+# Specifies (by name or index) which window will be selected on project startup. If not set, the first window is used.
+# startup_window: logs
+
+# Controls whether the tmux session should be attached to automatically. Defaults to true.
+# attach: false
+
+# Runs after everything. Use it to attach to tmux with custom options etc.
+# post: tmux -CC attach -t texas_server
+
+windows:
+  - jump:
+      layout: main-horizontal
+      panes:
+        - ssh dmx@shark_jump 
+        - ssh dmx@shark_jump
+  - skynet:
+      layout: main-horizontal
+      panes:
+        - ssh -t dmx@shark_jump ssh -t texas@172.26.209.244
+        - ssh -t dmx@shark_jump ssh -t texas@172.26.209.244
+  - test:
+      layout: main-horizontal
+      panes:
+        - ssh deploy@139.129.221.101
+        - ssh deploy@139.129.221.101
+  - local:
+      layout: main-horizontal
+      panes:
+        - 
+        - 
+  - note:
+      layout: main-horizontal
+      panes:
+        - 
+        - 
