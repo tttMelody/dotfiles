@@ -2,3 +2,6 @@
 https://packagecontrol.io/
 
 可以通过这个安装插件, 相当于vim的vundle
+* packages
+** PackageControl
+** TypeScript
