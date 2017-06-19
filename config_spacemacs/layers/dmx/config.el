@@ -41,6 +41,7 @@
    '((emacs-lisp . t)
 	 (sh . t)
 	 (js . t)
+	 (typescript . t)
 	 (lua . t)
 	 (C . t)
 	 (sed . t)

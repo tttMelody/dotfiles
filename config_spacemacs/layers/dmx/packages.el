@@ -21,6 +21,8 @@
 		smart-tab
 		company-ycmd
 		applescript-mode
+		typescript-mode
+		ob-typescript
 		ycmd
 		dash-functional
 		;; (ob-lua :location (recipe :fetcher github :repo "stardiviner/ob-lua"))
@@ -186,6 +188,22 @@
 	:init
 	(progn
 	  (message "Loading %s..." "chinese-font-setup"))))
+(defun dmx/init-ob-typescript()
+  "Initialize ob-typescript"
+  (use-package ob-typescript
+	:defer t
+	:init
+	(progn
+	 (require 'ob-typescript)
+	  (message "Loading %s..." "ob-typescript"))))
+(defun dmx/init-typescript-mode()
+  "Initialize typescript-mode"
+  (use-package typescript-mode
+	:defer t
+	:init
+	(progn
+	 (require 'typescript-mode)
+	  (message "Loading %s..." "typescript-mode"))))
 ;; (defun dmx/init-ob-lua()
 ;;   "Initialize ob-lua"
 ;;   (use-package ob-lua
