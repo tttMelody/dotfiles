@@ -10,7 +10,14 @@ set confirm
 set novisualbell 
 if has('mouse') 
 	set mouse=a
-	set ttymouse=xterm2
+	if !has('nvim')
+		set ttymouse=xterm2
+	endif
+endif
+
+if has('nvim')
+	set inccommand=nosplit
+	" code
 endif
 " 设置vim剪切板和系统剪切板共享
 set clipboard+=unnamed

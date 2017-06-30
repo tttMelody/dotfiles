@@ -62,20 +62,21 @@ alias j=fzf-bookmarks
 #hash -d handroid="/work/heracles/frameworks/runtime-src/proj.android"
 
 hash -d myblog=~/Documents/github/dingmingxin.github.io
+hash -d gui530=/data/手机版/美术资源/ui/gui_530
 
-# === texas ===
-DMX_ENV="home"
-if [[ $DMX_ENV == "home" ]]; then
-	hash -d tlua="/data/staff/texas/client/src/"
-	hash -d tskynet="/data/staff/texas/server/"
-	hash -d tclient="/data/staff/texas/client"
-else
-	hash -d tlua="/data/texas/vr-texas/src/"
-	hash -d tskynet="/data/texas/vr-texas-server/"
-	hash -d tdmxtool="/data/texas/dmxtools/"
-	hash -d tnode="/data/texas/vr-texas-server-http/"
-	hash -d tart="/data/texas/vr-texas-art/"
-fi
+## === texas ===
+#DMX_ENV="home"
+#if [[ $DMX_ENV == "home" ]]; then
+	#hash -d tlua="/data/staff/texas/client/src/"
+	#hash -d tskynet="/data/staff/texas/server/"
+	#hash -d tclient="/data/staff/texas/client"
+#else
+	#hash -d tlua="/data/texas/vr-texas/src/"
+	#hash -d tskynet="/data/texas/vr-texas-server/"
+	#hash -d tdmxtool="/data/texas/dmxtools/"
+	#hash -d tnode="/data/texas/vr-texas-server-http/"
+	#hash -d tart="/data/texas/vr-texas-art/"
+#fi
 
 
 #common file type alias
