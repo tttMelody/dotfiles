@@ -116,6 +116,7 @@ Plugin 'osyo-manga/vim-anzu'
 Plugin 'posva/vim-vue'
 Plugin 'vim-scripts/PDV--phpDocumentor-for-Vim'
 Plugin 'rizzatti/dash.vim'
+Plugin 'johngrib/vim-game-code-break' "一个基于代码的打砖块游戏
 Plugin 'kien/ctrlp.vim'
 Plugin 'tacahiroy/ctrlp-funky'
 "Plugin 'mattn/ctrlp-mark'
@@ -280,6 +281,11 @@ let g:expand_region_text_objects = {
       \ 'ip'  :0,
       \ 'ie'  :0, 
       \ }
+"=====================syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 "=====================fzf.vim
 "set rtp+=~/.vim/bundle/fzf.vim
 set rtp+=~/.fzf
@@ -550,25 +556,22 @@ let g:tagbar_type_lua = {
 	\ 'deffile' : '~/dotfiles/config_tagsystem/ctags_lua.cnf'
 \ }
 
-"npm install --global git+https://github.com/Perlence/tstags.git
-let g:tagbar_type_typescript = {                                                  
-  \ 'ctagsbin' : 'tstags',                                                        
-  \ 'ctagsargs' : '-f-',                                                           
-  \ 'kinds': [                                                                     
-    \ 'e:enums:0:1',                                                               
-    \ 'f:function:0:1',                                                            
-    \ 't:typealias:0:1',                                                           
-    \ 'M:Module:0:1',                                                              
-    \ 'I:import:0:1',                                                              
-    \ 'i:interface:0:1',                                                           
-    \ 'C:class:0:1',                                                               
-    \ 'm:method:0:1',                                                              
-    \ 'p:property:0:1',                                                            
-    \ 'c:const:0:1',                                                              
-  \ ],                                                                            
+let g:tagbar_type_typescript = {
+  \ 'ctagstype': 'typescript',
+  \ 'kinds': [
+    \ 'c:classes',
+    \ 'n:modules',
+    \ 'f:functions',
+    \ 'v:variables',
+    \ 'v:varlambdas',
+    \ 'm:members',
+    \ 'i:interfaces',
+    \ 'e:enums',
+  \ ],
   \ 'sort' : 0,
   \ 'deffile' : '~/dotfiles/config_tagsystem/ctags_ts.cnf'
-\ }                              
+\ }
+
 let g:tagbar_type_proto = {
 	\ 'ctagstype' : 'proto',
 	\ 'kinds'     : [
